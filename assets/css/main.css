@@ -1273,16 +1273,16 @@ input, select, textarea {
 			margin-top: 3.5rem;
 		}
 
-			#header > *:before {
+			/*#header > *:before {
 				content: '';
 				display: block;
 				position: absolute;
 				top: calc(-3.5rem - 1px);
 				left: calc(50% - 1px);
 				width: 1px;
-				height: calc(3.5rem + 1px);
+				height: calc(1.5rem);
 				background: #ffffff;
-			}
+			}*/
 
 		#header > :first-child {
 			margin-top: 0;
@@ -1291,7 +1291,7 @@ input, select, textarea {
 			#header > :first-child:before {
 				display: none;
 			}
-
+		
 		#header .logo {
 			width: 5.5rem;
 			height: 5.5rem;
