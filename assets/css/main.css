@@ -1,5 +1,6 @@
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+@import url("https://fonts.google.com/share?selection.family=EB%20Garamond");
+
 
 /*
 	Dimension by HTML5 UP
@@ -1387,9 +1388,9 @@ input, select, textarea {
 			background: #ffffff;
 		}
 
-		#header nav.use-middle ul li.is-middle {
+		/*#header nav.use-middle ul li.is-middle {
 			border-left: 0;
-		}
+		}*/
 
 		body.is-article-visible #header {
 			-moz-transform: scale(0.95);
