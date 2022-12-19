@@ -74,7 +74,7 @@
 					'padding #{_duration(intro)} ease',
 					'opacity #{_duration(article)} ease-in-out'
 				));
-				@include vendor('transition-delay', '0.25s');
+				@include vendor('transition-delay', '0.1s');
 				padding: 3rem 2rem;
 				max-height: 40rem;
 				overflow: hidden;
@@ -131,7 +131,7 @@
 				}
 			}
 
-			&.use-middle {
+			/*&.use-middle {
 				&:after {
 					content: '';
 					display: block;
@@ -141,7 +141,7 @@
 					width: _size(border-width);
 					height: 100%;
 					background: _palette(border);
-				}
+				}*/
 
 				ul {
 					li {
