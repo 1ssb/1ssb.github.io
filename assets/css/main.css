@@ -1273,7 +1273,7 @@ input, select, textarea {
 			margin-top: 3.5rem;
 		}
 
-			/*#header > *:before {
+			#header > *:before {
 				content: '';
 				display: block;
 				position: absolute;
@@ -1282,7 +1282,7 @@ input, select, textarea {
 				width: 1px;
 				height: calc(1.5rem);
 				background: #ffffff;
-			}*/
+			}
 
 		#header > :first-child {
 			margin-top: 0;
