@@ -97,6 +97,7 @@ input, select, textarea {
 
 	body {
 		background: #1b1f22;
+		font-family: ebgaramond;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -142,7 +143,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #ffffff;
-		font-family: "ebgaramond";
+		font-family: ebgaramond;
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 1.65;
@@ -263,7 +264,7 @@ input, select, textarea {
 	code {
 		background: rgba(255, 255, 255, 0.075);
 		border-radius: 4px;
-		font-family: "Courier New", monospace;
+		font-family: ebgaramond;
 		font-size: 0.9rem;
 		margin: 0 0.25rem;
 		padding: 0.25rem 0.65rem;
@@ -271,7 +272,7 @@ input, select, textarea {
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
+		font-family: ebgaramond;
 		font-size: 0.9rem;
 		margin: 0 0 2rem 0;
 	}
