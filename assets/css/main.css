@@ -384,7 +384,7 @@ input, select, textarea {
 		letter-spacing: 0.2rem;
 		line-height: 1.5;
 		margin: 0 0 1rem 0;
-		text-transform: uppercase;
+		/*text-transform: uppercase;*/
 	}
 
 	input[type="text"],
