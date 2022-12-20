@@ -1341,7 +1341,7 @@ input, select, textarea {
 				}
 
 			#header .content p {
-				text-transform: uppercase;
+				/*text-transform: uppercase;*/
 				letter-spacing: 0.2rem;
 				font-size: 0.8rem;
 				line-height: 2;
