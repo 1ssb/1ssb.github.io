@@ -30,6 +30,11 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+image {
+  border-radius: 50%;
+}
+
+
 body {
 	line-height: 1;
 }
