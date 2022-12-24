@@ -1,5 +1,5 @@
 @import url(fontawesome-all.min.css);
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
 
 
 /*
@@ -102,7 +102,7 @@ input, select, textarea {
 
 	body {
 		background: #1b1f22;
-		font-family: ebgaramond;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -148,7 +148,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #ffffff;
-		font-family: ebgaramond;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 1.65;
@@ -269,7 +269,7 @@ input, select, textarea {
 	code {
 		background: rgba(255, 255, 255, 0.075);
 		border-radius: 4px;
-		font-family: ebgaramond;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
 		font-size: 0.9rem;
 		margin: 0 0.25rem;
 		padding: 0.25rem 0.65rem;
@@ -277,7 +277,10 @@ input, select, textarea {
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: ebgaramond;
+		font-family: Verdana,
+			Geneva,
+			Tahoma,
+			sans-serif;
 		font-size: 0.9rem;
 		margin: 0 0 2rem 0;
 	}
@@ -1118,7 +1121,7 @@ input, select, textarea {
 		-webkit-transform: scale(1.0);
 		-ms-transform: scale(1.0);
 		transform: scale(1.0);
-		-webkit-backface-visibility: hidden;
+		/*-webkit-backface-visibility: hidden;*/
 		position: fixed;
 		top: 0;
 		left: 0;
