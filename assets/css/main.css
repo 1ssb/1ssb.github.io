@@ -114,6 +114,43 @@ input, select, textarea {
 			-ms-transition: none !important;
 			transition: none !important;
 		}
+/*Search*/
+.box{
+    position: relative;
+}
+
+.input {
+    padding: 10px;
+    width: 80px;
+    height: 80px;
+    background: none;
+    border: 4px solid #ffff;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-family: merriweather, serif;
+    font-size: 24px;
+    color: #ffd52d;
+    outline: none;
+    transition: .35s;
+}
+.box:hover input{
+    width: 350px;
+    background: #3b3640;
+    border-radius: 10px;
+}
+.box i{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(-50%,-50%);
+    font-size: 26px;
+    color: #ffd57d;
+    transition: .25s;
+}
+.box:hover i{
+    opacity: 0;
+    z-index: -1;
+}
 
 /* Type */
 
