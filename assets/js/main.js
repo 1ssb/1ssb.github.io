@@ -23,6 +23,17 @@
 			xsmall:   [ '361px',   '480px'  ],
 			xxsmall:  [ null,      '360px'  ]
 		});
+	
+	//Searchbar
+	const input = document.getElementById("search-input");
+	const searchBtn = document.getElementById("search-btn");
+
+	const expand = () => {
+  	searchBtn.classList.toggle("close");
+  	input.classList.toggle("square");
+	};
+
+	searchBtn.addEventListener("click", expand);
 
 	// Play initial animations on page load.
 		$window.on('load', function() {
