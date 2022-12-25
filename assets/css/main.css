@@ -306,6 +306,11 @@ input, select, textarea {
 		text-align: right;
 	}
 /*Search Bar*/
+body {
+  background-color: #ff9800;
+  color: #fff;
+  margin: 0;
+}
 #content {
   position: absolute;
   height: 50px;
