@@ -305,7 +305,7 @@ input, select, textarea {
 	.align-right {
 		text-align: right;
 	}
-/*Search Bar*/
+/*Search Bar
 body {
   background-color: #ff9800;
   color: #fff;
@@ -449,7 +449,7 @@ input {
   -ms-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
 }
-
+*/
 /* Form */
 
 	form {
