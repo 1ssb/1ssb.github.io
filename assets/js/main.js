@@ -24,7 +24,7 @@
 			xxsmall:  [ null,      '360px'  ]
 		});
 	
-	//Searchbar
+	/*Searchbar
 	const input = document.getElementById("search-input");
 	const searchBtn = document.getElementById("search-btn");
 
@@ -33,7 +33,7 @@
   	input.classList.toggle("square");
 	};
 
-	searchBtn.addEventListener("click", expand);
+	searchBtn.addEventListener("click", expand);*/
 
 	// Play initial animations on page load.
 		$window.on('load', function() {
