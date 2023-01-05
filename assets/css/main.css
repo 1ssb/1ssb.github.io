@@ -729,11 +729,11 @@ input {
 /* Box */
 
 	.box {
-		border-radius: 4px;
+		border-radius: 5px;
 		border: solid 1px #ffffff;
 		margin-bottom: 2rem;
 		padding: 1.5em;
-		text-underline-offset: 8px;
+		text-underline-offset: 7px;
 	}
 
 		.box > :last-child,
