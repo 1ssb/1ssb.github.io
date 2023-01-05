@@ -733,6 +733,7 @@ input {
 		border: solid 1px #ffffff;
 		margin-bottom: 2rem;
 		padding: 1.5em;
+		text-underline-offset: 8px;
 	}
 
 		.box > :last-child,
