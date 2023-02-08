@@ -1050,7 +1050,7 @@ input {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 18px;
+  font-size: 20px;
   /*margin: 4px 2px;*/
 }
 .button3 {border-radius: 8px;}
@@ -1179,7 +1179,7 @@ input {
 		color: #ffffff !important;
 		cursor: pointer;
 		display: inline-block;
-		font-size: 0.8rem;
+		font-size: 1rem;
 		font-weight: 300;
 		height: 2.75rem;
 		letter-spacing: 0.2rem;
