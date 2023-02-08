@@ -1050,8 +1050,8 @@ input {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 18px;
+  /*margin: 4px 2px;*/
 }
 .button3 {border-radius: 8px;}
 /* Icons */
