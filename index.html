@@ -58,12 +58,33 @@
   letter-spacing: 0em;
 }
 .btn {
-  border: 2px solid black;
-  background-color: transparent;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 10px;
+	
+	-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		background-color: transparent;
+		border-radius: 5px;
+		box-shadow: inset 0 0 0 0px #ffffff;
+		color: #ffffff !important;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 1rem;
+		font-weight: 300;
+		height: 88px;
+		letter-spacing: 0.3rem;
+		line-height: 2.75rem;
+		outline: 0;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: nowrap;
+		border: 2px solid black;
+  		padding: 14px 28px;
 }
 
 .default {
@@ -314,10 +335,10 @@
 								<h2 class="major">Contact</h2>
 								<h3>Email</h3>
 								Feel free to contact me on either mail addresses. I may be more responsive on my academic mail.
-								<br> 
+								<div> 
 								<a class="btn default" href="mailto:Subhransu.Bhattacharjee@anu.edu.au" title = "Academic Email"><i class='fas fa-envelope'></i> Academic Email</a>
-								<br>
 								<a class="btn default" href="mailto:bhattacharjeesekharsubhransu1@gmail.com" title = "Personal Email"><i class='fas fa-envelope'></i> Personal Email</a>
+								</div>
 								<h3>Phone</h3>
 								<p>
 								<i class="fa fa-phone"></i>  +61-(04)-74224742<br>
