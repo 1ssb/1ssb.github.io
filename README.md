@@ -1,2 +1,2 @@
-# SSBhattacharjee.github.io
+# 1ssb.github.io
 Portfolio Website
