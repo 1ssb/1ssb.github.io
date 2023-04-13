@@ -674,20 +674,16 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							</article>
 
 					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; 2023 Subhransu Bhattacharjee | Design: HTML5UP | <script>
-var now = new Date()
-var date = now.toLocaleDateString();
-var dates = date.split("/");
-var monthNumber = dates[0];
+				var now = new Date();
+var monthNumber = now.getMonth();
 var monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
-var monthString = monthNames[monthNumber - 1];
-document.write("Last Updated: "+monthString+" "+dates[1]+", "+dates[2]);
-</script></p>
+var monthString = monthNames[monthNumber];
+var dateString = "Last Updated: "+monthString+" "+now.getDate()+", "+now.getFullYear();
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; 2023 Subhransu Bhattacharjee | Design: HTML5UP | document.write(dateString)</p>
 					</footer>
 
 			</div>
