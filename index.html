@@ -77,27 +77,38 @@
 			height: auto;
 		        width: auto;
 			}
-  .button3 {
-    background-color: transparent;
-    border: 1pt solid white;
-    border-radius: 5px;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
+
   
-  navr ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  navr li {
-    display: inline-block;
-  }
+  navr {
+  text-align: center;
+}
+
+navr ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+navr li {
+  display: block;
+  margin: 10px 0;
+}
+
+.buttonp {
+  background-color: transparent;
+  border: 1pt solid white;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.buttonp:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
 	</style>
 	</head>
 	<body class="is-preload">
@@ -138,7 +149,9 @@
 					<div id="main">
 
 				<article id="menu">
-  				 <h2 class="major">Menu</h2>
+					<center>
+  				 <h2>Menu</h2>
+					</center>
   					<navr>
     						<ul>
       							<li><a href="https://www.example.com/page1" class="button3">Button 1</a></li>
