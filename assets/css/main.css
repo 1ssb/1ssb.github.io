@@ -1534,7 +1534,7 @@ input {
 						background-color: rgba(255, 255, 255, 0.175);
 					}
 
-		/*#header nav.use-middle:after {
+		#header nav.use-middle:after {
 			content: '';
 			display: block;
 			position: absolute;
@@ -1547,7 +1547,7 @@ input {
 
 		#header nav.use-middle ul li.is-middle {
 			border-left: 0;
-		}*/
+		}
 
 		body.is-article-visible #header {
 			-moz-transform: scale(0.95);
@@ -1653,9 +1653,9 @@ input {
 							width: 100%;
 						}
 
-				/*#header nav.use-middle:after {
+				#header nav.use-middle:after {
 					display: none;
-				}*/
+				}
 
 		}
 
