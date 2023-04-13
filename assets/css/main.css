@@ -1285,16 +1285,6 @@ input, select, textarea {
 				height: calc(3.5rem + 1px);
 				background: #ffffff;
 			}
-			#header > nav:before {
-				content: '';
-				display: block;
-				position: absolute;
-				top: calc(-3.5rem - 1px);
-				left: calc(50% - 1px);
-				width: 0px;
-				height: calc(3.5rem + 1px);
-				background: #ffffff;
-			}
 
 		#header > :first-child {
 			margin-top: 0;
@@ -1303,7 +1293,7 @@ input, select, textarea {
 			#header > :first-child:before {
 				display: none;
 			}
-		
+
 		#header .logo {
 			width: 5.5rem;
 			height: 5.5rem;
@@ -1343,7 +1333,7 @@ input, select, textarea {
 				}
 
 			#header .content p {
-				/*text-transform: uppercase;*/
+				text-transform: uppercase;
 				letter-spacing: 0.2rem;
 				font-size: 0.8rem;
 				line-height: 2;
@@ -1376,7 +1366,7 @@ input, select, textarea {
 					height: 2.75rem;
 					line-height: 2.75rem;
 					padding: 0 1.25rem 0 1.45rem;
-					/*text-transform: uppercase;*/
+					text-transform: uppercase;
 					letter-spacing: 0.2rem;
 					font-size: 0.8rem;
 					border-bottom: 0;
@@ -1673,9 +1663,3 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
-.inf{
-   display: inline-block;
-   width:   10px;
-   height:  10px;
-   background-image: url("images/inf.jpg");
-}
