@@ -303,10 +303,10 @@
 				var $this = $(this);
 
 				// Close.
-					$('<div class="close">Close</div>')
+					$('<div class="back">Back</div>')
 						.appendTo($this)
 						.on('click', function() {
-							location.hash = '';
+							window.history.back();
 						});
 
 				// Prevent clicks from inside article from bubbling.
