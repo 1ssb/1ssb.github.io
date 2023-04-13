@@ -303,7 +303,7 @@
 				var $this = $(this);
 
 				// Close.
-					$('<div class="back">Back</div>')
+					$('<div class="close">Back</div>')
 						.appendTo($this)
 						.on('click', function() {
 							window.history.back();
