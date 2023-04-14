@@ -78,32 +78,6 @@
 		        width: auto;
 			}
 	</style>
-			<style>
-    .my-table {
-        border-collapse: separate;
-        border-spacing: 0;
-        border-radius: 10px;
-        border: none;
-    }
-
-    .my-table td {
-        text-align: center;
-    }
-
-    .my-table a {
-        font-size: 10pt;
-        color: white;
-        background-color: transparent;
-        text-decoration: none !important;
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-
-    .my-table a:hover {
-        color: gray;
-    }
-</style>
 	</head>
 	<body class="is-preload">
 
@@ -145,27 +119,55 @@
 					</div>-->	
         
 
+<style>
+    .my-table {
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 10px;
+        border: none;
+    }
+
+    .my-table td {
+        text-align: center;
+    }
+
+    .my-table button {
+        font-size: 10pt;
+        color: white;
+        background-color: transparent;
+        text-decoration: none !important;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .my-table button:hover {
+        color: gray;
+    }
+</style>
+
 <table class="my-table">
     <tr>
-        <td><a href="#news">News</a></td>
+        <td><button onclick="location.href='#news'">News</button></td>
     </tr>
     <tr>
-        <td><a href="#exp">Experiences</a></td>
+        <td><button onclick="location.href='#exp'">Experiences</button></td>
     </tr>
     <tr>
-        <td><a href="#pub">Publications</a></td>
+        <td><button onclick="location.href='#pub'">Publications</button></td>
     </tr>
     <tr>
-        <td><a href="#proj">Projects</a></td>
+        <td><button onclick="location.href='#proj'">Projects</button></td>
     </tr>
     <tr>
-        <td><a href="#blog">Blogs</a></td>
+        <td><button onclick="location.href='#blog'">Blogs</button></td>
     </tr>
     <tr>
-        <td><a href="#present">Presentations</a></td>
+        <td><button onclick="location.href='#present'">Presentations</button></td>
     </tr>
     <tr>
-        <td><a href="#note">Notes</a></td>
+        <td><button onclick="location.href='#note'">Notes</button></td>
     </tr>
 </table>
 					
