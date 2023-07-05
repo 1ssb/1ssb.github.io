@@ -681,6 +681,38 @@ Design: <a href="https://html5up.net/dimension">Dimension</a> | <script language
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			  <script>
+    function toggleList() {
+      var entries = document.getElementsByClassName('list-entry');
+      var showMoreButton = document.getElementsByClassName('show-more')[0];
+      var arrow = document.getElementById('arrow');
+
+      for (var i = 10; i < entries.length; i++) {
+        if (entries[i].style.display === 'none') {
+          entries[i].style.display = 'block';
+        } else {
+          entries[i].style.display = 'none';
+        }
+      }
+
+      if (arrow.innerHTML === '&#9660;') {
+        arrow.innerHTML = '&#9650;';
+      } else {
+        arrow.innerHTML = '&#9660;';
+      }
+
+      showMoreButton.style.display = 'none';
+    }
+
+    window.onload = function () {
+      var entries = document.getElementsByClassName('list-entry');
+      var showMoreButton = document.getElementsByClassName('show-more')[0];
+
+      if (entries.length > 10) {
+        showMoreButton.style.display = 'block';
+      }
+    };
+  </script>
 
 	</body>
 </html>
