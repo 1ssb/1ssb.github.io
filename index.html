@@ -14,7 +14,19 @@
 
 			  gtag('config', 'G-15H5N438DR');
 		</script>
-		
+		<script>
+  function toggleNewsList() {
+    const newsList = document.getElementById("newsList");
+    const toggleButton = document.getElementById("toggleButton");
+    if (newsList.classList.contains("collapsed")) {
+      newsList.classList.remove("collapsed");
+      toggleButton.textContent = "Older ↓";
+    } else {
+      newsList.classList.add("collapsed");
+      toggleButton.textContent = "Show Latest ↑";
+    }
+  }
+</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" type="image/x-icon" href="https://1ssb.github.io/favicon.ico?v=2" />
@@ -26,7 +38,9 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
 		<style>
-			
+			 #newsList.collapsed li:nth-child(n + 11) {
+    			display: none;
+  }
 			.divider{
     width:2.5px;
     height:auto;
@@ -179,16 +193,17 @@
 					
 </article>
 						<article id="news">
-						<h2 class="major">News</h2>	
-							<ul>
-							<li>July 2023: I have started tutoring for Advanced Control Systems and Network Optimization.</li>
-							<li>June 2023: Bachelor Thesis finally published!</li>
-							<li>June 2023: I will be visiting India in July and would be working remotely.</li>
-							<li>Apr 2023: PhD Committee has been formed now.</li>
-							<li>Mar 2023: Started my PhD with the School of Computing, ANU.</li>
-							<li>Dec 2022: Graduated First Class (third in the major cohort) from ANU!</li>
-							</ul>
-						</article>
+  <h2 class="major">News</h2>
+  <ul id="newsList">
+    <li>July 2023: I have started tutoring for Advanced Control Systems and Network Optimization.</li>
+    <li>June 2023: Bachelor Thesis finally published!</li>
+    <li>June 2023: I will be visiting India in July and would be working remotely.</li>
+    <li>Apr 2023: PhD Committee has been formed now.</li>
+    <li>Mar 2023: Started my PhD with the School of Computing, ANU.</li>
+    <li>Dec 2022: Graduated First Class (third in the major cohort) from ANU!</li>
+  </ul>
+  <button id="toggleButton" onclick="toggleNewsList()">Older ↓</button>
+</article>
 						<!-- Work -->
 						<article id="pub">
 							<h2 class="major">Publications</h2>
@@ -257,7 +272,7 @@
 							<article id="exp">
 								<h2 class="major">Experiences</h2>
 								<h3>Undergraduate Research Projects</h3>
-								<p>Over my undergraduation I have taken multiple research projects as a part of my training and coursework and some independently. The following five standout among them:</p>
+								<p>Over my undergraduate degree I have taken multiple research projects as a part of my training and coursework and some independently. The following five standout among them:</p>
 								<dl>
 									<dt>
 										1. Closed Loop Inertial Gradient Dynamics, School of Engineering, ANU, 2021
@@ -275,7 +290,7 @@
 									<dt>
 										3. Passive Radar Signal Processing, ARDE, DRDO, 2020
 									</dt>
-									<dd> Undertaken as under the supervision of Dr Pranab Saha and Dr V Venkateshwara Rao at the Centre of Advanced Systems in the Armament Research and Development Establishment in the Defence Research and Development Organization. Noisy Signals often have distortion loss, reducing the usefulness of the information it carries. In this project, we developed a Kalman filter-based method to select with a few iterations, using the ambiguity function of a returning radar signal, the matched filter of the radar signal. This method allowed us to optimize the next burst to reduce the uncertainty measure. We use an FPGA-based multi-processor interfacing setup for long-range noisy radar signal processing. Certain aspects of this research are classified.</dd>
+									<dd> Undertaken under the supervision of Dr Pranab Saha and Dr V Venkateshwara Rao at the Centre of Advanced Systems in the Armament Research and Development Establishment in the Defence Research and Development Organization. Noisy Signals often have distortion loss, reducing the usefulness of the information it carries. In this project, we developed a Kalman filter-based method to select with a few iterations, using the ambiguity function of a returning radar signal, the matched filter of the radar signal. This method allowed us to optimize the next burst to reduce the uncertainty measure. We use an FPGA-based multi-processor interfacing setup for long-range noisy radar signal processing. Certain aspects of this research are classified.</dd>
 									<br>
 									<dt>
 										4. Real-Time Complexity of First-Order Optimization, CIICADA Labs, ANU, 2022
@@ -306,7 +321,7 @@
  <li>Organized client meetings for product re-evaluation and quality control.</li>
 </ol>
 </dd>
-<dt>Research Intern Laxmi Vilas Bank, India under the employment of Mr. Parthasarathi Mukherjee, Ex‑ CEO, Laxmi Vilas Bank, India 2021<dt>
+<dt>Research Intern Laxmi Vilas Bank, India under the employment of Mr Parthasarathi Mukherjee, Ex‑ CEO, Laxmi Vilas Bank, India 2021<dt>
 <dd>
 <ol>
 <li>Developed a Markonikov portfolio optimization method using a Competitive Neural Network from multiple time series data using KKT conditions on roll-over margin.</li>
@@ -501,159 +516,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 										<li><a href="#" class="button">Default</a></li>
 									</ul>
 								</section>
-
-								<!--section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-	 </div>
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	btn,
-	.btn {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: transparent;
-		border-radius: 5px;
-		border: 1px solid white;
-		box-shadow: inset 0 0 0 0px #ffffff;
-		color: #ffffff !important;
-		cursor: pointer;
-		display: inline-block;
-		font-size: 0.85rem;
-		font-weight: 300;
-		height: 88px;
-		letter-spacing: 0.3rem;
-		line-height: 1rem;
-		outline: 0;
-		padding: 0 1rem 0 1rem;
-		text-align: center;
-		text-decoration: none;
-		text-transform: uppercase;
-		white-space: nowrap;
-	}
-
-		input[type="submit"]:hover,
-		input[type="reset"]:hover,
-		input[type="button"]:hover,
-		btn:hover,
-		.btn:hover {
-			background-color: rgba(255, 255, 255, 0.075);
-		}
-
-		input[type="submit"]:active,
-		input[type="reset"]:active,
-		input[type="button"]:active,
-		btn:active,
-		.btn:active {
-			background-color: rgba(255, 255, 255, 0.175);
-		}
-
-		input[type="submit"].icon:before,
-		input[type="reset"].icon:before,
-		input[type="button"].icon:before,
-		btn.icon:before,
-		.btn.icon:before {
-			margin-right: 0.5em;
-		}
-
-		input[type="submit"].fit,
-		input[type="reset"].fit,
-		input[type="button"].fit,
-		btn.fit,
-		.btn.fit {
-			width: 100%;
-		}
-
-		input[type="submit"].small,
-		input[type="reset"].small,
-		input[type="button"].small,
-		btn.small,
-		.btn.small {
-			font-size: 0.6rem;
-			height: 2.0625rem;
-			line-height: 2.0625rem;
-		}
-
-		input[type="submit"].primary,
-		input[type="reset"].primary,
-		input[type="button"].primary,
-		btn.primary,
-		.btn.primary {
-			background-color: #ffffff;
-			color: #1b1f22 !important;
-			font-weight: 600;
-		}
-
-		input[type="submit"].disabled, input[type="submit"]:disabled,
-		input[type="reset"].disabled,
-		input[type="reset"]:disabled,
-		input[type="button"].disabled,
-		input[type="button"]:disabled,
-		btn.disabled,
-		btn:disabled,
-		.btn.disabled,
-		.btn:disabled {
-			pointer-events: none;
-			cursor: default;
-			opacity: 0.25;
-		}
-
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	btn {
-		line-height: calc(2.75rem - 2px);
-	}-->
 									<h4>Alternate</h4>
 									<div class="table-wrapper">
 										<table class="alt">
