@@ -14,38 +14,6 @@
 
 			  gtag('config', 'G-15H5N438DR');
 		</script>
-		  <script>
-    function toggleList() {
-      var entries = document.getElementsByClassName('list-entry');
-      var showMoreButton = document.getElementsByClassName('show-more')[0];
-      var arrow = document.getElementById('arrow');
-
-      for (var i = 10; i < entries.length; i++) {
-        if (entries[i].style.display === 'none') {
-          entries[i].style.display = 'block';
-        } else {
-          entries[i].style.display = 'none';
-        }
-      }
-
-      if (arrow.innerHTML === '&#9660;') {
-        arrow.innerHTML = '&#9650;';
-      } else {
-        arrow.innerHTML = '&#9660;';
-      }
-
-      showMoreButton.style.display = 'none';
-    }
-
-    window.onload = function () {
-      var entries = document.getElementsByClassName('list-entry');
-      var showMoreButton = document.getElementsByClassName('show-more')[0];
-
-      if (entries.length > 10) {
-        showMoreButton.style.display = 'block';
-      }
-    };
-  </script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" type="image/x-icon" href="https://1ssb.github.io/favicon.ico?v=2" />
@@ -117,36 +85,6 @@
 		border-bottom: 1px solid white;
 		background-color: rgba(211, 211, 211, 0.1);
 			}
-
-			
-    .news-list {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .list-entry {
-      display: none;
-    }
-
-    .show-more {
-      display: none;
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    .round-button {
-      display: inline-block;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      background-color: #f2f2f2;
-      color: #333;
-      text-align: center;
-      font-size: 24px;
-      line-height: 50px;
-      cursor: pointer;
-    }
 			<style>
 	</style>
 	</head>
@@ -246,7 +184,7 @@
 </article>
 						<article id="news">
   <h2 class="major">News</h2>
-  <!--<ul id="newsList">
+  <ul>
     <li>p</li>
 	  <li>p</li>
 	  <li>p</li>
@@ -260,32 +198,7 @@
     <li>Apr 2023: PhD Committee has been formed now.</li>
     <li>Mar 2023: Started my PhD with the School of Computing, ANU.</li>
     <li>Dec 2022: Graduated First Class (third in the major cohort) from ANU!</li>
-  </ul>
-							<center>
-  <button id="button1" onclick="toggleNewsList()">Older</button></center>-->
-	<ul class="news-list">
-      <li class="list-entry">News 1</li>
-      <li class="list-entry">News 2</li>
-      <li class="list-entry">News 3</li>
-      <li class="list-entry">News 4</li>
-      <li class="list-entry">News 5</li>
-      <li class="list-entry">News 6</li>
-      <li class="list-entry">News 7</li>
-      <li class="list-entry">News 8</li>
-      <li class="list-entry">News 9</li>
-      <li class="list-entry">News 10</li>
-      <li class="list-entry">News 11</li>
-      <li class="list-entry">News 12</li>
-      <li class="list-entry">News 13</li>
-      <li class="list-entry">News 14</li>
-      <li class="list-entry">News 15</li>
-    </ul>
-    <div class="show-more">
-      <div class="round-button" onclick="toggleList()">
-        <span id="arrow">&#9660;</span>
-      </div>
-    </div>
-  </div>
+						</ul>
 </article>
 						<!-- Work -->
 						<article id="pub">
