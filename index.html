@@ -297,58 +297,73 @@
 								<h3>Undergraduate Research Projects</h3>
 								<p>Over my undergraduate degree I have taken multiple research projects as a part of my training and coursework and some independently. The following five standout among them:</p>
 								<dl>
-									<dt>
-										1. Closed Loop Inertial Gradient Dynamics, School of Engineering, ANU, 2021
-									</dt>
-									<dd> Undertaken as my Undergraduate Thesis project under the supervision of Prof. Ian Petersen. In this honours project, we investigated the Nesterov ODE developed using symplectic integration by Prof. Su, Boyd and Candes and devised feedback optimization methods that led to the discovery of the Whiplash inertial gradient dynamical system. This state-of-the-art algorithm is deterministic and is exponentially faster than Nesterov-like classical methods for convex functions. We also used control principles to establish universal Lyapunov-based methods to predict rates of convergences of accelerated inertial methods for high-resolution ODE-based approaches.
-
-									</dd>
-									<br>
-									<dt>
-										2. Neural Network for inverting high dimensional functions, School of Computing, ANU, 2022
-									</dt>
-									<dd> Undertaken as under the supervision of Prof. Richard Hartley. In this project, we took a Neural Network perspective to realize the feasibility of inverting differentiable functions within a closed sample range for non-linear processes. We found that such a phenomenon is restricted to an RMSE hit rate of 72% and requires computationally intensive positional embedding. We discovered that neural networks could not compute inverses of functions unless the embedded function is locally invertible for a smooth manifold. We thus proved inconsistency in the network over its global invertibility.
-									</dd>
-									<br>
-									<dt>
-										3. Passive Radar Signal Processing, ARDE, DRDO, 2020
-									</dt>
-									<dd> Undertaken under the supervision of Dr Pranab Saha and Dr V Venkateshwara Rao at the Centre of Advanced Systems in the Armament Research and Development Establishment in the Defence Research and Development Organization. Noisy Signals often have distortion loss, reducing the usefulness of the information it carries. In this project, we developed a Kalman filter-based method to select with a few iterations, using the ambiguity function of a returning radar signal, the matched filter of the radar signal. This method allowed us to optimize the next burst to reduce the uncertainty measure. We use an FPGA-based multi-processor interfacing setup for long-range noisy radar signal processing. Certain aspects of this research are classified.</dd>
-									<br>
-									<dt>
-										4. Real-Time Complexity of First-Order Optimization, CIICADA Labs, ANU, 2022
-									</dt>
-									<dd> In this project, undertaken under the supervision of Prof. Iman Shames, we study the total complexity of smooth unconstrained deterministic optimization algorithms using first-order algorithms. The lower bound complexity of a problem dictates the number of oracle calls. However, the computational effort of calling the oracle dictates the algorithm's computational complexity. We are essentially trying to develop this idea of the total complexity of the algorithm to determine the net computational effort to reach the minimum using an iteration bound.
-									</dd>
-									<br>
-									<dt>
-										5. Bifurcation analysis using Optical Signal Processing through Viscoelastic Graphene Sheet, School of Advanced Sciences, VIT, 2019
-									</dt>
-									<dd>
-										In this project, undertaken under the supervision of Prof. Gargi Chakraborty, Prof. Sumathi S. and Prof. Shweta Thomas, we tried to find a model using parametric state estimations for the projection arguments for a viscoelastic graphene sheet's response under stress. We aimed to explain the irreproducibility of the Bubnov--Galerkin treatment in the presence of optical excitations through the medium. We successfully explained the bifurcations using a non-linear Lyapunov excitation term that took the signal's energy as a singular argument and experimentally verified it for larger gains using the noisy Brueller model.
-									</dd>
-								</dl>
+<dt>Neural Network for inverting high dimensional functions, 2022</dt>
+<dd>
+<ol>
+<li>Supervisor: Distinguished Prof. Emeritus Richard Hartley, FAA, School of Computing, ANU.</li>
+<li>In this project, we took a Neural Network perspective to realize the feasibility of inverting differentiable functions within a closed sample range for non-linear processes. We found that such a phenomenon is restricted to an RMSE hit rate of 72% and requires computationally intensive positional encoding and transfer decoding.</li>
+<li>We discovered that neural networks could not compute inverses of functions unless the embedded function is locally invertible for a smooth manifold. We thus proved inconsistency in the network over its global invertibility. This is strong evidence that NNs are feed-forward only local approximators of smooth functions.</li>
+</ol>
+</dd>
+<dt>Complexity Analysis of First-Order Optimization on an FPGA, 2022</dt>
+<dd>
+<ol>
+<li>Supervisor: Prof. Iman Shames, CIICADA Lab, ANU.</li>
+<li>In this project, we studied the total complexity of smooth unconstrained deterministic optimization algorithms using first-order algorithms.</li>
+<li>We developed the TIMER algorithm, that the total complexity of the algorithm to determine the net computational effort to reach the minimum using an iteration bound is equal to the number of oracle calls times the differentiation steps on a Basys FPGA output counter using real-time wallclock and operation response.</li>
+<li>We proved our hypothesis that the numerical floating point accuracy dictates the total complexity of the lower bound.</li>
+</ol>
+</dd>
+<dt>Closed Loop Inertial Gradient Dynamics, 2021</dt>
+<dd>
+<ol>
+<li>Supervisor: Prof. Ian Petersen, FAA, ANU.</li>
+<li>In this honours project, we investigated the Nesterov ODE developed using symplectic integration by Prof. Su, Boyd and Candes and devised feedback optimization methods that led to the discovery of the Whiplash inertial gradient dynamical system.</li>
+<li>This state-of-the-art algorithm is deterministic and is exponentially faster than Nesterov-like classical methods for convex functions. We also used control principles to establish universal Lyapunov-based methods to predict rates of convergences of accelerated inertial methods for high-resolution ODE-based approaches.</li>
+</ol>
+</dd>
+<dt>Passive Radar Signal Processing, 2020-21</dt>
+<dd>
+<ol>
+<li>Supervisor: V. Venkateshwara Rao, Ex-Director, ARDE, Defence Research and Development Organisation, 2020.</li>
+<li>In this project, we developed a Kalman filter-based method to select with a few iterations, using the ambiguity function of a returning radar signal, the matched filter of the radar signal. This method allowed us to optimize the next burst to reduce the uncertainty measure.</li>
+<li>We used an FPGA-based multi-processor interfacing setup for long-range noisy radar signal processing. Certain aspects of this research were classified.</li>
+</ol>
+</dd>
+<dt>Bifurcation analysis using Optical Signal Processing through Viscoelastic Graphene Sheet, 2019</dt>
+<dd>
+<ol>
+<li>Supervisors: Prof. Gargi Chakraborty, School of Advanced Sciences, Vellore Institute of Technology.</li>
+<li>In this project, we found a model using parametric state estimations for the viscoelastic graphene sheet’s optical response under stress. We aimed to explain the irreproducibility of the Bubnov–Galerkin treatment in the presence of optical excitations through the medium.</li>
+<li>We successfully explained the bifurcations using a non-linear excitation term & experimentally verified the regression for larger gains using the noisy Brueller model.</li>
+</ol>
+</dd>
+</dl>
 								<h3>Internships</h3>
-					<dl>
-<dt>Head Automation Intern Calcutta Electric Supply Corporation, Kolkata under the supervision of Mr Arindam Sanyal, Deputy General of the Department of Automation, 2022</dt>
-<ol>
+<dl>
+<dt>Head Automation Intern at Calcutta Electric Supply Corporation, Kolkata, August 2021 - February 2022</dt>
 <dd>
-<li>Headed a team that developed a self-heal mechanism for the Ring Main Unit-based Power System for the Chitpur hospital substation during the second wave of the Coronavirus outbreak in India.</li>
-<li>Redesigned breaker relay circuits to control breakdown voltage using feedback stabilizers. </li>
+<ol>
+<li>I worked under the supervision of Mr. Arindam Sanyal, Deputy General (Automation).</li>
+<li>I led a team of 17 people to develop and integrate a self-heal mechanism for a power system at a hospital substation.</li>
+<li>I supervised the installation and configuration of HVDC circuit breakers using SCADA.</li>
 </ol>
 </dd>
-<dt>Machine Learning Research Intern at Decimal Point Analytics, India, Pvt. Ltd. under the supervision of Mr Paresh Sharma, MD of DPA, 2021</dt>
+<dt>NLP Research Intern at Decimal Point Analytics, India, 2021</dt>
 <dd>
 <ol>
-<li>Developed a Question and Answering model from company metadata using transformer models of Natural Language Processing for optimal delivery problems.</li>
- <li>Organized client meetings for product re-evaluation and quality control. </li>
+<li>I worked under the supervision of Mr. Paresh Sharma, MD.</li>
+<li>I developed and fine-tuned a financial metadata database for direct RoBERTa question answering using advanced natural language processing techniques.</li>
+<li>I organized client meetings for product re-evaluation and quality control.</li>
 </ol>
 </dd>
-<dt>Research Intern Laxmi Vilas Bank, India under the employment of Mr Parthasarathi Mukherjee, Ex‑ CEO, Laxmi Vilas Bank, India 2021<dt>
+<dt>Private Equity Research Intern at Laxmi Vilas Bank, India, 2020</dt>
 <dd>
 <ol>
-<li>Developed a Markonikov portfolio optimization method using a Competitive Neural Network from multiple time series data using KKT conditions on roll-over margin.</li>
-<li>Renegotiated cover term plans with the banking tribunal for roll-over calculation in the policy management meeting.</li>
+<li>I worked under the supervision of Parthasarathi Mukherjee, Ex-CEO.</li>
+<li>I developed a portfolio optimization method using a Competitive Neural Network.</li>
+<li>I renegotiated contract term limits with the banking tribunal.</li>
+<li>I delegated with multiple teams for the deployment of an algorithm in day-trading.</li>
 </ol>
 </dd>
 </dl>
