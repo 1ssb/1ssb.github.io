@@ -111,6 +111,31 @@
 		border-bottom: 1px solid white;
 		background-color: rgba(211, 211, 211, 0.1);
 			}
+			.bg {
+				position: fixed;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				overflow: hidden;
+				z-index: -100;
+			}
+			.bg video {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.content {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+				color: white;
+			}
 			<style>
 	</style>
 	</head>
@@ -496,7 +521,9 @@ on our product and implementing changes to improve its performance.</li>
 			</div>
 
 		<!-- BG -->
-			<div id="bg"></div>
+		<div class="bg">
+			<video src="bgv.mp4" autoplay muted loop></video>
+		</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
