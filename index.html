@@ -485,7 +485,13 @@ on our product and implementing changes to improve its performance.</li>
 
 		<!-- BG -->
 		<div class="bg">
-			<video src="bgv.mp4" poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" autoplay muted loop></video>
+			<video autoplay muted loop>
+  				<source src="bgv.mp4" type="video/mp4">
+  					<picture>
+    						<!-- Image fallback for when video doesn't load -->
+    						<img src="images/bg.jpg" alt="Background Image Loading">
+  					</picture>
+			</video>
 		</div>
 
 		<!-- Scripts -->
