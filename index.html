@@ -110,23 +110,27 @@
 		border-bottom: 1px solid white;
 		background-color: rgba(211, 211, 211, 0.1);
 			}
-			 .bg {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: -100;
-        }
-			.bg video {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
+			 /* Make the video stretch to cover the entire container */
+.bg video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Make the container cover the entire viewport */
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
 			
 			<style>
 	</style>
@@ -477,7 +481,7 @@ on our product and implementing changes to improve its performance.</li>
     var month = lastMod.toLocaleString('default', { month: 'short' });
     var day = lastMod.getDate();
     var year = lastMod.getFullYear();
-    document.write("&copy; S. S. Bhattacharjee | Updated on "+ month + " " + day + ", " + year);
+    document.write("&copy; S. S. Bhattacharjee | Last Updated "+ month + ", " + year);
   </script></p>
 					</footer>
 
@@ -485,8 +489,8 @@ on our product and implementing changes to improve its performance.</li>
 
 		<!-- BG -->
 		<div class="bg">
-  		<video src="bgv.mp4" poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" autoplay muted loop></video>
-</div>
+  		<video src="bgv.mp4" poster="images/bg.jpg" autoplay muted loop></video>
+		</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
