@@ -1,5 +1,4 @@
-# 1ssb.github.io
-My Portfolio Website
+### My Portfolio Website: 1ssb.github.io
 
-Design Credits: Partially from the theme Dimension, HTML5UP
-Photo Credits: Unsplash, Photographer Farhan Aqub
+### Design Credits: Partially from the theme Dimension, HTML5UP
+### Photo Credits: Unsplash, Photographer Farhan Aqub
