@@ -1,4 +1,4 @@
 ### My Portfolio Website: 1ssb.github.io
 
-### Design Credits: Partially from the theme Dimension, HTML5UP
-### Photo Credits: Unsplash, Photographer Farhan Aqub
+### Design Credits: Partially from the theme [Dimension, HTML5UP](https://html5up.net/dimension)
+### Photo Credits: [Unsplash, Photographer Farhan Khan](https://unsplash.com/@farhan5792)https://unsplash.com/@farhan5792
