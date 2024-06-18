@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s, color 0.3s;
+            justify-content: center; /* Ensure body is centered */
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+        .dark-mode {
+            background-color: #555;
+            color: #e0e0e0;
+        }
+        .dark-mode .container {
+            background: rgba(30, 30, 30, 0.9);
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .title {
+            font-size: 2em;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .home-button, .theme-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: inherit;
+        }
+        .home-button i, .theme-toggle i {
+            font-size: 24px; /* Ensure both icons are the same size */
+        }
+        .dark-mode .home-button, .dark-mode .theme-toggle {
+            background-color: none;
+            color: #e0e0e0;
+        }
+        h4 {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        dl {
+            margin: 0;
+        }
+        dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        dd {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .title, dt, dd, h4, .home-button {
+                font-size: 4vw;
+            }
+            .container {
+                padding: 10px;
+                margin: 10px;
+            }
+            dd {
+                margin-left: 10px;
+            }
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            font-size: 14px;
+            width: 100%;
+            position: relative;
+        }
+        .dark-mode footer {
+            background-color: #333 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <main class="container">
+            <header>
+                <h1 class="title">Publications</h1>
+                <div class="buttons">
+                    <button class="home-button" onclick="location.href='https://1ssb.github.io/'">
+                        <i class="fas fa-home"></i>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+            <article id="pub">
+                <h4>Thesis</h4>
+                <dl>
+                    <dt>Bachelor Thesis: Whiplash Inertial Gradient Dynamics, 2022 <a href="https://arxiv.org/abs/2203.02140" target="_blank"><i class="ai ai-arxiv"></i></a></dt>
+                </dl>
+                <h4>Journal Publications</h4>
+                <dl>
+                    <dt>J1. Analysis of closed‑loop inertial gradient dynamics, 2023</dt>
+                    <dd>First authored by myself and my supervisor Ian Petersen as a journalised culmination of the work undertaken in C1 and C2. Published in the Asian Journal of Control in the Special Edition for Robotics, Control and Systems, 2023 <a href="https://onlinelibrary.wiley.com/doi/10.1002/asjc.3153" target="_blank"><i class="ai ai-doi"></i></a>.</dd>
+                </dl>
+                <h4>Conference Publications</h4>
+                <dl>
+                    <dt>C2. Analysis of closed‑loop inertial gradient dynamics, 2022</dt>
+                    <dd>First authored by myself and my supervisor Ian Petersen as an extension to C1. Published in the 13th Asian Control Conference, 2022 and was highly recommended by the committee to the Asian Control Conference. <a href="https://ieeexplore.ieee.org/document/9828104" target="_blank"><i class="ai ai-doi"></i></a></dd>
+                    <br>
+                    <dt>C1. Analysis of closed‑loop inertial gradient dynamics, 2022</dt>
+                    <dd>First authored by myself and my supervisor Ian Petersen outlines the non-classical Whiplash Inertial Gradient Dynamics and Algorithm. It was published in the Australian and New Zealand Control Conference, 2021 and we won the High commendation award for it. <a href="https://ieeexplore.ieee.org/document/9628258" target="_blank"><i class="ai ai-doi"></i></a></dd>
+                </dl>
+            </article>
+        </main>
+    </div>
+    <footer>
+        &copy; Subhransu S. Bhattacharjee, <span id="year"></span>
+    </footer>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSpan = document.getElementById('year');
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = currentYear;
+        });
+    </script>
+</body>
+</html>

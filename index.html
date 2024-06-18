@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Homepage of Subhransu Sekhar Bhattacharjee, PhD Student at the Australian National University.">
+    <meta name="author" content="Subhransu S. Bhattacharjee">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <title>Subhransu Sekhar Bhattacharjee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://1ssb.github.io/favicon.ico?v=2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            background: var(--bg-color, url('light_bg.jpg')) no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-color, #000);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            visibility: hidden;
+        }
+
+        body.dark-mode {
+            --bg-color: url('dark_bg.png');
+            --text-color: #fff;
+            --wrapper-bg-color: rgba(30, 30, 30, 0.95); /* Even darker background for dark mode */
+            --wrapper-border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--text-color, #000);
+            transition: color 0.3s;
+        }
+
+        #wrapper {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1, header h2, header h3, header h4,
+        header h3 a, nav ul, nav ul li, nav ul li a {
+            margin: 0;
+            padding: 5px;
+        }
+
+        header h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header h3 a:hover {
+            text-decoration: underline;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: inherit;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            transition: background 0.3s, color 0.3s;
+            font-size: 18px;
+            display: inline-block;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        nav ul li a:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .icons {
+            padding: 0;
+            margin: 20px 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .icons li {
+            display: inline-block;
+        }
+
+        .icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.1);
+            color: inherit;
+            transition: background 0.3s, color 0.3s;
+            text-decoration: none;
+        }
+
+        .icons a:hover {
+            background: #f39c12;
+            color: #fff;
+        }
+
+        .separator {
+            width: 60%;
+            border-top: 2px solid #ddd;
+            margin: 20px auto;
+        }
+
+
+        .update-box {
+            display: none;
+            background: rgba(255, 255, 255, 0.5); /* Transparent background */
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center; /* Center the text */
+        }
+        
+        .update-box h2 {
+            margin-top: 0; /* Remove top margin from heading */
+        }
+        
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <h1>Subhransu S. Bhattacharjee</h1>
+            <h3>Ph.D. Student</h3>
+            <h3><a href="https://comp.anu.edu.au/research/clusters/intelligent-systems/">Intelligent Systems Cluster</a></h3>
+            <h4>The Australian National University</h4>
+            <ul class="icons">
+                <li><a href="./Resume.pdf" title="Curriculum Vitae" class="ai ai-cv"></a></li>
+                <li><a href="https://orcid.org/0000-0002-0734-4864" target="_blank" title="ORCID Profile" class="ai ai-orcid"></a></li>
+                <li><a href="https://github.com/1ssb" title="GitHub" target="_blank" class="fab fa-github"></a></li>
+                <li><a href="https://www.linkedin.com/in/1ssb/" target="_blank" title="LinkedIn" class="fab fa-linkedin-in"></a></li>
+                <li><a href="https://www.facebook.com/1ssb.rudra" target="_blank" title="Facebook" class="fab fa-facebook-f"></a></li>
+            </ul>
+            <div class="separator"></div>
+            <div class="update-box" id="update-box">
+                <h2>UPDATES</h2>
+                <p>Loading content...</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://1ssb.github.io/bio/">BIO</a></li>
+                    <li><a href="https://1ssb.github.io/pub/">PUBLICATIONS</a></li>
+                    <li><a href="https://1ssb.github.io/exp/">EXPERIENCES</a></li>
+                    <li><a href='https://1ssb.github.io/gallery/'>GALLERY</a></li>
+                    <li><a href="https://1ssb.github.io/contact/">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+        <footer id="footer">
+            <p>&copy; S. S. Bhattacharjee | Last Updated: <span id="lastUpdated"></span></p>
+        </footer>
+    </div>
+    <div id="theme-toggle" class="fas fa-moon"></div>
+<script type="module">
+    import { SHOW_UPDATE_BOX } from './constants.js';
+
+    // Function to control the visibility of updates
+    function showUpdates() {
+        const updateBox = document.getElementById('update-box');
+        if (SHOW_UPDATE_BOX) {
+            updateBox.style.display = 'block';
+        } else {
+            updateBox.style.display = 'none';
+        }
+    }
+
+    // Function to fetch and insert content from the external file
+    async function loadUpdateContent() {
+        try {
+            const response = await fetch('update-content.txt');
+            const text = await response.text();
+
+            // Insert the fetched text into the update-box div with the header
+            document.getElementById('update-box').innerHTML = `<h2>UPDATES</h2><p>${text}</p>`;
+        } catch (error) {
+            console.error('Error loading update content:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Redirect mobile users
+        if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+            window.location.href = "index_mobile.html";
+        }
+
+        // Update the last modified date
+        var lastMod = new Date(document.lastModified);
+        document.getElementById('lastUpdated').textContent = lastMod.toLocaleDateString('en-US', {
+            year: 'numeric', month: 'long'
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', function() {
+            const isDarkMode = document.body.classList.toggle('dark-mode');
+            themeToggle.classList.toggle('fa-sun', isDarkMode);
+            themeToggle.classList.toggle('fa-moon', !isDarkMode);
+        });
+
+        // Display updates if applicable
+        showUpdates();
+
+        // Ensure all images are loaded before showing the body
+        const images = document.images;
+        const totalImages = images.length;
+        let loadedImages = 0;
+
+        function imageLoaded() {
+            loadedImages++;
+            if (loadedImages === totalImages) {
+                document.body.style.visibility = 'visible';
+            }
+        }
+
+        if (totalImages === 0) {
+            document.body.style.visibility = 'visible'; // Show body if no images are present
+        } else {
+            for (let i = 0; i < totalImages; i++) {
+                images[i].addEventListener('load', imageLoaded);
+                images[i].addEventListener('error', imageLoaded); // Consider an error as a loaded image
+            }
+        }
+
+        // Load the content once the DOM is fully loaded
+        loadUpdateContent();
+    });
+</script>
+
+</body>
+</html>

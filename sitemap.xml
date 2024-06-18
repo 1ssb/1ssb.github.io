@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://1ssb.github.io/</loc>
+  <lastmod>2024-06-18T12:17:50+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://1ssb.github.io/Resume.pdf</loc>
+  <lastmod>2024-06-18T12:17:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://1ssb.github.io/bio/</loc>
+  <lastmod>2024-06-18T12:17:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://1ssb.github.io/pub/</loc>
+  <lastmod>2024-06-18T12:17:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://1ssb.github.io/exp/</loc>
+  <lastmod>2024-06-18T12:17:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://1ssb.github.io/gallery/</loc>
+  <lastmod>2024-06-18T12:17:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://1ssb.github.io/contact/</loc>
+  <lastmod>2024-06-18T12:17:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>

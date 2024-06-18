@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Profile Experiences</title>
+    <style>
+        body {
+            font-family: 'Lato';
+            margin: 5px;
+            padding: 10px;
+            background-color: white;
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-y: auto;
+        }
+        h2 {
+    		text-align: center;
+			}
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f8f8;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .header-left h1 {
+            margin: 0;
+        }
+        .header-left .subtitle {
+            margin: 0;
+            color: #777;
+        }
+        .header-right ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .header-right li {
+            margin-left: 10px;
+            position: relative;
+        }
+        .header-right a, .header-right button {
+            text-decoration: none;
+            color: #007BFF;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font: inherit;
+            outline: inherit;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .header-right .icon {
+            font-size: 24px;
+            color: black; /* Default color for light mode */
+        }
+        .dark-mode .header-right .icon {
+            color: white !important; /* Color for dark mode */
+        }
+        .tooltip {
+            visibility: hidden;
+            width: 100px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 100%; /* Position above the element */
+            left: 50%;
+            margin-left: -50px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .button1:hover .tooltip {
+            visibility: visible;
+        }
+        .header-right li:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Add this line */
+            padding: 20px;
+        }
+
+        .experience-card {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px 0;
+            width: 80%; /* Adjust this width as needed */
+            max-width: 800px;
+            transition: transform 0.3s;
+            margin-left: auto; /* Add this line */
+            margin-right: auto; /* Add this line */
+        }
+
+        .experience-card:hover {
+            transform: scale(1.02);
+        }
+        .experience-card h4 {
+            margin-top: 0;
+        }
+        .experience-card p {
+            margin: 5px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .dark-mode footer {
+            background-color: #333 !important;
+        }
+        .dark-mode {
+            background-color: black !important;
+            color: white !important;
+        }
+        .dark-mode header {
+            background-color: #333 !important;
+            border-bottom: 1px solid #444 !important;
+        }
+        .dark-mode .header-right a {
+            color: #007BFF !important;
+        }
+        .dark-mode .experience-card {
+            background-color: #444 !important;
+            color: white !important;
+        }
+        .dark-mode .tooltip {
+            background-color: #ddd !important;
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>Experiences</h1>
+            <p class="subtitle">Professional Experiences, Research Projects and Reviewerships</p>
+        </div>
+        <nav class="header-right">
+            <ul>
+                <li><a href="https://1ssb.github.io" class="button1"><i class="fas fa-home icon"></i><span class="tooltip">Home</span></a></li>
+                <li><button id="theme-toggle" class="button1"><i class="fas fa-moon icon" id="theme-icon"></i><span class="tooltip">Dark</span></button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="profile-container">
+            <article id="exp">
+                <h2>Academic Experiences</h2>
+                <section class="experience-card academic">
+                    <h4 class="major">Graduate Research Assistant: Fintech & AI</h4>
+                    <div class="details">
+                        <p>September 2023 - Present</p>
+                        <p>Employer: Dr. Priya Muthukannan</p>
+                        <p>Research School of Management, ANU</p>
+                        <p>Principal Investigator</p>
+                        <ul>
+                            <li>Conducting qualitative analysis on open banking regimes using a dynamic capabilities lens.</li>
+                            <li>Teaching Introduction to Data Analysis in Business Information Systems.</li>
+                            <li>Developing novel frameworks to study the effects of AI and banking sector responses to technological shifts.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="experience-card academic">
+                    <h4 class="major">Casual Sessional Academic: Engineering</h4>
+                    <div class="details">
+                        <p>July 2022 - September 2023</p>
+                        <p>Employers: Dr. Ian Petersen, FAA & Dr. Iman Shames</p>
+                        <p>School of Engineering, ANU</p>
+                        <ul>
+                            <li>ENGN8824: Advanced Control Systems (Masters) at ANU, 2023: Tutored the laboratory class of 12 students.</li>
+                            <li>ENGN4628: Network Optimization and Control at ANU, 2023: Tutored problem-solving sessions in a class of 34 students.</li>
+                            <li>ENGN4625: Power Systems and Electronics at ANU, 2022: Tutored problem-solving sessions for 16 students.</li>
+                        </ul>
+                    </div>
+                </section>
+                <h2>Internships</h2>
+                <section class="experience-card internship">
+                    <h4 class="major">Head Automation Intern: Power Systems Automation</h4>
+                    <div class="details">
+                        <p>March - August 2021</p>
+                        <p>Employer: Mr. Arindam Sanyal</p>
+                        <p>Calcutta Electric Supply Corporation, India</p>
+                        <p>Deputy Director (Automation)</p>
+                        <ul>
+                            <li>Orchestrated a 17-member team to engineer and implement a self-healing mechanism in the Ring Main Unit-based Power System at Chitpur hospital substation during India's second COVID-19 wave.</li>
+                            <li>Managed real-time installation of high-voltage DC circuit breakers, linking the substation to multiple power grids.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="experience-card internship">
+                    <h4 class="major">ML Research Intern: Financial NLP</h4>
+                    <div class="details">
+                        <p>December 2021 - March 2022</p>
+                        <p>Employer: Mr. Paresh Sharma</p>
+                        <p>Decimal Point Analytics, India</p>
+                        <p>Managing Director</p>
+                        <ul>
+                            <li>Engineered and optimized a financial metadata database tailored for RoBERTa-based question-answering systems.</li>
+                            <li>Facilitated and chaired client meetings for product reassessment and quality assurance.</li>
+                            <li>Renegotiated contract durations during discussions with the banking tribunal, focusing on stock option roll-over mechanisms.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="experience-card internship">
+                    <h4 class="major">Research Intern: Finance</h4>
+                    <div class="details">
+                        <p>December 2020- February 2021</p>
+                        <p>Employer: Mr. Parthasarathi Mukherjee</p>
+                        <p>Laxmi Vilas Bank, India</p>
+                        <p>Ex- CEO, Laxmi Vilas Bank, India</p>
+                        <p>Developed a Markonikov portfolio optimization method using a Competitive Neural Network from multiple time series data.</p>
+                    </div>
+                </section>
+                <h2>Undergraduate Research Projects</h2>
+                <section class="experience-card project">
+                    <h4 class="major">Undergraduate Researcher: Foundational Deep Learning</h4>
+                    <div class="details">
+                        <p>March 2022 - June 2022</p>
+                        <p>Supervisor: Dr. Richard Hartley, FAA</p>
+                        <p>School of Computing, ANU</p>
+                        <p>Distinguished Professor Emeritus</p>
+                        <ul>
+                            <li>Employed Neural Networks to assess the invertibility of differentiable functions in closed sample ranges for non-linear processes.</li>
+                            <li>Demonstrated that normalizing flow networks struggle with global invertibility.</li>
+                            <li>Formulated an FPGA TIMER algorithm to measure the total computational effort required for minimum convergence.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="experience-card project">
+                    <h4 class="major">Undergraduate Researcher: Control & Optimization</h4>
+                    <div class="details">
+                        <p>December 2021 - March 2022</p>
+                        <p>Supervisor: Dr. Ian Petersen, FAA</p>
+                        <p>School of Engineering, ANU</p>
+                        <p>Professor</p>
+                        <ul>
+                            <li>Established a novel algorithm that is deterministic and exponentially faster than classical Nesterov-like methods for convex functions.</li>
+                            <li>Utilized control theory to formulate universal Lyapunov-based methods for predicting convergence rates in high-resolution ODE approaches.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="experience-card project">
+                    <h4 class="major">Summer Research Intern: Passive Radar Signal Processing</h4>
+                    <div class="details">
+                        <p>May-August 2020</p>
+                        <p>Supervised by V. Venkateshwara Rao, Ex-Director, ARDE</p>
+                        <p>DRDO, India</p>
+                        <ul>
+                            <li>Formulated a Kalman filter-centric technique for swift selection of the best-matched filter for incoming radar signals.</li>
+                            <li>Implemented an FPGA-based multi-processor interface for the analysis of long-range, noise-affected radar signals.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="experience-card project">
+                    <h4 class="major">Undergraduate Researcher: Optical Excitation Study in Graphene Sheets</h4>
+                    <div class="details">
+                        <p>August-December 2019</p>
+                        <p>Supervisors: Prof. Gargi Chakraborty, Dr. Sumathi S, Prof. Shweta B. Thomas</p>
+                        <p>VIT, Vellore</p>
+                        <ul>
+                            <li>Developed a model to estimate parametric states for the optical response of viscoelastic graphene sheets under stress.</li>
+                            <li>Verified the bifurcations and empirically validated the model for larger gains.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="experience-card reviewership">
+                    <h4 class="major">Reviewership</h4>
+                    <div class="details">
+                        <ul>
+                            <li>Wiley: Asian Journal of Control, 2023: Paper review on game-theoretic control.</li>
+                            <li>Asian Control Conference, 2022: Paper review on feedback linearisation for UAV controllers.</li>
+                            <li>IEEE Xplore ANZCC, 2021: Paper review on non-smooth feedback controllers.</li>
+                        </ul>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+    <footer>
+        &copy; Subhransu S. Bhattacharjee, <span id="year"></span>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const tooltip = document.querySelector('#theme-toggle .tooltip');
+            const homeIcon = document.querySelector('.fa-home');
+            const yearSpan = document.getElementById('year');
+
+            // Set the current year in the footer
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = currentYear;
+
+            // Check for saved theme in localStorage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark-mode') {
+                document.body.classList.add('dark-mode');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                themeIcon.style.color = 'white';
+                homeIcon.style.color = 'white';
+                tooltip.textContent = 'Light';
+            }
+
+            themeToggle.addEventListener('click', function() {
+                if (themeIcon.classList.contains('fa-moon')) {
+                    themeIcon.classList.replace('fa-moon', 'fa-sun');
+                    themeIcon.style.color = 'white';
+                    homeIcon.style.color = 'white';
+                    tooltip.textContent = 'Light';
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark-mode');
+                } else {
+                    themeIcon.classList.replace('fa-sun', 'fa-moon');
+                    themeIcon.style.color = 'black';
+                    homeIcon.style.color = 'black';
+                    tooltip.textContent = 'Dark';
+                    document.body.classList.remove('dark-mode');
+                    localStorage.removeItem('theme');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
