@@ -6,7 +6,7 @@ This is a template portfolio website that you can use to create your own persona
 
 **Background Photos** generated using DALLE-3 and Edited on Abode Photoshop
 
-If you use this template, please give credit by including the following text in your site:
+If you use this template, please credit by including the following text in your site:
 
 ```html
 Template from <a href="https://1ssb.github.io" target="_blank">@1ssb</a>
