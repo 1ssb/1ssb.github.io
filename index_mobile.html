@@ -20,7 +20,6 @@
     <link rel="icon" type="image/x-icon" href="https://1ssb.github.io/favicon.ico?v=2">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        
         :root {
             --light-bg: url('light.jpg') no-repeat center center / cover;
             --light-color: #333;
@@ -32,8 +31,6 @@
             --transition: 0.3s;
         }
 
-/*             --dark-bg: #65000b; */
-        
         html, body {
             width: 100%;
             margin: 0;
@@ -97,6 +94,11 @@
         .update-container p {
             margin: 0;
             font-size: 16px;
+        }
+
+        .update-container a {
+            color: var(--light-color);
+            text-decoration: underline;
         }
 
         .separator {
@@ -199,12 +201,18 @@
             color: var(--dark-color);
         }
 
+        .dark-mode .update-container a {
+            color: var(--dark-color);
+            text-decoration: underline;
+        }
+
         .dark-mode .separator {
             background: var(--dark-color);
         }
 
         .dark-mode a {
             color: var(--dark-color);
+            text-decoration: underline;
         }
 
         .dark-mode .icons a {
@@ -279,11 +287,11 @@
     // Function to fetch and insert content from the external file
     async function loadUpdateContent() {
         try {
-            const response = await fetch('update-box.txt');
+            const response = await fetch('update-box.html');
             const text = await response.text();
 
-            // Insert the fetched text into the update-box div with the header
-            document.getElementById('updateBox').innerHTML = `<h2>UPDATES</h2><p>${text}</p>`;
+            // Insert the fetched text into the update-box div
+            document.getElementById('updateBox').innerHTML = text;
         } catch (error) {
             console.error('Error loading update content:', error);
         }
