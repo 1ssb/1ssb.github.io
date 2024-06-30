@@ -136,7 +136,6 @@
             margin: 20px auto;
         }
 
-
         .update-box {
             display: none;
             background: rgba(255, 255, 255, 0.5); /* Transparent background */
@@ -205,7 +204,7 @@
     // Function to fetch and insert content from the external file
     async function loadUpdateContent() {
         try {
-            const response = await fetch('update-content.txt');
+            const response = await fetch('update-box.txt');
             const text = await response.text();
 
             // Insert the fetched text into the update-box div with the header
