@@ -201,14 +201,14 @@
         }
     }
 
-    // Function to fetch and insert content from the external file
+    // Function to fetch and insert content from the external HTML file
     async function loadUpdateContent() {
         try {
-            const response = await fetch('update-box.txt');
+            const response = await fetch('update-box.html');
             const text = await response.text();
 
-            // Insert the fetched text into the update-box div with the header
-            document.getElementById('update-box').innerHTML = `<h2>UPDATES</h2><p>${text}</p>`;
+            // Insert the fetched HTML into the update-box div
+            document.getElementById('update-box').innerHTML = text;
         } catch (error) {
             console.error('Error loading update content:', error);
         }
