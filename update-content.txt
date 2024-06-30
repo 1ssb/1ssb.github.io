@@ -1,1 +1,2 @@
-Editable text from another file
+1. <a href="https://github.com/1ssb/torchkan/">TorchKAN</a> documentation is delayed but the experiments in Noisy regime has been released.
+2. I am visting Optiver as  apart of a PhD QuantLab program.
