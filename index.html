@@ -10,168 +10,19 @@
     <link rel="icon" type="image/x-icon" href="https://1ssb.github.io/favicon.ico?v=2">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Lato', sans-serif;
-            background: var(--bg-color, url('light_bg.jpg')) no-repeat center center fixed;
-            background-size: cover;
-            color: var(--text-color, #000);
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            visibility: hidden;
-        }
-    
-        body.dark-mode {
-            --bg-color: url('dark_bg.png');
-            --text-color: #fff;
-            --wrapper-bg-color: rgba(30, 30, 30, 0.95); /* Even darker background for dark mode */
-            --wrapper-border-color: rgba(255, 255, 255, 0.25);
-        }
-    
-        #theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-            font-size: 24px;
-            color: var(--text-color, #000);
-            transition: color 0.3s;
-        }
-    
-        #wrapper {
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px;
-            max-width: 800px;
-            background-color: rgba(255, 255, 255, 0.25);
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-    
-        header h1, header h2, header h3, header h4,
-        header h3 a, nav ul, nav ul li, nav ul li a {
-            margin: 0;
-            padding: 5px;
-        }
-    
-        header h3 a {
-            color: inherit;
-            text-decoration: none;
-        }
-    
-        header h3 a:hover {
-            text-decoration: underline;
-        }
-    
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-    
-        nav ul li {
-            margin: 10px;
-        }
-    
-        nav ul li a {
-            text-decoration: none;
-            color: inherit;
-            padding: 10px 20px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            transition: background 0.3s, color 0.3s;
-            font-size: 18px;
-            display: inline-block;
-            min-width: 150px;
-            text-align: center;
-        }
-    
-        nav ul li a:hover {
-            background: rgba(0, 0, 0, 0.1);
-        }
-    
-        .icons {
-            padding: 0;
-            margin: 20px 0;
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-    
-        .icons li {
-            display: inline-block;
-        }
-    
-        .icons a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.1);
-            color: inherit;
-            transition: background 0.3s, color 0.3s;
-            text-decoration: none;
-        }
-    
-        .icons a:hover {
-            background: #f39c12;
-            color: #fff;
-        }
-    
-        .separator {
-            width: 60%;
-            border-top: 2px solid #ddd;
-            margin: 20px auto;
-        }
-    
-        .update-box {
-            display: none;
-            background: rgba(255, 255, 255, 0.5); /* Transparent background */
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            margin: 20px 0;
-            text-align: center; /* Center the text */
-        }
-        
-        .update-box h2 {
-            margin-top: 0; /* Remove top margin from heading */
-        }
-    
-        /* Update box links in light mode */
-        .update-box a {
-            color: #000;
-            text-decoration: none;
-        }
-    
-        .update-box a:hover {
-            text-decoration: underline;
-        }
-    
-        /* Update box links in dark mode */
-        body.dark-mode .update-box a {
-            color: #fff;
-        }
-    
-        body.dark-mode .update-box a:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            margin-top: 20px;
-            text-align: center;
-        }
+    <!-- Mobile-Detect Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js"></script>
+    <!-- Redirection Script -->
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var md = new MobileDetect(window.navigator.userAgent);
+            if (md.mobile()) {
+                window.location.href = "index_mobile.html";
+            }
+        });
+     </script>
+     <style>
+         body{margin:0;padding:0;font-family:'Lato',sans-serif;background:var(--bg-color,url('light_bg.jpg')) no-repeat center center fixed;background-size:cover;color:var(--text-color,#000);overflow:hidden;display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column}body.dark-mode{--bg-color:url('dark_bg.png');--text-color:#fff;--wrapper-bg-color:rgba(30,30,30,0.95);--wrapper-border-color:rgba(255,255,255,0.25)}#theme-toggle{position:fixed;top:20px;right:20px;cursor:pointer;font-size:24px;color:var(--text-color,#000);transition:color 0.3s}#wrapper{text-align:center;padding:20px;border-radius:10px;margin:20px;max-width:800px;background-color:rgba(255,255,255,0.25);box-shadow:0px 0px 10px rgba(0,0,0,0.1)}header h1,header h2,header h3,header h4,header h3 a,nav ul,nav ul li,nav ul li a{margin:0;padding:5px}header h3 a{color:inherit;text-decoration:none}header h3 a:hover{text-decoration:underline}nav ul{list-style-type:none;padding:0;display:flex;justify-content:center;flex-wrap:wrap}nav ul li{margin:10px}nav ul li a{text-decoration:none;color:inherit;padding:10px 20px;border-radius:10px;border:1px solid #ddd;transition:background 0.3s,color 0.3s;font-size:18px;display:inline-block;min-width:150px;text-align:center}nav ul li a:hover{background:rgba(0,0,0,0.1)}.icons{padding:0;margin:20px 0;list-style:none;display:flex;justify-content:center;gap:20px}.icons li{display:inline-block}.icons a{display:flex;justify-content:center;align-items:center;width:50px;height:50px;border-radius:50%;background:rgba(0,0,0,0.1);color:inherit;transition:background 0.3s,color 0.3s;text-decoration:none}.icons a:hover{background:#f39c12;color:#fff}.separator{width:60%;border-top:2px solid #ddd;margin:20px auto}.update-box{display:none;background:rgba(255,255,255,0.5);padding:20px;border:1px solid #ddd;border-radius:10px;margin:20px 0;text-align:center}.update-box h2{margin-top:0}.update-container h2{margin-top:0;text-align:center}.update-box a{color:#000}.update-box a:hover{text-decoration:underline}body.dark-mode .update-box a{color:#fff}body.dark-mode .update-box a:hover{text-decoration:underline}footer{margin-top:20px;text-align:center}
     </style>
 
 </head>
@@ -207,80 +58,74 @@
         </footer>
     </div>
     <div id="theme-toggle" class="fas fa-moon"></div>
-<script type="module">
-    import { SHOW_UPDATE_BOX } from './constants.js';
-
-    // Function to control the visibility of updates
-    function showUpdates() {
-        const updateBox = document.getElementById('update-box');
-        if (SHOW_UPDATE_BOX) {
-            updateBox.style.display = 'block';
-        } else {
-            updateBox.style.display = 'none';
-        }
-    }
-
-    // Function to fetch and insert content from the external HTML file
-    async function loadUpdateContent() {
-        try {
-            const response = await fetch('update-box.html');
-            const text = await response.text();
-
-            // Insert the fetched HTML into the update-box div
-            document.getElementById('update-box').innerHTML = text;
-        } catch (error) {
-            console.error('Error loading update content:', error);
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        // Redirect mobile users
-        if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
-            window.location.href = "index_mobile.html";
-        }
-
-        // Update the last modified date
-        var lastMod = new Date(document.lastModified);
-        document.getElementById('lastUpdated').textContent = lastMod.toLocaleDateString('en-US', {
-            year: 'numeric', month: 'long'
-        });
-
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', function() {
-            const isDarkMode = document.body.classList.toggle('dark-mode');
-            themeToggle.classList.toggle('fa-sun', isDarkMode);
-            themeToggle.classList.toggle('fa-moon', !isDarkMode);
-        });
-
-        // Display updates if applicable
-        showUpdates();
-
-        // Ensure all images are loaded before showing the body
-        const images = document.images;
-        const totalImages = images.length;
-        let loadedImages = 0;
-
-        function imageLoaded() {
-            loadedImages++;
-            if (loadedImages === totalImages) {
-                document.body.style.visibility = 'visible';
+    <script type="module">
+        import { SHOW_UPDATE_BOX } from './constants.js';
+    
+        // Function to control the visibility of updates
+        function showUpdates() {
+            const updateBox = document.getElementById('update-box');
+            if (SHOW_UPDATE_BOX) {
+                updateBox.style.display = 'block';
+            } else {
+                updateBox.style.display = 'none';
             }
         }
-
-        if (totalImages === 0) {
-            document.body.style.visibility = 'visible'; // Show body if no images are present
-        } else {
-            for (let i = 0; i < totalImages; i++) {
-                images[i].addEventListener('load', imageLoaded);
-                images[i].addEventListener('error', imageLoaded); // Consider an error as a loaded image
+    
+        // Function to fetch and insert content from the external HTML file
+        async function loadUpdateContent() {
+            try {
+                const response = await fetch('update-box.html');
+                const text = await response.text();
+    
+                // Insert the fetched HTML into the update-box div
+                document.getElementById('update-box').innerHTML = text;
+            } catch (error) {
+                console.error('Error loading update content:', error);
             }
         }
-
-        // Load the content once the DOM is fully loaded
-        loadUpdateContent();
-    });
-</script>
+    
+            // Update the last modified date
+            var lastMod = new Date(document.lastModified);
+            document.getElementById('lastUpdated').textContent = lastMod.toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long'
+            });
+    
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('click', function() {
+                const isDarkMode = document.body.classList.toggle('dark-mode');
+                themeToggle.classList.toggle('fa-sun', isDarkMode);
+                themeToggle.classList.toggle('fa-moon', !isDarkMode);
+            });
+    
+            // Display updates if applicable
+            showUpdates();
+    
+            // Ensure all images are loaded before showing the body
+            const images = document.images;
+            const totalImages = images.length;
+            let loadedImages = 0;
+    
+            function imageLoaded() {
+                loadedImages++;
+                if (loadedImages === totalImages) {
+                    document.body.style.visibility = 'visible';
+                }
+            }
+    
+            if (totalImages === 0) {
+                document.body.style.visibility = 'visible'; // Show body if no images are present
+            } else {
+                for (let i = 0; i < totalImages; i++) {
+                    images[i].addEventListener('load', imageLoaded);
+                    images[i].addEventListener('error', imageLoaded); // Consider an error as a loaded image
+                }
+            }
+    
+            // Load the content once the DOM is fully loaded
+            loadUpdateContent();
+        });
+    </script>
 
 </body>
 </html>
