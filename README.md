@@ -1,4 +1,6 @@
-# Template Portfolio Website: [1ssb.github.io](https://1ssb.github.io) [CODE UNDER MAINTAINENCE]
+# Template Portfolio Website: [1ssb.github.io](https://1ssb.github.io) 
+
+## STATUS: CODE UNDER MAINTAINENCE
 
 This is a template portfolio website that you can use to create your own personal site using GitHub Pages. This site has both main and mobile versions, It also has an Updates box function which allow for switching and simply updating the html file. HTML5UP Dimension template was used as a motivation.
 
