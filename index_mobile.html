@@ -3,249 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Homepage of Subhransu Sekhar Bhattacharjee, PhD Student at the Australian National University.">
-    <meta name="keywords" content="Subhransu Sekhar Bhattacharjee, PhD Student, Australian National University, Intelligent Systems Cluster, Research, Publications">
-    <meta name="author" content="Subhransu S. Bhattacharjee">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Subhransu Sekhar Bhattacharjee - Mobile">
-    <meta property="og:description" content="Homepage of Subhransu Sekhar Bhattacharjee, PhD Student at the Australian National University.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://1ssb.github.io/">
-    <meta property="og:image" content="https://1ssb.github.io/favicon.ico?v=2">
     <title>Subhransu Sekhar Bhattacharjee - Mobile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="https://1ssb.github.io/favicon.ico?v=2">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --light-bg: url('light.jpg') no-repeat center center / cover;
-            --light-color: #333;
-            --dark-bg: url('dark.jpg') no-repeat center center / cover;
-            --dark-color: #fff;
-            --primary-color: #007bff;
-            --hover-color: #FFD700;
-            --border-radius: 5px;
-            --transition: 0.3s;
-        }
-
-        html, body {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            font-family: 'Lato', sans-serif;
-            background: var(--light-bg);
-            color: var(--light-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            transition: background-color var(--transition), color var(--transition);
-        }
-
-        .wrapper {
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        header {
-            padding: 5px;
-        }
-
-        header h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        header h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        header h3 a {
-            color: inherit;
-            text-decoration: underline;
-        }
-
-        .update-container {
-            display: none;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--light-color);
-            background: rgba(255, 255, 255, 0.5); /* Transparent background */
-            width: 60%;
-            margin: 10px auto;
-            text-align: left;
-        }
-
-        .update-container h2 {
-            margin-top: 0; /* Remove top margin from heading */
-        }
-
-        .update-container p {
-            margin: 0;
-            font-size: 16px;
-        }
-
-        .update-container a {
-            color: var(--light-color);
-            text-decoration: underline;
-        }
-
-        .update-container h2 {
-            margin-top: 0; /* Remove top margin from heading */
-            text-align: center; /* Center the header text */
-        }
-
-        .separator {
-            width: 60%;
-            height: 2px;
-            background: var(--light-color);
-            margin: 10px auto;
-        }
-
-        .icons {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .icons a {
-            text-decoration: none;
-            color: var(--light-color);
-            font-size: 24px;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: color var(--transition);
-        }
-
-        .icons a:hover {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .dark-mode .icons a:hover {
-            color: var(--hover-color);
-            text-decoration: none;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 20px 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        nav ul li {
-            flex: 1 1 calc(50% - 20px);
-            max-width: 200px;
-            box-sizing: border-box;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--light-color);
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--light-color);
-            display: block;
-            transition: background var(--transition), color var(--transition);
-            font-size: 18px;
-            text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        nav ul li a:hover {
-            background: var(--light-color);
-            color: var(--dark-color);
-        }
-
-        footer {
-            margin-top: 20px;
-            font-size: 12px;
-            padding: 10px;
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-size: 30px;
-            color: var(--light-color);
-            transition: color var(--transition);
-        }
-
-        .dark-mode {
-            background: var(--dark-bg);
-            color: var(--dark-color);
-            text-decoration: none;
-        }
-
-        .dark-mode .theme-toggle {
-            color: var(--dark-color);
-            text-decoration: none;
-        }
-
-        .dark-mode .update-container {
-            border: 1px solid var(--dark-color);
-            color: var(--dark-color);
-            text-decoration: none;
-        }
-
-        .dark-mode .update-container a {
-            color: var(--dark-color);
-            text-decoration: underline;
-        }
-
-        .dark-mode .separator {
-            background: var(--dark-color);
-        }
-
-        .dark-mode a {
-            color: var(--dark-color);
-            text-decoration: none;
-        }
-
-        .dark-mode .icons a {
-            color: var(--dark-color);
-            text-decoration: none;
-        }
-
-        .dark-mode nav ul li a {
-            border: 1px solid var(--dark-color);
-        }
-
-        .dark-mode nav ul li a:hover {
-            background: var(--dark-color);
-            color: var(--light-color);
-        }
-
-        .dark-mode header h3 a {
-            color: var(--dark-color);
-            text-decoration: underline;
-        }
+        /* Minified CSS */
+        :root{--light-bg:url('light.jpg') no-repeat center center / cover;--light-color:#333;--dark-bg:url('dark.jpg') no-repeat center center / cover;--dark-color:#fff;--primary-color:#007bff;--hover-color:#FFD700;--border-radius:5px;--transition:.3s}
+        html,body{width:100%;margin:0;padding:0;overflow-x:hidden;font-family:'Lato',sans-serif;background:var(--light-bg);color:var(--light-color);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;transition:background-color var(--transition),color var(--transition)}
+        .wrapper{width:100%;max-width:100%;margin:0 auto;padding:20px;box-sizing:border-box}
+        header{padding:5px}
+        header h1{font-size:24px;margin-bottom:10px}
+        header h3{font-size:18px;margin-bottom:5px}
+        header h3 a{color:inherit;text-decoration:underline}
+        .update-container{display:none;padding:10px;margin:10px 0;border-radius:var(--border-radius);border:1px solid var(--light-color);background:rgba(255,255,255,.5);width:60%;margin:10px auto;text-align:left}
+        .update-container h2{margin-top:0}
+        .update-container p{margin:0;font-size:16px}
+        .update-container a{color:var(--light-color);text-decoration:underline}
+        .update-container h2{margin-top:0;text-align:center}
+        .separator{width:60%;height:2px;background:var(--light-color);margin:10px auto}
+        .icons{margin:20px 0;display:flex;justify-content:center;gap:20px}
+        .icons a{text-decoration:none;color:var(--light-color);font-size:24px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;transition:color var(--transition)}
+        .icons a:hover{color:var(--primary-color);text-decoration:none}
+        .dark-mode .icons a:hover{color:var(--hover-color);text-decoration:none}
+        nav ul{list-style-type:none;padding:0;margin:20px 0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+        nav ul li{flex:1 1 calc(50% - 20px);max-width:200px;box-sizing:border-box}
+        nav ul li a{text-decoration:none;color:var(--light-color);padding:10px 20px;border-radius:var(--border-radius);border:1px solid var(--light-color);display:block;transition:background var(--transition),color var(--transition);font-size:18px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        nav ul li a:hover{background:var(--light-color);color:var(--dark-color)}
+        footer{margin-top:20px;font-size:12px;padding:10px}
+        .theme-toggle{position:fixed;top:10px;right:10px;cursor:pointer;font-size:30px;color:var(--light-color);transition:color var(--transition)}
+        .dark-mode{background:var(--dark-bg);color:var(--dark-color);text-decoration:none}
+        .dark-mode .theme-toggle{color:var(--dark-color);text-decoration:none}
+        .dark-mode .update-container{border:1px solid var(--dark-color);color:var(--dark-color);text-decoration:none}
+        .dark-mode .update-container a{color:var(--dark-color);text-decoration:underline}
+        .dark-mode .separator{background:var(--dark-color)}
+        .dark-mode a{color:var(--dark-color);text-decoration:none}
+        .dark-mode .icons a{color:var(--dark-color);text-decoration:none}
+        .dark-mode nav ul li a{border:1px solid var(--dark-color)}
+        .dark-mode nav ul li a:hover{background:var(--dark-color);color:var(--light-color)}
+        .dark-mode header h3 a{color:var(--dark-color);text-decoration:underline}
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <br>
         <header>
             <h1>Subhransu S. Bhattacharjee</h1>
             <h3>Ph.D. Student</h3>
@@ -278,45 +79,52 @@
     <div class="theme-toggle" id="toggleTheme">
         <i class="fas fa-moon"></i>
     </div>
-    <script type="module">
-        import { SHOW_UPDATE_BOX } from './constants.js';
+<script type="module">
+    import { SHOW_UPDATE_BOX } from './constants.js';
 
-        async function loadUpdateContent() {
-            try {
-                const response = await fetch('update-box.html');
-                const text = await response.text();
-                document.getElementById('updateBox').innerHTML = text;
-            } catch (error) {
-                console.error('Error loading update content:', error);
-            }
+    async function loadUpdateContent() {
+        try {
+            const response = await fetch('update-box.html');
+            const text = await response.text();
+            document.getElementById('updateBox').innerHTML = text;
+        } catch (error) {
+            console.error('Error loading update content:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const lastMod = new Date(document.lastModified);
+        document.getElementById('lastUpdated').textContent = lastMod.toLocaleDateString('en-US', {
+            year: 'numeric', month: 'long'
+        });
+
+        const toggleThemeButton = document.getElementById('toggleTheme');
+        const themeIcon = toggleThemeButton.querySelector('i');
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+            themeIcon.classList.toggle('fa-sun', savedTheme === 'dark');
+            themeIcon.classList.toggle('fa-moon', savedTheme !== 'dark');
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const lastMod = new Date(document.lastModified);
-            document.getElementById('lastUpdated').textContent = lastMod.toLocaleDateString('en-US', {
-                year: 'numeric', month: 'long'
-            });
-
-            const toggleThemeButton = document.getElementById('toggleTheme');
-            const themeIcon = toggleThemeButton.querySelector('i');
-
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-                themeIcon.classList.toggle('fa-sun', savedTheme === 'dark');
-                themeIcon.classList.toggle('fa-moon', savedTheme !== 'dark');
-            }
-
-            toggleThemeButton.addEventListener('click', function() {
-                const isDarkMode = document.body.classList.toggle('dark-mode');
-                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-                themeIcon.classList.toggle('fa-sun', isDarkMode);
-                themeIcon.classList.toggle('fa-moon', !isDarkMode);
-            });
-
-            showUpdates();
-            loadUpdateContent();
+        toggleThemeButton.addEventListener('click', function() {
+            const isDarkMode = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            themeIcon.classList.toggle('fa-sun', isDarkMode);
+            themeIcon.classList.toggle('fa-moon', !isDarkMode);
         });
-    </script>
+
+        if (SHOW_UPDATE_BOX) {
+            document.getElementById('updateBox').style.display = 'block';
+            document.getElementById('separator').style.display = 'none';
+        } else {
+            document.getElementById('updateBox').style.display = 'none';
+            document.getElementById('separator').style.display = 'block';
+        }
+
+        loadUpdateContent();
+    });
+</script>
 </body>
 </html>
