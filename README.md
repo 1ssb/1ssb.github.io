@@ -17,4 +17,4 @@ Template from <a href="https://1ssb.github.io" target="_blank">@1ssb</a>
 
 ## Support
 
-For queries contact me at [Subhransu S. Bhattacharjee](mailto:Subhransu.Bhattacharjee@anu.edu.au).
+For queries [contact me](https://1ssb.github.io/contact/).
