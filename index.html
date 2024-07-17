@@ -177,7 +177,14 @@
             text-align: center;
         }
     </style>
-
+ <script>
+        // Redirection script
+        document.addEventListener('DOMContentLoaded', function() {
+            if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+                window.location.href = "index_mobile.html";
+            }
+        });
+    </script>
 </head>
 <body>
     <div id="wrapper">
@@ -211,80 +218,51 @@
         </footer>
     </div>
     <div id="theme-toggle" class="fas fa-moon"></div>
-<script type="module">
-    import { SHOW_UPDATE_BOX } from './constants.js';
-
-    // Function to control the visibility of updates
-    function showUpdates() {
-        const updateBox = document.getElementById('update-box');
-        if (SHOW_UPDATE_BOX) {
-            updateBox.style.display = 'block';
-        } else {
-            updateBox.style.display = 'none';
-        }
-    }
-
-    // Function to fetch and insert content from the external HTML file
-    async function loadUpdateContent() {
-        try {
-            const response = await fetch('update-box.html');
-            const text = await response.text();
-
-            // Insert the fetched HTML into the update-box div
-            document.getElementById('update-box').innerHTML = text;
-        } catch (error) {
-            console.error('Error loading update content:', error);
-        }
-    }
-
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
-            if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
-                window.location.href = "index_mobile.html";
+            const lastMod = new Date(document.lastModified);
+            document.getElementById('lastUpdated').textContent = lastMod.toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long'
+            });
+
+            const toggleThemeButton = document.getElementById('toggleTheme');
+            const themeIcon = toggleThemeButton.querySelector('i');
+
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+                themeIcon.classList.toggle('fa-sun', savedTheme === 'dark');
+                themeIcon.classList.toggle('fa-moon', savedTheme !== 'dark');
             }
-        });
 
-        // Update the last modified date
-        var lastMod = new Date(document.lastModified);
-        document.getElementById('lastUpdated').textContent = lastMod.toLocaleDateString('en-US', {
-            year: 'numeric', month: 'long'
-        });
+            toggleThemeButton.addEventListener('click', function() {
+                const isDarkMode = document.body.classList.toggle('dark-mode');
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+                themeIcon.classList.toggle('fa-sun', isDarkMode);
+                themeIcon.classList.toggle('fa-moon', !isDarkMode);
+            });
 
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', function() {
-            const isDarkMode = document.body.classList.toggle('dark-mode');
-            themeToggle.classList.toggle('fa-sun', isDarkMode);
-            themeToggle.classList.toggle('fa-moon', !isDarkMode);
-        });
-
-        // Display updates if applicable
-        showUpdates();
-
-        // Ensure all images are loaded before showing the body
-        const images = document.images;
-        const totalImages = images.length;
-        let loadedImages = 0;
-
-        function imageLoaded() {
-            loadedImages++;
-            if (loadedImages === totalImages) {
-                document.body.style.visibility = 'visible';
+            if (typeof SHOW_UPDATE_BOX !== 'undefined' && SHOW_UPDATE_BOX) {
+                document.getElementById('updateBox').style.display = 'block';
+                document.getElementById('separator').style.display = 'none';
+            } else {
+                document.getElementById('updateBox').style.display = 'none';
+                document.getElementById('separator').style.display = 'block';
             }
-        }
 
-        if (totalImages === 0) {
-            document.body.style.visibility = 'visible'; // Show body if no images are present
-        } else {
-            for (let i = 0; i < totalImages; i++) {
-                images[i].addEventListener('load', imageLoaded);
-                images[i].addEventListener('error', imageLoaded); // Consider an error as a loaded image
+            async function loadUpdateContent() {
+                try {
+                    const response = await fetch('update-box.html');
+                    const text = await response.text();
+                    document.getElementById('updateBox').innerHTML = text;
+                } catch (error) {
+                    console.error('Error loading update content:', error);
+                }
             }
-        }
 
-        // Load the content once the DOM is fully loaded
-        loadUpdateContent();
-    });
-</script>
+            loadUpdateContent();
+        });
+    </script>
 
 </body>
 </html>
