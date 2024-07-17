@@ -237,11 +237,11 @@
         }
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Redirect mobile users
-        if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
-            window.location.href = "index_mobile.html";
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+                window.location.href = "index_mobile.html";
+            }
+        });
 
         // Update the last modified date
         var lastMod = new Date(document.lastModified);
