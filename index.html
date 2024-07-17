@@ -9,17 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="https://1ssb.github.io/favicon.ico?v=2">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <!-- Mobile-Detect Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js"></script>
-    <!-- Redirection Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var md = new MobileDetect(window.navigator.userAgent);
-            if (md.mobile()) {
-                window.location.href = "index_mobile.html";
-            }
-        });
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -34,6 +24,7 @@
             align-items: center;
             height: 100vh;
             flex-direction: column;
+            visibility: hidden;
         }
     
         body.dark-mode {
@@ -157,15 +148,11 @@
         .update-box h2 {
             margin-top: 0; /* Remove top margin from heading */
         }
-
-        .update-container h2 {
-            margin-top: 0; /* Remove top margin from heading */
-            text-align: center; /* Center the header text */
-        }
     
         /* Update box links in light mode */
         .update-box a {
             color: #000;
+            text-decoration: none;
         }
     
         .update-box a:hover {
@@ -186,6 +173,7 @@
             text-align: center;
         }
     </style>
+
 </head>
 <body>
     <div id="wrapper">
@@ -219,50 +207,80 @@
         </footer>
     </div>
     <div id="theme-toggle" class="fas fa-moon"></div>
-<script>
+<script type="module">
+    import { SHOW_UPDATE_BOX } from './constants.js';
+
+    // Function to control the visibility of updates
+    function showUpdates() {
+        const updateBox = document.getElementById('update-box');
+        if (SHOW_UPDATE_BOX) {
+            updateBox.style.display = 'block';
+        } else {
+            updateBox.style.display = 'none';
+        }
+    }
+
+    // Function to fetch and insert content from the external HTML file
+    async function loadUpdateContent() {
+        try {
+            const response = await fetch('update-box.html');
+            const text = await response.text();
+
+            // Insert the fetched HTML into the update-box div
+            document.getElementById('update-box').innerHTML = text;
+        } catch (error) {
+            console.error('Error loading update content:', error);
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
-        const lastMod = new Date(document.lastModified);
+        // Redirect mobile users
+        if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+            window.location.href = "index_mobile.html";
+        }
+
+        // Update the last modified date
+        var lastMod = new Date(document.lastModified);
         document.getElementById('lastUpdated').textContent = lastMod.toLocaleDateString('en-US', {
             year: 'numeric', month: 'long'
         });
 
-        const toggleThemeButton = document.getElementById('theme-toggle'); // Corrected ID
-
-        // Initial theme check and icon setup
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-            toggleThemeButton.classList.toggle('fa-sun', savedTheme === 'dark');
-            toggleThemeButton.classList.toggle('fa-moon', savedTheme !== 'dark');
-        }
-
-        toggleThemeButton.addEventListener('click', function() {
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', function() {
             const isDarkMode = document.body.classList.toggle('dark-mode');
-            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-            toggleThemeButton.classList.toggle('fa-sun', isDarkMode);
-            toggleThemeButton.classList.toggle('fa-moon', !isDarkMode);
+            themeToggle.classList.toggle('fa-sun', isDarkMode);
+            themeToggle.classList.toggle('fa-moon', !isDarkMode);
         });
 
-        if (typeof SHOW_UPDATE_BOX !== 'undefined' && SHOW_UPDATE_BOX) {
-            document.getElementById('updateBox').style.display = 'block';
-            document.getElementById('separator').style.display = 'none';
-        } else {
-            document.getElementById('updateBox').style.display = 'none';
-            document.getElementById('separator').style.display = 'block';
-        }
+        // Display updates if applicable
+        showUpdates();
 
-        async function loadUpdateContent() {
-            try {
-                const response = await fetch('update-box.html');
-                const text = await response.text();
-                document.getElementById('updateBox').innerHTML = text;
-            } catch (error) {
-                console.error('Error loading update content:', error);
+        // Ensure all images are loaded before showing the body
+        const images = document.images;
+        const totalImages = images.length;
+        let loadedImages = 0;
+
+        function imageLoaded() {
+            loadedImages++;
+            if (loadedImages === totalImages) {
+                document.body.style.visibility = 'visible';
             }
         }
 
+        if (totalImages === 0) {
+            document.body.style.visibility = 'visible'; // Show body if no images are present
+        } else {
+            for (let i = 0; i < totalImages; i++) {
+                images[i].addEventListener('load', imageLoaded);
+                images[i].addEventListener('error', imageLoaded); // Consider an error as a loaded image
+            }
+        }
+
+        // Load the content once the DOM is fully loaded
         loadUpdateContent();
     });
 </script>
+
 </body>
 </html>
