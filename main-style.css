@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    background: var(--bg-color, url('BGs/light_bg.jpg')) no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text-color, #000);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+body.dark-mode {
+    --bg-color: url('BGs/dark_bg.png');
+    --text-color: #fff;
+    --wrapper-bg-color: rgba(30, 30, 30, 0.35);
+}
+
+body.dark-mode nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.8); /* Darker background for hover in dark mode */
+    color: black; /* Ensure the text remains white for contrast */
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--text-color, #000);
+    transition: color 0.3s;
+}
+
+#wrapper {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+body.dark-mode #wrapper {
+    background-color: var(--wrapper-bg-color);
+}
+
+header h1, header h2, header h3, header h4, header h3 a,
+nav ul, nav ul li, nav ul li a {
+    margin: 0;
+    padding: 5px;
+}
+
+header h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header h3 a:hover {
+    text-decoration: underline;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: background 0.3s, color 0.3s;
+    font-size: 18px;
+    display: inline-block;
+    min-width: 150px;
+    text-align: center;
+}
+
+body.dark-mode nav ul li a {
+    border: 1px solid white; /* White border in dark mode */
+}
+
+nav ul li a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.icons {
+    padding: 0;
+    margin: 20px 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icons li {
+    display: inline-block;
+}
+
+.icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    color: inherit;
+    transition: background 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.icons a:hover {
+    background: #f39c12;
+    color: #fff;
+}
+
+.separator {
+    width: 60%;
+    border-top: 2px solid black; /* Default black for light mode */
+    margin: 20px auto;
+}
+
+body.dark-mode .separator {
+    border-top: 2px solid white; /* White for dark mode */
+}
+
+.update-box {
+    display: none;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.update-box h2 {
+    margin-top: 0;
+}
+
+.update-container h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.update-box a {
+    color: #000;
+}
+
+.update-box a:hover {
+    text-decoration: underline;
+}
+
+body.dark-mode .update-box a {
+    color: #fff;
+}
+
+body.dark-mode .update-box a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.ai-google-scholar {
+    font-size: 1.5rem;
+}

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" no-cache>
+    <meta http-equiv="Expires" content="0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background-color: transparent;
+        }
+        .header .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .theme-toggle, .home-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .theme-toggle i, .home-button i {
+            color: blue;
+            transition: color 0.3s;
+        }
+        .bio-image {
+            width: 300px;
+            height: 300px;
+            background-color: grey;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .bio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .bio-image:hover {
+            transform: scale(1.05);
+        }
+        .bio-text {
+            text-align: left;
+        }
+        .bio-text p, .bio-text ul, .bio-text ol {
+            text-align: left;
+            text-align-last: left;
+        }
+        .bio-text ul {
+            list-style-position: inside;
+        }
+        .bio-text ol {
+            list-style-position: inside;
+        }
+        .bio-section {
+            margin-bottom: 20px;
+        }
+        .bio-section h2 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .dark-mode .header {
+            background-color: transparent;
+        }
+        .dark-mode .theme-toggle i, .dark-mode .home-button i {
+            color: #f0f0f0;
+        }
+        .dark-mode .bio-section h2 {
+            color: #f0f0f0;
+        }
+        a {
+            color: inherit;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: darkblue;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: transparent;
+            font-size: 14px;
+            width: 100%;
+        }
+        .dark-mode footer {
+            background-color: transparent;
+            color: #e0e0e0;
+        }
+        .theme-toggle i, .home-button i {
+            color: black;
+        }
+        .dark-mode .theme-toggle i, .dark-mode .home-button i {
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9; /* Light background for default mode */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .dark-mode .container {
+            background-color: #1f1f1f; /* Dark background for dark mode */
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Softer shadow for dark mode */
+            color: #e0e0e0; /* Light text color for dark mode */
+        }
+
+        @media (max-width: 768px) {
+            .header .title {
+                font-size: 18px;
+            }
+            .theme-toggle, .home-button {
+                font-size: 20px;
+            }
+            .bio-image {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        .drop-down {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 22px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            display: inline-block;
+            color: black;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .drop-down i {
+            margin-left: 5px;
+            transition: color 0.3s;
+        }
+        .drop-down:hover {
+            color: #007bff;
+            transform: scale(1.05);
+        }
+        .drop-down:hover i {
+            color: #007bff;
+        }
+        .dark-mode .drop-down {
+            color: white;
+        }
+        .dark-mode .drop-down:hover {
+            color: #1e90ff;
+        }
+        .dark-mode .drop-down:hover i {
+            color: #1e90ff;
+        }
+        .drop-down-content {
+            display: none;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .dark-mode .drop-down-content {
+            background-color: #1c1c1c;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="title">About Me</div>
+        <div class="buttons">
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="home-button" onclick="location.href='/'">
+                <i class="fas fa-home"></i>
+            </button>
+        </div>
+    </header>
+    <div class="bio-image">
+        <img src="DP.jpeg" alt="Profile Picture">
+    </div>
+    <br>
+    <div class="container">
+    <div class="bio-text">
+        <div class="bio-section">
+            <h2>Introduction</h2>
+            <p>Hi, I am Subhransu Sekhar Bhattacharjee (Bangla: শুভ্রাংশু-শেখর ভট্টাচার্য), nickname: Rudra (রুদ্র).</p>
+            <p>I am currently a University Research Scholar at the <a href="https://www.anu.edu.au" target="_blank">Australian National University</a>, with the Intelligent Systems Cluster at the <a href="https://cecc.anu.edu.au/" target="_blank">College of Engineering, Computing and Cybernetics</a> since April 2023. I am originally from West Bengal, India, where I completed my schooling.</p>
+        </div>
+        <div class="bio-section">
+            <h2>Doctoral Research</h2>
+            <p>My doctoral research focuses on probabilistic inverse generative modeling in 3D for autonomous spatial-semantic reasoning. My supervisory panel includes:</p>
+            <ul>
+                <li><a href="https://rahulsho.me/" target="_blank">Dr. Rahul Shome</a> (Joint Supervisor)</li>
+                <li><a href="https://sites.google.com/view/djcampbell" target="_blank">Dr. Dylan Campbell</a> (Joint Supervisor)</li>
+                <li><a href="http://users.cecs.anu.edu.au/~sgould/" target="_blank">Prof. Stephen Gould</a> (Chair)</li>
+            </ul>
+        </div>
+        <div class="bio-section">
+            <h2>Educational Background</h2>
+            <p>I graduated with First Class Honours in Mechatronic Systems from the College of Engineering, Computing and Cybernetics at the Australian National University, minoring in Electronic Communication Systems and Mathematics, and ranked third in my cohort. My honours thesis, advised by <a href="https://eng.anu.edu.au/people/ian-petersen/" target="_blank">Prof. Ian Petersen</a>, was titled "Whiplash Inertial Gradient Inertial Dynamics," and was later published as a journal paper <a href="https://onlinelibrary.wiley.com/doi/10.1002/asjc.3153" target="_blank">J1</a>. You can find the complete version <a href="https://arxiv.org/abs/2203.02140" target="_blank">here</a>.</p> 
+            <p>My academic journey began at the Vellore Institute of Technology, India, from where I transferred to ANU on a scholarship.</p>
+        </div>
+        <div class="bio-section">
+            <h2>Research Interests</h2>
+            <p>My research interests lie at the intersection of inverse models, 3D computer vision, and optimization, with a particular focus on applications in robotic vision. Some topics I look forward to working on in the future:</p>
+            <ol>
+                <li>Developing robust and safe active vision techniques for field robotics</li>
+                <li>Exploring generative models for human-robot interaction (HRI)</li>
+                <li>Advancing vision language models through retrieval-augmented generation</li>
+                <li>Addressing noisy inverse problems in high-dimensional, physics-based models and financial models</li>
+                <li>Implementing energy-efficient gradient optimization techniques on FPGAs. Check the proposed (but shelved) undergraduate project at <a href="https://1ssb.github.io/gradients_on_the_clock/">Gradients on the clock</a>.</li>
+            </ol>
+        </div>
+        <div class="bio-section">
+            <span class="drop-down" id="togglePersonalInterests">Personal Interests <i class="fas fa-chevron-down"></i></span>
+            <div class="drop-down-content" id="personalInterests">
+                <p>I have a deep interest in International Relations, Politics, and Law, stemming from my active participation in the South Indian MUN circuit. I specialized in economic committees representing Switzerland, but my standout performance was as the People's Republic of China in late 2020, after which I retired from MUNs. Currently, my hobbies include searching for forgotten books and exploring international music from the 1940s to the 1970s, listening to radio shows, and making cocktails when I get the opportunity.</p>
+                <p>As a film enthusiast, I am particularly drawn to temporally discontinuous films, which I believe require exceptional directorial skill. Christopher Nolan ranks as my favorite director, with 'Oppenheimer' and 'Interstellar' being among my top films, alongside 'Nayak' by Satyajit Ray, 'Shawshank Redemption', 'The 400 Blows', and 'Haider'. I also admire the works of Quentin Tarantino, Stanley Kubrick, Alfred Hitchcock, Francis Ford Coppola, and Indian directors like Anurag Kashyap and Vishal Bharadwaj. My favorite actors include Christoph Waltz, Robert Downey Jr., Edward Norton, Benedict Cumberbatch, Michael Fassbender, Olivia Colman, and Helena Bonham Carter.</p>
+                <p>In literature, I enjoy nihilistic poetry, with Charles Bukowski and Jaun Elia being notable favorites, despite the controversial aspects of Bukowski's work. My favorite authors are Alexandre Dumas, Ruskin Bond, Dan Brown, Richard Dawkins, Bertrand Russell, and Franz Kafka. I have a diverse taste in music, especially modern fusions of Western and Indian classical music, with artists like The Piano Guys, Gustavo Santaolalla, Estas Tonne, Ludovico Einaudi, Nina Simone, Kishore Kumar, and Nusrat Fateh Ali Khan ranking high on my list.</p>
+                <p>I am not particularly outgoing, but I enjoy traveling, playing chess, listening to thriller audiobooks, exploring unusual hikes, engaging in a game of ping-pong, and occasionally swimming in the sea. I also embrace moments of serendipity—when I stumble upon a book, film, show, or song that resonates deeply, I take it as a meaningful sign, subtly guiding my next steps in life.</p>
+                <p>A <a href='https://1ssb.github.io/gallery/'>gallery</a> of some experiences and memories. Connect with me on <a href="https://www.facebook.com/1ssb.rudra">Facebook</a>!</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        &copy; Subhransu S. Bhattacharjee, <span id="year"></span>
+    </footer>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const togglePersonalInterests = document.getElementById('togglePersonalInterests');
+        const personalInterests = document.getElementById('personalInterests');
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        togglePersonalInterests.addEventListener('click', () => {
+            const icon = togglePersonalInterests.querySelector('i');
+            if (personalInterests.style.display === 'none' || personalInterests.style.display === '') {
+                personalInterests.style.display = 'block';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                personalInterests.style.display = 'none';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile Experiences</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      margin: 20px;
+      background-color: #fff;
+      color: #000;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* Ensure buttons and title are level */
+      margin-bottom: 20px;
+      height: 60px;
+    }
+    header h1 {
+      margin: 0;
+      text-align: left;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .experience-card {
+      background-color: #f8f8f8;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 10px auto;
+      width: 80%;
+      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .experience-card.current {
+      background-color: #d1e7dd; /* Light green background for current experience */
+    }
+    .experience-card.reviewership {
+      background-color: #e3f2fd; /* Light blue background for reviewership */
+    }
+    .experience-card h4 {
+      margin-top: 0;
+    }
+    .experience-card p {
+      margin: 5px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+      font-size: 14px;
+      border-top: 1px solid #ccc;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #fff;
+    }
+    .dark-mode .experience-card {
+      background-color: #333;
+    }
+    .dark-mode .experience-card.current {
+      background-color: #4caf50; /* Darker green for current experience in dark mode */
+    }
+    .dark-mode .experience-card.reviewership {
+      background-color: #1e88e5; /* Darker blue for reviewership in dark mode */
+    }
+    #theme-toggle, .button1 {
+      background-color: transparent;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #000;
+      transition: color 0.3s;
+      margin-left: 10px;
+    }
+    .dark-mode #theme-toggle, .dark-mode .button1 {
+      color: #fff;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+    .header-right ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+    .header-right li {
+      margin-left: 10px;
+      position: relative;
+    }
+    .header-right a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .icon {
+      font-size: 24px;
+    }
+    /* Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff; /* Button color */
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      text-align: center;
+      cursor: pointer;
+      display: none; /* Hidden by default */
+      font-size: 24px;
+      z-index: 1000;
+      transition: background-color 0.3s;
+    }
+
+    #back-to-top:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    .dark-mode #back-to-top {
+      background-color: #333; /* Adjust for dark mode */
+    }
+
+    .dark-mode #back-to-top:hover {
+      background-color: #555; /* Adjust for dark mode hover */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Experiences</h1>
+    <div class="header-right">
+      <ul>
+        <li><a href="https://1ssb.github.io" title="Home" class="button1"><i class="fas fa-home icon"></i></a></li>
+        <li><button id="theme-toggle" title="Toggle display mode"><i class="fas fa-moon"></i></button></li>
+      </ul>
+    </div>
+  </header>
+<br>
+ <main>
+    <section>
+      <h2>Academic Experiences</h2>
+          <div class="experience-card">
+        <h4 class="major">Casual Sessional Academic: CYBN8001: Building Cyber-Physical Systems</h4>
+        <div class="details">
+          <p><strong>Duration:</strong>Currently Employed</p>
+          <p><strong>Employer:</strong> Dr. Safiya Okai-Ugbaje </p>
+          <p><strong>Affiliation:</strong> School of Cybernetics, ANU</p>
+          <p><strong>Role:</strong> Lecturer</p>
+          <ul>
+            <li>Tutoring hands-on laboratory sessions for Masters students.</li>
+            <li>Developing projects on Microprocessors, Robotics and Machine Learning.</li>
+            <li>Teaching introductory programming using Python</li>
+          </ul>
+        </div>
+      </div>
+      <div class="experience-card">
+        <h4 class="major">Graduate Research Assistant: Fintech & AI</h4>
+        <div class="details">
+          <p><strong>Duration:</strong> September 2023 - September 2024</p>
+          <p><strong>Employer:</strong> Dr. Priya Muthukannan</p>
+          <p><strong>Affiliation:</strong> Research School of Management, ANU</p>
+          <p><strong>Role:</strong> Principal Investigator</p>
+          <ul>
+            <li>Conducting qualitative analysis on open banking regimes to assess the dynamic capabilities.</li>
+            <li>Data Science Bootcamps for Beginners</li>
+            <li>Developing novel frameworks to study the effects of AI and banking sector responses to technological shifts.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <h4 class="major">Casual Sessional Academic: Engineering</h4>
+        <div class="details">
+          <p><strong>Duration:</strong> July 2022 - September 2023</p>
+          <p><strong>Employers:</strong> Prof. Ian Petersen, FAA & Prof. Iman Shames</p>
+          <p><strong>Affiliation:</strong> School of Engineering, ANU</p>
+          <ul>
+            <li>ENGN8824: Advanced Control Systems (Masters) at ANU, 2023: Tutored the laboratory class of 12 students.</li>
+            <li>ENGN4628: Network Optimization and Control at ANU, 2023: Tutored problem-solving sessions in a class of 34 students.</li>
+            <li>ENGN4625: Power Systems and Electronics at ANU, 2022: Tutored problem-solving sessions for 16 students.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Internships</h2>
+
+      <div class="experience-card">
+        <h4 class="major">Quantitative Research Intern</h4>
+        <div class="details">
+          <p><strong>Duration:</strong> Nov 2024 - Feb 2025</p>
+          <p><strong>Affiliation:</strong> Optiver, Asia Pacific, Sydney, Australia</p>
+          <ul>
+            <li>Developed, implemented & back-tested a statistical arbitration model on the Hong Kong exchange.</li>
+            <li>Performed statistical analyses on large-scale financial data to uncover market patterns and operational ineﬃciencies in Korean market.</li>
+            <li>Collaborated with traders and developers to build a proprietary, real-time Machine Learning decision-making system.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <h4 class="major">Head Automation Intern: Power Systems Automation</h4>
+        <div class="details">
+          <p><strong>Duration:</strong> March - August 2021</p>
+          <p><strong>Affiliation:</strong> Calcutta Electric Supply Corporation, India</p>
+          <ul>
+            <li>Orchestrated a 17-member team to engineer and implement a self-healing mechanism in the Ring Main Unit-based Power System at Chitpur hospital substation during India's second COVID-19 wave.</li>
+            <li>Managed real-time installation of high-voltage DC circuit breakers, linking the substation to multiple power grids.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <h4 class="major">ML Research Intern: Financial NLP</h4>
+        <div class="details">
+          <p><strong>Duration:</strong> December 2021 - March 2022</p>
+          <p><strong>Employer:</strong> Mr. Paresh Sharma</p>
+          <p><strong>Affiliation:</strong> Decimal Point Analytics, India</p>
+          <ul>
+            <li>Engineered and optimized a financial metadata database tailored for RoBERTa-based question-answering systems.</li>
+            <li>Facilitated and chaired client meetings for product reassessment and quality assurance.</li>
+            <li>Renegotiated contract durations during discussions with the banking tribunal, focusing on stock option roll-over mechanisms.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <h4 class="major">Research Intern: Finance</h4>
+        <div class="details">
+          <p><strong>Duration:</strong> December 2020 - February 2021</p>
+          <p><strong>Employer:</strong> Mr. Parthasarathi Mukherjee</p>
+          <p><strong>Affiliation:</strong> Laxmi Vilas Bank, India</p>
+          <p><strong>Role:</strong> Ex-CEO, Laxmi Vilas Bank, India</p>
+          <p>Developed a Markonikov portfolio optimization method using a Competitive Neural Network from multiple time series data.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Undergraduate Research Projects</h2>
+
+      <div class="experience-card">
+        <h4 class="major">Undergraduate Researcher: Foundational Deep Learning</h4>
+        <div class="details">
+          <p><strong>Duration:</strong> March 2022 - June 2022</p>
+          <p><strong>Supervisor:</strong> Prof. Richard Hartley, FAA</p>
+          <p><strong>Affiliation:</strong> School of Computing, ANU</p>
+          <p><strong>Role:</strong> Distinguished Professor Emeritus</p>
+          <ul>
+            <li>Employed Neural Networks to assess the invertibility of differentiable functions in closed sample ranges for non-linear processes.</li>
+            <li>Demonstrated that normalizing flow networks struggle with global invertibility.</li>
+            <li>Formulated an FPGA TIMER algorithm to measure the total computational effort required for minimum convergence.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <h4 class="major">Undergraduate Researcher: Control & Optimization</h4>
+        <div class="details">
+          <p><strong>Duration:</strong> December 2021 - March 2022</p>
+          <p><strong>Supervisor:</strong> Prof. Ian Petersen, FAA</p>
+          <p><strong>Affiliation:</strong> School of Engineering, ANU</p>
+          <ul>
+            <li>Established a novel algorithm that is deterministic and exponentially faster than classical Nesterov-like methods for convex functions.</li>
+            <li>Utilized control theory to formulate universal Lyapunov-based methods for predicting convergence rates in high-resolution ODE approaches.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <h4 class="major">Summer Research Intern: Passive Radar Signal Processing</h4>
+        <div class="details">
+          <p><strong>Duration:</strong> May - August 2020</p>
+          <p><strong>Supervised by:</strong> V. Venkateshwara Rao, Ex-Director, ARDE</p>
+          <p><strong>Affiliation:</strong> DRDO, India</p>
+          <ul>
+            <li>Formulated a Kalman filter-centric technique for swift selection of the best-matched filter for incoming radar signals.</li>
+            <li>Implemented an FPGA-based multi-processor interface for the analysis of long-range, noise-affected radar signals.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <h4 class="major">Undergraduate Researcher: Optical Excitation Study in Graphene Sheets</h4>
+        <div class="details">
+          <p><strong>Duration:</strong> August - December 2019</p>
+          <p><strong>Supervisors:</strong> Prof. Gargi Chakraborty, Dr. Sumathi S, Prof. Shweta B. Thomas</p>
+          <p><strong>Affiliation:</strong> VIT, Vellore</p>
+          <ul>
+            <li>Developed a model to estimate parametric states for the optical response of viscoelastic graphene sheets under stress.</li>
+            <li>Verified the bifurcations and empirically validated the model for larger gains.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reviewerships</h2>
+      <div class="experience-card reviewership">
+        <h4 class="major">Reviewership</h4>
+        <div class="details">
+          <ul>
+            <li>IEEE Xplore, ICRA, 2025: Paper Review on the application of Diffusion in Robotics.</li>
+            <li>Wiley: Asian Journal of Control, 2023: Paper review on game-theoretic control.</li>
+            <li>Asian Control Conference, 2022: Paper review on feedback linearisation for UAV controllers.</li>
+            <li>IEEE Xplore ANZCC, 2021: Paper review on non-smooth feedback controllers.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; Subhransu S. Bhattacharjee, <span id="year"></span>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></a>
+
+  <script>
+    // Set the current year in the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggling functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check for saved theme in localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark-mode') {
+      body.classList.add('dark-mode');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+
+      // Save the theme preference in localStorage
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark-mode');
+      } else {
+        localStorage.removeItem('theme');
+      }
+    });
+
+    // Show or hide the "Back to Top" button
+    window.addEventListener('scroll', function() {
+      const backToTopButton = document.getElementById('back-to-top');
+      if (window.pageYOffset > 300) { // Show button after scrolling down 300px
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    // Smooth scroll back to top
+    document.getElementById('back-to-top').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>

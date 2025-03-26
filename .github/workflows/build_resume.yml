@@ -1,0 +1,34 @@
+name: Build Resume PDF
+
+on:
+  push:
+    paths:
+      - '**/*.tex'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install TeXLive
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-full
+
+      - name: Compile Resume PDF with XeLaTeX
+        run: |
+          xelatex -interaction=nonstopmode -output-directory=. Resume.tex
+          # Uncomment the following line if you need a second compilation pass (e.g., for references or bibliography)
+          # xelatex -interaction=nonstopmode -output-directory=. Resume.tex
+
+      - name: Commit and push updated PDF
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add Resume.pdf
+          # Only commit if there are changes
+          git diff-index --quiet HEAD || git commit -m "Automated PDF update [skip ci]"
+          git push
