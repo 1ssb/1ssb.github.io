@@ -1,6 +1,16 @@
+\PassOptionsToPackage{pdfpagelabels=false,unicode}{hyperref}
 \documentclass[10pt, a4paper, sans]{moderncv}
+
+% Set PDF metadata using \hypersetup.
+\usepackage[unicode, pdflang={en-GB}]{hyperref}
+\hypersetup{
+  pdftitle={Subhransu S. Bhattacharjee's Résumé},
+  pdfauthor={Subhransu S. Bhattacharjee},
+  pdfsubject={Résumé},
+  pdfkeywords={AI, Machine Learning, Optimization, 3D Vision, Quantitative Research},
+}
+
 \usepackage[T1]{fontenc}
-\usepackage{tgbonum}
 \usepackage{multicol}
 \usepackage{amsmath}
 \usepackage{verbatim}
@@ -8,7 +18,9 @@
 \usepackage{comment}
 \usepackage{float, multirow}
 
+\usepackage{moderncvcompatibility}
 \moderncvstyle{banking}
+\moderncvcolor{black}
 \nopagenumbers{}
 \renewcommand\footrule{\hrule width\textwidth}
 \usepackage{enumitem,url}
@@ -19,10 +31,12 @@
 \title{\huge Résumé}
 \name{\huge Subhransu S.}{\huge Bhattacharjee}
 \address{Skaidrite Darius Building, The Australian National University, Acton, ACT 2601}
-\homepage{1ssb.github.io}
 \newcommand*{\gmail}{\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com}}
 \email{Subhransu.Bhattacharjee@anu.edu.au}
-\mobile{+61474224742}
+
+% Needs a space
+\mobile {+61474224742}
+\homepage {1ssb.github.io}
 
 % Redefine custom social commands with new names
 \newcommand*{\githublink}{\href{https://github.com/1ssb}{GitHub}}
@@ -31,7 +45,7 @@
 
 % Add social information
 \extrainfo{
-    \faEnvelope~\href{1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com} ~~~
+    \faEnvelope~\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com} ~~~
     \faGithub~\githublink ~~~
     \faLinkedin~\linkedinlink ~~~
     \aiGoogleScholar~\googlescholarlink
@@ -46,22 +60,23 @@
 \section{Education}
 \cventry{April 2023-Present}{Research School of Computing, Australian National University}{Doctor of Philosophy in Artificial Intelligence}{Ongoing}{Australia}{
   \textbullet Supervisors: Dr.\ Rahul Shome, Dr.\ Dylan Campbell \& Prof.\ Stephen Gould\\
-  \textbullet Specialisations: Vision Language Models, Non-Convex Optimization, Diffusion Models \& 3D Computer Vision\\
-  \textbullet Attended: Robotic Vision Summer School, 2024; Optiver PhD Quant Lab Program, 2024 (Acceptance rate 6\%)\\
-  \textbullet Participated by invitation to the all-paid PhD summit by Citadel \& Citadel Securities, London (Acceptance rate 4.8\%)\\
+  \textbullet Specializations: Vision Language Models, Non-Convex Optimization, Diffusion Models \& 3D Computer Vision\\
+  \textbullet Attended: Robotic Vision Summer School, 2024; Optiver PhD Quant Lab Program, 2024 (Acceptance Rate 6\%)\\
+  \textbullet Participated by invitation to the all-paid PhD summit by Citadel \& Citadel Securities, London, 2025 (Acceptance Rate 4.8\%)\\
   \textbullet Thesis Topic: \textit{A Probabilistic 3D Spatio-Semantic Reasoning Framework using Generative Models}\\
   \textbf{Courses Audited:} \textit{Task \& Motion Planning in Robotics, Convex Optimization, Differential Geometry \& Probability Theory}
 }
+\vspace{0.5em}
 \cventry{July 2018 - Dec 2022}{College of Systems \& Society, Australian National University}{Bachelor of Engineering}{First Class, Honours}{Australia}{
   \textbullet Major in Mechatronic Systems Engineering (Graduated cum laude in Honors' cohort)\\
   \textbullet Minors in Mathematics \& Electronic Communication Systems\\
-  \textbf{Courses Audited:} \textit{Non-linear Control Theory, Network Optimization \& Control, Information Theory, Mathematical Analysis}\\
   \textbullet Summer School at the \textbf{London School of Economics}, 2019: Practical Machine Learning: Grade-A\\
   \textbullet \href{https://coursera.org/share/393423005d9dec9f00e3c0895c54868f}{\textcolor{black}{Online Certification in Game Theory, \textbf{Stanford University}}}\\
-  \textbullet Thesis Project: Whiplash Gradient Descent Dynamics (Supervisor: Professor Ian Petersen).\\
-  \textbullet Transferred to ANU from VIT, India in 2020 (Top 1\% of branch).
+  \textbullet Thesis Project: \href{https://arxiv.org/pdf/2203.02140}{Whiplash Gradient Descent Dynamics} (Supervisor: Professor Ian Petersen).\\
+  \textbullet Transferred to ANU from VIT, India in 2020 (Top 1\% of branch).\\
+  \textbf{Courses Audited:} \textit{Non-linear Control Theory, Network Optimization \& Control, Information Theory, Mathematical Analysis}\\
 }
-
+\vspace{-1em}
 \section{Scholarships \& Awards}
 \begin{enumerate}\itemsep0em
     \item \textbf{2023:} ANU International University Research Scholarship with HDR Merit Stipend (Acceptance Rate: 2.18\%)
@@ -145,8 +160,8 @@ DOI: \href{https://onlinelibrary.wiley.com/doi/10.1002/asjc.3153}{10.1002/asjc.3
 %
 \section*{Skills}
 \begin{itemize}[leftmargin=*, itemsep=0em]
-    \item \textbf{Programming Languages \& Scripting:} Python, C, CUDA-Python, R, Embedded C, MATLAB, HTML-CSS-JavaScript
-    \item \textbf{ML libraries:} PyTorch, Scikit-learn, Pandas, NumPy, Numba, SciPy, Seaborn, Matplotlib, Jupyter, OpenCV, OpenGL, Transformers, CuPy, XGBoost, LightGBM, Dask, W\&B, Optuna, NLTK
+    \item \textbf{Programming Languages \& Scripting:} Python, C, C++, PyCUDA, R, Embedded C, MATLAB, HTML, CSS, JavaScript
+    \item \textbf{ML libraries:} PyTorch, Scikit-learn, Pandas, NumPy, Numba, SciPy, Seaborn, Matplotlib, Jupyter, OpenCV, OpenCL, OpenGL, Transformers, CuPy, XGBoost, LightGBM, Dask, W\&B, Optuna, NLTK
     \item \textbf{Additional Tools \& Frameworks:} Git/GitHub, PySpark, SQL, STM32Cube, Vivado, Simulink, LTSpice, SCADA, DigiSim, SLURM, Blender, SAS, Tableau, \LaTeX, Shell Script
 \end{itemize}
 \vspace{-1em}
