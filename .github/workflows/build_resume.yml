@@ -3,7 +3,7 @@ name: Build Resume PDF
 on:
   push:
     paths:
-      - '**/*.tex'
+      - 'resume/Resume.tex'
 
 jobs:
   build:
@@ -19,10 +19,11 @@ jobs:
           sudo apt-get install -y texlive-full
 
       - name: Compile Resume PDF with XeLaTeX
+        working-directory: resume
         run: |
-          xelatex -interaction=nonstopmode -output-directory=. Resume.tex
+          xelatex -interaction=nonstopmode Resume.tex
           # Uncomment the following line if you need a second compilation pass (e.g., for references or bibliography)
-          # xelatex -interaction=nonstopmode -output-directory=. Resume.tex
+          # xelatex -interaction=nonstopmode Resume.tex
 
       - name: Commit and push updated PDF
         run: |
