@@ -1,0 +1,176 @@
+\PassOptionsToPackage{pdfpagelabels=false,unicode}{hyperref}
+\documentclass[10pt, a4paper, sans]{moderncv}
+
+% Set PDF metadata using \hypersetup.
+\usepackage[unicode, pdflang={en-GB}]{hyperref}
+\hypersetup{
+  pdftitle={Subhransu S. Bhattacharjee's Résumé},
+  pdfauthor={Subhransu S. Bhattacharjee},
+  pdfsubject={Résumé},
+  pdfkeywords={AI, Machine Learning, Optimization, 3D Vision, Quantitative Research},
+}
+
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage[hmargin=1.25cm, bottom=1in, top=1in]{geometry}
+\usepackage{comment}
+\usepackage{float, multirow}
+
+\usepackage{moderncvcompatibility}
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\nopagenumbers{}
+\renewcommand\footrule{\hrule width\textwidth}
+\usepackage{enumitem,url}
+\usepackage{array,adjustbox, xcolor,fancyhdr}
+\usepackage{etoolbox}
+
+% Document Header
+\title{\huge Résumé}
+\name{\huge Subhransu S.}{\huge Bhattacharjee}
+\address{Skaidrite Darius Building, The Australian National University, Acton, ACT 2601}
+\newcommand*{\gmail}{\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com}}
+\email{Subhransu.Bhattacharjee@anu.edu.au}
+
+% Needs a space
+\mobile {+61474224742}
+\homepage {1ssb.github.io}
+
+% Redefine custom social commands with new names
+\newcommand*{\githublink}{\href{https://github.com/1ssb}{GitHub}}
+\newcommand*{\linkedinlink}{\href{https://www.linkedin.com/in/1ssb/}{LinkedIn}}
+\newcommand*{\googlescholarlink}{\href{https://scholar.google.com/citations?hl=en&user=Ngk4emsAAAAJ&view_op=list_works&sortby=pubdate}{Google Scholar}}
+
+% Add social information
+\extrainfo{
+    \faEnvelope~\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com} ~~~
+    \faGithub~\githublink ~~~
+    \faLinkedin~\linkedinlink ~~~
+    \aiGoogleScholar~\googlescholarlink
+}
+\setlength{\emergencystretch}{3em}
+\tolerance=1000
+
+% Document
+\begin{document}
+\makecvtitle
+\vspace{-2.5em} 
+\section{Education}
+\cventry{April 2023-Present}{Research School of Computing, Australian National University}{Doctor of Philosophy in Artificial Intelligence}{Ongoing}{Australia}{
+  \textbullet Supervisors: Dr.\ Rahul Shome, Dr.\ Dylan Campbell \& Prof.\ Stephen Gould\\
+  \textbullet Specializations: Vision Language Models, Non-Convex Optimization, Diffusion Models \& 3D Computer Vision\\
+  \textbullet Attended: Robotic Vision Summer School, 2024; Optiver PhD Quant Lab Program, 2024 (Acceptance Rate 6\%)\\
+  \textbullet Participated by invitation to the all-paid PhD summit by Citadel \& Citadel Securities, London, 2025 (Acceptance Rate 4.8\%)\\
+  \textbullet Thesis Topic: \textit{A Probabilistic 3D Spatio-Semantic Reasoning Framework using Generative Models}\\
+  \textbf{Courses Audited:} \textit{Task \& Motion Planning in Robotics, Convex Optimization, Differential Geometry \& Probability Theory}
+}
+\vspace{0.5em}
+\cventry{July 2018 - Dec 2022}{College of Systems \& Society, Australian National University}{Bachelor of Engineering}{First Class, Honours}{Australia}{
+  \textbullet Major in Mechatronic Systems Engineering (Graduated cum laude in Honors' cohort)\\
+  \textbullet Minors in Mathematics \& Electronic Communication Systems\\
+  \textbullet Summer School at the \textbf{London School of Economics}, 2019: Practical Machine Learning: Grade-A\\
+  \textbullet \href{https://coursera.org/share/393423005d9dec9f00e3c0895c54868f}{\textcolor{black}{Online Certification in Game Theory, \textbf{Stanford University}}}\\
+  \textbullet Thesis Project: \href{https://arxiv.org/pdf/2203.02140}{Whiplash Gradient Descent Dynamics} (Supervisor: Professor Ian Petersen).\\
+  \textbullet Transferred to ANU from VIT, India in 2020 (Top 1\% of branch).\\
+  \textbf{Courses Audited:} \textit{Non-linear Control Theory, Network Optimization \& Control, Information Theory, Mathematical Analysis}\\
+}
+\vspace{-1em}
+\section{Scholarships \& Awards}
+\begin{enumerate}\itemsep0em
+    \item \textbf{2023:} ANU International University Research Scholarship with HDR Merit Stipend (Acceptance Rate: 2.18\%)
+    \item \textbf{2022:} Course Highest in Robotics (ENGN4627)
+    \item \textbf{2022:} Highly recommended paper in the Asian Control Conference
+    \item \textbf{2021:} High commendation award in the Australia and New Zealand Control Conference
+    \item \textbf{2020:} ANU CECS Undergraduate International Scholarship and Partner Institute scholarship -- $50\%$ tuition scholarship.
+\end{enumerate}
+\vspace{-1em}
+\section{Publications}
+\cvitem{Subhransu S. Bhattacharjee$^*$, Dylan Campbell \& Rahul Shome}{Believing is Seeing: Unobserved Object Detection using Generative Models, \href{https://arxiv.org/abs/2410.05869}{IEEE/CVF Computer Vision and Pattern Recognition, 2025}}
+\cvitem{Subhransu S. Bhattacharjee$^*$ \& Ian Petersen}{Analysis of the Whiplash Gradient Descent Dynamics,\\
+DOI: \href{https://onlinelibrary.wiley.com/doi/10.1002/asjc.3153}{10.1002/asjc.3153}, Asian Journal of Control, Special Edition, 2023}
+\cvitem{Subhransu S. Bhattacharjee$^*$ \& Ian Petersen}{Analysis of closed-loop inertial gradient dynamics,\\ DOI:\href{https://ieeexplore.ieee.org/document/9828104}{10.23919/ASCC56756.2022.9828104}, Asian Control Conference, 2022}
+\cvitem{Subhransu Bhattacharjee$^*$ \& Ian Petersen}{A closed loop gradient descent algorithm applied to Rosenbrock's function, DOI:\href{https://ieeexplore.ieee.org/document/9628258}{10.1109/ANZCC53563.2021.9628258}, Australia and New Zealand Control Conference, 2021}
+%
+\section{Experience}
+\cventry{March 2025 -- Present}{Casual Sessional Academic --- Cybernetics}{School of Cybernetics, Australian National University}{}{\textit{Employers: Dr.\ Safiya Okai-Ugbaje}}{%
+\begin{itemize}[itemsep=0em]
+  \item Tutoring hands-on laboratory sessions for Masters students.
+  \item Developing projects on Microprocessors, Robotics and Machine Learning.
+  \item Teaching introductory programming using Python.
+\end{itemize}}
+%
+\cventry{Nov 2024 -- Feb 2025}{Quantitative Research Intern}{Optiver APAC, Sydney}{}{}{%
+\begin{itemize}[itemsep=0em]
+  \item Developed, implemented \& back-tested a statistical arbitration model on the Hong Kong exchange.
+  \item Performed statistical analyses on large-scale financial data to uncover market patterns and operational inefficiencies in Korean market.
+  \item Collaborated with traders and developers to build a proprietary, real-time Machine Learning decision-making system.
+\end{itemize}}
+%
+\newpage
+\cventry{Sep 2023 -- Sep 2024}{Graduate Research Assistant --- Fintech \& AI}{Research School of Management, Australian National University}{}{\textit{Principal Investigator: Dr. Priya Muthukannan}}{%
+\begin{itemize}[itemsep=0em]
+  \item Conducted qualitative analyses of open banking regimes using dynamic capabilities frameworks.
+  \item Delivered introductory courses in data analysis for Business Information Systems.
+  \item Developed innovative frameworks to assess the impact of AI on banking responses to technological shifts.
+\end{itemize}}
+%
+\cventry{Jul 2022 -- Sep 2023}{Casual Sessional Academic --- Engineering}{School of Engineering, Australian National University}{}{\textit{Employers: Prof. Ian Petersen \& Prof. Iman Shames}}{%
+\begin{itemize}[itemsep=0em]
+  \item Tutored laboratory sessions for Advanced Control Systems (ENGN8824) for a cohort of 12 master’s students.
+  \item Facilitated interactive problem-solving sessions for 34 students in Network Optimization and Control (ENGN4628).
+  \item Led focused tutoring sessions for 16 students in Power Systems and Electronics (ENGN4625).
+\end{itemize}}
+%
+\cventry{Mar 2022 -- Jun 2022}{Undergraduate Researcher --- Foundational Deep Learning}{School of Computing, Australian National University}{}{\textit{Supervisor: Prof. Richard Hartley, FAA}}{%
+\begin{itemize}[itemsep=0em]
+  \item Applied neural networks to assess the invertibility of differentiable functions in non-linear processes, achieving a 72\% RMSE hit rate using positional encoding.
+  \item Demonstrated the limitations of normalizing flow networks for global invertibility, underscoring neural networks’ limitations as local approximators for smooth functions.
+  \item Developed an FPGA-based TIMER algorithm to quantify the computational effort required for minimum convergence, accounting for floating-point precision constraints.
+\end{itemize}}
+%
+\cventry{Dec 2021 -- Mar 2022}{Undergraduate Researcher --- Control \& Optimisation}{Research School of Engineering, Australian National University}{}{\textit{Supervisor: Prof. Ian Petersen, FAA}}{%
+\begin{itemize}
+  \item Developed a deterministic algorithm that outperformed classical Nesterov-like methods for convex functions.
+  \item Applied control theory to design universal Lyapunov-based methods for predicting convergence rates in high-resolution ODE models.
+\end{itemize}}
+%
+\cventry{Mar -- Aug 2021}{Head Automation Intern --- Power Systems Automation}{Calcutta Electric Supply Corporation, India}{}{\textit{Supervisor: Mr. Arindam Sanyal, Director}}{%
+\begin{itemize}[itemsep=0em]
+  \item Led a cross-functional team of 17 (including 5 interns and 12 field workers) to design and implement a self-healing mechanism for the Ring Main Unit-based power system at Chitpur Hospital Substation during the second COVID-19 wave in India.
+\end{itemize}}
+%
+\cventry{Dec 2020 -- Mar 2021}{ML Research Intern --- Financial NLP}{Decimal Point Analytics, India}{}{\textit{Supervisor: Mr. Paresh Sharma, MD}}{%
+\begin{itemize}[itemsep=0em]
+  \item Engineered and optimized a financial metadata database for a RoBERTa-based question-answering system, enhancing both accuracy and efficiency.
+  \item Conducted client meetings for product reassessment and quality assurance, collaborating with diverse stakeholders to implement performance enhancements.
+\end{itemize}}
+%
+\cventry{Sep -- Nov 2020}{Research Intern}{Laxmi Vilas Bank, India}{}{\textit{Supervisor: Mr. Parthasarathi Mukherjee, Ex-CEO}}{%
+\begin{itemize}
+  \item Devised a portfolio optimization method using competitive neural networks to analyze multiple time series datasets.
+\end{itemize}}
+%
+\cventry{May -- Aug 2020}{Summer Research Trainee --- Passive Radar Signal Processing}{Armament Research and Development Establishment, DRDO, India}{}{}{%
+\begin{itemize}[itemsep=0em]
+  \item Developed a Kalman filter–based technique to rapidly select optimal matched filters for incoming radar signals via ambiguity functions, enabling fine-tuning of radar bursts to reduce signal uncertainty.
+  \item Implemented an FPGA-based multi-processor interface for real-time analysis of long-range, noise-affected radar signals.
+\end{itemize}}
+%
+\section*{Skills}
+\begin{itemize}[leftmargin=*, itemsep=0em]
+    \item \textbf{Programming Languages \& Scripting:} Python, C, C++, PyCUDA, R, Embedded C, MATLAB, HTML, CSS, JavaScript
+    \item \textbf{ML libraries:} PyTorch, Scikit-learn, Pandas, NumPy, Numba, SciPy, Seaborn, Matplotlib, Jupyter, OpenCV, OpenCL, OpenGL, Transformers, CuPy, XGBoost, LightGBM, Dask, W\&B, Optuna, NLTK
+    \item \textbf{Additional Tools \& Frameworks:} Git/GitHub, PySpark, SQL, STM32Cube, Vivado, Simulink, LTSpice, SCADA, DigiSim, SLURM, Blender, SAS, Tableau, \LaTeX, Shell Script
+\end{itemize}
+\vspace{-1em}
+\section*{Certifications \& Services}
+\begin{itemize}[leftmargin=*, itemsep=0em]
+    \item \textbf{Certifications:} ANU Tutor (Teaching) Program; ANU Lab Training for Researchers; ANU AI in Research \& Teaching; \href{https://coursera.org/share/8204c8b2ca3d84b7fccec7d44edaa8b7}{\textcolor{black}{Machine Learning Production, Deeplearning.AI}}; \href{https://www.coursera.org/account/accomplishments/certificate/JZCYF4MAB3CX}{\textcolor{black}{Project Management, Google}};
+    \href{https://www.coursera.org/account/accomplishments/verify/X6R6DZN8VGXN?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course}{\textcolor{black}{Financial Markets, Yale}};
+    \href{https://www.udemy.com/certificate/UC-36c9fc3c-e20c-45fb-994e-776393cdb4ce/}{\textcolor{black}{SCADA, Udemy}}
+    \item \textbf{Paper Reviewer:} IROS, 2025; ICRA, 2025; Asian Journal of Control, 2023; Asian Control Conference, 2022; ANZCC, 2021
+    \item \textbf{Volunteering Experience:} Thread Together, Sydney (2025), ANU Techlauncher Program (2024); Set4ANU Mentoring (2023--24); Course Representative, ANU (2021); AIESEC VIT (2018--19); Friends of Tribal Society, India (2017--18)
+\end{itemize}
+\end{document}

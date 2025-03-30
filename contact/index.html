@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .header .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .theme-toggle, .home-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .theme-toggle i, .home-button i {
+            color: blue;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            text-align: left;
+            max-width: 100%;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+        .bio-text {
+            text-align: justify;
+        }
+        .bio-section {
+            margin-bottom: 20px;
+        }
+        .dark-mode .card {
+            background-color: #1c1c1c;
+            color: #e0e0e0;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .dark-mode .header {
+            background-color: #1c1c1c;
+        }
+        .theme-toggle i, .home-button i {
+            color: black; /* Default color for light mode */
+        }
+        
+        .dark-mode .theme-toggle i, .dark-mode .home-button i {
+            color: white; /* Color for dark mode */
+        }
+        
+        .button1 {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+        .button1:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .header .title {
+                font-size: 18px;
+            }
+            .theme-toggle, .home-button {
+                font-size: 20px;
+            }
+            .container {
+                padding: 10px;
+            }
+            .button1 {
+                font-size: 14px;
+            }
+        }
+        .map-container {
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .map-container iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 450px;
+            border: 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            font-size: 14px;
+            width: 100%;
+        }
+        .dark-mode footer {
+            background-color: #333 !important;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="title">Contact Me</div>
+        <div class="buttons">
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="home-button" onclick="location.href='/'">
+                <i class="fas fa-home"></i>
+            </button>
+        </div>
+    </header>
+    <div class="container">
+        <div class="card">
+            <article id="cnt" class="bio-text">
+                <h3>Email</h3>
+                <p>Kindly direct all official intimations to my Academic mail.</p>
+                <p>
+                    <a href="mailto:Subhransu.Bhattacharjee@anu.edu.au" class="button1" onclick="return theFunction();">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>&ensp; Academic Email
+                    </a><br>
+                    <a href="mailto:1ssb.rudra@gmail.com" class="button1" onclick="return theFunction();">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>&ensp; Personal Email
+                    </a>
+                </p>
+                <h3>Phone Number</h3>
+                <p>
+                    <a class="button1" href="tel:+61474224742" onclick="return theFunction();">
+                        <i class="fa fa-phone-alt" aria-hidden="true"></i>&ensp; +61-474224742
+                    </a>
+                </p>
+                <h3>Office Address</h3>
+                <p>
+                    N329, Robotics Lab, CSIT Building<br>
+                    108 North Rd, The Australian National University<br>
+                    Acton, ACT-2601, Australia
+                </p>
+            </article>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d750.6912317179923!2d149.120686!3d-35.275245!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b164d5b4fd2223f%3A0x247432e4404afa54!2sANU%20School%20of%20Computing!5e1!3m2!1sen!2sus!4v1717435450419!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <footer>
+        &copy; Subhransu S. Bhattacharjee, <span id="year"></span>
+    </footer>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSpan = document.getElementById('year');
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = currentYear;
+        });
+
+        function theFunction() {
+            return true;
+        }
+    </script>
+</body>
+</html>
