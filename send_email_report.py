@@ -7,7 +7,13 @@ import os
 
 # Configuration from environment variables (set these as GitHub Secrets)
 SMTP_SERVER = os.getenv("SMTP_SERVER")
-SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
+smtp_port_str = os.getenv("SMTP_PORT", "587")
+try:
+    SMTP_PORT = int(smtp_port_str)
+except ValueError:
+    print(f"Invalid SMTP_PORT value: '{smtp_port_str}'. Using default 587.")
+    SMTP_PORT = 587
+
 EMAIL_USERNAME = os.getenv("EMAIL_USERNAME")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 FROM_EMAIL = os.getenv("FROM_EMAIL")
