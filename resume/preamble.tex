@@ -1,0 +1,52 @@
+% preamble.tex
+\PassOptionsToPackage{pdfpagelabels=false,unicode}{hyperref}
+\documentclass[10pt, a4paper, sans]{moderncv}
+
+% Set PDF metadata using \hypersetup.
+\usepackage[unicode, pdflang={en-GB}]{hyperref}
+\hypersetup{
+  pdftitle={Subhransu S. Bhattacharjee Résumé},
+  pdfauthor={Subhransu S. Bhattacharjee},
+  pdfsubject={Résumé},
+  pdfkeywords={AI, Machine Learning, Optimization, 3D Vision, Quantitative Research},
+}
+
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage[hmargin=1.25cm, bottom=1in, top=1in]{geometry}
+\usepackage{comment}
+\usepackage{float, multirow}
+
+\usepackage{moderncvcompatibility}
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\nopagenumbers{}
+\renewcommand\footrule{\hrule width\textwidth}
+\usepackage{enumitem,url}
+\usepackage{array,adjustbox, xcolor,fancyhdr}
+\usepackage{etoolbox}
+
+% Document Header (personal info)
+\title{\huge Résumé}
+\name{\huge Subhransu S.}{\huge Bhattacharjee}
+\address{Skaidrite Darius Building, The Australian National University, Acton, ACT 2601}
+\newcommand*{\gmail}{\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com}}
+\email{Subhransu.Bhattacharjee@anu.edu.au}
+\mobile {+61474224742}
+\homepage {1ssb.github.io}
+
+% Social Links and Commands
+\newcommand*{\githublink}{\href{https://github.com/1ssb}{GitHub}}
+\newcommand*{\googlescholarlink}{\href{https://scholar.google.com/citations?hl=en&user=Ngk4emsAAAAJ&view_op=list_works&sortby=pubdate}{Google Scholar}}
+\newcommand*{\linkedinlink}{\href{https://www.linkedin.com/in/1ssb/}{LinkedIn}}
+
+% Extra Social Info in header
+\extrainfo{
+    \faEnvelope~\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com} ~~ | ~~
+    \faGithub~\githublink ~~ | ~~
+    \faLinkedin~\linkedinlink ~~ | ~~\aiGoogleScholar~\googlescholarlink
+}
+\setlength{\emergencystretch}{3em}
+% \tolerance=1000
