@@ -75,38 +75,36 @@
       margin-bottom: 15px;
       text-align: center;
     }
-    .updates-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 0;
-      list-style: none;
+    .update-card {
+      background: var(--card-bg);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      transition: background 0.3s;
     }
-    .updates-list li {
-      text-align: center;
-      padding: 10px;
-    }
-    .updates-list li a {
+    .update-card a {
       text-decoration: none;
       font-size: 1.1rem;
       font-weight: bold;
       color: var(--light-color);
+      display: block;
       transition: color 0.3s;
     }
-    .updates-list li a:hover {
+    .update-card a:hover {
       color: #005582;
-    }
-    .dark-mode {
-      background: var(--dark-bg);
-      color: var(--dark-color);
     }
     .dark-mode .year-card {
       background: var(--card-bg-dark);
     }
-    .dark-mode .updates-list li a {
+    .dark-mode .update-card {
+      background: var(--card-bg-dark);
+      border-color: #333;
+    }
+    .dark-mode .update-card a {
       color: var(--dark-color);
     }
-    .dark-mode .updates-list li a:hover {
+    .dark-mode .update-card a:hover {
       color: #bbb;
     }
   </style>
@@ -127,17 +125,13 @@
       sortedYears.forEach(year => {
         const section = document.createElement('section');
         section.className = 'year-card';
-        section.innerHTML = `<div class="year-title">${year}</div><ul class="updates-list"></ul>`;
+        section.innerHTML = `<div class="year-title">${year}</div>`;
 
-        const ul = section.querySelector('ul');
         grouped[year].forEach(({ text, link }) => {
-          const li = document.createElement('li');
-          if (link) {
-            li.innerHTML = `<a href="${link}" target="_blank">${text}</a>`;
-          } else {
-            li.textContent = text;
-          }
-          ul.appendChild(li);
+          const div = document.createElement('div');
+          div.className = 'update-card';
+          div.innerHTML = link ? `<a href="${link}" target="_blank">${text}</a>` : `<span>${text}</span>`;
+          section.appendChild(div);
         });
 
         main.appendChild(section);
