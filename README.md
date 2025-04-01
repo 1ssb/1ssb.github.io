@@ -1,4 +1,4 @@
-# 🌐 My Academic Portfolio Website V3
+# 🌐 My Academic Portfolio Website
 
 This is a template portfolio website that you can use to create your own personal site using GitHub Pages. This site has both main and mobile versions 📱. It also has an Updates page which allows for simply updating an HTML file ✏️. Now integrated with an action push which write the Resume PDF from a TeX file.
 
