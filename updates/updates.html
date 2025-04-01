@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Updates - LinkedIn posts from Subhransu S. Bhattacharjee">
+  <meta name="description" content="Updates">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Updates - S. S. Bhattacharjee</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -23,6 +23,11 @@
       margin: 0;
       padding: 20px;
       transition: background-color 0.3s, color 0.3s;
+    }
+    /* New dark mode styling for the whole page */
+    .dark-mode {
+      background: var(--dark-bg);
+      color: var(--dark-color);
     }
     .top-bar {
       display: flex;
@@ -109,22 +114,29 @@
       const main = document.querySelector('main');
       const grouped = {};
 
+      // Group updates by year
       updates.forEach(({ year, text, link }) => {
         if (!grouped[year]) grouped[year] = [];
         grouped[year].push({ text, link });
       });
 
+      // Sort years in descending order (newest first)
       const sortedYears = Object.keys(grouped).sort((a, b) => b - a);
-      const redIntensities = ["#ffebeb", "#ffd6d6", "#ffbfbf", "#ffa8a8", "#ff9191"];
-      const darkRedIntensities = ["#2a0000", "#330000", "#3d0000", "#470000", "#510000"];
 
+      // Reverse the intensity arrays so that newer years are more intense red
+      const redIntensities = ["#ff9191", "#ffa8a8", "#ffbfbf", "#ffd6d6", "#ffebeb"];
+      const darkRedIntensities = ["#510000", "#470000", "#3d0000", "#330000", "#2a0000"];
+
+      // Create a section for each year
       sortedYears.forEach((year, index) => {
         const section = document.createElement('section');
         section.className = 'year-card';
 
+        // Use the intensity based on the index (capped by the array length)
         const bgLight = redIntensities[Math.min(index, redIntensities.length - 1)];
         const bgDark = darkRedIntensities[Math.min(index, darkRedIntensities.length - 1)];
         section.style.background = bgLight;
+        section.setAttribute('data-light-bg', bgLight);
         section.setAttribute('data-dark-bg', bgDark);
 
         section.innerHTML = `<div class="year-title">${year}</div>`;
@@ -146,11 +158,12 @@
         icon.classList.toggle('fa-moon');
         icon.classList.toggle('fa-sun');
 
+        // Toggle the background colors for the year cards
         document.querySelectorAll('.year-card').forEach(card => {
           if (document.body.classList.contains('dark-mode')) {
             card.style.background = card.getAttribute('data-dark-bg');
           } else {
-            card.style.background = '';
+            card.style.background = card.getAttribute('data-light-bg');
           }
         });
       });
