@@ -21,15 +21,15 @@ jobs:
       - name: Compile Resume PDF with XeLaTeX
         working-directory: resume
         run: |
-          xelatex -interaction=nonstopmode Resume.tex
+          xelatex -interaction=nonstopmode main.tex
           # Uncomment the following line if you need a second compilation pass (e.g., for references or bibliography)
-          # xelatex -interaction=nonstopmode Resume.tex
+          # xelatex -interaction=nonstopmode main.tex
 
       - name: Commit and push updated PDF
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add resume/Resume.pdf
+          git add main.pdf
           # Only commit if there are changes
           git diff-index --quiet HEAD || git commit -m "Automated PDF update [skip ci]"
           git push
