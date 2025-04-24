@@ -3,31 +3,55 @@ name: Build Resume PDF
 on:
   push:
     paths:
-      - 'resume/main.tex'
+      - 'resume/**' # Trigger on changes in the resume directory
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Explicitly set write permissions for repo operations
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for proper git operations
 
-      - name: Install TeXLive
+      - name: Install minimal TeXLive
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-full
+          # Install only required packages instead of texlive-full
+          sudo apt-get install -y --no-install-recommends \
+            texlive-xetex \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-latex-extra
 
       - name: Compile Resume PDF with XeLaTeX
         working-directory: resume
         run: |
-          xelatex -interaction=nonstopmode -jobname=Resume main.tex
+          # Add error handling with set -e to exit on any error
+          set -e
+          echo "Compiling Resume PDF..."
+          # Run twice to ensure references are resolved correctly
+          xelatex -interaction=nonstopmode -jobname=Resume main.tex || { echo "Error in first XeLaTeX run"; exit 1; }
+          xelatex -interaction=nonstopmode -jobname=Resume main.tex || { echo "Error in second XeLaTeX run"; exit 1; }
+          echo "PDF compilation successful"
 
       - name: Commit and push updated PDF
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
+          set -e
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add resume/Resume.pdf
-          # Only commit if there are changes
-          git diff-index --quiet HEAD || git commit -m "Automated PDF update [skip ci]"
-          git push
+          
+          # Check if there are changes to the PDF
+          if git diff --staged --quiet resume/Resume.pdf; then
+            echo "No changes to Resume.pdf"
+          else
+            echo "Changes detected in Resume.pdf, committing..."
+            git commit -m "Automated PDF update [skip ci]"
+            # Use token explicitly for better error handling
+            git push || { echo "Failed to push changes"; exit 1; }
+            echo "Successfully pushed updated PDF"
+          fi
