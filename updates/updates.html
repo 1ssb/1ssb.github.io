@@ -109,7 +109,7 @@
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", async () => {
-      const res = await fetch('updates.json');
+      const res = await fetch('./updates.json');
       const updates = await res.json();
       const main = document.querySelector('main');
       const grouped = {};

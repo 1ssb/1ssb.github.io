@@ -22,8 +22,6 @@ jobs:
         working-directory: resume
         run: |
           xelatex -interaction=nonstopmode -jobname=Resume main.tex
-          # Uncomment the following line if you need a second compilation pass (e.g., for references or bibliography)
-          # xelatex -interaction=nonstopmode -jobname=Resume main.tex
 
       - name: Commit and push updated PDF
         run: |
