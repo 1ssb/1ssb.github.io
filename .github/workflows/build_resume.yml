@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'resume/**' # Trigger on changes in the resume directory
+      - '.github/workflows/**' # Trigger on changes in the workflows directory
 
 jobs:
   build:
@@ -17,15 +18,12 @@ jobs:
         with:
           fetch-depth: 0  # Fetch all history for proper git operations
 
-      - name: Install minimal TeXLive
+      - name: Install full TeXLive
         run: |
           sudo apt-get update
-          # Install only required packages instead of texlive-full
-          sudo apt-get install -y --no-install-recommends \
-            texlive-xetex \
-            texlive-fonts-recommended \
-            texlive-fonts-extra \
-            texlive-latex-extra
+          # Install full TeXLive distribution to ensure all packages are available
+          sudo apt-get install -y texlive-full
+          echo "Full TeXLive installation completed"
 
       - name: Compile Resume PDF with XeLaTeX
         working-directory: resume
