@@ -1,0 +1,4 @@
+# Ignore local files
+./resume/Resume.out
+./resume/Resume.log
+./resume/Resume.aux
