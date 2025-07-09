@@ -94,6 +94,7 @@
             background-color: #f8f9fa;
             position: relative;
             z-index: 1;
+            box-sizing: border-box;
         }
         .header .title {
             font-size: 24px;
@@ -108,6 +109,7 @@
             border: none;
             font-size: 24px;
             cursor: pointer;
+            touch-action: manipulation;
         }
         .theme-toggle i, .home-button i {
             color: black;
@@ -123,6 +125,7 @@
             max-width: 100%;
             position: relative;
             z-index: 1;
+            box-sizing: border-box;
         }
         .card {
             background-color: #ffffff;
@@ -154,17 +157,19 @@
             color: white;
         }
         .button1 {
-            display: inline-block;
-            padding: 10px 15px;
+            display: block;
+            padding: 12px 16px;
             font-size: 16px;
             color: #ffffff;
             background-color: #007bff;
             border: none;
             border-radius: 5px;
             text-decoration: none;
-            margin: 5px 0;
+            margin: 8px 0;
             line-height: 1.5;
             touch-action: manipulation;
+            text-align: center;
+            box-sizing: border-box;
         }
         .button1:hover {
             background-color: #0056b3;
@@ -177,6 +182,7 @@
             width: 100%;
             position: relative;
             z-index: 1;
+            box-sizing: border-box;
         }
         .dark-mode footer {
             background-color: #333 !important;
@@ -185,7 +191,7 @@
             .header {
                 flex-direction: row;
                 justify-content: space-between;
-                padding: 15px;
+                padding: 12px;
             }
             .header .title {
                 font-size: 18px;
@@ -197,15 +203,18 @@
                 padding: 10px;
             }
             .card {
-                padding: 15px;
+                padding: 12px;
                 max-width: 90%;
+                width: 90%;
             }
             .button1 {
                 font-size: 14px;
-                padding: 8px 12px;
+                padding: 10px 12px;
+                width: 100%;
             }
             .bio-text h3 {
                 font-size: 18px;
+                margin: 10px 0;
             }
             .bio-text p {
                 font-size: 14px;
@@ -215,40 +224,43 @@
             .header {
                 flex-direction: column;
                 align-items: center;
-                gap: 10px;
-                padding: 10px;
+                gap: 8px;
+                padding: 8px;
             }
             .header .title {
                 font-size: 16px;
             }
             .buttons {
                 justify-content: center;
+                gap: 8px;
             }
             .theme-toggle, .home-button {
                 font-size: 18px;
             }
             .container {
-                padding: 5px;
+                padding: 8px;
             }
             .card {
                 padding: 10px;
                 max-width: 95%;
+                width: 95%;
             }
             .button1 {
                 font-size: 12px;
-                padding: 6px 10px;
+                padding: 8px 10px;
                 width: 100%;
-                text-align: center;
             }
             .bio-text h3 {
                 font-size: 16px;
+                margin: 8px 0;
             }
             .bio-text p {
                 font-size: 12px;
+                margin: 6px 0;
             }
             footer {
                 font-size: 12px;
-                padding: 10px;
+                padding: 8px;
             }
         }
     </style>
@@ -273,7 +285,7 @@
                 <p>
                     <a href="mailto:Subhransu.Bhattacharjee@anu.edu.au" class="button1" onclick="return theFunction();">
                         <i class="fa fa-envelope" aria-hidden="true"></i>  Academic Email
-                    </a><br>
+                    </a>
                     <a href="mailto:1ssb.rudra@gmail.com" class="button1" onclick="return theFunction();">
                         <i class="fa fa-envelope" aria-hidden="true"></i>  Personal Email
                     </a>
@@ -288,7 +300,7 @@
                 <p>
                     N329, Robotics Lab, CSIT Building<br>
                     108 North Rd, The Australian National University<br>
-                    Acton, ACT-2601, Australia<br></br>
+                    Acton, ACT-2601, Australia<br>
                     <a href="https://www.google.com/maps/place/ANU+School+of+Computing/@-35.275245,149.120686,17z/data=!3m1!4b1!4m6!3m5!1s0x6b164d5b4fd2223f:0x247432e4404afa54!8m2!3d-35.275245!4d149.120686!16s%2Fg%2F11bw3yghz_" target="_blank" class="button1">
                         <i class="fas fa-map-marker-alt" aria-hidden="true"></i>  View on Google Maps
                     </a>
