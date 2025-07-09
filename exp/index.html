@@ -7,19 +7,88 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
   <style>
+    :root {
+      /* Base Colors */
+      --primary-color: #6b21a8; /* Deep violet */
+      --accent-color: #d97706; /* Warm gold */
+    }
     body {
       font-family: 'Lato', sans-serif;
       margin: 20px;
       background-color: #fff;
       color: #000;
       transition: background-color 0.3s, color 0.3s;
+      position: relative;
+    }
+    /* Static Gradient Background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(135deg, rgba(107, 33, 168, 0.08) 0%, rgba(217, 119, 6, 0.08) 100%),
+        radial-gradient(circle at 20% 30%, rgba(107, 33, 168, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(217, 119, 6, 0.1) 0%, transparent 50%);
+      z-index: -1;
+      opacity: 0.7;
+    }
+    /* Geometric Side Patterns */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        /* Primary triangle grid */
+        repeating-conic-gradient(
+          from 0deg,
+          rgba(107, 33, 168, 0.2) 0deg 30deg,
+          transparent 30deg 60deg,
+          rgba(217, 119, 6, 0.15) 60deg 90deg
+        ),
+        /* Secondary intersecting lines */
+        repeating-linear-gradient(
+          45deg,
+          transparent 0px,
+          transparent 40px,
+          rgba(107, 33, 168, 0.1) 40px,
+          rgba(107, 33, 168, 0.1) 42px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          transparent 0px,
+          transparent 40px,
+          rgba(217, 119, 6, 0.1) 40px,
+          rgba(217, 119, 6, 0.1) 42px
+        ),
+        /* Subtle overlay grid */
+        repeating-conic-gradient(
+          from 45deg at 50% 50%,
+          rgba(107, 33, 168, 0.05) 0deg 45deg,
+          transparent 45deg 90deg
+        );
+      background-size: 120px 120px, 80px 80px, 80px 80px, 160px 160px;
+      z-index: -2;
+      opacity: 0.65;
+      animation: geometricFlow 30s linear infinite;
+    }
+    @keyframes geometricFlow {
+      0% { background-position: 0 0, 0 0, 40px 40px, 80px 80px; }
+      100% { background-position: 120px 120px, 80px 80px, 0 0, 160px 160px; }
     }
     header {
       display: flex;
       justify-content: space-between;
-      align-items: center; /* Ensure buttons and title are level */
+      align-items: center;
       margin-bottom: 20px;
       height: 60px;
+      position: relative;
+      z-index: 1;
     }
     header h1 {
       margin: 0;
@@ -28,6 +97,10 @@
     h2 {
       text-align: center;
       margin-bottom: 20px;
+    }
+    main {
+      position: relative;
+      z-index: 1;
     }
     .experience-card {
       background-color: #f8f8f8;
@@ -40,10 +113,10 @@
       transition: background-color 0.3s, color 0.3s;
     }
     .experience-card.current {
-      background-color: #d1e7dd; /* Light green background for current experience */
+      background-color: #d1e7dd;
     }
     .experience-card.reviewership {
-      background-color: #e3f2fd; /* Light blue background for reviewership */
+      background-color: #e3f2fd;
     }
     .experience-card h4 {
       margin-top: 0;
@@ -58,6 +131,8 @@
       font-size: 14px;
       border-top: 1px solid #ccc;
       transition: background-color 0.3s, color 0.3s;
+      position: relative;
+      z-index: 1;
     }
     .dark-mode {
       background-color: #121212;
@@ -67,10 +142,10 @@
       background-color: #333;
     }
     .dark-mode .experience-card.current {
-      background-color: #4caf50; /* Darker green for current experience in dark mode */
+      background-color: #4caf50;
     }
     .dark-mode .experience-card.reviewership {
-      background-color: #1e88e5; /* Darker blue for reviewership in dark mode */
+      background-color: #1e88e5;
     }
     #theme-toggle, .button1 {
       background-color: transparent;
@@ -106,39 +181,35 @@
     .icon {
       font-size: 24px;
     }
-    /* Back to Top Button */
     #back-to-top {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #007bff; /* Button color */
+      background-color: #007bff;
       color: white;
       padding: 10px;
       border-radius: 50%;
       text-align: center;
       cursor: pointer;
-      display: none; /* Hidden by default */
+      display: none;
       font-size: 24px;
       z-index: 1000;
       transition: background-color 0.3s;
     }
-
     #back-to-top:hover {
-      background-color: #0056b3; /* Darker blue on hover */
+      background-color: #0056b3;
     }
-
     .dark-mode #back-to-top {
-      background-color: #333; /* Adjust for dark mode */
+      background-color: #333;
     }
-
     .dark-mode #back-to-top:hover {
-      background-color: #555; /* Adjust for dark mode hover */
+      background-color: #555;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Experiences</h1>
+    <h1>&nbsp Experiences</h1>
     <div class="header-right">
       <ul>
         <li><a href="https://1ssb.github.io" title="Home" class="button1"><i class="fas fa-home icon"></i></a></li>
@@ -146,11 +217,24 @@
       </ul>
     </div>
   </header>
-<br>
- <main>
+  <br>
+  <main>
     <section>
       <h2>Academic Experiences</h2>
-          <div class="experience-card">
+      <div class="experience-card">
+        <h4 class="major">Casual Sessional Academic: COMP3670: Introduction to Machine Learning</h4>
+        <div class="details">
+          <p><strong>Duration:</strong> Currently Employed</p>
+          <p><strong>Employer:</strong> Dr. Rahul Shome </p>
+          <p><strong>Affiliation:</strong> School of Computing, ANU</p>
+          <p><strong>Role:</strong> Lecturer</p>
+          <ul>
+            <li>Tutoring hands-on laboratory sessions for 100+ students.</li>
+            <li>Marking of examinations</li>
+            <li>Project tutoring for a class of 250+ students</li>
+          </ul>
+      </div>
+      <div class="experience-card">
         <h4 class="major">Casual Sessional Academic: CYBN8001: Building Cyber-Physical Systems</h4>
         <div class="details">
           <p><strong>Duration:</strong> Currently Employed</p>
@@ -178,7 +262,6 @@
           </ul>
         </div>
       </div>
-
       <div class="experience-card">
         <h4 class="major">Casual Sessional Academic: Engineering</h4>
         <div class="details">
@@ -193,10 +276,8 @@
         </div>
       </div>
     </section>
-
     <section>
       <h2>Internships</h2>
-
       <div class="experience-card">
         <h4 class="major">Quantitative Research Intern</h4>
         <div class="details">
@@ -204,12 +285,11 @@
           <p><strong>Affiliation:</strong> Optiver, Asia Pacific, Sydney, Australia</p>
           <ul>
             <li>Developed, implemented & back-tested a statistical arbitration model on the Hong Kong exchange.</li>
-            <li>Performed statistical analyses on large-scale financial data to uncover market patterns and operational ineﬃciencies in Korean market.</li>
+            <li>Performed statistical analyses on large-scale financial data to uncover market patterns and operational inefficiencies in Korean market.</li>
             <li>Collaborated with traders and developers to build a proprietary, real-time Machine Learning decision-making system.</li>
           </ul>
         </div>
       </div>
-
       <div class="experience-card">
         <h4 class="major">Head Automation Intern: Power Systems Automation</h4>
         <div class="details">
@@ -221,7 +301,6 @@
           </ul>
         </div>
       </div>
-
       <div class="experience-card">
         <h4 class="major">ML Research Intern: Financial NLP</h4>
         <div class="details">
@@ -235,7 +314,6 @@
           </ul>
         </div>
       </div>
-
       <div class="experience-card">
         <h4 class="major">Research Intern: Finance</h4>
         <div class="details">
@@ -247,10 +325,8 @@
         </div>
       </div>
     </section>
-
     <section>
       <h2>Undergraduate Research Projects</h2>
-
       <div class="experience-card">
         <h4 class="major">Undergraduate Researcher: Foundational Deep Learning</h4>
         <div class="details">
@@ -265,7 +341,6 @@
           </ul>
         </div>
       </div>
-
       <div class="experience-card">
         <h4 class="major">Undergraduate Researcher: Control & Optimization</h4>
         <div class="details">
@@ -278,7 +353,6 @@
           </ul>
         </div>
       </div>
-
       <div class="experience-card">
         <h4 class="major">Summer Research Intern: Passive Radar Signal Processing</h4>
         <div class="details">
@@ -292,7 +366,6 @@
           </ul>
         </div>
       </div>
-
       <div class="experience-card">
         <h4 class="major">Undergraduate Researcher: Optical Excitation Study in Graphene Sheets</h4>
         <div class="details">
@@ -306,7 +379,6 @@
         </div>
       </div>
     </section>
-
     <section>
       <h2>Reviewerships</h2>
       <div class="experience-card reviewership">
@@ -322,31 +394,23 @@
       </div>
     </section>
   </main>
-
   <footer>
-    &copy; Subhransu S. Bhattacharjee, <span id="year"></span>
+    © Subhransu S. Bhattacharjee, <span id="year"></span>
   </footer>
-
-  <!-- Back to Top Button -->
   <a href="#" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></a>
-
   <script>
     // Set the current year in the footer
     document.getElementById('year').textContent = new Date().getFullYear();
-
     // Theme toggling functionality
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-
     // Check for saved theme in localStorage
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark-mode') {
       body.classList.add('dark-mode');
     }
-
     themeToggle.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
-
       // Save the theme preference in localStorage
       if (body.classList.contains('dark-mode')) {
         localStorage.setItem('theme', 'dark-mode');
@@ -354,23 +418,20 @@
         localStorage.removeItem('theme');
       }
     });
-
     // Show or hide the "Back to Top" button
     window.addEventListener('scroll', function() {
       const backToTopButton = document.getElementById('back-to-top');
-      if (window.pageYOffset > 300) { // Show button after scrolling down 300px
+      if (window.pageYOffset > 300) {
         backToTopButton.style.display = 'block';
       } else {
         backToTopButton.style.display = 'none';
       }
     });
-
     // Smooth scroll back to top
     document.getElementById('back-to-top').addEventListener('click', function(e) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
-
 </body>
 </html>
