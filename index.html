@@ -1,157 +1,554 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Mobile Redirection Script at the start of the head for speed -->
-    <script>
-        // Immediately redirect mobile users to the mobile site
-        if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
-            window.location.replace("index_mobile.html");
-        }
-    </script>
-    <meta charset="UTF-8">
-    <meta name="description" content="Homepage of Subhransu Sekhar Bhattacharjee, PhD Student at the Australian National University.">
-    <meta name="author" content="Subhransu S. Bhattacharjee">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-    <title>Subhransu Sekhar Bhattacharjee</title>
-    <link rel="stylesheet" rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="https://1ssb.github.io/favicon.ico?v=2">
+  <!-- Mobile Redirection Script -->
+  <script>
+    if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+      window.location.replace("index_mobile.html");
+    }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="description" content="Homepage of Subhransu Sekhar Bhattacharjee, PhD Student at the Australian National University.">
+  <meta name="author" content="Subhransu S. Bhattacharjee">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subhransu Sekhar Bhattacharjee</title>
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap&font-display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Early catching -->
-    <!-- Mobile-Detect Library -->
-    <script 
-      src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js" 
-      integrity="sha384-8lRU5Y1YTr2MfRmXbZrM29oLq8IL0kaNNdCyzWlXw2nq+yPUvZoVUZ+DUUZwqvEV" 
-      crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="./main-style.css">
-    <style>
-        :root {
-            --light-color: #333;
-            --dark-color: #fff;
-            --border-radius: 4px;
-            --transition: 0.3s;
-        }
-        .ai-google-scholar {
-            font-size: 1.25rem;
-        }
-        /* UPDATES button styled like navigation buttons */
-        .update-button {
-            text-decoration: none;
-            color: var(--light-color);
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--light-color);
-            transition: background var(--transition), color var(--transition);
-            font-size: 18px;
-            text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .update-button:hover {
-            background: var(--light-color);
-            color: var(--dark-color);
-        }
-        /* New container for the separator with the button integrated */
-        .separator-with-button {
-            display: flex;
-            align-items: center;
-            margin: 20px auto;
-            width: 80%; /* Adjust width as needed */
-        }
-        .separator-with-button .line {
-            flex: 1;
-            height: 1px;
-            background: var(--light-color);
-        }
-        .separator-with-button .update-button {
-            margin: 0 10px;
-        }
-        /* Dark mode overrides for the separator and update button */
-        .dark-mode .separator-with-button .line {
-            background: var(--dark-color);
-        }
-        .dark-mode .separator-with-button .update-button {
-            color: var(--dark-color);
-            border: 1px solid var(--dark-color);
-        }
-        .dark-mode .separator-with-button .update-button:hover {
-            background: var(--dark-color);
-            color: var(--light-color);
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap">
+  </noscript>
+  <link rel="icon" type="image/x-icon" href="https://1ssb.github.io/favicon.ico?v=2">
+  <style>
+    :root {
+      /* Base Colors */
+      --primary-color: #6b21a8; /* Deep violet */
+      --primary-light: #a78bfa;
+      --primary-dark: #581c87;
+      --accent-color: #d97706; /* Warm gold */
+      /* Text Colors */
+      --text-primary: #1e293b;
+      --text-secondary: #4b5563;
+      --text-muted: #6c7280;
+      /* Background Colors */
+      --bg-primary: #f9fafb;
+      --bg-secondary: #f3f5f7;
+      --bg-elevated: #ffffff;
+      /* Borders & Shadows */
+      --border-color: #e5e7eb;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 10px -1px rgba(0, 0, 0, 0.12), 0 2px 6px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 8px 16px -3px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.08);
+      --shadow-xl: 0 16px 24px -5px rgba(0, 0, 0, 0.15), 0 8px 12px -5px rgba(0, 0, 0, 0.1);
+      /* Gradients */
+      --gradient-primary: linear-gradient(135deg, #6b21a8 0%, #d97706 100%);
+      --gradient-accent: linear-gradient(135deg, #a78bfa 0%, #f4c26b 100%);
+      /* Transitions */
+      --transition-fast: all 0.2s ease-out;
+      --transition-medium: all 0.3s ease-in-out;
+      --transition-slow: all 0.5s ease;
+      /* Spacing */
+      --spacing-xs: 0.25rem;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 2.5rem;
+    }
+    /* Dark Mode Variables */
+    .dark-mode {
+      --primary-color: #a78bfa;
+      --primary-light: #c4b5fd;
+      --primary-dark: #6b21a8;
+      --accent-color: #f4c26b;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --text-muted: #9ca3af;
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-elevated: #2d3748;
+      --border-color: #4a5568;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 4px 10px -1px rgba(0, 0, 0, 0.4), 0 2px 6px -1px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 8px 16px -3px rgba(0, 0, 0, 0.8), 0 4px 8px -2px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 16px 24px -5px rgba(0, 0, 0, 0.3), 0 8px 12px -5px rgba(0, 0, 0, 0.2);
+      --gradient-primary: linear-gradient(135deg, #a78bfa 0%, #f4c26b 100%);
+      --gradient-accent: linear-gradient(135deg, #c4b5fd 0%, #fed7aa 100%);
+    }
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-secondary, #f3f5f7);
+      color: var(--text-primary, #1e293b);
+      line-height: 1.7;
+      transition: background-color var(--transition-medium), color var(--transition-medium);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--spacing-lg) var(--spacing-md);
+      position: relative;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    /* Static Gradient Background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(135deg, rgba(107, 33, 168, 0.08) 0%, rgba(217, 119, 6, 0.08) 100%),
+        radial-gradient(circle at 20% 30%, rgba(107, 33, 168, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(217, 119, 6, 0.1) 0%, transparent 50%);
+      z-index: -1;
+      opacity: 0.7;
+    }
+    /* Container */
+    .container {
+      background: var(--bg-elevated, #ffffff);
+      border: 1px solid var(--border-color, #e5e7eb);
+      border-radius: 16px;
+      -webkit-box-shadow: var(--shadow-lg);
+      -moz-box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-lg);
+      padding: var(--spacing-xl);
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      -webkit-transition: box-shadow var(--transition-medium);
+      -moz-transition: box-shadow var(--transition-medium);
+      transition: box-shadow var(--transition-medium);
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      will-change: box-shadow;
+    }
+    /* Profile Section */
+    .profile-section {
+      margin-bottom: var(--spacing-lg);
+    }
+    .name {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: var(--text-primary, #1e293b);
+      margin-bottom: var(--spacing-lg); /* Adjusted for spacing after name, now that line is gone */
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      position: relative;
+    }
+    .title, .institution, .department {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-secondary, #4b5563);
+      margin-bottom: var(--spacing-sm);
+    }
+    .title {
+      color: var(--primary-color, #6b21a8);
+      font-weight: 600;
+      margin-top: var(--spacing-lg); /* Change this to increase space between the line and "Ph.D. Student" */
+    }
+    .institution {
+      font-weight: 600;
+    }
+    /* Social Links */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-md);
+      margin: var(--spacing-lg) 0;
+    }
+    .social-links a {
+      color: var(--text-secondary, #4b5563);
+      font-size: 1.4rem;
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: 10px;
+      background: var(--bg-secondary, #f3f5f7);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      -webkit-transition: var(--transition-fast);
+      -moz-transition: var(--transition-fast);
+      transition: var(--transition-fast);
+      will-change: transform, background-color, box-shadow;
+    }
+    .social-links a:hover {
+      color: var(--primary-color, #6b21a8);
+      transform: translateY(-4px) scale(1.02);
+      background: var(--bg-elevated, #ffffff);
+      -webkit-box-shadow: var(--shadow-md);
+      -moz-box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-md);
+    }
+    /* Fallback for X icon */
+    .social-links a[href*="x.com"] i.fab.fa-x-twitter::before {
+      content: "X";
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+    }
+    /* Divider */
+    .divider {
+      width: 150px;
+      height: 2px;
+      background: var(--gradient-primary);
+      margin: var(--spacing-lg) auto;
+      border-radius: 2px;
+      opacity: 0.7;
+    }
+    /* Navigation */
+    .navigation {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      color: var(--text-primary, #1e293b);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 0.7rem 1.4rem;
+      border-radius: 10px;
+      background: var(--bg-secondary, #f3f5f7);
+      border: 1px solid var(--border-color, #e5e7eb);
+      text-transform: uppercase;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      -webkit-transition: var(--transition-fast);
+      -moz-transition: var(--transition-fast);
+      transition: var(--transition-fast);
+      will-change: transform, background-color, color, box-shadow;
+    }
+    .nav-link:hover {
+      color: var(--bg-elevated, #ffffff);
+      background: var(--primary-color, #6b21a8);
+      border-color: var(--primary-dark, #581c87);
+      transform: translateY(-2px);
+      -webkit-box-shadow: var(--shadow-sm);
+      -moz-box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-sm);
+    }
+    /* Updates Section */
+    .updates-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-lg);
+    }
+    .updates-line {
+      flex: 1;
+      height: 2px;
+      background: var(--gradient-primary);
+      max-width: 100px;
+      opacity: 0.6;
+    }
+    .updates-button {
+      background: var(--gradient-primary);
+      color: var(--bg-elevated, #ffffff);
+      padding: 0.8rem 1.6rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      -webkit-transition: var(--transition-fast);
+      -moz-transition: var(--transition-fast);
+      transition: var(--transition-fast);
+      -webkit-box-shadow: var(--shadow-md);
+      -moz-box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-md);
+      will-change: transform, box-shadow;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+    }
+    .updates-button:hover {
+      transform: translateY(-3px) scale(1.01);
+      -webkit-box-shadow: var(--shadow-lg);
+      -moz-box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-lg);
+      background: var(--gradient-accent);
+    }
+    /* Theme Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: var(--spacing-md);
+      right: var(--spacing-md);
+      background: var(--bg-elevated, #ffffff);
+      color: var(--text-primary, #1e293b);
+      border: 1px solid var(--border-color, #e5e7eb);
+      border-radius: 50%;
+      padding: var(--spacing-sm);
+      font-size: 1.25rem;
+      cursor: pointer;
+      -webkit-transition: var(--transition-fast);
+      -moz-transition: var(--transition-fast);
+      transition: var(--transition-fast);
+      -webkit-box-shadow: var(--shadow-sm);
+      -moz-box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-sm);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+    }
+    .theme-toggle:hover {
+      background: var(--primary-color, #6b21a8);
+      color: var(--bg-elevated, #ffffff);
+      transform: scale(1.1);
+      -webkit-box-shadow: var(--shadow-md);
+      -moz-box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-color);
+    }
+    /* Footer */
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-elevated, #ffffff);
+      border-top: 1px solid var(--border-color, #e5e7eb);
+      padding: var(--spacing-sm) var(--spacing-md);
+      text-align: center;
+      font-size: clamp(0.7rem, 2vw, 0.8rem);
+      color: var(--text-muted, #6c7280);
+      z-index: 10;
+      font-family: 'JetBrains Mono', monospace;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      -webkit-box-shadow: var(--shadow-sm);
+      -moz-box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-sm);
+    }
+    .dark-mode .footer {
+      color: var(--text-primary, #f9fafb);
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: var(--spacing-md);
+      }
+      .container {
+        padding: var(--spacing-lg);
+        border-radius: 12px;
+      }
+      .name {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+      }
+      .social-links a {
+        padding: 0.6rem 0.8rem;
+        font-size: 1.2rem;
+      }
+      .navigation {
+        gap: var(--spacing-xs);
+      }
+      .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        border-radius: 8px;
+      }
+      .updates-button {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.85rem;
+        border-radius: 8px;
+      }
+      .updates-line {
+        max-width: 60px;
+      }
+      .theme-toggle {
+        top: var(--spacing-sm);
+        right: var(--spacing-sm);
+        font-size: 1.1rem;
+        width: 40px;
+        height: 40px;
+      }
+    }
+    @media (max-width: 600px) {
+      .navigation {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+      }
+      .nav-link {
+        width: 100%;
+        text-align: center;
+      }
+      .updates-section {
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+      .updates-line {
+        display: none;
+      }
+      .name::after {
+        width: 60px;
+        bottom: -5px;
+      }
+    }
+    /* Loading state */
+    .loading {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+    }
+    .loaded {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      -webkit-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      -moz-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    /* Focus states for accessibility */
+    .nav-link:focus,
+    .updates-button:focus,
+    .social-links a:focus,
+    .theme-toggle:focus {
+      outline: 3px solid var(--primary-light, #a78bfa);
+      outline-offset: 3px;
+      -webkit-box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.4);
+      -moz-box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.4);
+      box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.4);
+    }
+    /* Ripple effect */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      -webkit-animation: ripple 0.6s ease-out;
+      -moz-animation: ripple 0.6s ease-out;
+      animation: ripple 0.6s ease-out;
+      background-color: rgba(255, 255, 255, 0.5);
+      pointer-events: none;
+      z-index: 1;
+    }
+    @-webkit-keyframes ripple {
+      to { transform: scale(3); opacity: 0; }
+    }
+    @-moz-keyframes ripple {
+      to { transform: scale(3); opacity: 0; }
+    }
+    @keyframes ripple {
+      to { transform: scale(3); opacity: 0; }
+    }
+  </style>
 </head>
-<body>
-    <div id="wrapper">
-        <header id="header">
-            <h1>Subhransu S. Bhattacharjee</h1>
-            <br>
-            <h3>Ph.D. Student @ Intelligent Systems Cluster</h3>
-            <h3>The Australian National University</h3>
-            <ul class="icons">
-                <li><a href="./resume/Resume.pdf" title="Curriculum Vitae" class="ai ai-cv"></a></li>
-                <li><a href="https://github.com/1ssb" title="GitHub" target="_blank" class="fab fa-github"></a></li>
-                <li><a href="https://www.linkedin.com/in/1ssb/" target="_blank" title="LinkedIn" class="fab fa-linkedin-in"></a></li>
-            </ul>
-
-            <!-- Integrated separator with UPDATES button -->
-            <div class="separator-with-button">
-                <span class="line"></span>
-                <a href="updates/updates.html" class="update-button">UPDATES</a>
-                <span class="line"></span>
-            </div>
-
-            <nav>
-                <ul>
-                    <li><a href="https://1ssb.github.io/bio/">ABOUT ME</a></li>
-                    <li><a href="https://scholar.google.com.au/citations?hl=en&pli=1&user=Ngk4emsAAAAJ">PUBLICATIONS</a></li>
-                    <li><a href="https://1ssb.github.io/exp/">EXPERIENCES</a></li>
-                    <li><a href="https://1ssb.github.io/contact/">CONTACT</a></li>
-                </ul>
-            </nav>
-        </header>
-        <footer id="footer">
-            <p>&copy; S. S. Bhattacharjee | Last Updated: <span id="lastUpdated"></span></p>
-        </footer>
+<body class="loading">
+  <div class="container">
+    <div class="profile-section">
+      <h1 class="name">Subhransu Sekhar Bhattacharjee</h1>
+      <p class="title">Ph.D. Student</p>
+      <p class="institution">The Australian National University</p>
+      <p class="department">School of Computing</p>
+      <div class="social-links">
+        <a href="./resume/Resume.pdf" title="Curriculum Vitae" aria-label="Download CV">
+          <i class="ai ai-cv"></i>
+        </a>
+        <a href="https://github.com/1ssb" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub Profile">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/1ssb/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://x.com/1ssbRudra" title="X" target="_blank" rel="noopener" aria-label="X Profile">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+      </div>
     </div>
-    <div id="theme-toggle" class="fas fa-moon"></div>
-    <script type="module">
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', function() {
-            const isDarkMode = document.body.classList.toggle('dark-mode');
-            themeToggle.classList.toggle('fa-sun', isDarkMode);
-            themeToggle.classList.toggle('fa-moon', !isDarkMode);
-        });
-    
-        // Update the last modified date
-        document.addEventListener('DOMContentLoaded', function() {
-            var lastMod = new Date(document.lastModified);
-            var month = lastMod.toLocaleString('en-US', { month: 'long' }).slice(0, 3);
-            document.getElementById('lastUpdated').textContent = month + ' ' + lastMod.getFullYear();
-    
-            // Ensure all images are loaded before showing the body
-            const images = document.images;
-            const totalImages = images.length;
-            let loadedImages = 0;
-    
-            function imageLoaded() {
-                loadedImages++;
-                if (loadedImages === totalImages) {
-                    document.body.style.visibility = 'visible';
-                }
-            }
-    
-            if (totalImages === 0) {
-                document.body.style.visibility = 'visible';
-            } else {
-                for (let i = 0; i < totalImages; i++) {
-                    images[i].addEventListener('load', imageLoaded);
-                    images[i].addEventListener('error', imageLoaded);
-                }
-            }
-        });
-    </script>
+    <div class="divider"></div>
+    <nav class="navigation">
+      <a href="https://1ssb.github.io/bio/" class="nav-link">About</a>
+      <a href="https://scholar.google.com.au/citations?hl=en&pli=1&user=Ngk4emsAAAAJ" class="nav-link">Publications</a>
+      <a href="https://1ssb.github.io/exp/" class="nav-link">Experience</a>
+      <a href="https://1ssb.github.io/contact/" class="nav-link">Contact</a>
+    </nav>
+    <div class="updates-section">
+      <div class="updates-line"></div>
+      <a href="updates/updates.html" class="updates-button">
+        <i class="fas fa-bullhorn"></i> &nbsp Updates
+      </a>
+      <div class="updates-line"></div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>© S. S. Bhattacharjee | Last Updated: <span id="lastUpdated"></span></p>
+  </footer>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+    const applyTheme = (theme) => {
+      if (theme === 'dark') {
+        body.classList.add('dark-mode');
+        themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+      } else {
+        body.classList.remove('dark-mode');
+        themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+      }
+    };
+    if (savedTheme) {
+      applyTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+    themeToggle.addEventListener('click', () => {
+      const isDarkMode = body.classList.toggle('dark-mode');
+      const newTheme = isDarkMode ? 'dark' : 'light';
+      localStorage.setItem('theme', newTheme);
+      themeToggle.querySelector('i').classList.replace(isDarkMode ? 'fa-moon' : 'fa-sun', isDarkMode ? 'fa-sun' : 'fa-moon');
+    });
+    // Update last modified date and show content
+    document.addEventListener('DOMContentLoaded', () => {
+      const lastMod = new Date(document.lastModified);
+      const options = { year: 'numeric', month: 'short' };
+      document.getElementById('lastUpdated').textContent = lastMod.toLocaleDateString('en-US', options);
+      body.classList.remove('loading');
+      body.classList.add('loaded');
+    });
+    // Ripple effect for buttons
+    function createRipple(event) {
+      const button = event.currentTarget;
+      const circle = document.createElement('span');
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
+      circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+      circle.classList.add('ripple');
+      const ripple = button.getElementsByClassName('ripple')[0];
+      if (ripple) ripple.remove();
+      button.appendChild(circle);
+    }
+    document.querySelectorAll('.nav-link, .updates-button, .social-links a').forEach(button => {
+      button.addEventListener('click', createRipple);
+    });
+  </script>
 </body>
 </html>
