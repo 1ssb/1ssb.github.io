@@ -77,6 +77,10 @@
       padding: 0;
       box-sizing: border-box;
     }
+    html {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: var(--bg-secondary, #f3f5f7);
@@ -85,16 +89,14 @@
       transition: background-color var(--transition-medium), color var(--transition-medium);
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       padding: var(--spacing-lg) var(--spacing-md);
-      position: relative;
+      overflow-y: auto;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    /* Static Gradient Background */
     body::before {
       content: '';
       position: fixed;
@@ -109,7 +111,6 @@
       z-index: -1;
       opacity: 0.7;
     }
-    /* Geometric Side Patterns */
     body::after {
       content: '';
       position: fixed;
@@ -118,14 +119,12 @@
       width: 100%;
       height: 100%;
       background:
-        /* Primary triangle grid */
         repeating-conic-gradient(
           from 0deg,
           rgba(107, 33, 168, 0.2) 0deg 30deg,
           transparent 30deg 60deg,
           rgba(217, 119, 6, 0.15) 60deg 90deg
         ),
-        /* Secondary intersecting lines */
         repeating-linear-gradient(
           45deg,
           transparent 0px,
@@ -140,7 +139,6 @@
           rgba(217, 119, 6, 0.1) 40px,
           rgba(217, 119, 6, 0.1) 42px
         ),
-        /* Subtle overlay grid */
         repeating-conic-gradient(
           from 45deg at 50% 50%,
           rgba(107, 33, 168, 0.05) 0deg 45deg,
@@ -155,7 +153,6 @@
       0% { background-position: 0 0, 0 0, 40px 40px, 80px 80px; }
       100% { background-position: 120px 120px, 80px 80px, 0 0, 160px 160px; }
     }
-    /* Container */
     .container {
       background: var(--bg-elevated, #ffffff);
       border: 1px solid var(--border-color, #e5e7eb);
@@ -174,8 +171,8 @@
       -webkit-backdrop-filter: blur(5px);
       backdrop-filter: blur(5px);
       will-change: box-shadow;
+      transform: translateY(20px);
     }
-    /* Profile Section */
     .profile-section {
       margin-bottom: var(--spacing-lg);
     }
@@ -202,7 +199,6 @@
     .institution {
       font-weight: 600;
     }
-    /* Social Links */
     .social-links {
       display: flex;
       justify-content: center;
@@ -234,13 +230,6 @@
       -moz-box-shadow: var(--shadow-md);
       box-shadow: var(--shadow-md);
     }
-    /* Fallback for X icon */
-    .social-links a[href*="x.com"] i.fab.fa-x-twitter::before {
-      content: "X";
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-    }
-    /* Divider */
     .divider {
       width: 150px;
       height: 2px;
@@ -249,7 +238,6 @@
       border-radius: 2px;
       opacity: 0.7;
     }
-    /* Navigation */
     .navigation {
       display: flex;
       justify-content: center;
@@ -285,7 +273,6 @@
       -moz-box-shadow: var(--shadow-sm);
       box-shadow: var(--shadow-sm);
     }
-    /* Updates Section */
     .updates-section {
       display: flex;
       align-items: center;
@@ -328,7 +315,6 @@
       box-shadow: var(--shadow-lg);
       background: var(--gradient-accent);
     }
-    /* Theme Toggle */
     .theme-toggle {
       position: fixed;
       top: var(--spacing-md);
@@ -354,7 +340,7 @@
       height: 44px;
     }
     .theme-toggle:hover {
-      background: var(--primary-color, analyser: #6b21a8);
+      background: var(--primary-color, #6b21a8);
       color: var(--bg-elevated, #ffffff);
       transform: scale(1.1);
       -webkit-box-shadow: var(--shadow-md);
@@ -362,7 +348,6 @@
       box-shadow: var(--shadow-md);
       border-color: var(--primary-color);
     }
-    /* Footer */
     .footer {
       position: fixed;
       bottom: 0;
@@ -385,7 +370,6 @@
     .dark-mode .footer {
       color: var(--text-primary, #f9fafb);
     }
-    /* Responsive Design */
     @media (max-width: 768px) {
       body {
         padding: var(--spacing-md);
@@ -441,12 +425,7 @@
       .updates-line {
         display: none;
       }
-      .name::after {
-        width: 60px;
-        bottom: -5px;
-      }
     }
-    /* Loading state */
     .loading {
       opacity: 0;
       visibility: hidden;
@@ -460,7 +439,6 @@
       -moz-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-    /* Focus states for accessibility */
     .nav-link:focus,
     .updates-button:focus,
     .social-links a:focus,
@@ -471,7 +449,6 @@
       -moz-box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.4);
       box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.4);
     }
-    /* Ripple effect */
     .ripple {
       position: absolute;
       border-radius: 50%;
@@ -526,7 +503,7 @@
     <div class="updates-section">
       <div class="updates-line"></div>
       <a href="updates/updates.html" class="updates-button">
-        <i class="fas fa-bullhorn"></i>   Updates
+        <i class="fas fa-bullhorn"></i> Updates
       </a>
       <div class="updates-line"></div>
     </div>
@@ -538,7 +515,6 @@
     <i class="fas fa-moon"></i>
   </button>
   <script>
-    // Theme toggle functionality
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     const savedTheme = localStorage.getItem('theme');
@@ -564,15 +540,18 @@
       localStorage.setItem('theme', newTheme);
       themeToggle.querySelector('i').classList.replace(isDarkMode ? 'fa-moon' : 'fa-sun', isDarkMode ? 'fa-sun' : 'fa-moon');
     });
-    // Update last modified date and show content
     document.addEventListener('DOMContentLoaded', () => {
       const lastMod = new Date(document.lastModified);
       const options = { year: 'numeric', month: 'short' };
       document.getElementById('lastUpdated').textContent = lastMod.toLocaleDateString('en-US', options);
       body.classList.remove('loading');
       body.classList.add('loaded');
+      const footer = document.querySelector('.footer');
+      if (footer) {
+        const footerHeight = footer.getBoundingClientRect().height;
+        body.style.paddingBottom = `${footerHeight}px`;
+      }
     });
-    // Ripple effect for buttons
     function createRipple(event) {
       const button = event.currentTarget;
       const circle = document.createElement('span');
