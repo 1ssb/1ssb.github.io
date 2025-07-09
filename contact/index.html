@@ -131,6 +131,7 @@
             padding: 20px;
             max-width: 600px;
             width: 100%;
+            box-sizing: border-box;
         }
         .bio-text {
             text-align: justify;
@@ -162,37 +163,11 @@
             border-radius: 5px;
             text-decoration: none;
             margin: 5px 0;
+            line-height: 1.5;
+            touch-action: manipulation;
         }
         .button1:hover {
             background-color: #0056b3;
-        }
-        @media (max-width: 768px) {
-            .header .title {
-                font-size: 18px;
-            }
-            .theme-toggle, .home-button {
-                font-size: 20px;
-            }
-            .container {
-                padding: 10px;
-            }
-            .button1 {
-                font-size: 14px;
-            }
-        }
-        .map-container {
-            width: 100%;
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .map-container iframe {
-            width: 100%;
-            max-width: 600px;
-            height: 450px;
-            border: 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         footer {
             text-align: center;
@@ -205,6 +180,76 @@
         }
         .dark-mode footer {
             background-color: #333 !important;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 15px;
+            }
+            .header .title {
+                font-size: 18px;
+            }
+            .theme-toggle, .home-button {
+                font-size: 20px;
+            }
+            .container {
+                padding: 10px;
+            }
+            .card {
+                padding: 15px;
+                max-width: 90%;
+            }
+            .button1 {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+            .bio-text h3 {
+                font-size: 18px;
+            }
+            .bio-text p {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                padding: 10px;
+            }
+            .header .title {
+                font-size: 16px;
+            }
+            .buttons {
+                justify-content: center;
+            }
+            .theme-toggle, .home-button {
+                font-size: 18px;
+            }
+            .container {
+                padding: 5px;
+            }
+            .card {
+                padding: 10px;
+                max-width: 95%;
+            }
+            .button1 {
+                font-size: 12px;
+                padding: 6px 10px;
+                width: 100%;
+                text-align: center;
+            }
+            .bio-text h3 {
+                font-size: 16px;
+            }
+            .bio-text p {
+                font-size: 12px;
+            }
+            footer {
+                font-size: 12px;
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -243,12 +288,12 @@
                 <p>
                     N329, Robotics Lab, CSIT Building<br>
                     108 North Rd, The Australian National University<br>
-                    Acton, ACT-2601, Australia
+                    Acton, ACT-2601, Australia<br></br>
+                    <a href="https://www.google.com/maps/place/ANU+School+of+Computing/@-35.275245,149.120686,17z/data=!3m1!4b1!4m6!3m5!1s0x6b164d5b4fd2223f:0x247432e4404afa54!8m2!3d-35.275245!4d149.120686!16s%2Fg%2F11bw3yghz_" target="_blank" class="button1">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>  View on Google Maps
+                    </a>
                 </p>
             </article>
-        </div>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d750.6912317179923!2d149.120686!3d-35.275245!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b164d5b4fd2223f%3A0x247432e4404afa54!2sANU%20School%20of%20Computing!5e1!3m2!1sen!2sus!4v1717435450419!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
     <footer>
