@@ -115,6 +115,52 @@
       z-index: -1;
       opacity: 0.7;
     }
+    /* Geometric Side Patterns */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        /* Primary triangle grid */
+        repeating-conic-gradient(
+          from 0deg,
+          rgba(107, 33, 168, 0.2) 0deg 30deg,
+          transparent 30deg 60deg,
+          rgba(217, 119, 6, 0.15) 60deg 90deg
+        ),
+        /* Secondary intersecting lines */
+        repeating-linear-gradient(
+          45deg,
+          transparent 0px,
+          transparent 40px,
+          rgba(107, 33, 168, 0.1) 40px,
+          rgba(107, 33, 168, 0.1) 42px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          transparent 0px,
+          transparent 40px,
+          rgba(217, 119, 6, 0.1) 40px,
+          rgba(217, 119, 6, 0.1) 42px
+        ),
+        /* Subtle overlay grid */
+        repeating-conic-gradient(
+          from 45deg at 50% 50%,
+          rgba(107, 33, 168, 0.05) 0deg 45deg,
+          transparent 45deg 90deg
+        );
+      background-size: 120px 120px, 80px 80px, 80px 80px, 160px 160px;
+      z-index: -2;
+      opacity: 0.65;
+      animation: geometricFlow 30s linear infinite;
+    }
+    @keyframes geometricFlow {
+      0% { background-position: 0 0, 0 0, 40px 40px, 80px 80px; }
+      100% { background-position: 120px 120px, 80px 80px, 0 0, 160px 160px; }
+    }
     /* Container */
     .container {
       background: var(--bg-elevated, #ffffff);
@@ -143,7 +189,7 @@
       font-size: clamp(1.75rem, 4vw, 2.25rem);
       font-weight: 700;
       color: var(--text-primary, #1e293b);
-      margin-bottom: var(--spacing-lg); /* Adjusted for spacing after name, now that line is gone */
+      margin-bottom: var(--spacing-lg);
       letter-spacing: -0.02em;
       line-height: 1.1;
       position: relative;
@@ -157,7 +203,7 @@
     .title {
       color: var(--primary-color, #6b21a8);
       font-weight: 600;
-      margin-top: var(--spacing-lg); /* Change this to increase space between the line and "Ph.D. Student" */
+      margin-top: var(--spacing-lg);
     }
     .institution {
       font-weight: 600;
@@ -314,7 +360,7 @@
       height: 44px;
     }
     .theme-toggle:hover {
-      background: var(--primary-color, #6b21a8);
+      background: var(--primary-color, analyser: #6b21a8);
       color: var(--bg-elevated, #ffffff);
       transform: scale(1.1);
       -webkit-box-shadow: var(--shadow-md);
@@ -486,7 +532,7 @@
     <div class="updates-section">
       <div class="updates-line"></div>
       <a href="updates/updates.html" class="updates-button">
-        <i class="fas fa-bullhorn"></i> &nbsp Updates
+        <i class="fas fa-bullhorn"></i>   Updates
       </a>
       <div class="updates-line"></div>
     </div>
