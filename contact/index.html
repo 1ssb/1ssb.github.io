@@ -543,21 +543,7 @@
       }
     }
 
-    .ripple {
-      position: absolute;
-      border-radius: 50%;
-      background: var(--ripple-color);
-      transform: scale(0);
-      animation: ripple-animation 0.6s linear;
-      pointer-events: none;
-    }
-
-    @keyframes ripple-animation {
-      to {
-        transform: scale(4);
-        opacity: 0;
-      }
-    }
+    /* Removed ripple effect to fix button expansion issue */
   </style>
 </head>
 
@@ -680,37 +666,7 @@
       document.getElementById('year').textContent = new Date().getFullYear();
     });
 
-    // Simple contact card hover (removed 3D effect)
-    const contactCard = document.querySelector('.contact-card');
-    
-    // Just using CSS hover now - no complex JavaScript needed
-
-    // Ripple effect function
-    function createRipple(event) {
-      const button = event.currentTarget;
-      const circle = document.createElement('span');
-      const diameter = Math.max(button.clientWidth, button.clientHeight);
-      const radius = diameter / 2;
-
-      const rect = button.getBoundingClientRect();
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${event.clientX - rect.left - radius}px`;
-      circle.style.top = `${event.clientY - rect.top - radius}px`;
-      circle.classList.add('ripple');
-
-      // Remove existing ripple
-      const ripple = button.getElementsByClassName('ripple')[0];
-      if (ripple) {
-        ripple.remove();
-      }
-
-      button.appendChild(circle);
-    }
-
-    // Add ripple effects to all interactive elements
-    document.querySelectorAll('.btn-contact, .theme-toggle, .home-button').forEach(button => {
-      button.addEventListener('mousedown', createRipple);
-    });
+    // Removed ripple effect to prevent button expansion issues
 
     // Respect reduced motion preferences
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
