@@ -671,10 +671,8 @@
     // Event listeners for buttons
     themeToggle.addEventListener('click', toggleTheme);
     
-    homeButton.addEventListener('click', function() {
-      // Since we can't navigate to '/', we'll show an alert
-      // In a real website, this would navigate to the home page
-      alert('Home button clicked! In a real website, this would navigate to the home page.');
+    homeButton.addEventListener('click', () => {
+      window.location.href = 'https://1ssb.github.io';
     });
 
     // Initialize year in footer
