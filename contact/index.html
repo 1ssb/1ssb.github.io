@@ -1,534 +1,724 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Contact Me</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Light Theme */
-            --bg-primary: #f8f9fa;
-            --bg-surface: rgba(255, 255, 255, 0.85);
-            --text-primary: #1a1d21;
-            --text-secondary: #6c757d;
-            --accent-gold: #c9a96e;
-            --accent-dark: #2c3e50;
-            --border-color: rgba(44, 62, 80, 0.08);
-            --shadow-light: rgba(0, 0, 0, 0.04);
-            --shadow-medium: rgba(0, 0, 0, 0.08);
-            
-            /* Dark Theme */
-            --dark-bg-primary: #0d1117;
-            --dark-bg-surface: rgba(22, 27, 34, 0.85);
-            --dark-text-primary: #f0f6fc;
-            --dark-text-secondary: #8b949e;
-            --dark-accent-gold: #f9c74f;
-            --dark-accent-light: #58a6ff;
-            --dark-border-color: rgba(88, 166, 255, 0.12);
-            --dark-shadow-light: rgba(0, 0, 0, 0.3);
-            --dark-shadow-medium: rgba(0, 0, 0, 0.5);
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow-x: hidden;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+  <style>
+    :root {
+      --bg-primary: #fafbfc;
+      --bg-surface: rgba(255, 255, 255, 0.95);
+      --bg-elevated: rgba(255, 255, 255, 0.98);
+      --text-primary: #1a1d23;
+      --text-secondary: #6b7280;
+      --accent-primary: #3b82f6;
+      --accent-secondary: #1d4ed8;
+      --accent-gold: #f59e0b;
+      --accent-emerald: #10b981;
+      --border-light: rgba(59, 130, 246, 0.1);
+      --border-medium: rgba(59, 130, 246, 0.2);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+      --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+      --ripple-color: rgba(59, 130, 246, 0.3);
+    }
 
-        /* Mathematical Triangle Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                /* Primary triangular grid */
-                conic-gradient(from 0deg at 25% 25%, 
-                    transparent 0deg 115deg, 
-                    var(--accent-dark) 115deg 125deg, 
-                    transparent 125deg 235deg, 
-                    var(--accent-dark) 235deg 245deg, 
-                    transparent 245deg 360deg),
-                conic-gradient(from 120deg at 75% 75%, 
-                    transparent 0deg 115deg, 
-                    var(--accent-gold) 115deg 125deg, 
-                    transparent 125deg 235deg, 
-                    var(--accent-gold) 235deg 245deg, 
-                    transparent 245deg 360deg),
-                conic-gradient(from 240deg at 20% 80%, 
-                    transparent 0deg 115deg, 
-                    var(--accent-dark) 115deg 125deg, 
-                    transparent 125deg 235deg, 
-                    var(--accent-dark) 235deg 245deg, 
-                    transparent 245deg 360deg),
-                /* Secondary mathematical triangles */
-                conic-gradient(from 60deg at 80% 30%, 
-                    transparent 0deg 118deg, 
-                    var(--accent-gold) 118deg 122deg, 
-                    transparent 122deg 238deg, 
-                    var(--accent-gold) 238deg 242deg, 
-                    transparent 242deg 360deg);
-            background-size: 600px 600px, 800px 800px, 700px 700px, 500px 500px;
-            opacity: 0.15;
-            z-index: -2;
-            animation: triangularFlow 180s linear infinite;
-        }
+    .dark-mode {
+      --bg-primary: #0f111a;
+      --bg-surface: rgba(22, 27, 34, 0.95);
+      --bg-elevated: rgba(30, 35, 42, 0.98);
+      --text-primary: #f0f6fc;
+      --text-secondary: #c9d1d9;
+      --accent-primary: #58a6ff;
+      --accent-secondary: #1f6feb;
+      --accent-gold: #ffd700;
+      --accent-emerald: #56d364;
+      --border-light: rgba(88, 166, 255, 0.15);
+      --border-medium: rgba(88, 166, 255, 0.25);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+      --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.7);
+      --ripple-color: rgba(88, 166, 255, 0.4);
+    }
 
-        /* Floating geometric triangles */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                /* Large geometric triangles */
-                polygon(50% 0%, 0% 100%, 100% 100%) at 15% 20% / 120px 104px,
-                polygon(50% 0%, 0% 100%, 100% 100%) at 85% 80% / 80px 69px,
-                polygon(50% 0%, 0% 100%, 100% 100%) at 70% 30% / 100px 87px,
-                /* Triangle outlines */
-                conic-gradient(from 0deg, 
-                    var(--accent-gold) 0deg 1deg, 
-                    transparent 1deg 119deg, 
-                    var(--accent-gold) 119deg 121deg, 
-                    transparent 121deg 239deg, 
-                    var(--accent-gold) 239deg 241deg, 
-                    transparent 241deg 360deg);
-            background-size: 400px 400px, 300px 300px, 350px 350px, 800px 800px;
-            opacity: 0.08;
-            z-index: -1;
-            animation: geometricFloat 120s ease-in-out infinite reverse;
-        }
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        @keyframes triangularFlow {
-            0% { transform: rotate(0deg) translateY(0px); }
-            50% { transform: rotate(180deg) translateY(-20px); }
-            100% { transform: rotate(360deg) translateY(0px); }
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        @keyframes geometricFloat {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(30px, -20px) rotate(120deg); }
-            66% { transform: translate(-20px, 15px) rotate(240deg); }
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      position: relative;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-        /* Header */
-        .header {
-            background: var(--bg-surface);
-            backdrop-filter: blur(24px) saturate(180%);
-            border-bottom: 1px solid var(--border-color);
-            padding: 32px 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 100;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        conic-gradient(from 0deg at 25% 25%, transparent 0deg 115deg, var(--accent-primary) 115deg 125deg, transparent 125deg 235deg, var(--accent-primary) 235deg 245deg, transparent 245deg 360deg),
+        conic-gradient(from 120deg at 75% 75%, transparent 0deg 115deg, var(--accent-gold) 115deg 125deg, transparent 125deg 235deg, var(--accent-gold) 235deg 245deg, transparent 245deg 360deg),
+        conic-gradient(from 240deg at 20% 80%, transparent 0deg 115deg, var(--accent-emerald) 115deg 125deg, transparent 125deg 235deg, var(--accent-emerald) 235deg 245deg, transparent 245deg 360deg);
+      background-size: 800px 800px, 1000px 1000px, 600px 600px;
+      opacity: 0.06;
+      z-index: -3;
+      animation: geometricFlow 300s linear infinite;
+    }
 
-        .title {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 22px;
-            font-weight: 400;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-            position: relative;
-        }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, var(--accent-primary) 1px, transparent 1px),
+        radial-gradient(circle at 80% 40%, var(--accent-gold) 1px, transparent 1px),
+        radial-gradient(circle at 50% 80%, var(--accent-emerald) 1px, transparent 1px),
+        radial-gradient(circle at 70% 20%, var(--accent-secondary) 1px, transparent 1px);
+      background-size: 100px 100px, 120px 120px, 80px 80px, 140px 140px;
+      opacity: 0.4;
+      z-index: -2;
+      animation: dotMatrix 240s ease-in-out infinite;
+    }
 
-        .title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--accent-gold);
-            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+    @keyframes geometricFlow {
+      0% { transform: rotate(0deg) scale(1) translate(0, 0); }
+      25% { transform: rotate(90deg) scale(1.02) translate(10px, -5px); }
+      50% { transform: rotate(180deg) scale(1) translate(0, -10px); }
+      75% { transform: rotate(270deg) scale(0.98) translate(-10px, 5px); }
+      100% { transform: rotate(360deg) scale(1) translate(0, 0); }
+    }
 
-        .header:hover .title::after {
-            width: 100%;
-        }
+    @keyframes dotMatrix {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(20px, -15px) scale(1.01); }
+      50% { transform: translate(-10px, 20px) scale(0.99); }
+      75% { transform: translate(15px, -25px) scale(1.02); }
+    }
 
-        .buttons {
-            display: flex;
-            gap: 12px;
-        }
+    .site-header {
+      background: var(--bg-surface);
+      backdrop-filter: blur(40px) saturate(200%);
+      border-bottom: 1px solid var(--border-light);
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-        .theme-toggle, .home-button {
-            width: 44px;
-            height: 44px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            background: var(--bg-surface);
-            color: var(--text-primary);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-        }
+    .site-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold), var(--accent-emerald));
+      opacity: 0.02;
+      transition: opacity 0.4s;
+    }
 
-        .theme-toggle:hover, .home-button:hover {
-            transform: translateY(-1px);
-            border-color: var(--accent-gold);
-            box-shadow: 0 4px 20px var(--shadow-light);
-        }
+    .site-header:hover::before {
+      opacity: 0.04;
+    }
 
-        /* Main Container */
-        .container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 48px;
-            position: relative;
-            z-index: 10;
-        }
+    .site-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      position: relative;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--text-primary);
+    }
 
-        /* Mathematical Card */
-        .card {
-            background: var(--bg-surface);
-            backdrop-filter: blur(24px) saturate(180%);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 64px;
-            max-width: 720px;
-            width: 100%;
-            position: relative;
-            box-shadow: 
-                0 1px 3px var(--shadow-light),
-                0 8px 32px var(--shadow-medium);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+    .site-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      border-radius: 2px;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, 
-                transparent, 
-                var(--accent-gold), 
-                var(--accent-dark), 
-                var(--accent-gold), 
-                transparent);
-            opacity: 0.6;
-            animation: mathematicalPulse 4s ease-in-out infinite;
-        }
+    .site-header:hover .site-title::after {
+      width: 100%;
+    }
 
-        @keyframes mathematicalPulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.8; }
-        }
+    .header-buttons {
+      display: flex;
+      gap: 16px;
+    }
 
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 
-                0 4px 12px var(--shadow-light),
-                0 16px 48px var(--shadow-medium);
-            border-color: var(--accent-gold);
-        }
+    .theme-toggle, .home-button {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      border: 1px solid var(--border-light);
+      background: var(--bg-elevated);
+      backdrop-filter: blur(20px);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      z-index: 10;
+    }
 
-        /* Typography */
-        .bio-text h3 {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 24px;
-            position: relative;
-            letter-spacing: -0.01em;
-            text-transform: uppercase;
-            opacity: 0.9;
-        }
+    .theme-toggle::before, .home-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      border-radius: inherit;
+      transform: scale(1);
+      transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+    }
 
-        .bio-text h3::before {
-            content: '';
-            position: absolute;
-            left: -24px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 8px;
-            height: 8px;
-            background: var(--accent-gold);
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            animation: triangleRotate 6s ease-in-out infinite;
-        }
+    .theme-toggle:hover::before, .home-button:hover::before {
+      background: transparent;
+    }
 
-        @keyframes triangleRotate {
-            0%, 100% { transform: translateY(-50%) rotate(0deg); }
-            33% { transform: translateY(-50%) rotate(120deg); }
-            66% { transform: translateY(-50%) rotate(240deg); }
-        }
+    .theme-toggle:hover, .home-button:hover {
+      background: var(--accent-primary) !important;
+      color: white !important;
+      border-color: var(--accent-primary) !important;
+    }
 
-        .bio-text p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
+    .theme-toggle:active, .home-button:active {
+      background: var(--accent-secondary) !important;
+    }
 
-        .bio-section {
-            margin-bottom: 48px;
-        }
+    .main-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 48px;
+      position: relative;
+      z-index: 100;
+    }
 
-        /* Mathematical Buttons */
-        .button1 {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px 32px;
-            font-size: 14px;
-            font-weight: 400;
-            color: var(--text-primary);
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            text-decoration: none;
-            margin: 6px 12px 6px 0;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-            font-family: 'Inter', sans-serif;
-        }
+    .contact-card {
+      background: var(--bg-surface);
+      backdrop-filter: blur(40px) saturate(200%);
+      border: 1px solid var(--border-medium);
+      border-radius: 32px;
+      padding: 64px;
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+      box-shadow: var(--shadow-xl);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: cardEntrance 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
 
-        .button1::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                var(--accent-gold), 
-                transparent);
-            opacity: 0.1;
-            transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, 
+        var(--accent-primary), 
+        var(--accent-gold), 
+        var(--accent-emerald), 
+        var(--accent-secondary));
+      opacity: 0.8;
+      animation: gradientShimmer 8s ease-in-out infinite;
+    }
 
-        .button1:hover::before {
-            left: 100%;
-        }
+    .contact-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.02), 
+        rgba(245, 158, 11, 0.02), 
+        rgba(16, 185, 129, 0.02));
+      border-radius: inherit;
+      transition: opacity 0.6s;
+      opacity: 0.5;
+    }
 
-        .button1:hover {
-            transform: translateY(-1px);
-            border-color: var(--accent-gold);
-            box-shadow: 0 4px 20px var(--shadow-light);
-        }
+    .contact-card:hover {
+      border-color: var(--accent-primary) !important;
+      box-shadow: var(--shadow-lg) !important;
+    }
 
-        .button1 i {
-            font-size: 14px;
-            opacity: 0.8;
-        }
+    .contact-card:hover::after {
+      opacity: 0.7 !important;
+    }
 
-        /* Footer */
-        footer {
-            background: var(--bg-surface);
-            backdrop-filter: blur(24px) saturate(180%);
-            border-top: 1px solid var(--border-color);
-            padding: 32px 48px;
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-secondary);
-            position: relative;
-            z-index: 10;
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 300;
-        }
+    @keyframes cardEntrance {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95) rotateX(10deg);
+        filter: blur(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0deg);
+        filter: blur(0px);
+      }
+    }
 
-        /* Dark Mode */
-        .dark-mode {
-            --bg-primary: var(--dark-bg-primary);
-            --bg-surface: var(--dark-bg-surface);
-            --text-primary: var(--dark-text-primary);
-            --text-secondary: var(--dark-text-secondary);
-            --accent-gold: var(--dark-accent-gold);
-            --accent-dark: var(--dark-accent-light);
-            --border-color: var(--dark-border-color);
-            --shadow-light: var(--dark-shadow-light);
-            --shadow-medium: var(--dark-shadow-medium);
-        }
+    @keyframes gradientShimmer {
+      0%, 100% { 
+        background-position: 0% 50%; 
+        opacity: 0.6;
+      }
+      50% { 
+        background-position: 100% 50%; 
+        opacity: 1;
+      }
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header, .container, footer {
-                padding-left: 24px;
-                padding-right: 24px;
-            }
-            
-            .container {
-                padding-top: 48px;
-                padding-bottom: 48px;
-            }
-            
-            .card {
-                padding: 40px 32px;
-                border-radius: 12px;
-            }
-            
-            .button1 {
-                width: 100%;
-                justify-content: center;
-                margin: 8px 0;
-            }
-        }
+    .contact-content h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      position: relative;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
 
-        @media (max-width: 480px) {
-            .header {
-                flex-direction: column;
-                gap: 20px;
-                padding: 24px 20px;
-            }
-            
-            .container {
-                padding: 32px 20px;
-            }
-            
-            .card {
-                padding: 32px 24px;
-            }
-            
-            .bio-section {
-                margin-bottom: 32px;
-            }
-            
-            footer {
-                padding: 24px 20px;
-                font-size: 12px;
-            }
-        }
+    .contact-content h3::before {
+      content: '';
+      position: absolute;
+      left: -32px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      animation: triangleRotate 12s ease-in-out infinite;
+    }
 
-        /* Entrance Animation */
-        .card {
-            animation: mathematicalEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+    @keyframes triangleRotate {
+      0%, 100% { 
+        transform: translateY(-50%) rotate(0deg) scale(1); 
+        filter: hue-rotate(0deg);
+      }
+      33% { 
+        transform: translateY(-50%) rotate(120deg) scale(1.1); 
+        filter: hue-rotate(120deg);
+      }
+      66% { 
+        transform: translateY(-50%) rotate(240deg) scale(0.9); 
+        filter: hue-rotate(240deg);
+      }
+    }
 
-        @keyframes mathematicalEntrance {
-            0% {
-                opacity: 0;
-                transform: translateY(20px) scale(0.98);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-    </style>
+    .contact-content p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    .contact-section + .contact-section {
+      margin-top: 56px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .contact-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 32px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-primary);
+      background: var(--bg-elevated);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      justify-content: flex-start;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .btn-contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(59, 130, 246, 0.05);
+      border-radius: 20px;
+      transform: scale(0);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+    }
+
+    .btn-contact:hover::before {
+      transform: scale(1);
+    }
+
+    .btn-contact:hover {
+      border-color: var(--accent-primary) !important;
+      background: var(--bg-surface) !important;
+    }
+
+    .btn-contact:active {
+      background: var(--bg-elevated) !important;
+    }
+
+    .btn-contact i {
+      font-size: 18px;
+      opacity: 0.9;
+      min-width: 20px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 2;
+      position: relative;
+    }
+
+    .btn-contact span {
+      z-index: 2;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-contact:hover i {
+      color: var(--accent-primary) !important;
+    }
+
+    .btn-contact:hover span {
+      color: var(--accent-primary) !important;
+      font-weight: 600 !important;
+    }
+
+    .response-notice {
+      background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.08), 
+        rgba(245, 158, 11, 0.08),
+        rgba(16, 185, 129, 0.08));
+      border: 1px solid var(--border-medium);
+      border-radius: 20px;
+      padding: 28px;
+      margin: 24px 0;
+      font-size: 15px;
+      color: var(--text-secondary);
+      font-weight: 400;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .response-notice::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold), var(--accent-emerald));
+      opacity: 0.05;
+      border-radius: inherit;
+    }
+
+    .response-notice i {
+      color: var(--accent-primary);
+      margin-right: 16px;
+      font-size: 18px;
+    }
+
+    .site-footer {
+      background: var(--bg-surface);
+      backdrop-filter: blur(40px) saturate(200%);
+      border-top: 1px solid var(--border-light);
+      padding: 32px 48px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 400;
+      z-index: 100;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 768px) {
+      .site-header, .main-content, .site-footer {
+        padding: 24px;
+      }
+      
+      .contact-card {
+        padding: 40px 32px;
+        border-radius: 24px;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      
+      .btn-contact {
+        padding: 20px 24px;
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+      
+      .main-content {
+        padding: 32px 20px;
+      }
+      
+      .contact-card {
+        padding: 32px 24px;
+        border-radius: 20px;
+      }
+      
+      .site-footer {
+        padding: 24px 20px;
+        font-size: 12px;
+      }
+      
+      .btn-contact {
+        padding: 18px 20px;
+        gap: 14px;
+      }
+    }
+
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--ripple-color);
+      transform: scale(0);
+      animation: ripple-animation 0.6s linear;
+      pointer-events: none;
+    }
+
+    @keyframes ripple-animation {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header class="header">
-        <div class="title">Contact Protocol</div>
-        <div class="buttons">
-            <button class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="home-button" onclick="location.href='/'">
-                <i class="fas fa-home"></i>
-            </button>
-        </div>
-    </header>
-    <div class="container">
-        <div class="card">
-            <article id="cnt" class="bio-text">
-                <div class="bio-section">
-                    <h3>Electronic Mail</h3>
-                    <p>Kindly direct all official intimations to my Academic mail.</p>
-                    <p>
-                        <a href="mailto:Subhransu.Bhattacharjee@anu.edu.au" class="button1" onclick="return theFunction();">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>Academic Email
-                        </a>
-                        <a href="mailto:1ssb.rudra@gmail.com" class="button1" onclick="return theFunction();">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>Personal Email
-                        </a>
-                        <p>I typically aim to respond within 24-48 hours.</p>
-                    </p>
-                </div>
-                <div class="bio-section">
-                    <h3>Physical Coordinates</h3>
-                    <p>
-                        N329, Robotics Lab, CSIT Building<br>
-                        108 North Rd, The Australian National University<br>
-                        Acton, ACT-2601, Australia<br>
-                    </p>
-                    <a href="https://www.google.com/maps/place/ANU+School+of+Computing/@-35.275245,149.120686,17z/data=!3m1!4b1!4m6!3m5!1s0x6b164d5b4fd2223f:0x247432e4404afa54!8m2!3d-35.275245!4d149.120686!16s%2Fg%2F11bw3yghz_" target="_blank" class="button1">
-                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>View on Google Maps
-                    </a>
-                </div>
-            </article>
-        </div>
+  <header class="site-header">
+    <div class="site-title">Contact Protocol</div>
+    <div class="header-buttons">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="home-button" id="homeButton" aria-label="Go home">
+        <i class="fas fa-home"></i>
+      </button>
     </div>
-    <footer>
-        © Subhransu S. Bhattacharjee, <span id="year"></span>
-    </footer>
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const icon = themeToggle.querySelector('i');
-            if (document.body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        });
+  </header>
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const yearSpan = document.getElementById('year');
-            const currentYear = new Date().getFullYear();
-            yearSpan.textContent = currentYear;
-        });
+  <main class="main-content">
+    <div class="contact-card">
+      <article class="contact-content">
 
-        function theFunction() {
-            return true;
-        }
+        <section class="contact-section">
+          <h3>Electronic Communications</h3>
+          <p>Primary channels for academic and professional correspondence.</p>
 
-        // Mathematical precision interactions
-        const card = document.querySelector('.card');
-        
-        card.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const mouseX = (e.clientX - rect.left) / rect.width;
-            const mouseY = (e.clientY - rect.top) / rect.height;
-            
-            const rotateX = (mouseY - 0.5) * 2;
-            const rotateY = (mouseX - 0.5) * -2;
-            
-            this.style.transform = `translateY(-4px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg)';
-        });
-    </script>
+          <div class="response-notice">
+            <i class="fas fa-clock"></i>
+            I aim to respond within 24–48 hrs. For urgent matters, please WhatsApp me.
+            <br><strong>Time Zone:</strong> AEDT (UTC+11)
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-column">
+              <a href="mailto:Subhransu.Bhattacharjee@anu.edu.au" class="btn-contact">
+                <i class="fa fa-envelope"></i>
+                <span>Academic Email</span>
+              </a>
+              <a href="mailto:1ssb.rudra@gmail.com" class="btn-contact">
+                <i class="fa fa-envelope"></i>
+                <span>Personal Email</span>
+              </a>
+              <a href="https://wa.me/61474224742" class="btn-contact" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-section">
+          <h3>Physical Location & Availability</h3>
+          <p>
+            N329, Robotics Lab, CSIT Building<br>
+            108 North Rd, ANU, Acton ACT 2601, Australia
+          </p>
+
+          <div class="contact-grid">
+            <div class="contact-column">
+              <a
+                href="https://www.google.com/maps/place/ANU+School+of+Computing/@-35.275245,149.120686,17z"
+                target="_blank"
+                rel="noopener"
+                class="btn-contact"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+                <span>View on Map</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    © Subhransu S. Bhattacharjee, <span id="year"></span>
+  </footer>
+
+  <script>
+    // In-memory theme storage (no localStorage)
+    let currentTheme = 'light';
+    
+    const themeToggle = document.getElementById('themeToggle');
+    const homeButton = document.getElementById('homeButton');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+
+    // Theme toggle functionality
+    function updateIcon(theme) {
+      if (theme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    }
+
+    function toggleTheme() {
+      const isDark = body.classList.contains('dark-mode');
+      currentTheme = isDark ? 'light' : 'dark';
+      
+      if (isDark) {
+        body.classList.remove('dark-mode');
+      } else {
+        body.classList.add('dark-mode');
+      }
+      
+      updateIcon(currentTheme);
+    }
+
+    // Event listeners for buttons
+    themeToggle.addEventListener('click', toggleTheme);
+    
+    homeButton.addEventListener('click', function() {
+      // Since we can't navigate to '/', we'll show an alert
+      // In a real website, this would navigate to the home page
+      alert('Home button clicked! In a real website, this would navigate to the home page.');
+    });
+
+    // Initialize year in footer
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+
+    // Simple contact card hover (removed 3D effect)
+    const contactCard = document.querySelector('.contact-card');
+    
+    // Just using CSS hover now - no complex JavaScript needed
+
+    // Ripple effect function
+    function createRipple(event) {
+      const button = event.currentTarget;
+      const circle = document.createElement('span');
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+
+      const rect = button.getBoundingClientRect();
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - rect.left - radius}px`;
+      circle.style.top = `${event.clientY - rect.top - radius}px`;
+      circle.classList.add('ripple');
+
+      // Remove existing ripple
+      const ripple = button.getElementsByClassName('ripple')[0];
+      if (ripple) {
+        ripple.remove();
+      }
+
+      button.appendChild(circle);
+    }
+
+    // Add ripple effects to all interactive elements
+    document.querySelectorAll('.btn-contact, .theme-toggle, .home-button').forEach(button => {
+      button.addEventListener('mousedown', createRipple);
+    });
+
+    // Respect reduced motion preferences
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.style.setProperty('--animation-duration', '0.01s');
+    }
+  </script>
 </body>
 </html>
