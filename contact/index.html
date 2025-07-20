@@ -8,24 +8,51 @@
     <meta http-equiv="Expires" content="0">
     <title>Contact Me</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Base Colors */
-            --primary-color: #6b21a8; /* Deep violet */
-            --accent-color: #d97706; /* Warm gold */
+            /* Light Theme */
+            --bg-primary: #f8f9fa;
+            --bg-surface: rgba(255, 255, 255, 0.85);
+            --text-primary: #1a1d21;
+            --text-secondary: #6c757d;
+            --accent-gold: #c9a96e;
+            --accent-dark: #2c3e50;
+            --border-color: rgba(44, 62, 80, 0.08);
+            --shadow-light: rgba(0, 0, 0, 0.04);
+            --shadow-medium: rgba(0, 0, 0, 0.08);
+            
+            /* Dark Theme */
+            --dark-bg-primary: #0d1117;
+            --dark-bg-surface: rgba(22, 27, 34, 0.85);
+            --dark-text-primary: #f0f6fc;
+            --dark-text-secondary: #8b949e;
+            --dark-accent-gold: #f9c74f;
+            --dark-accent-light: #58a6ff;
+            --dark-border-color: rgba(88, 166, 255, 0.12);
+            --dark-shadow-light: rgba(0, 0, 0, 0.3);
+            --dark-shadow-medium: rgba(0, 0, 0, 0.5);
         }
-        body {
-            font-family: 'Lato', sans-serif;
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            transition: background-color 0.3s, color 0.3s;
             position: relative;
+            overflow-x: hidden;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        /* Static Gradient Background */
+
+        /* Mathematical Triangle Background */
         body::before {
             content: '';
             position: fixed;
@@ -33,14 +60,40 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background:
-                linear-gradient(135deg, rgba(107, 33, 168, 0.08) 0%, rgba(217, 119, 6, 0.08) 100%),
-                radial-gradient(circle at 20% 30%, rgba(107, 33, 168, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(217, 119, 6, 0.1) 0%, transparent 50%);
-            z-index: -1;
-            opacity: 0.7;
+            background: 
+                /* Primary triangular grid */
+                conic-gradient(from 0deg at 25% 25%, 
+                    transparent 0deg 115deg, 
+                    var(--accent-dark) 115deg 125deg, 
+                    transparent 125deg 235deg, 
+                    var(--accent-dark) 235deg 245deg, 
+                    transparent 245deg 360deg),
+                conic-gradient(from 120deg at 75% 75%, 
+                    transparent 0deg 115deg, 
+                    var(--accent-gold) 115deg 125deg, 
+                    transparent 125deg 235deg, 
+                    var(--accent-gold) 235deg 245deg, 
+                    transparent 245deg 360deg),
+                conic-gradient(from 240deg at 20% 80%, 
+                    transparent 0deg 115deg, 
+                    var(--accent-dark) 115deg 125deg, 
+                    transparent 125deg 235deg, 
+                    var(--accent-dark) 235deg 245deg, 
+                    transparent 245deg 360deg),
+                /* Secondary mathematical triangles */
+                conic-gradient(from 60deg at 80% 30%, 
+                    transparent 0deg 118deg, 
+                    var(--accent-gold) 118deg 122deg, 
+                    transparent 122deg 238deg, 
+                    var(--accent-gold) 238deg 242deg, 
+                    transparent 242deg 360deg);
+            background-size: 600px 600px, 800px 800px, 700px 700px, 500px 500px;
+            opacity: 0.15;
+            z-index: -2;
+            animation: triangularFlow 180s linear infinite;
         }
-        /* Geometric Side Patterns */
+
+        /* Floating geometric triangles */
         body::after {
             content: '';
             position: fixed;
@@ -48,226 +101,351 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background:
-                /* Primary triangle grid */
-                repeating-conic-gradient(
-                    from 0deg,
-                    rgba(107, 33, 168, 0.2) 0deg 30deg,
-                    transparent 30deg 60deg,
-                    rgba(217, 119, 6, 0.15) 60deg 90deg
-                ),
-                /* Secondary intersecting lines */
-                repeating-linear-gradient(
-                    45deg,
-                    transparent 0px,
-                    transparent 40px,
-                    rgba(107, 33, 168, 0.1) 40px,
-                    rgba(107, 33, 168, 0.1) 42px
-                ),
-                repeating-linear-gradient(
-                    -45deg,
-                    transparent 0px,
-                    transparent 40px,
-                    rgba(217, 119, 6, 0.1) 40px,
-                    rgba(217, 119, 6, 0.1) 42px
-                ),
-                /* Subtle overlay grid */
-                repeating-conic-gradient(
-                    from 45deg at 50% 50%,
-                    rgba(107, 33, 168, 0.05) 0deg 45deg,
-                    transparent 45deg 90deg
-                );
-            background-size: 120px 120px, 80px 80px, 80px 80px, 160px 160px;
-            z-index: -2;
-            opacity: 0.65;
-            animation: geometricFlow 30s linear infinite;
+            background: 
+                /* Large geometric triangles */
+                polygon(50% 0%, 0% 100%, 100% 100%) at 15% 20% / 120px 104px,
+                polygon(50% 0%, 0% 100%, 100% 100%) at 85% 80% / 80px 69px,
+                polygon(50% 0%, 0% 100%, 100% 100%) at 70% 30% / 100px 87px,
+                /* Triangle outlines */
+                conic-gradient(from 0deg, 
+                    var(--accent-gold) 0deg 1deg, 
+                    transparent 1deg 119deg, 
+                    var(--accent-gold) 119deg 121deg, 
+                    transparent 121deg 239deg, 
+                    var(--accent-gold) 239deg 241deg, 
+                    transparent 241deg 360deg);
+            background-size: 400px 400px, 300px 300px, 350px 350px, 800px 800px;
+            opacity: 0.08;
+            z-index: -1;
+            animation: geometricFloat 120s ease-in-out infinite reverse;
         }
-        @keyframes geometricFlow {
-            0% { background-position: 0 0, 0 0, 40px 40px, 80px 80px; }
-            100% { background-position: 120px 120px, 80px 80px, 0 0, 160px 160px; }
+
+        @keyframes triangularFlow {
+            0% { transform: rotate(0deg) translateY(0px); }
+            50% { transform: rotate(180deg) translateY(-20px); }
+            100% { transform: rotate(360deg) translateY(0px); }
         }
+
+        @keyframes geometricFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -20px) rotate(120deg); }
+            66% { transform: translate(-20px, 15px) rotate(240deg); }
+        }
+
+        /* Header */
         .header {
+            background: var(--bg-surface);
+            backdrop-filter: blur(24px) saturate(180%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 32px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            background-color: #f8f9fa;
             position: relative;
-            z-index: 1;
-            box-sizing: border-box;
+            z-index: 100;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .header .title {
-            font-size: 24px;
-            font-weight: bold;
+
+        .title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            position: relative;
         }
+
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-gold);
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .header:hover .title::after {
+            width: 100%;
+        }
+
         .buttons {
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
+
         .theme-toggle, .home-button {
-            background: none;
-            border: none;
-            font-size: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-surface);
+            color: var(--text-primary);
             cursor: pointer;
-            touch-action: manipulation;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
         }
-        .theme-toggle i, .home-button i {
-            color: black;
+
+        .theme-toggle:hover, .home-button:hover {
+            transform: translateY(-1px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 4px 20px var(--shadow-light);
         }
+
+        /* Main Container */
         .container {
             flex: 1;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            padding: 20px;
-            text-align: left;
-            max-width: 100%;
+            justify-content: center;
+            padding: 80px 48px;
             position: relative;
-            z-index: 1;
-            box-sizing: border-box;
+            z-index: 10;
         }
+
+        /* Mathematical Card */
         .card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 600px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .bio-text {
-            text-align: justify;
-        }
-        .bio-section {
-            margin-bottom: 20px;
-        }
-        .dark-mode .card {
-            background-color: #1c1c1c;
-            color: #e0e0e0;
-        }
-        .dark-mode {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-        .dark-mode .header {
-            background-color: #1c1c1c;
-        }
-        .dark-mode .theme-toggle i, .dark-mode .home-button i {
-            color: white;
-        }
-        .button1 {
-            display: block;
-            padding: 12px 16px;
-            font-size: 16px;
-            color: #ffffff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            margin: 8px 0;
-            line-height: 1.5;
-            touch-action: manipulation;
-            text-align: center;
-            box-sizing: border-box;
-        }
-        .button1:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #f8f9fa;
-            font-size: 14px;
+            background: var(--bg-surface);
+            backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 64px;
+            max-width: 720px;
             width: 100%;
             position: relative;
-            z-index: 1;
-            box-sizing: border-box;
+            box-shadow: 
+                0 1px 3px var(--shadow-light),
+                0 8px 32px var(--shadow-medium);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .dark-mode footer {
-            background-color: #333 !important;
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--accent-gold), 
+                var(--accent-dark), 
+                var(--accent-gold), 
+                transparent);
+            opacity: 0.6;
+            animation: mathematicalPulse 4s ease-in-out infinite;
         }
+
+        @keyframes mathematicalPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 4px 12px var(--shadow-light),
+                0 16px 48px var(--shadow-medium);
+            border-color: var(--accent-gold);
+        }
+
+        /* Typography */
+        .bio-text h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            position: relative;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .bio-text h3::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--accent-gold);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation: triangleRotate 6s ease-in-out infinite;
+        }
+
+        @keyframes triangleRotate {
+            0%, 100% { transform: translateY(-50%) rotate(0deg); }
+            33% { transform: translateY(-50%) rotate(120deg); }
+            66% { transform: translateY(-50%) rotate(240deg); }
+        }
+
+        .bio-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .bio-section {
+            margin-bottom: 48px;
+        }
+
+        /* Mathematical Buttons */
+        .button1 {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-primary);
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 6px 12px 6px 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .button1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--accent-gold), 
+                transparent);
+            opacity: 0.1;
+            transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .button1:hover::before {
+            left: 100%;
+        }
+
+        .button1:hover {
+            transform: translateY(-1px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 4px 20px var(--shadow-light);
+        }
+
+        .button1 i {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-surface);
+            backdrop-filter: blur(24px) saturate(180%);
+            border-top: 1px solid var(--border-color);
+            padding: 32px 48px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 10;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 300;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            --bg-primary: var(--dark-bg-primary);
+            --bg-surface: var(--dark-bg-surface);
+            --text-primary: var(--dark-text-primary);
+            --text-secondary: var(--dark-text-secondary);
+            --accent-gold: var(--dark-accent-gold);
+            --accent-dark: var(--dark-accent-light);
+            --border-color: var(--dark-border-color);
+            --shadow-light: var(--dark-shadow-light);
+            --shadow-medium: var(--dark-shadow-medium);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .header {
-                flex-direction: row;
-                justify-content: space-between;
-                padding: 12px;
+            .header, .container, footer {
+                padding-left: 24px;
+                padding-right: 24px;
             }
-            .header .title {
-                font-size: 18px;
-            }
-            .theme-toggle, .home-button {
-                font-size: 20px;
-            }
+            
             .container {
-                padding: 10px;
+                padding-top: 48px;
+                padding-bottom: 48px;
             }
+            
             .card {
-                padding: 12px;
-                max-width: 90%;
-                width: 90%;
+                padding: 40px 32px;
+                border-radius: 12px;
             }
+            
             .button1 {
-                font-size: 14px;
-                padding: 10px 12px;
                 width: 100%;
-            }
-            .bio-text h3 {
-                font-size: 18px;
-                margin: 10px 0;
-            }
-            .bio-text p {
-                font-size: 14px;
+                justify-content: center;
+                margin: 8px 0;
             }
         }
+
         @media (max-width: 480px) {
             .header {
                 flex-direction: column;
-                align-items: center;
-                gap: 8px;
-                padding: 8px;
+                gap: 20px;
+                padding: 24px 20px;
             }
-            .header .title {
-                font-size: 16px;
-            }
-            .buttons {
-                justify-content: center;
-                gap: 8px;
-            }
-            .theme-toggle, .home-button {
-                font-size: 18px;
-            }
+            
             .container {
-                padding: 8px;
+                padding: 32px 20px;
             }
+            
             .card {
-                padding: 10px;
-                max-width: 95%;
-                width: 95%;
+                padding: 32px 24px;
             }
-            .button1 {
-                font-size: 12px;
-                padding: 8px 10px;
-                width: 100%;
+            
+            .bio-section {
+                margin-bottom: 32px;
             }
-            .bio-text h3 {
-                font-size: 16px;
-                margin: 8px 0;
-            }
-            .bio-text p {
-                font-size: 12px;
-                margin: 6px 0;
-            }
+            
             footer {
+                padding: 24px 20px;
                 font-size: 12px;
-                padding: 8px;
+            }
+        }
+
+        /* Entrance Animation */
+        .card {
+            animation: mathematicalEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes mathematicalEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
             }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="title">Contact Me</div>
+        <div class="title">Contact Protocol</div>
         <div class="buttons">
             <button class="theme-toggle" id="themeToggle">
                 <i class="fas fa-moon"></i>
@@ -280,25 +458,30 @@
     <div class="container">
         <div class="card">
             <article id="cnt" class="bio-text">
-                <h3>Email</h3>
-                <p>Kindly direct all official intimations to my Academic mail.</p>
-                <p>
-                    <a href="mailto:Subhransu.Bhattacharjee@anu.edu.au" class="button1" onclick="return theFunction();">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>  Academic Email
-                    </a>
-                    <a href="mailto:1ssb.rudra@gmail.com" class="button1" onclick="return theFunction();">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>  Personal Email
-                    </a>
-                </p>
-                <h3>Office Address</h3>
-                <p>
-                    N329, Robotics Lab, CSIT Building<br>
-                    108 North Rd, The Australian National University<br>
-                    Acton, ACT-2601, Australia<br>
+                <div class="bio-section">
+                    <h3>Electronic Mail</h3>
+                    <p>Kindly direct all official intimations to my Academic mail.</p>
+                    <p>
+                        <a href="mailto:Subhransu.Bhattacharjee@anu.edu.au" class="button1" onclick="return theFunction();">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>Academic Email
+                        </a>
+                        <a href="mailto:1ssb.rudra@gmail.com" class="button1" onclick="return theFunction();">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>Personal Email
+                        </a>
+                        <p>I typically aim to respond within 24-48 hours.</p>
+                    </p>
+                </div>
+                <div class="bio-section">
+                    <h3>Physical Coordinates</h3>
+                    <p>
+                        N329, Robotics Lab, CSIT Building<br>
+                        108 North Rd, The Australian National University<br>
+                        Acton, ACT-2601, Australia<br>
+                    </p>
                     <a href="https://www.google.com/maps/place/ANU+School+of+Computing/@-35.275245,149.120686,17z/data=!3m1!4b1!4m6!3m5!1s0x6b164d5b4fd2223f:0x247432e4404afa54!8m2!3d-35.275245!4d149.120686!16s%2Fg%2F11bw3yghz_" target="_blank" class="button1">
-                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>  View on Google Maps
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>View on Google Maps
                     </a>
-                </p>
+                </div>
             </article>
         </div>
     </div>
@@ -328,6 +511,24 @@
         function theFunction() {
             return true;
         }
+
+        // Mathematical precision interactions
+        const card = document.querySelector('.card');
+        
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const mouseX = (e.clientX - rect.left) / rect.width;
+            const mouseY = (e.clientY - rect.top) / rect.height;
+            
+            const rotateX = (mouseY - 0.5) * 2;
+            const rotateY = (mouseX - 0.5) * -2;
+            
+            this.style.transform = `translateY(-4px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg)';
+        });
     </script>
 </body>
 </html>
