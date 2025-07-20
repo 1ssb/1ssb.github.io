@@ -1,289 +1,677 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>About Me</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Base Colors */
-            --primary-color: #6b21a8; /* Deep violet */
-            --accent-color: #d97706; /* Warm gold */
-        }
-        body {
-            font-family: 'Lato', sans-serif;
-            margin: 0;
-            padding: 20px;
-            transition: background-color 0.3s, color 0.3s;
-            position: relative;
-        }
-        /* Static Gradient Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                linear-gradient(135deg, rgba(107, 33, 168, 0.08) 0%, rgba(217, 119, 6, 0.08) 100%),
-                radial-gradient(circle at 20% 30%, rgba(107, 33, 168, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(217, 119, 6, 0.1) 0%, transparent 50%);
-            z-index: -1;
-            opacity: 0.7;
-        }
-        /* Geometric Side Patterns */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                /* Primary triangle grid */
-                repeating-conic-gradient(
-                    from 0deg,
-                    rgba(107, 33, 168, 0.2) 0deg 30deg,
-                    transparent 30deg 60deg,
-                    rgba(217, 119, 6, 0.15) 60deg 90deg
-                ),
-                /* Secondary intersecting lines */
-                repeating-linear-gradient(
-                    45deg,
-                    transparent 0px,
-                    transparent 40px,
-                    rgba(107, 33, 168, 0.1) 40px,
-                    rgba(107, 33, 168, 0.1) 42px
-                ),
-                repeating-linear-gradient(
-                    -45deg,
-                    transparent 0px,
-                    transparent 40px,
-                    rgba(217, 119, 6, 0.1) 40px,
-                    rgba(217, 119, 6, 0.1) 42px
-                ),
-                /* Subtle overlay grid */
-                repeating-conic-gradient(
-                    from 45deg at 50% 50%,
-                    rgba(107, 33, 168, 0.05) 0deg 45deg,
-                    transparent 45deg 90deg
-                );
-            background-size: 120px 120px, 80px 80px, 80px 80px, 160px 160px;
-            z-index: -2;
-            opacity: 0.65;
-            animation: geometricFlow 30s linear infinite;
-        }
-        @keyframes geometricFlow {
-            0% { background-position: 0 0, 0 0, 40px 40px, 80px 80px; }
-            100% { background-position: 120px 120px, 80px 80px, 0 0, 160px 160px; }
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            background-color: transparent;
-        }
-        .header .title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #000;
-        }
-        .buttons {
-            display: flex;
-            gap: 10px;
-        }
-        .theme-toggle, .home-button {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .theme-toggle i, .home-button i {
-            color: blue;
-            transition: color 0.3s;
-        }
-        .bio-image {
-            width: 300px;
-            height: 300px;
-            background-color: grey;
-            border-radius: 50%;
-            margin: 0 auto 20px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        .bio-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .bio-image:hover {
-            transform: scale(1.05);
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, color 0.3s;
-            position: relative;
-            z-index: 1;
-        }
-        .bio-text {
-            text-align: left;
-        }
-        .bio-section {
-            margin-bottom: 20px;
-        }
-        .bio-section h2 {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
-        .social-icons a {
-            font-size: 24px;
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .social-icons a:hover {
-            color: #007bff;
-        }
-        a {
-            color: inherit;
-            text-decoration: underline;
-            transition: color 0.3s;
-        }
-        a:hover {
-            color: darkblue;
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: transparent;
-            font-size: 14px;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-        }
-        .dark-mode {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-        /* Brighten headings and title in dark mode */
-        .dark-mode .header .title {
-            color: #ffffff;
-        }
-        .dark-mode .bio-section h2 {
-            color: #ffffff;
-        }
-        .dark-mode .container {
-            background-color: #1f1f1f;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-            color: #e0e0e0;
-        }
-        .dark-mode .theme-toggle i, .dark-mode .home-button i {
-            color: #f0f0f0;
-        }
-        .dark-mode footer {
-            color: #e0e0e0;
-        }
-        @media (max-width: 768px) {
-            .header .title {
-                font-size: 18px;
-            }
-            .theme-toggle, .home-button {
-                font-size: 20px;
-            }
-            .bio-image {
-                width: 200px;
-                height: 200px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #fafbfc;
+      --bg-surface: rgba(255, 255, 255, 0.95);
+      --bg-elevated: rgba(255, 255, 255, 0.98);
+      --text-primary: #1a1d23;
+      --text-secondary: #6b7280;
+      --accent-primary: #3b82f6;
+      --accent-secondary: #1d4ed8;
+      --accent-gold: #f59e0b;
+      --accent-emerald: #10b981;
+      --border-light: rgba(59, 130, 246, 0.1);
+      --border-medium: rgba(59, 130, 246, 0.2);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+      --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .dark-mode {
+      --bg-primary: #0f111a;
+      --bg-surface: rgba(22, 27, 34, 0.95);
+      --bg-elevated: rgba(30, 35, 42, 0.98);
+      --text-primary: #f0f6fc;
+      --text-secondary: #c9d1d9;
+      --accent-primary: #58a6ff;
+      --accent-secondary: #1f6feb;
+      --accent-gold: #ffd700;
+      --accent-emerald: #56d364;
+      --border-light: rgba(88, 166, 255, 0.15);
+      --border-medium: rgba(88, 166, 255, 0.25);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+      --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      position: relative;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        conic-gradient(from 0deg at 25% 25%, transparent 0deg 115deg, var(--accent-primary) 115deg 125deg, transparent 125deg 235deg, var(--accent-primary) 235deg 245deg, transparent 245deg 360deg),
+        conic-gradient(from 120deg at 75% 75%, transparent 0deg 115deg, var(--accent-gold) 115deg 125deg, transparent 125deg 235deg, var(--accent-gold) 235deg 245deg, transparent 245deg 360deg),
+        conic-gradient(from 240deg at 20% 80%, transparent 0deg 115deg, var(--accent-emerald) 115deg 125deg, transparent 125deg 235deg, var(--accent-emerald) 235deg 245deg, transparent 245deg 360deg);
+      background-size: 800px 800px, 1000px 1000px, 600px 600px;
+      opacity: 0.06;
+      z-index: -3;
+      animation: geometricFlow 300s linear infinite;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, var(--accent-primary) 1px, transparent 1px),
+        radial-gradient(circle at 80% 40%, var(--accent-gold) 1px, transparent 1px),
+        radial-gradient(circle at 50% 80%, var(--accent-emerald) 1px, transparent 1px),
+        radial-gradient(circle at 70% 20%, var(--accent-secondary) 1px, transparent 1px);
+      background-size: 100px 100px, 120px 120px, 80px 80px, 140px 140px;
+      opacity: 0.4;
+      z-index: -2;
+      animation: dotMatrix 240s ease-in-out infinite;
+    }
+
+    @keyframes geometricFlow {
+      0% { transform: rotate(0deg) scale(1) translate(0, 0); }
+      25% { transform: rotate(90deg) scale(1.02) translate(10px, -5px); }
+      50% { transform: rotate(180deg) scale(1) translate(0, -10px); }
+      75% { transform: rotate(270deg) scale(0.98) translate(-10px, 5px); }
+      100% { transform: rotate(360deg) scale(1) translate(0, 0); }
+    }
+
+    @keyframes dotMatrix {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(20px, -15px) scale(1.01); }
+      50% { transform: translate(-10px, 20px) scale(0.99); }
+      75% { transform: translate(15px, -25px) scale(1.02); }
+    }
+
+    .site-header {
+      background: var(--bg-surface);
+      backdrop-filter: blur(40px) saturate(200%);
+      border-bottom: 1px solid var(--border-light);
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .site-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold), var(--accent-emerald));
+      opacity: 0.02;
+      transition: opacity 0.4s;
+    }
+
+    .site-header:hover::before {
+      opacity: 0.06;
+    }
+
+    .site-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      position: relative;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--text-primary);
+    }
+
+    .site-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      border-radius: 2px;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .site-header:hover .site-title::after {
+      width: 50%;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 16px;
+    }
+
+    .theme-toggle, .home-button {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      border: 1px solid var(--border-light);
+      background: var(--bg-elevated);
+      backdrop-filter: blur(20px);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      z-index: 10;
+    }
+
+    .theme-toggle::before, .home-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      border-radius: inherit;
+      transform: scale(1);
+      transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+    }
+
+    .theme-toggle:hover::before, .home-button:hover::before {
+      background: transparent;
+    }
+
+    .theme-toggle:hover, .home-button:hover {
+      background: var(--accent-primary);
+      color: white;
+      border-color: var(--accent-primary);
+    }
+
+    .theme-toggle:active, .home-button:active {
+      background: var(--accent-secondary);
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px;
+      position: relative;
+      z-index: 100;
+      gap: 32px;
+    }
+
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .bio-image {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--border-medium);
+      box-shadow: var(--shadow-xl);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .bio-image::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold), var(--accent-emerald));
+      border-radius: 50%;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .bio-image:hover::before {
+      opacity: 1;
+    }
+
+    .bio-image:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-2xl);
+    }
+
+    .bio-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .about-card {
+      background: var(--bg-surface);
+      backdrop-filter: blur(40px) saturate(200%);
+      border: 1px solid var(--border-medium);
+      border-radius: 32px;
+      padding: 48px;
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+      box-shadow: var(--shadow-xl);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, 
+        var(--accent-primary), 
+        var(--accent-gold), 
+        var(--accent-emerald), 
+        var(--accent-secondary));
+      opacity: 0.8;
+      animation: gradientShimmer 8s ease-in-out infinite;
+    }
+
+    .about-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.02), 
+        rgba(245, 158, 11, 0.02), 
+        rgba(16, 185, 129, 0.02));
+      border-radius: inherit;
+      transition: opacity 0.6s;
+      opacity: 0.5;
+    }
+
+    .about-card:hover {
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-card:hover::after {
+      opacity: 0.7;
+    }
+
+    @keyframes gradientShimmer {
+      0%, 100% { 
+        background-position: 0% 50%; 
+        opacity: 0.6;
+      }
+      50% { 
+        background-position: 100% 50%; 
+        opacity: 1;
+      }
+    }
+
+    .bio-section {
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bio-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio-section h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      position: relative;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    .bio-section h2::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { 
+        transform: translateY(-50%) scale(1); 
+        opacity: 1;
+      }
+      50% { 
+        transform: translateY(-50%) scale(1.2); 
+        opacity: 0.7;
+      }
+    }
+
+    .bio-section p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .bio-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio-section ol {
+      margin-left: 24px;
+      color: var(--text-secondary);
+    }
+
+    .bio-section ol li {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-light);
+      color: var(--text-primary);
+      font-size: 20px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-icons a::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(59, 130, 246, 0.05);
+      border-radius: 12px;
+      transform: scale(0);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+    }
+
+    .social-icons a:hover::before {
+      transform: scale(1);
+    }
+
+    .social-icons a:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+      background: var(--bg-surface);
+    }
+
+    a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    a:hover {
+      color: var(--accent-secondary);
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-primary);
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    .site-footer {
+      background: var(--bg-surface);
+      backdrop-filter: blur(40px) saturate(200%);
+      border-top: 1px solid var(--border-light);
+      padding: 32px 48px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 400;
+      z-index: 100;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 768px) {
+      .site-header, .main-content, .site-footer {
+        padding: 24px;
+      }
+      
+      .about-card {
+        padding: 32px 24px;
+        border-radius: 24px;
+      }
+      
+      .bio-image {
+        width: 180px;
+        height: 180px;
+      }
+
+      .social-icons {
+        gap: 16px;
+      }
+
+      .social-icons a {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+      
+      .main-content {
+        padding: 24px 20px;
+        gap: 24px;
+      }
+      
+      .about-card {
+        padding: 24px 20px;
+        border-radius: 20px;
+      }
+      
+      .site-footer {
+        padding: 24px 20px;
+        font-size: 12px;
+      }
+      
+      .bio-image {
+        width: 160px;
+        height: 160px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header class="header">
-        <div class="title">About Me</div>
-        <div class="buttons">
-            <button class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="home-button" onclick="location.href='/'">
-                <i class="fas fa-home"></i>
-            </button>
-        </div>
-    </header>
-    <div class="bio-image">
+  <header class="site-header">
+    <div class="site-title">About Me</div>
+    <div class="header-buttons">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="home-button" id="homeButton" aria-label="Go home">
+        <i class="fas fa-home"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="profile-section">
+      <div class="bio-image">
         <img src="DP.jpeg" alt="Profile Picture">
+      </div>
+    </section>
+
+    <div class="about-card">
+      <article class="bio-content">
+        <section class="bio-section">
+          <h2>Introduction</h2>
+          <p>Hi, I am Subhransu Sekhar Bhattacharjee (Bangla: শুভ্রাংশু-শেখর ভট্টাচার্য), nickname: Rudra (রুদ্র). I am an international research scholar at the <a href="https://comp.anu.edu.au/" target="_blank">ANU School of Computing</a> since April 2023.</p>
+        </section>
+
+        <section class="bio-section">
+          <h2>Doctoral Research</h2>
+          <p>My research focuses on autonomous spatio-semantic reasoning under uncertainty, supervised by <a href="https://rahulsho.me/" target="_blank">Dr. Rahul Shome</a>, <a href="https://sites.google.com/view/djcampbell" target="_blank">Dr. Dylan Campbell</a>, and <a href="http://users.cecs.anu.edu.au/~sgould/" target="_blank">Prof. Stephen Gould</a>.</p> 
+          <p>See our latest work published in CVPR 2025: <a href="https://1ssb.github.io/UOD" target="_blank">Unobserved Object Detection</a>.</p>
+        </section>
+
+        <section class="bio-section">
+          <h2>Education</h2>
+          <p>I graduated with First Class Honours in Mechatronic Systems at ANU, minoring in Electronic Communication Systems and Mathematics. My honours thesis, advised by <a href="https://eng.anu.edu.au/people/ian-petersen/" target="_blank">Prof. Ian Petersen</a>, was titled "Whiplash Inertial Gradient Inertial Dynamics," and was later published as a journal paper <a href="https://onlinelibrary.wiley.com/doi/10.1002/asjc.3153" target="_blank">J1</a>. You can find the complete version <a href="https://arxiv.org/abs/2203.02140" target="_blank">here</a>.</p>
+        </section>
+
+        <section class="bio-section">
+          <h2>Research Interests</h2>
+          <p>My research interests are centered around autonomous systems, spatial computing and optimization theory.</p>
+          <ol>
+            <li>Building robust active vision solutions for field robotics and autonomous systems</li>
+            <li>Solving noisy inverse problems with deep learning in physics-based or financial models</li>
+            <li>Developing optimization algorithms tailored for energy-efficient GPU computing</li>
+          </ol>
+        </section>
+
+        <section class="bio-section">
+          <h2>Hobbies</h2>
+          <p>I enjoy traveling, playing chess, hunting for forgotten books and cinema, exploring bone music, sketching and painting, mixing cocktails, unusual hikes, swimming, and listening to thriller audiobooks.</p>
+          <div class="social-icons">
+            <a href="https://1ssb.github.io/gallery/" target="_blank" aria-label="Gallery">
+              <i class="fas fa-image"></i>
+            </a>
+            <a href="https://www.facebook.com/1ssb.rudra" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
+        </section>
+      </article>
     </div>
-    <div class="container">
-        <div class="bio-text">
-            <div class="bio-section">
-                <h2>Introduction</h2>
-                <p>Hi, I am Subhransu Sekhar Bhattacharjee (Bangla: শুভ্রাংশু-শেখর ভট্টাচার্য), nickname: Rudra (রুদ্র). I am an international research scholar at <a href="https://www.anu.edu.au" target="_blank">ANU</a> since April 2023, originally from West Bengal, India.</p>
-            </div>
-            <div class="bio-section">
-                <h2>Doctoral Research</h2>
-                <p>My research focuses on autonomous spatio-semantic reasoning under uncertainty, supervised by <a href="https://rahulsho.me/" target="_blank">Dr. Rahul Shome</a>, <a href="https://sites.google.com/view/djcampbell" target="_blank">Dr. Dylan Campbell</a>, and <a href="http://users.cecs.anu.edu.au/~sgould/" target="_blank">Prof. Stephen Gould</a>.</p> 
-                <p>See our latest work published in CVPR 2025: <a href="https://1ssb.github.io/UOD" target="_blank">Unobserved Object Detection</a>.</p>
-            </div>
-            <div class="bio-section">
-                <h2>Education</h2>
-                <p>I graduated with First Class Honours in Mechatronic Systems at ANU, minoring in Electronic Communication Systems and Mathematics. My honours thesis, advised by <a href="https://eng.anu.edu.au/people/ian-petersen/" target="_blank">Prof. Ian Petersen</a>, was titled "Whiplash Inertial Gradient Inertial Dynamics," and was later published as a journal paper <a href="https://onlinelibrary.wiley.com/doi/10.1002/asjc.3153" target="_blank">J1</a>. You can find the complete version <a href="https://arxiv.org/abs/2203.02140" target="_blank">here</a>.</p>
-            </div>
-            <div class="bio-section">
-                <h2>Research Interests</h2>
-                <p>My research interests are centered around autonomous systems, spatial computing and optimization theory.</p>
-                <ol>
-                    <li>Building robust active vision solutions for field robotics and autonomous systems</li>
-                    <li>Solving noisy inverse problems with deep learning in physics-based or financial models</li>
-                    <li>Developing optimization algorithms tailored for energy-efficient GPU computing</li>
-                </ol>
-            </div>
-            <div class="bio-section">
-                <h2>Hobbies</h2>
-                <p>I enjoy traveling, playing chess, hunting for forgotten books and cinema, exploring bone music, sketching and painting, mixing cocktails, unusual hikes, swimming, and listening to thriller audiobooks.</p>
-                <div class="social-icons">
-                    <a href="https://1ssb.github.io/gallery/" target="_blank"><i class="fas fa-image"></i></a>
-                    <a href="https://www.facebook.com/1ssb.rudra" target="_blank"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer>
-        © Subhransu S. Bhattacharjee, <span id="year"></span>
-    </footer>
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const icon = themeToggle.querySelector('i');
-            if (document.body.classList.contains('dark-mode')) {
-                icon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-                icon.classList.replace('fa-sun', 'fa-moon');
-            }
-        });
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+  </main>
+
+  <footer class="site-footer">
+    © Subhransu S. Bhattacharjee, <span id="year"></span>
+  </footer>
+
+  <script>
+    // In-memory theme storage (no localStorage)
+    let currentTheme = 'light';
+    
+    const themeToggle = document.getElementById('themeToggle');
+    const homeButton = document.getElementById('homeButton');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+
+    // Theme toggle functionality
+    function updateIcon(theme) {
+      if (theme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    }
+
+    function toggleTheme() {
+      const isDark = body.classList.contains('dark-mode');
+      currentTheme = isDark ? 'light' : 'dark';
+      
+      if (isDark) {
+        body.classList.remove('dark-mode');
+      } else {
+        body.classList.add('dark-mode');
+      }
+      
+      updateIcon(currentTheme);
+    }
+
+    // Event listeners for buttons
+    themeToggle.addEventListener('click', toggleTheme);
+    
+      homeButton.addEventListener('click', () => {
+    window.location.href = 'https://1ssb.github.io';
+  	});
+
+    // Initialize year in footer
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+
+    // Respect reduced motion preferences
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.style.setProperty('--animation-duration', '0.01s');
+    }
+  </script>
 </body>
 </html>
