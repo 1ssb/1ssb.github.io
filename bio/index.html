@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
@@ -9,7 +10,11 @@
   <title>About Me</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../shared-styles.css">
+
 
   <style>
     :root {
@@ -50,7 +55,9 @@
       --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.7);
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -75,59 +82,101 @@
     body::before {
       content: '';
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background:
-        conic-gradient(from 0deg at 25% 25%, transparent 0deg 115deg, var(--accent-primary) 115deg 125deg, transparent 125deg 235deg, var(--accent-primary) 235deg 245deg, transparent 245deg 360deg),
-        conic-gradient(from 120deg at 75% 75%, transparent 0deg 115deg, var(--accent-gold) 115deg 125deg, transparent 125deg 235deg, var(--accent-gold) 235deg 245deg, transparent 245deg 360deg),
-        conic-gradient(from 240deg at 20% 80%, transparent 0deg 115deg, var(--accent-emerald) 115deg 125deg, transparent 125deg 235deg, var(--accent-emerald) 235deg 245deg, transparent 245deg 360deg);
-      background-size: 800px 800px, 1000px 1000px, 600px 600px;
-      opacity: 0.06;
-      z-index: -3;
-      animation: geometricFlow 300s linear infinite;
+        /* PRIMARY GRID PATTERN */
+        repeating-linear-gradient(45deg, transparent 0px, transparent 30px, #3b82f6 30px, #3b82f6 32px),
+        repeating-linear-gradient(-45deg, transparent 0px, transparent 40px, #10b981 40px, #10b981 42px),
+        /* PRIMARY DOTS */
+        radial-gradient(circle at 25% 25%, #f59e0b 0px, #f59e0b 4px, transparent 4px),
+        radial-gradient(circle at 75% 75%, #ef4444 0px, #ef4444 4px, transparent 4px),
+        radial-gradient(circle at 25% 75%, #8b5cf6 0px, #8b5cf6 4px, transparent 4px),
+        radial-gradient(circle at 75% 25%, #06b6d4 0px, #06b6d4 4px, transparent 4px);
+      background-size: 60px 60px, 80px 80px, 100px 100px, 100px 100px, 100px 100px, 100px 100px;
+      opacity: 0.7;
+      z-index: -2;
     }
 
     body::after {
       content: '';
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background:
-        radial-gradient(circle at 20% 30%, var(--accent-primary) 1px, transparent 1px),
-        radial-gradient(circle at 80% 40%, var(--accent-gold) 1px, transparent 1px),
-        radial-gradient(circle at 50% 80%, var(--accent-emerald) 1px, transparent 1px),
-        radial-gradient(circle at 70% 20%, var(--accent-secondary) 1px, transparent 1px);
-      background-size: 100px 100px, 120px 120px, 80px 80px, 140px 140px;
-      opacity: 0.4;
-      z-index: -2;
-      animation: dotMatrix 240s ease-in-out infinite;
+        /* OFFSET GRID PATTERN */
+        repeating-linear-gradient(90deg, transparent 0px, transparent 35px, #06b6d4 35px, #06b6d4 37px),
+        repeating-linear-gradient(0deg, transparent 0px, transparent 45px, #f97316 45px, #f97316 47px),
+        /* OFFSET DOTS */
+        radial-gradient(circle at 50% 50%, #ec4899 0px, #ec4899 3px, transparent 3px),
+        radial-gradient(circle at 10% 90%, #8b5cf6 0px, #8b5cf6 3px, transparent 3px),
+        radial-gradient(circle at 90% 10%, #06b6d4 0px, #06b6d4 3px, transparent 3px);
+      background-size: 70px 70px, 90px 90px, 120px 120px, 120px 120px, 120px 120px;
+      background-position: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+      opacity: 0.5;
+      z-index: -1;
     }
 
     @keyframes geometricFlow {
-      0% { transform: rotate(0deg) scale(1) translate(0, 0); }
-      25% { transform: rotate(90deg) scale(1.02) translate(10px, -5px); }
-      50% { transform: rotate(180deg) scale(1) translate(0, -10px); }
-      75% { transform: rotate(270deg) scale(0.98) translate(-10px, 5px); }
-      100% { transform: rotate(360deg) scale(1) translate(0, 0); }
+      0% {
+        transform: rotate(0deg) scale(1) translate(0, 0);
+      }
+
+      25% {
+        transform: rotate(90deg) scale(1.02) translate(10px, -5px);
+      }
+
+      50% {
+        transform: rotate(180deg) scale(1) translate(0, -10px);
+      }
+
+      75% {
+        transform: rotate(270deg) scale(0.98) translate(-10px, 5px);
+      }
+
+      100% {
+        transform: rotate(360deg) scale(1) translate(0, 0);
+      }
     }
 
     @keyframes dotMatrix {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      25% { transform: translate(20px, -15px) scale(1.01); }
-      50% { transform: translate(-10px, 20px) scale(0.99); }
-      75% { transform: translate(15px, -25px) scale(1.02); }
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      25% {
+        transform: translate(20px, -15px) scale(1.01);
+      }
+
+      50% {
+        transform: translate(-10px, 20px) scale(0.99);
+      }
+
+      75% {
+        transform: translate(15px, -25px) scale(1.02);
+      }
     }
 
     .site-header {
       background: var(--bg-surface);
       backdrop-filter: blur(40px) saturate(200%);
       border-bottom: 1px solid var(--border-light);
-      padding: 32px 48px;
+      padding: 24px 48px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
+      z-index: 9999 !important;
       position: relative;
       box-shadow: var(--shadow-sm);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      min-height: 80px;
+      width: 100%;
     }
 
     .site-header::before {
@@ -137,6 +186,8 @@
       background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold), var(--accent-emerald));
       opacity: 0.02;
       transition: opacity 0.4s;
+      pointer-events: none !important;
+      z-index: -1;
     }
 
     .site-header:hover::before {
@@ -145,8 +196,8 @@
 
     .site-title {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 24px;
-      font-weight: 500;
+      font-size: 28px;
+      font-weight: 600;
       letter-spacing: -0.02em;
       position: relative;
       background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
@@ -154,6 +205,8 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
       color: var(--text-primary);
+      flex: 1;
+      text-align: left;
     }
 
     .site-title::after {
@@ -172,55 +225,9 @@
       width: 50%;
     }
 
-    .header-buttons {
-      display: flex;
-      gap: 16px;
-    }
 
-    .theme-toggle, .home-button {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      border: 1px solid var(--border-light);
-      background: var(--bg-elevated);
-      backdrop-filter: blur(20px);
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      z-index: 10;
-    }
 
-    .theme-toggle::before, .home-button::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: transparent;
-      border-radius: inherit;
-      transform: scale(1);
-      transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: -1;
-    }
 
-    .theme-toggle:hover::before, .home-button:hover::before {
-      background: transparent;
-    }
-
-    .theme-toggle:hover, .home-button:hover {
-      background: var(--accent-primary);
-      color: white;
-      border-color: var(--accent-primary);
-    }
-
-    .theme-toggle:active, .home-button:active {
-      background: var(--accent-secondary);
-    }
 
     .main-content {
       flex: 1;
@@ -299,11 +306,11 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, 
-        var(--accent-primary), 
-        var(--accent-gold), 
-        var(--accent-emerald), 
-        var(--accent-secondary));
+      background: linear-gradient(90deg,
+          var(--accent-primary),
+          var(--accent-gold),
+          var(--accent-emerald),
+          var(--accent-secondary));
       opacity: 0.8;
       animation: gradientShimmer 8s ease-in-out infinite;
     }
@@ -312,10 +319,10 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, 
-        rgba(59, 130, 246, 0.02), 
-        rgba(245, 158, 11, 0.02), 
-        rgba(16, 185, 129, 0.02));
+      background: linear-gradient(135deg,
+          rgba(59, 130, 246, 0.02),
+          rgba(245, 158, 11, 0.02),
+          rgba(16, 185, 129, 0.02));
       border-radius: inherit;
       transition: opacity 0.6s;
       opacity: 0.5;
@@ -331,12 +338,15 @@
     }
 
     @keyframes gradientShimmer {
-      0%, 100% { 
-        background-position: 0% 50%; 
+
+      0%,
+      100% {
+        background-position: 0% 50%;
         opacity: 0.6;
       }
-      50% { 
-        background-position: 100% 50%; 
+
+      50% {
+        background-position: 100% 50%;
         opacity: 1;
       }
     }
@@ -377,12 +387,15 @@
     }
 
     @keyframes pulse {
-      0%, 100% { 
-        transform: translateY(-50%) scale(1); 
+
+      0%,
+      100% {
+        transform: translateY(-50%) scale(1);
         opacity: 1;
       }
-      50% { 
-        transform: translateY(-50%) scale(1.2); 
+
+      50% {
+        transform: translateY(-50%) scale(1.2);
         opacity: 0.7;
       }
     }
@@ -484,31 +497,21 @@
       width: 100%;
     }
 
-    .site-footer {
-      background: var(--bg-surface);
-      backdrop-filter: blur(40px) saturate(200%);
-      border-top: 1px solid var(--border-light);
-      padding: 32px 48px;
-      text-align: center;
-      font-size: 14px;
-      color: var(--text-secondary);
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 400;
-      z-index: 100;
-      position: relative;
-      box-shadow: var(--shadow-sm);
-    }
+
 
     @media (max-width: 768px) {
-      .site-header, .main-content, .site-footer {
+
+      .site-header,
+      .main-content,
+      .site-footer {
         padding: 24px;
       }
-      
+
       .about-card {
         padding: 32px 24px;
         border-radius: 24px;
       }
-      
+
       .bio-image {
         width: 180px;
         height: 180px;
@@ -527,26 +530,30 @@
 
     @media (max-width: 480px) {
       .site-header {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        gap: 16px;
         padding: 20px;
+        align-items: center;
       }
-      
+
+      .site-title {
+        font-size: 20px;
+      }
+
+
+
+
+
       .main-content {
         padding: 24px 20px;
         gap: 24px;
       }
-      
+
       .about-card {
         padding: 24px 20px;
         border-radius: 20px;
       }
-      
-      .site-footer {
-        padding: 24px 20px;
-        font-size: 12px;
-      }
-      
+
       .bio-image {
         width: 160px;
         height: 160px;
@@ -559,7 +566,7 @@
   <header class="site-header">
     <div class="site-title">About Me</div>
     <div class="header-buttons">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
       </button>
       <button class="home-button" id="homeButton" aria-label="Go home">
@@ -579,23 +586,35 @@
       <article class="bio-content">
         <section class="bio-section">
           <h2>Introduction</h2>
-          <p>Hi, I am Subhransu Sekhar Bhattacharjee (Bangla: শুভ্রাংশু-শেখর ভট্টাচার্য), nickname: Rudra (রুদ্র). I am an international research scholar at the <a href="https://comp.anu.edu.au/" target="_blank">ANU School of Computing</a> since April 2023.</p>
+          <p>Hi, I am Subhransu Sekhar Bhattacharjee (Bangla: শুভ্রাংশু-শেখর ভট্টাচার্য), nickname: Rudra (রুদ্র). I am
+            an international research scholar at the <a href="https://comp.anu.edu.au/" target="_blank">ANU School of
+              Computing</a> since April 2023.</p>
         </section>
 
         <section class="bio-section">
           <h2>Doctoral Research</h2>
-          <p>My research focuses on autonomous spatio-semantic reasoning under uncertainty, supervised by <a href="https://rahulsho.me/" target="_blank">Dr. Rahul Shome</a>, <a href="https://sites.google.com/view/djcampbell" target="_blank">Dr. Dylan Campbell</a>, and <a href="http://users.cecs.anu.edu.au/~sgould/" target="_blank">Prof. Stephen Gould</a>.</p> 
-          <p>See our latest work published in CVPR 2025: <a href="https://1ssb.github.io/UOD" target="_blank">Unobserved Object Detection</a>.</p>
+          <p>My research focuses on autonomous spatio-semantic reasoning under uncertainty, supervised by <a
+              href="https://rahulsho.me/" target="_blank">Dr. Rahul Shome</a>, <a
+              href="https://sites.google.com/view/djcampbell" target="_blank">Dr. Dylan Campbell</a>, and <a
+              href="http://users.cecs.anu.edu.au/~sgould/" target="_blank">Prof. Stephen Gould</a>.</p>
+          <p>See our latest work published in CVPR 2025: <a href="https://1ssb.github.io/UOD" target="_blank">Unobserved
+              Object Detection</a>.</p>
         </section>
 
         <section class="bio-section">
           <h2>Education</h2>
-          <p>I graduated with First Class Honours in Mechatronic Systems at ANU, minoring in Electronic Communication Systems and Mathematics. My honours thesis, advised by <a href="https://eng.anu.edu.au/people/ian-petersen/" target="_blank">Prof. Ian Petersen</a>, was titled "Whiplash Inertial Gradient Inertial Dynamics," and was later published as a journal paper <a href="https://onlinelibrary.wiley.com/doi/10.1002/asjc.3153" target="_blank">J1</a>. You can find the complete version <a href="https://arxiv.org/abs/2203.02140" target="_blank">here</a>.</p>
+          <p>I graduated with First Class Honours in Mechatronic Systems at ANU, minoring in Electronic Communication
+            Systems and Mathematics. My honours thesis, advised by <a href="https://eng.anu.edu.au/people/ian-petersen/"
+              target="_blank">Prof. Ian Petersen</a>, was titled "Whiplash Inertial Gradient Inertial Dynamics," and was
+            later published as a journal paper <a href="https://onlinelibrary.wiley.com/doi/10.1002/asjc.3153"
+              target="_blank">J1</a>. You can find the complete version <a href="https://arxiv.org/abs/2203.02140"
+              target="_blank">here</a>.</p>
         </section>
 
         <section class="bio-section">
           <h2>Research Interests</h2>
-          <p>My research interests are centered around autonomous systems, spatial computing and optimization theory.</p>
+          <p>My research interests are centered around autonomous systems, spatial computing and optimization theory.
+          </p>
           <ol>
             <li>Building robust active vision solutions for field robotics and autonomous systems</li>
             <li>Solving noisy inverse problems with deep learning in physics-based or financial models</li>
@@ -605,73 +624,53 @@
 
         <section class="bio-section">
           <h2>Hobbies</h2>
-          <p>I enjoy traveling, playing chess, hunting for forgotten books and cinema, exploring bone music, sketching and painting, mixing cocktails, unusual hikes, swimming, and listening to thriller audiobooks.</p>
-          <div class="social-icons">
-            <a href="https://1ssb.github.io/gallery/" target="_blank" aria-label="Gallery">
-              <i class="fas fa-image"></i>
-            </a>
-            <a href="https://www.facebook.com/1ssb.rudra" target="_blank" aria-label="Facebook">
-              <i class="fab fa-facebook"></i>
-            </a>
-          </div>
+          <p>I enjoy traveling, playing chess, hunting for forgotten books and cinema, exploring bone music, sketching
+            and painting, mixing cocktails, unusual hikes, swimming, and listening to thriller audiobooks.</p>
+
         </section>
       </article>
     </div>
   </main>
 
-  <footer class="site-footer">
-    © Subhransu S. Bhattacharjee, <span id="year"></span>
-  </footer>
+
 
   <script>
-    // In-memory theme storage (no localStorage)
-    let currentTheme = 'light';
-    
-    const themeToggle = document.getElementById('themeToggle');
-    const homeButton = document.getElementById('homeButton');
-    const body = document.body;
-    const icon = themeToggle.querySelector('i');
+    document.addEventListener('DOMContentLoaded', function () {
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const homeButton = document.getElementById('homeButton');
+      const body = document.body;
 
-    // Theme toggle functionality
-    function updateIcon(theme) {
-      if (theme === 'dark') {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-      } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+      if (themeToggle) {
+        const icon = themeToggle.querySelector('i');
+        themeToggle.addEventListener('click', function () {
+          const isDark = body.classList.contains('dark-mode');
+          if (isDark) {
+            body.classList.remove('dark-mode');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+          } else {
+            body.classList.add('dark-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+          }
+        });
       }
-    }
 
-    function toggleTheme() {
-      const isDark = body.classList.contains('dark-mode');
-      currentTheme = isDark ? 'light' : 'dark';
-      
-      if (isDark) {
-        body.classList.remove('dark-mode');
-      } else {
-        body.classList.add('dark-mode');
+      // Home button functionality
+      if (homeButton) {
+        // Force button to be clickable
+        homeButton.style.zIndex = '10000';
+        homeButton.style.position = 'relative';
+        homeButton.style.pointerEvents = 'auto';
+
+        homeButton.addEventListener('click', function (e) {
+          e.stopPropagation();
+          window.location.href = 'https://1ssb.github.io/';
+        });
       }
-      
-      updateIcon(currentTheme);
-    }
-
-    // Event listeners for buttons
-    themeToggle.addEventListener('click', toggleTheme);
-    
-      homeButton.addEventListener('click', () => {
-    window.location.href = 'https://1ssb.github.io';
-  	});
-
-    // Initialize year in footer
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('year').textContent = new Date().getFullYear();
     });
-
-    // Respect reduced motion preferences
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.documentElement.style.setProperty('--animation-duration', '0.01s');
-    }
   </script>
 </body>
+
 </html>

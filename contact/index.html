@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
@@ -9,7 +10,11 @@
   <title>Contact Me</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../shared-styles.css">
+
 
   <style>
     :root {
@@ -52,7 +57,9 @@
       --ripple-color: rgba(88, 166, 255, 0.4);
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -77,59 +84,61 @@
     body::before {
       content: '';
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background:
-        conic-gradient(from 0deg at 25% 25%, transparent 0deg 115deg, var(--accent-primary) 115deg 125deg, transparent 125deg 235deg, var(--accent-primary) 235deg 245deg, transparent 245deg 360deg),
-        conic-gradient(from 120deg at 75% 75%, transparent 0deg 115deg, var(--accent-gold) 115deg 125deg, transparent 125deg 235deg, var(--accent-gold) 235deg 245deg, transparent 245deg 360deg),
-        conic-gradient(from 240deg at 20% 80%, transparent 0deg 115deg, var(--accent-emerald) 115deg 125deg, transparent 125deg 235deg, var(--accent-emerald) 235deg 245deg, transparent 245deg 360deg);
-      background-size: 800px 800px, 1000px 1000px, 600px 600px;
-      opacity: 0.06;
-      z-index: -3;
-      animation: geometricFlow 300s linear infinite;
+        /* PRIMARY GRID PATTERN */
+        repeating-linear-gradient(45deg, transparent 0px, transparent 30px, #3b82f6 30px, #3b82f6 32px),
+        repeating-linear-gradient(-45deg, transparent 0px, transparent 40px, #10b981 40px, #10b981 42px),
+        /* PRIMARY DOTS */
+        radial-gradient(circle at 25% 25%, #f59e0b 0px, #f59e0b 4px, transparent 4px),
+        radial-gradient(circle at 75% 75%, #ef4444 0px, #ef4444 4px, transparent 4px),
+        radial-gradient(circle at 25% 75%, #8b5cf6 0px, #8b5cf6 4px, transparent 4px),
+        radial-gradient(circle at 75% 25%, #06b6d4 0px, #06b6d4 4px, transparent 4px);
+      background-size: 60px 60px, 80px 80px, 100px 100px, 100px 100px, 100px 100px, 100px 100px;
+      opacity: 0.7;
+      z-index: -2;
     }
 
     body::after {
       content: '';
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background:
-        radial-gradient(circle at 20% 30%, var(--accent-primary) 1px, transparent 1px),
-        radial-gradient(circle at 80% 40%, var(--accent-gold) 1px, transparent 1px),
-        radial-gradient(circle at 50% 80%, var(--accent-emerald) 1px, transparent 1px),
-        radial-gradient(circle at 70% 20%, var(--accent-secondary) 1px, transparent 1px);
-      background-size: 100px 100px, 120px 120px, 80px 80px, 140px 140px;
-      opacity: 0.4;
-      z-index: -2;
-      animation: dotMatrix 240s ease-in-out infinite;
+        /* OFFSET GRID PATTERN */
+        repeating-linear-gradient(90deg, transparent 0px, transparent 35px, #06b6d4 35px, #06b6d4 37px),
+        repeating-linear-gradient(0deg, transparent 0px, transparent 45px, #f97316 45px, #f97316 47px),
+        /* OFFSET DOTS */
+        radial-gradient(circle at 50% 50%, #ec4899 0px, #ec4899 3px, transparent 3px),
+        radial-gradient(circle at 10% 90%, #8b5cf6 0px, #8b5cf6 3px, transparent 3px),
+        radial-gradient(circle at 90% 10%, #06b6d4 0px, #06b6d4 3px, transparent 3px);
+      background-size: 70px 70px, 90px 90px, 120px 120px, 120px 120px, 120px 120px;
+      background-position: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+      opacity: 0.5;
+      z-index: -1;
     }
 
-    @keyframes geometricFlow {
-      0% { transform: rotate(0deg) scale(1) translate(0, 0); }
-      25% { transform: rotate(90deg) scale(1.02) translate(10px, -5px); }
-      50% { transform: rotate(180deg) scale(1) translate(0, -10px); }
-      75% { transform: rotate(270deg) scale(0.98) translate(-10px, 5px); }
-      100% { transform: rotate(360deg) scale(1) translate(0, 0); }
-    }
-
-    @keyframes dotMatrix {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      25% { transform: translate(20px, -15px) scale(1.01); }
-      50% { transform: translate(-10px, 20px) scale(0.99); }
-      75% { transform: translate(15px, -25px) scale(1.02); }
-    }
+    /* Animations removed - static patterns only */
 
     .site-header {
       background: var(--bg-surface);
       backdrop-filter: blur(40px) saturate(200%);
       border-bottom: 1px solid var(--border-light);
-      padding: 32px 48px;
+      padding: 24px 48px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
+      z-index: 9999 !important;
       position: relative;
       box-shadow: var(--shadow-sm);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      min-height: 80px;
+      width: 100%;
     }
 
     .site-header::before {
@@ -139,6 +148,8 @@
       background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold), var(--accent-emerald));
       opacity: 0.02;
       transition: opacity 0.4s;
+      pointer-events: none !important;
+      z-index: -1;
     }
 
     .site-header:hover::before {
@@ -147,8 +158,8 @@
 
     .site-title {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 24px;
-      font-weight: 500;
+      font-size: 28px;
+      font-weight: 600;
       letter-spacing: -0.02em;
       position: relative;
       background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
@@ -156,6 +167,8 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
       color: var(--text-primary);
+      flex: 1;
+      text-align: left;
     }
 
     .site-title::after {
@@ -174,55 +187,9 @@
       width: 100%;
     }
 
-    .header-buttons {
-      display: flex;
-      gap: 16px;
-    }
 
-    .theme-toggle, .home-button {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      border: 1px solid var(--border-light);
-      background: var(--bg-elevated);
-      backdrop-filter: blur(20px);
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      z-index: 10;
-    }
 
-    .theme-toggle::before, .home-button::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: transparent;
-      border-radius: inherit;
-      transform: scale(1);
-      transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: -1;
-    }
 
-    .theme-toggle:hover::before, .home-button:hover::before {
-      background: transparent;
-    }
-
-    .theme-toggle:hover, .home-button:hover {
-      background: var(--accent-primary) !important;
-      color: white !important;
-      border-color: var(--accent-primary) !important;
-    }
-
-    .theme-toggle:active, .home-button:active {
-      background: var(--accent-secondary) !important;
-    }
 
     .main-content {
       flex: 1;
@@ -256,11 +223,11 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, 
-        var(--accent-primary), 
-        var(--accent-gold), 
-        var(--accent-emerald), 
-        var(--accent-secondary));
+      background: linear-gradient(90deg,
+          var(--accent-primary),
+          var(--accent-gold),
+          var(--accent-emerald),
+          var(--accent-secondary));
       opacity: 0.8;
       animation: gradientShimmer 8s ease-in-out infinite;
     }
@@ -269,10 +236,10 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, 
-        rgba(59, 130, 246, 0.02), 
-        rgba(245, 158, 11, 0.02), 
-        rgba(16, 185, 129, 0.02));
+      background: linear-gradient(135deg,
+          rgba(59, 130, 246, 0.02),
+          rgba(245, 158, 11, 0.02),
+          rgba(16, 185, 129, 0.02));
       border-radius: inherit;
       transition: opacity 0.6s;
       opacity: 0.5;
@@ -293,6 +260,7 @@
         transform: translateY(40px) scale(0.95) rotateX(10deg);
         filter: blur(20px);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0) scale(1) rotateX(0deg);
@@ -301,12 +269,15 @@
     }
 
     @keyframes gradientShimmer {
-      0%, 100% { 
-        background-position: 0% 50%; 
+
+      0%,
+      100% {
+        background-position: 0% 50%;
         opacity: 0.6;
       }
-      50% { 
-        background-position: 100% 50%; 
+
+      50% {
+        background-position: 100% 50%;
         opacity: 1;
       }
     }
@@ -329,26 +300,10 @@
       left: -32px;
       top: 50%;
       transform: translateY(-50%);
-      width: 12px;
-      height: 12px;
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-      animation: triangleRotate 12s ease-in-out infinite;
-    }
-
-    @keyframes triangleRotate {
-      0%, 100% { 
-        transform: translateY(-50%) rotate(0deg) scale(1); 
-        filter: hue-rotate(0deg);
-      }
-      33% { 
-        transform: translateY(-50%) rotate(120deg) scale(1.1); 
-        filter: hue-rotate(120deg);
-      }
-      66% { 
-        transform: translateY(-50%) rotate(240deg) scale(0.9); 
-        filter: hue-rotate(240deg);
-      }
+      width: 8px;
+      height: 8px;
+      background: var(--accent-primary);
+      border-radius: 50%;
     }
 
     .contact-content p {
@@ -359,7 +314,7 @@
       font-weight: 400;
     }
 
-    .contact-section + .contact-section {
+    .contact-section+.contact-section {
       margin-top: 56px;
     }
 
@@ -448,10 +403,10 @@
     }
 
     .response-notice {
-      background: linear-gradient(135deg, 
-        rgba(59, 130, 246, 0.08), 
-        rgba(245, 158, 11, 0.08),
-        rgba(16, 185, 129, 0.08));
+      background: linear-gradient(135deg,
+          rgba(59, 130, 246, 0.08),
+          rgba(245, 158, 11, 0.08),
+          rgba(16, 185, 129, 0.08));
       border: 1px solid var(--border-medium);
       border-radius: 20px;
       padding: 28px;
@@ -480,36 +435,26 @@
       font-size: 18px;
     }
 
-    .site-footer {
-      background: var(--bg-surface);
-      backdrop-filter: blur(40px) saturate(200%);
-      border-top: 1px solid var(--border-light);
-      padding: 32px 48px;
-      text-align: center;
-      font-size: 14px;
-      color: var(--text-secondary);
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 400;
-      z-index: 100;
-      position: relative;
-      box-shadow: var(--shadow-sm);
-    }
+
 
     @media (max-width: 768px) {
-      .site-header, .main-content, .site-footer {
+
+      .site-header,
+      .main-content,
+      .site-footer {
         padding: 24px;
       }
-      
+
       .contact-card {
         padding: 40px 32px;
         border-radius: 24px;
       }
-      
+
       .contact-grid {
         grid-template-columns: 1fr;
         gap: 16px;
       }
-      
+
       .btn-contact {
         padding: 20px 24px;
         gap: 16px;
@@ -518,25 +463,29 @@
 
     @media (max-width: 480px) {
       .site-header {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        gap: 16px;
         padding: 20px;
+        align-items: center;
       }
-      
+
+      .site-title {
+        font-size: 20px;
+      }
+
+
+
+
+
       .main-content {
         padding: 32px 20px;
       }
-      
+
       .contact-card {
         padding: 32px 24px;
         border-radius: 20px;
       }
-      
-      .site-footer {
-        padding: 24px 20px;
-        font-size: 12px;
-      }
-      
+
       .btn-contact {
         padding: 18px 20px;
         gap: 14px;
@@ -549,12 +498,12 @@
 
 <body>
   <header class="site-header">
-    <div class="site-title">Contact Protocol</div>
+    <div class="site-title">Contact</div>
     <div class="header-buttons">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
       </button>
-      <button class="home-button" id="homeButton" aria-label="Go home">
+      <button type="button" class="home-button" id="homeButton" aria-label="Go home">
         <i class="fas fa-home"></i>
       </button>
     </div>
@@ -592,7 +541,7 @@
         </section>
 
         <section class="contact-section">
-          <h3>Physical Location & Availability</h3>
+          <h3>Physical Location &amp; Availability</h3>
           <p>
             N329, Robotics Lab, CSIT Building<br>
             108 North Rd, ANU, Acton ACT 2601, Australia
@@ -600,12 +549,7 @@
 
           <div class="contact-grid">
             <div class="contact-column">
-              <a
-                href="https://maps.app.goo.gl/XXMkQgavCi884gwY9"
-                target="_blank"
-                rel="noopener"
-                class="btn-contact"
-              >
+              <a href="https://maps.app.goo.gl/XXMkQgavCi884gwY9" target="_blank" rel="noopener" class="btn-contact">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>View on Map</span>
               </a>
@@ -617,61 +561,45 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    © Subhransu S. Bhattacharjee, <span id="year"></span>
-  </footer>
+
 
   <script>
-    // In-memory theme storage (no localStorage)
-    let currentTheme = 'light';
-    
-    const themeToggle = document.getElementById('themeToggle');
-    const homeButton = document.getElementById('homeButton');
-    const body = document.body;
-    const icon = themeToggle.querySelector('i');
+    document.addEventListener('DOMContentLoaded', function () {
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const homeButton = document.getElementById('homeButton');
+      const body = document.body;
 
-    // Theme toggle functionality
-    function updateIcon(theme) {
-      if (theme === 'dark') {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-      } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+      if (themeToggle) {
+        const icon = themeToggle.querySelector('i');
+        themeToggle.addEventListener('click', function () {
+          const isDark = body.classList.contains('dark-mode');
+          if (isDark) {
+            body.classList.remove('dark-mode');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+          } else {
+            body.classList.add('dark-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+          }
+        });
       }
-    }
 
-    function toggleTheme() {
-      const isDark = body.classList.contains('dark-mode');
-      currentTheme = isDark ? 'light' : 'dark';
-      
-      if (isDark) {
-        body.classList.remove('dark-mode');
-      } else {
-        body.classList.add('dark-mode');
+      // Home button functionality
+      if (homeButton) {
+        // Force button to be clickable
+        homeButton.style.zIndex = '10000';
+        homeButton.style.position = 'relative';
+        homeButton.style.pointerEvents = 'auto';
+
+        homeButton.addEventListener('click', function (e) {
+          e.stopPropagation();
+          window.location.href = 'https://1ssb.github.io/';
+        });
       }
-      
-      updateIcon(currentTheme);
-    }
-
-    // Event listeners for buttons
-    themeToggle.addEventListener('click', toggleTheme);
-    
-    homeButton.addEventListener('click', () => {
-      window.location.href = 'https://1ssb.github.io';
     });
-
-    // Initialize year in footer
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('year').textContent = new Date().getFullYear();
-    });
-
-    // Removed ripple effect to prevent button expansion issues
-
-    // Respect reduced motion preferences
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.documentElement.style.setProperty('--animation-duration', '0.01s');
-    }
   </script>
 </body>
+
 </html>

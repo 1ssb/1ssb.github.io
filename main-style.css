@@ -2,8 +2,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
-    background: var(--bg-color, url('BGs/light_bg.jpg')) no-repeat center center fixed;
-    background-size: cover;
     color: var(--text-color, #000);
     overflow: hidden;
     display: flex;
@@ -14,14 +12,15 @@ body {
 }
 
 body.dark-mode {
-    --bg-color: url('BGs/dark_bg.png');
     --text-color: #fff;
     --wrapper-bg-color: rgba(30, 30, 30, 0.35);
 }
 
 body.dark-mode nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.8); /* Darker background for hover in dark mode */
-    color: black; /* Ensure the text remains white for contrast */
+    background: rgba(255, 255, 255, 0.8);
+    /* Darker background for hover in dark mode */
+    color: black;
+    /* Ensure the text remains white for contrast */
 }
 
 #theme-toggle {
@@ -49,8 +48,14 @@ body.dark-mode #wrapper {
     background-color: var(--wrapper-bg-color);
 }
 
-header h1, header h2, header h3, header h4, header h3 a,
-nav ul, nav ul li, nav ul li a {
+header h1,
+header h2,
+header h3,
+header h4,
+header h3 a,
+nav ul,
+nav ul li,
+nav ul li a {
     margin: 0;
     padding: 5px;
 }
@@ -90,7 +95,8 @@ nav ul li a {
 }
 
 body.dark-mode nav ul li a {
-    border: 1px solid white; /* White border in dark mode */
+    border: 1px solid white;
+    /* White border in dark mode */
 }
 
 nav ul li a:hover {
@@ -130,12 +136,14 @@ nav ul li a:hover {
 
 .separator {
     width: 60%;
-    border-top: 2px solid black; /* Default black for light mode */
+    border-top: 2px solid black;
+    /* Default black for light mode */
     margin: 20px auto;
 }
 
 body.dark-mode .separator {
-    border-top: 2px solid white; /* White for dark mode */
+    border-top: 2px solid white;
+    /* White for dark mode */
 }
 
 .update-box {
