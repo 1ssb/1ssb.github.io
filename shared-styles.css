@@ -266,8 +266,8 @@ nav ul li a:hover {
     font-size: 18px;
 }
 
-/* Theme Toggle for main page */
-#theme-toggle {
+/* Theme Toggle for main page - only applies when not inside container */
+#theme-toggle:not(.theme-toggle) {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -287,7 +287,7 @@ nav ul li a:hover {
     z-index: 1000;
 }
 
-#theme-toggle:hover {
+#theme-toggle:not(.theme-toggle):hover {
     background: var(--accent-primary);
     color: white;
     transform: scale(1.1);

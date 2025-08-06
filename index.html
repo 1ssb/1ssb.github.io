@@ -513,8 +513,9 @@
       justify-content: center;
       width: 48px;
       height: 48px;
-      position: relative;
       overflow: hidden;
+      min-width: 44px;
+      min-height: 44px;
     }
 
     .theme-toggle::before {
@@ -645,6 +646,7 @@
         width: 44px;
         height: 44px;
         border-radius: 12px;
+        padding: 10px;
       }
     }
 
@@ -678,10 +680,43 @@
       .theme-toggle {
         top: 16px;
         right: 16px;
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+        border-radius: 12px;
+        padding: 8px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .container {
+        padding: 32px 20px;
+        border-radius: 16px;
+      }
+
+      .theme-toggle {
+        top: 12px;
+        right: 12px;
         width: 40px;
         height: 40px;
         font-size: 14px;
         border-radius: 10px;
+        padding: 6px;
+      }
+
+      .name {
+        font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+      }
+
+      .navigation {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .nav-link {
+        padding: 10px 4px;
+        font-size: clamp(0.55rem, 1.6vw, 0.65rem);
+        min-height: 36px;
       }
     }
   </style>
