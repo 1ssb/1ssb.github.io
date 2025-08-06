@@ -494,9 +494,10 @@
     }
 
     .theme-toggle {
-      position: absolute;
-      top: 24px;
-      right: 24px;
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
       background: var(--bg-elevated);
       backdrop-filter: blur(20px);
       color: var(--text-primary);
@@ -507,7 +508,7 @@
       cursor: pointer;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: var(--shadow-md);
-      z-index: 10;
+      z-index: 1000;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -640,8 +641,9 @@
       }
 
       .theme-toggle {
-        top: 20px;
-        right: 20px;
+        top: 50%;
+        right: 16px;
+        transform: translateY(-50%);
         font-size: 16px;
         width: 44px;
         height: 44px;
@@ -678,8 +680,9 @@
       }
 
       .theme-toggle {
-        top: 16px;
-        right: 16px;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
         width: 44px;
         height: 44px;
         font-size: 16px;
@@ -695,8 +698,9 @@
       }
 
       .theme-toggle {
-        top: 12px;
-        right: 12px;
+        top: 50%;
+        right: 8px;
+        transform: translateY(-50%);
         width: 40px;
         height: 40px;
         font-size: 14px;
@@ -723,10 +727,11 @@
 </head>
 
 <body class="loading page-index">
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
   <div class="container">
-    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-      <i class="fas fa-moon"></i>
-    </button>
 
     <div class="profile-section">
       <h1 class="name">Subhransu Sekhar Bhattacharjee</h1>
