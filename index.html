@@ -69,27 +69,14 @@
       animation: gradientShimmer 8s ease-in-out infinite;
     }
 
-    .container::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg,
-          rgba(59, 130, 246, 0.02),
-          rgba(245, 158, 11, 0.02),
-          rgba(16, 185, 129, 0.02));
-      border-radius: inherit;
-      transition: opacity 0.6s;
-      opacity: 0.5;
-    }
+
 
     .container:hover {
-      border-color: var(--accent-primary);
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg), 0 0 20px rgba(0, 180, 216, 0.3);
     }
 
-    .container:hover::after {
-      opacity: 0.7;
-    }
+
 
     @keyframes cardEntrance {
       0% {
@@ -493,54 +480,7 @@
       color: var(--text-primary);
     }
 
-    .theme-toggle {
-      position: fixed;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      background: var(--bg-elevated);
-      backdrop-filter: blur(20px);
-      color: var(--text-primary);
-      border: 1px solid var(--border-light);
-      border-radius: 16px;
-      padding: 12px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: var(--shadow-md);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      overflow: hidden;
-      min-width: 44px;
-      min-height: 44px;
-    }
 
-    .theme-toggle::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(59, 130, 246, 0.05);
-      border-radius: 16px;
-      transform: scale(0);
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: -1;
-    }
-
-    .theme-toggle:hover::before {
-      transform: scale(1);
-    }
-
-    .theme-toggle:hover {
-      background: var(--accent-primary);
-      color: var(--bg-elevated);
-      transform: scale(1.1);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--accent-primary);
-    }
 
     .footer {
       position: fixed;
@@ -574,8 +514,7 @@
 
     .nav-link:focus,
     .updates-button:focus,
-    .social-links a:focus,
-    .theme-toggle:focus {
+    .social-links a:focus {
       outline: 3px solid var(--accent-primary);
       outline-offset: 3px;
       box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);
@@ -640,16 +579,7 @@
         max-width: 60px;
       }
 
-      .theme-toggle {
-        top: 50%;
-        right: 16px;
-        transform: translateY(-50%);
-        font-size: 16px;
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
-        padding: 10px;
-      }
+
     }
 
     @media (max-width: 480px) {
@@ -679,16 +609,7 @@
         display: none;
       }
 
-      .theme-toggle {
-        top: 50%;
-        right: 12px;
-        transform: translateY(-50%);
-        width: 44px;
-        height: 44px;
-        font-size: 16px;
-        border-radius: 12px;
-        padding: 8px;
-      }
+
     }
 
     @media (max-width: 360px) {
@@ -697,16 +618,7 @@
         border-radius: 16px;
       }
 
-      .theme-toggle {
-        top: 50%;
-        right: 8px;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        font-size: 14px;
-        border-radius: 10px;
-        padding: 6px;
-      }
+
 
       .name {
         font-size: clamp(1.25rem, 3.5vw, 1.75rem);
@@ -727,10 +639,6 @@
 </head>
 
 <body class="loading page-index">
-  <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-    <i class="fas fa-moon"></i>
-  </button>
-
   <div class="container">
 
     <div class="profile-section">
@@ -789,31 +697,9 @@
   </footer>
 
   <script>
-    const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-    const savedTheme = localStorage.getItem('theme');
-    const applyTheme = (theme) => {
-      if (theme === 'dark') {
-        body.classList.add('dark-mode');
-        themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
-      } else {
-        body.classList.remove('dark-mode');
-        themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
-      }
-    };
-    if (savedTheme) {
-      applyTheme(savedTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      applyTheme('dark');
-    } else {
-      applyTheme('light');
-    }
-    themeToggle.addEventListener('click', () => {
-      const isDarkMode = body.classList.toggle('dark-mode');
-      const newTheme = isDarkMode ? 'dark' : 'light';
-      localStorage.setItem('theme', newTheme);
-      themeToggle.querySelector('i').classList.replace(isDarkMode ? 'fa-moon' : 'fa-sun', isDarkMode ? 'fa-sun' : 'fa-moon');
-    });
+    // Force dark mode
+    body.classList.add('dark-mode');
     document.addEventListener('DOMContentLoaded', () => {
       const lastMod = new Date(document.lastModified);
       const options = { year: 'numeric', month: 'short' };
