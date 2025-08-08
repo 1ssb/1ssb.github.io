@@ -3,41 +3,13 @@
 /* CSS Variables - Design System */
 :root {
     /* Base Colors */
-    --bg-primary: #fafbfc;
-    --bg-surface: rgba(255, 255, 255, 0.95);
-    --bg-elevated: rgba(255, 255, 255, 0.98);
-    --text-primary: #1a1d23;
-    --text-secondary: #6b7280;
-
-    /* Accent Colors */
-    --accent-primary: #3b82f6;
-    --accent-secondary: #1d4ed8;
-    --accent-gold: #f59e0b;
-    --accent-emerald: #10b981;
-
-    /* Borders */
-    --border-light: rgba(59, 130, 246, 0.1);
-    --border-medium: rgba(59, 130, 246, 0.2);
-
-    /* Shadows */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
-
-    /* Effects */
-    --ripple-color: rgba(59, 130, 246, 0.3);
-}
-
-/* Dark Mode Variables - Colorblind Friendly */
-.dark-mode {
     --bg-primary: #0f111a;
     --bg-surface: rgba(22, 27, 34, 0.95);
     --bg-elevated: rgba(30, 35, 42, 0.98);
     --text-primary: #f0f6fc;
     --text-secondary: #c9d1d9;
-    /* Colorblind-friendly accent colors - high contrast and distinguishable */
+
+    /* Accent Colors - Colorblind Friendly */
     --accent-primary: #00b4d8;
     /* Bright cyan - distinguishable from red/green */
     --accent-secondary: #0077b6;
@@ -46,13 +18,19 @@
     /* Bright orange - distinguishable from red/green */
     --accent-emerald: #06ffa5;
     /* Bright mint green - distinguishable from red */
+
+    /* Borders */
     --border-light: rgba(0, 180, 216, 0.15);
     --border-medium: rgba(0, 180, 216, 0.25);
+
+    /* Shadows */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
     --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
     --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.7);
+
+    /* Effects */
     --ripple-color: rgba(0, 180, 216, 0.4);
 }
 
@@ -257,45 +235,11 @@ nav ul li a:hover {
 }
 
 /* Cancel the floating behavior when inside header */
-.header-buttons #theme-toggle,
-.header-buttons .theme-toggle,
 .header-buttons .home-button {
     position: static !important;
     width: 40px;
     height: 40px;
     border-radius: 6px;
-}
-
-/* Optional: slightly smaller icon */
-.header-buttons #theme-toggle {
-    font-size: 18px;
-}
-
-/* Theme Toggle for main page - only applies when not inside container */
-#theme-toggle:not(.theme-toggle) {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    font-size: 24px;
-    color: var(--text-primary);
-    transition: color 0.3s;
-    background: var(--bg-surface);
-    border: 1px solid var(--border-light);
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(20px);
-    z-index: 1000;
-}
-
-#theme-toggle:not(.theme-toggle):hover {
-    background: var(--accent-primary);
-    color: white;
-    transform: scale(1.1);
 }
 
 /* Footer */
@@ -358,6 +302,13 @@ footer {
         width: 40px;
         height: 40px;
     }
+
+    .header-buttons .home-button {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -377,6 +328,23 @@ footer {
     .icons {
         gap: 15px;
     }
+
+    .header-buttons .home-button {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .header-buttons .home-button {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
 }
 
 /* Accessibility */
@@ -393,8 +361,7 @@ footer {
 
 /* Focus States */
 nav ul li a:focus,
-.icons a:focus,
-#theme-toggle:focus {
+.icons a:focus {
     outline: 3px solid var(--accent-primary);
     outline-offset: 3px;
     box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);

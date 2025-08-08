@@ -28,11 +28,11 @@
   <style>
     /* Page-specific styles for index.html */
     /* Override background opacity for index page */
-    .dark-mode body::before {
+    body::before {
       opacity: 0.8;
     }
 
-    .dark-mode body::after {
+    body::after {
       opacity: 0.6;
     }
 
@@ -539,21 +539,34 @@
 
     @media (max-width: 768px) {
       body {
-        padding: 24px;
+        padding: 20px;
       }
 
       .container {
-        padding: 48px 32px;
-        border-radius: 24px;
+        padding: 32px 24px;
+        border-radius: 20px;
+        margin: 0 10px;
       }
 
       .name {
-        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
+        margin-bottom: 16px;
+      }
+
+      .title {
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        gap: 12px;
+        margin-bottom: 24px;
       }
 
       .social-links a {
-        padding: 12px;
-        font-size: 1.2rem;
+        padding: 10px;
+        font-size: 1.1rem;
+        border-radius: 10px;
       }
 
       .navigation {
@@ -563,29 +576,58 @@
       }
 
       .nav-link {
-        padding: 14px 8px;
-        font-size: clamp(0.65rem, 2vw, 0.75rem);
-        border-radius: 12px;
+        padding: 12px 8px;
+        font-size: clamp(0.7rem, 2.2vw, 0.8rem);
+        border-radius: 10px;
         min-height: 44px;
       }
 
+      .updates-section {
+        margin-top: 20px;
+        gap: 12px;
+      }
+
       .updates-button {
-        padding: 12px 24px;
-        font-size: 0.85rem;
-        border-radius: 12px;
+        padding: 10px 20px;
+        font-size: 0.8rem;
+        border-radius: 10px;
       }
 
       .updates-line {
-        max-width: 60px;
+        max-width: 50px;
       }
-
-
     }
 
     @media (max-width: 480px) {
+      body {
+        padding: 16px;
+      }
+
       .container {
-        padding: 40px 24px;
-        border-radius: 20px;
+        padding: 24px 20px;
+        border-radius: 16px;
+        margin: 0 8px;
+      }
+
+      .name {
+        font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+        margin-bottom: 12px;
+      }
+
+      .title {
+        font-size: clamp(0.8rem, 2.2vw, 1rem);
+        margin-bottom: 16px;
+      }
+
+      .social-links {
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .social-links a {
+        padding: 8px;
+        font-size: 1rem;
+        border-radius: 8px;
       }
 
       .navigation {
@@ -594,34 +636,59 @@
       }
 
       .nav-link {
-        padding: 12px 6px;
-        font-size: clamp(0.6rem, 1.8vw, 0.7rem);
-        border-radius: 10px;
+        padding: 10px 6px;
+        font-size: clamp(0.65rem, 2vw, 0.75rem);
+        border-radius: 8px;
         min-height: 40px;
       }
 
       .updates-section {
+        margin-top: 16px;
+        gap: 10px;
         flex-direction: column;
-        gap: 16px;
+      }
+
+      .updates-button {
+        padding: 8px 16px;
+        font-size: 0.75rem;
+        border-radius: 8px;
       }
 
       .updates-line {
         display: none;
       }
-
-
     }
 
     @media (max-width: 360px) {
-      .container {
-        padding: 32px 20px;
-        border-radius: 16px;
+      body {
+        padding: 12px;
       }
 
-
+      .container {
+        padding: 20px 16px;
+        border-radius: 12px;
+        margin: 0 4px;
+      }
 
       .name {
-        font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+        font-size: clamp(1.1rem, 3vw, 1.4rem);
+        margin-bottom: 10px;
+      }
+
+      .title {
+        font-size: clamp(0.75rem, 2vw, 0.9rem);
+        margin-bottom: 12px;
+      }
+
+      .social-links {
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .social-links a {
+        padding: 6px;
+        font-size: 0.9rem;
+        border-radius: 6px;
       }
 
       .navigation {

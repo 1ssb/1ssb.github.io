@@ -18,26 +18,6 @@
 
   <style>
     :root {
-      --bg-primary: #fafbfc;
-      --bg-surface: rgba(255, 255, 255, 0.95);
-      --bg-elevated: rgba(255, 255, 255, 0.98);
-      --text-primary: #1a1d23;
-      --text-secondary: #6b7280;
-      --accent-primary: #3b82f6;
-      --accent-secondary: #1d4ed8;
-      --accent-gold: #f59e0b;
-      --accent-emerald: #10b981;
-      --border-light: rgba(59, 130, 246, 0.1);
-      --border-medium: rgba(59, 130, 246, 0.2);
-      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-      --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
-      --ripple-color: rgba(59, 130, 246, 0.3);
-    }
-
-    .dark-mode {
       --bg-primary: #0f111a;
       --bg-surface: rgba(22, 27, 34, 0.95);
       --bg-elevated: rgba(30, 35, 42, 0.98);
@@ -404,32 +384,9 @@
       position: relative;
     }
 
-    .card-title::before {
-      content: '';
-      position: absolute;
-      left: -16px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 8px;
-      height: 8px;
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
-      border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
-    }
 
-    @keyframes pulse {
 
-      0%,
-      100% {
-        transform: translateY(-50%) scale(1);
-        opacity: 1;
-      }
 
-      50% {
-        transform: translateY(-50%) scale(1.2);
-        opacity: 0.7;
-      }
-    }
 
     .card-details {
       font-size: 14px;
@@ -524,55 +481,34 @@
 
 
     @media (max-width: 768px) {
+      .site-header {
+        padding: 16px 20px;
+        min-height: 60px;
+      }
 
-      .site-header,
-      .main-content,
-      .site-footer {
-        padding: 24px;
+      .site-title {
+        font-size: 22px;
+      }
+
+      .main-content {
+        padding: 20px;
+      }
+
+      .experience-container {
+        gap: 24px;
+      }
+
+      .section-header {
+        margin-bottom: 16px;
+      }
+
+      .section-title {
+        font-size: 20px;
       }
 
       .experience-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .experience-card {
-        padding: 24px;
-        border-radius: 20px;
-      }
-
-      .section-title {
-        font-size: 24px;
-      }
-
-      .back-to-top {
-        bottom: 24px;
-        right: 24px;
-        width: 48px;
-        height: 48px;
-        font-size: 18px;
-        border-radius: 12px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .site-header {
-        flex-direction: row;
         gap: 16px;
-        padding: 20px;
-        align-items: center;
-      }
-
-      .site-title {
-        font-size: 20px;
-      }
-
-
-
-
-
-      .main-content {
-        padding: 20px;
       }
 
       .experience-card {
@@ -580,12 +516,187 @@
         border-radius: 16px;
       }
 
+      .card-header {
+        margin-bottom: 12px;
+      }
+
       .card-title {
         font-size: 16px;
+        line-height: 1.4;
+      }
+
+      .card-details {
+        margin-bottom: 12px;
+      }
+
+      .card-details p {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      .card-content ul {
+        margin-left: 16px;
       }
 
       .card-content li {
         font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 6px;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-header {
+        padding: 12px 16px;
+        min-height: 56px;
+      }
+
+      .site-title {
+        font-size: 18px;
+      }
+
+      .main-content {
+        padding: 16px;
+      }
+
+      .experience-container {
+        gap: 20px;
+      }
+
+      .section-header {
+        margin-bottom: 12px;
+      }
+
+      .section-title {
+        font-size: 18px;
+      }
+
+      .experience-grid {
+        gap: 12px;
+      }
+
+      .experience-card {
+        padding: 16px;
+        border-radius: 12px;
+      }
+
+      .card-header {
+        margin-bottom: 10px;
+      }
+
+      .card-title {
+        font-size: 15px;
+        line-height: 1.3;
+      }
+
+      .card-details {
+        margin-bottom: 10px;
+      }
+
+      .card-details p {
+        font-size: 13px;
+        margin-bottom: 4px;
+      }
+
+      .card-content ul {
+        margin-left: 12px;
+      }
+
+      .card-content li {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 5px;
+      }
+
+      .back-to-top {
+        bottom: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+        border-radius: 8px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .site-header {
+        padding: 10px 12px;
+        min-height: 52px;
+      }
+
+      .site-title {
+        font-size: 16px;
+      }
+
+      .main-content {
+        padding: 12px;
+      }
+
+      .experience-container {
+        gap: 16px;
+      }
+
+      .section-header {
+        margin-bottom: 10px;
+      }
+
+      .section-title {
+        font-size: 16px;
+      }
+
+      .experience-grid {
+        gap: 10px;
+      }
+
+      .experience-card {
+        padding: 12px;
+        border-radius: 10px;
+      }
+
+      .card-header {
+        margin-bottom: 8px;
+      }
+
+      .card-title {
+        font-size: 14px;
+        line-height: 1.3;
+      }
+
+      .card-details {
+        margin-bottom: 8px;
+      }
+
+      .card-details p {
+        font-size: 12px;
+        margin-bottom: 3px;
+      }
+
+      .card-content ul {
+        margin-left: 10px;
+      }
+
+      .card-content li {
+        font-size: 12px;
+        line-height: 1.3;
+        margin-bottom: 4px;
+      }
+
+      .back-to-top {
+        bottom: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+        border-radius: 6px;
       }
     }
   </style>
@@ -595,10 +706,7 @@
   <header class="site-header">
     <div class="site-title">Experience</div>
     <div class="header-buttons">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-      </button>
-      <button class="home-button" id="homeButton" aria-label="Go home">
+      <button type="button" class="home-button" id="homeButton" aria-label="Go home">
         <i class="fas fa-home"></i>
       </button>
     </div>
@@ -651,7 +759,7 @@
 
           <div class="experience-card">
             <div class="card-header">
-              <h3 class="card-title">Graduate Research Assistant: Fintech & AI</h3>
+              <h3 class="card-title">Graduate Research Assistant: Fintech &amp; AI</h3>
             </div>
             <div class="card-details">
               <p><strong>Duration:</strong> September 2023 - September 2024</p>
@@ -675,7 +783,7 @@
             </div>
             <div class="card-details">
               <p><strong>Duration:</strong> July 2022 - September 2023</p>
-              <p><strong>Employers:</strong> Prof. Ian Petersen, FAA & Prof. Iman Shames</p>
+              <p><strong>Employers:</strong> Prof. Ian Petersen, FAA &amp; Prof. Iman Shames</p>
               <p><strong>Affiliation:</strong> School of Engineering, ANU</p>
             </div>
             <div class="card-content">
@@ -707,7 +815,8 @@
             </div>
             <div class="card-content">
               <ul>
-                <li>Developed, implemented & back-tested a statistical arbitration model on the Hong Kong exchange.</li>
+                <li>Developed, implemented &amp; back-tested a statistical arbitration model on the Hong Kong exchange.
+                </li>
                 <li>Performed statistical analyses on large-scale financial data to uncover market patterns and
                   operational inefficiencies in Korean market.</li>
                 <li>Collaborated with traders and developers to build a proprietary, real-time Machine Learning
@@ -800,7 +909,7 @@
 
           <div class="experience-card">
             <div class="card-header">
-              <h3 class="card-title">Undergraduate Researcher: Control & Optimization</h3>
+              <h3 class="card-title">Undergraduate Researcher: Control &amp; Optimization</h3>
             </div>
             <div class="card-details">
               <p><strong>Duration:</strong> December 2021 - March 2022</p>
@@ -832,7 +941,8 @@
                   incoming passive radar signals.</li>
                 <li>Implemented an FPGA-based multi-processor interface for the analysis of long-range, noise-affected
                   radar signals.</li>
-                <li>Part of the Multi-Layer Air defence system passive signal processing team for the Kavach system.</li>
+                <li>Part of the Multi-Layer Air defence system passive signal processing team for the Kavach system.
+                </li>
               </ul>
             </div>
           </div>
@@ -848,7 +958,8 @@
             </div>
             <div class="card-content">
               <ul>
-                <li>Developed a model to estimate parametric states for the optical response of viscoelastic properties of the graphene
+                <li>Developed a model to estimate parametric states for the optical response of viscoelastic properties
+                  of the graphene
                   sheets under stress.</li>
                 <li>Verified the bifurcations and empirically validated the model for larger gains.</li>
               </ul>
@@ -884,33 +995,14 @@
 
 
 
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </button>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Theme toggle functionality
-      const themeToggle = document.getElementById('theme-toggle');
       const homeButton = document.getElementById('homeButton');
       const backToTopButton = document.getElementById('backToTop');
-      const body = document.body;
-
-      if (themeToggle) {
-        const icon = themeToggle.querySelector('i');
-        themeToggle.addEventListener('click', function () {
-          const isDark = body.classList.contains('dark-mode');
-          if (isDark) {
-            body.classList.remove('dark-mode');
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-          } else {
-            body.classList.add('dark-mode');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-          }
-        });
-      }
 
       // Home button functionality
       if (homeButton) {

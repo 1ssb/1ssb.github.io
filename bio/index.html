@@ -18,25 +18,6 @@
 
   <style>
     :root {
-      --bg-primary: #fafbfc;
-      --bg-surface: rgba(255, 255, 255, 0.95);
-      --bg-elevated: rgba(255, 255, 255, 0.98);
-      --text-primary: #1a1d23;
-      --text-secondary: #6b7280;
-      --accent-primary: #3b82f6;
-      --accent-secondary: #1d4ed8;
-      --accent-gold: #f59e0b;
-      --accent-emerald: #10b981;
-      --border-light: rgba(59, 130, 246, 0.1);
-      --border-medium: rgba(59, 130, 246, 0.2);
-      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-      --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
-    }
-
-    .dark-mode {
       --bg-primary: #0f111a;
       --bg-surface: rgba(22, 27, 34, 0.95);
       --bg-elevated: rgba(30, 35, 42, 0.98);
@@ -373,32 +354,9 @@
       font-size: 16px;
     }
 
-    .bio-section h2::before {
-      content: '';
-      position: absolute;
-      left: -24px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 8px;
-      height: 8px;
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
-      border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
-    }
 
-    @keyframes pulse {
 
-      0%,
-      100% {
-        transform: translateY(-50%) scale(1);
-        opacity: 1;
-      }
 
-      50% {
-        transform: translateY(-50%) scale(1.2);
-        opacity: 0.7;
-      }
-    }
 
     .bio-section p {
       font-size: 16px;
@@ -500,63 +458,176 @@
 
 
     @media (max-width: 768px) {
-
-      .site-header,
-      .main-content,
-      .site-footer {
-        padding: 24px;
-      }
-
-      .about-card {
-        padding: 32px 24px;
-        border-radius: 24px;
-      }
-
-      .bio-image {
-        width: 180px;
-        height: 180px;
-      }
-
-      .social-icons {
-        gap: 16px;
-      }
-
-      .social-icons a {
-        width: 44px;
-        height: 44px;
-        font-size: 18px;
-      }
-    }
-
-    @media (max-width: 480px) {
       .site-header {
-        flex-direction: row;
-        gap: 16px;
-        padding: 20px;
-        align-items: center;
+        padding: 16px 20px;
+        min-height: 60px;
       }
 
       .site-title {
-        font-size: 20px;
+        font-size: 22px;
       }
 
-
-
-
-
       .main-content {
-        padding: 24px 20px;
+        padding: 20px;
         gap: 24px;
       }
 
       .about-card {
         padding: 24px 20px;
         border-radius: 20px;
+        margin: 0 10px;
       }
 
       .bio-image {
         width: 160px;
         height: 160px;
+      }
+
+      .bio-section h2 {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .bio-section p {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .bio-section ol li {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .social-icons {
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-header {
+        padding: 12px 16px;
+        min-height: 56px;
+      }
+
+      .site-title {
+        font-size: 18px;
+      }
+
+      .main-content {
+        padding: 16px;
+        gap: 20px;
+      }
+
+      .about-card {
+        padding: 20px 16px;
+        border-radius: 16px;
+        margin: 0 8px;
+      }
+
+      .bio-image {
+        width: 140px;
+        height: 140px;
+      }
+
+      .bio-section h2 {
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+
+      .bio-section p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .bio-section ol {
+        margin-left: 16px;
+      }
+
+      .bio-section ol li {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 6px;
+      }
+
+      .social-icons {
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+        border-radius: 8px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .site-header {
+        padding: 10px 12px;
+        min-height: 52px;
+      }
+
+      .site-title {
+        font-size: 16px;
+      }
+
+      .main-content {
+        padding: 12px;
+        gap: 16px;
+      }
+
+      .about-card {
+        padding: 16px 12px;
+        border-radius: 12px;
+        margin: 0 4px;
+      }
+
+      .bio-image {
+        width: 120px;
+        height: 120px;
+      }
+
+      .bio-section h2 {
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      .bio-section p {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+      }
+
+      .bio-section ol {
+        margin-left: 12px;
+      }
+
+      .bio-section ol li {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 5px;
+      }
+
+      .social-icons {
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .social-icons a {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+        border-radius: 6px;
       }
     }
   </style>
@@ -566,10 +637,7 @@
   <header class="site-header">
     <div class="site-title">About Me</div>
     <div class="header-buttons">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-      </button>
-      <button class="home-button" id="homeButton" aria-label="Go home">
+      <button type="button" class="home-button" id="homeButton" aria-label="Go home">
         <i class="fas fa-home"></i>
       </button>
     </div>
@@ -635,26 +703,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Theme toggle functionality
-      const themeToggle = document.getElementById('theme-toggle');
       const homeButton = document.getElementById('homeButton');
-      const body = document.body;
-
-      if (themeToggle) {
-        const icon = themeToggle.querySelector('i');
-        themeToggle.addEventListener('click', function () {
-          const isDark = body.classList.contains('dark-mode');
-          if (isDark) {
-            body.classList.remove('dark-mode');
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-          } else {
-            body.classList.add('dark-mode');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-          }
-        });
-      }
 
       // Home button functionality
       if (homeButton) {

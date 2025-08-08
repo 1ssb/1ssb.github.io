@@ -18,26 +18,6 @@
 
   <style>
     :root {
-      --bg-primary: #fafbfc;
-      --bg-surface: rgba(255, 255, 255, 0.95);
-      --bg-elevated: rgba(255, 255, 255, 0.98);
-      --text-primary: #1a1d23;
-      --text-secondary: #6b7280;
-      --accent-primary: #3b82f6;
-      --accent-secondary: #1d4ed8;
-      --accent-gold: #f59e0b;
-      --accent-emerald: #10b981;
-      --border-light: rgba(59, 130, 246, 0.1);
-      --border-medium: rgba(59, 130, 246, 0.2);
-      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-      --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
-      --ripple-color: rgba(59, 130, 246, 0.3);
-    }
-
-    .dark-mode {
       --bg-primary: #0f111a;
       --bg-surface: rgba(22, 27, 34, 0.95);
       --bg-elevated: rgba(30, 35, 42, 0.98);
@@ -294,17 +274,7 @@
       font-size: 14px;
     }
 
-    .contact-content h3::before {
-      content: '';
-      position: absolute;
-      left: -32px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 8px;
-      height: 8px;
-      background: var(--accent-primary);
-      border-radius: 50%;
-    }
+
 
     .contact-content p {
       font-size: 16px;
@@ -313,6 +283,8 @@
       margin-bottom: 24px;
       font-weight: 400;
     }
+
+
 
     .contact-section+.contact-section {
       margin-top: 56px;
@@ -438,57 +410,174 @@
 
 
     @media (max-width: 768px) {
+      .site-header {
+        padding: 16px 20px;
+        min-height: 60px;
+      }
 
-      .site-header,
-      .main-content,
-      .site-footer {
-        padding: 24px;
+      .site-title {
+        font-size: 22px;
+      }
+
+      .main-content {
+        padding: 20px;
       }
 
       .contact-card {
-        padding: 40px 32px;
-        border-radius: 24px;
+        padding: 24px 20px;
+        border-radius: 20px;
+        margin: 0 10px;
+      }
+
+      .contact-section h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+
+      .contact-section p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+      }
+
+      .response-notice {
+        padding: 12px 16px;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      .response-notice i {
+        font-size: 16px;
+        margin-right: 12px;
       }
 
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 12px;
       }
 
       .btn-contact {
-        padding: 20px 24px;
-        gap: 16px;
+        padding: 16px 20px;
+        gap: 12px;
+        font-size: 15px;
+      }
+
+      .btn-contact i {
+        font-size: 16px;
       }
     }
 
     @media (max-width: 480px) {
       .site-header {
-        flex-direction: row;
-        gap: 16px;
-        padding: 20px;
-        align-items: center;
+        padding: 12px 16px;
+        min-height: 56px;
       }
 
       .site-title {
-        font-size: 20px;
+        font-size: 18px;
       }
 
-
-
-
-
       .main-content {
-        padding: 32px 20px;
+        padding: 16px;
       }
 
       .contact-card {
-        padding: 32px 24px;
-        border-radius: 20px;
+        padding: 20px 16px;
+        border-radius: 16px;
+        margin: 0 8px;
+      }
+
+      .contact-section h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .contact-section p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .response-notice {
+        padding: 10px 14px;
+        margin-bottom: 16px;
+        font-size: 13px;
+      }
+
+      .response-notice i {
+        font-size: 14px;
+        margin-right: 10px;
+      }
+
+      .contact-grid {
+        gap: 10px;
       }
 
       .btn-contact {
-        padding: 18px 20px;
-        gap: 14px;
+        padding: 14px 16px;
+        gap: 10px;
+        font-size: 14px;
+      }
+
+      .btn-contact i {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .site-header {
+        padding: 10px 12px;
+        min-height: 52px;
+      }
+
+      .site-title {
+        font-size: 16px;
+      }
+
+      .main-content {
+        padding: 12px;
+      }
+
+      .contact-card {
+        padding: 16px 12px;
+        border-radius: 12px;
+        margin: 0 4px;
+      }
+
+      .contact-section h3 {
+        font-size: 15px;
+        margin-bottom: 8px;
+      }
+
+      .contact-section p {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+      }
+
+      .response-notice {
+        padding: 8px 12px;
+        margin-bottom: 12px;
+        font-size: 12px;
+      }
+
+      .response-notice i {
+        font-size: 12px;
+        margin-right: 8px;
+      }
+
+      .contact-grid {
+        gap: 8px;
+      }
+
+      .btn-contact {
+        padding: 12px 14px;
+        gap: 8px;
+        font-size: 13px;
+      }
+
+      .btn-contact i {
+        font-size: 12px;
       }
     }
 
@@ -500,9 +589,6 @@
   <header class="site-header">
     <div class="site-title">Contact</div>
     <div class="header-buttons">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-      </button>
       <button type="button" class="home-button" id="homeButton" aria-label="Go home">
         <i class="fas fa-home"></i>
       </button>
@@ -565,26 +651,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Theme toggle functionality
-      const themeToggle = document.getElementById('theme-toggle');
       const homeButton = document.getElementById('homeButton');
-      const body = document.body;
-
-      if (themeToggle) {
-        const icon = themeToggle.querySelector('i');
-        themeToggle.addEventListener('click', function () {
-          const isDark = body.classList.contains('dark-mode');
-          if (isDark) {
-            body.classList.remove('dark-mode');
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-          } else {
-            body.classList.add('dark-mode');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-          }
-        });
-      }
 
       // Home button functionality
       if (homeButton) {
