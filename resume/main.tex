@@ -1,15 +1,166 @@
-\input{sections/preamble}
+% \documentclass[10pt, a4paper, sans]{moderncv}
+% % Set PDF metadata using \hypersetup.
+% \usepackage[unicode, pdflang={en-GB}]{hyperref}
+% \hypersetup{
+%   pdftitle={Subhransu S. Bhattacharjee Résumé},
+%   pdfauthor={Subhransu S. Bhattacharjee},
+%   pdfsubject={Résumé},
+%   pdfkeywords={AI, Machine Learning, Optimization, 3D Vision, Quantitative Research},
+% }
+
+% \usepackage[T1]{fontenc}
+% \usepackage{multicol}
+% \usepackage{amsmath}
+% \usepackage{verbatim}
+% \usepackage[hmargin=1.25cm, bottom=1in, top=1in]{geometry}
+% \usepackage{comment}
+% \usepackage{float, multirow}
+
+% \usepackage{moderncvcompatibility}
+% \moderncvstyle{banking}
+% \moderncvcolor{black}
+% \nopagenumbers{}
+% \renewcommand\footrule{\hrule width\textwidth}
+% \usepackage{enumitem,url}
+% \usepackage{array,adjustbox, xcolor,fancyhdr}
+% \usepackage{etoolbox}
+
+% % Document Header (personal info)
+% \title{\huge Résumé}
+% \name{\huge Subhransu S.}{\huge Bhattacharjee}
+% \address{Skaidrite Darius Building, The Australian National University, Acton, ACT 2601}
+% \newcommand*{\gmail}{\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com}}
+% \email{Subhransu.Bhattacharjee@anu.edu.au}
+% \mobile {+61474224742}
+% \homepage {1ssb.github.io}
+
+% % Social Links and Commands
+% \newcommand*{\githublink}{\href{https://github.com/1ssb}{GitHub}}
+% \newcommand*{\googlescholarlink}{\href{https://scholar.google.com/citations?hl=en&user=Ngk4emsAAAAJ&view_op=list_works&sortby=pubdate}{Google Scholar}}
+% \newcommand*{\linkedinlink}{\href{https://www.linkedin.com/in/1ssb/}{LinkedIn}}
+
+% % Extra Social Info in header
+% \extrainfo{
+%     \faEnvelope~\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com} ~~ | ~~
+%     \faGithub~\githublink ~~ | ~~
+%     \faLinkedin~\linkedinlink ~~ | ~~\aiGoogleScholar~\googlescholarlink
+% }
+
+% \setlength{\emergencystretch}{3em}
+% \tolerance=1000
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{document}
+% \makecvtitle
+% \vspace{-3em}
+% \begin{center}
+% \textbf{Research Interests} \\
+% Inverse Problems; Generative AI; Uncertainty Estimation; Spatial (Embodied) 3D Modeling; Optimization Theory
+% \end{center}
+% \input{sections/education}
+% \input{sections/awards}
+% \input{sections/publications}
+% \input{sections/exp}
+% \input{sections/skills}
+% \input{sections/services}
+% % --- Closing line: transcripts + references ---
+% \begin{center}
+% \bfseries
+% \textit{Transcripts and references available upon request.}
+% \end{center}
+
+% \end{document}
+
+
+\documentclass[10pt, a4paper, sans]{moderncv}
+
+% --- PDF metadata ---
+\usepackage[unicode, pdflang={en-GB}]{hyperref}
+\hypersetup{
+  pdftitle={Subhransu S. Bhattacharjee Résumé},
+  pdfauthor={Subhransu S. Bhattacharjee},
+  pdfsubject={Résumé},
+  pdfkeywords={AI, Machine Learning, Optimization, 3D Vision, Quantitative Research},
+}
+
+% --- Core pkgs ---
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage[hmargin=1.35cm, bottom=1in, top=0.98in]{geometry} % small, sane margin update
+\usepackage{comment}
+\usepackage{float, multirow}
+\usepackage{xcolor} % for the blue rule
+\definecolor{linkblue}{HTML}{1E3A8A} % deep, accessible blue
+
+\usepackage{moderncvcompatibility}
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\nopagenumbers{}
+\renewcommand\footrule{\hrule width\textwidth}
+\usepackage{enumitem,url}
+\usepackage{array,adjustbox,fancyhdr}
+\usepackage{etoolbox}
+
+% --- Header (personal info) ---
+\title{\huge Résumé}
+\name{\huge Subhransu S.}{\huge Bhattacharjee}
+\address{Skaidrite Darius Building, The Australian National University, Acton, ACT 2601}
+\newcommand*{\gmail}{\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com}}
+\email{Subhransu.Bhattacharjee@anu.edu.au}
+\mobile {+61474224742}
+\homepage {1ssb.github.io}
+
+% --- Social commands ---
+\newcommand*{\githublink}{\href{https://github.com/1ssb}{GitHub}}
+\newcommand*{\googlescholarlink}{\href{https://scholar.google.com/citations?hl=en&user=Ngk4emsAAAAJ&view_op=list_works&sortby=pubdate}{Google Scholar}}
+\newcommand*{\linkedinlink}{\href{https://www.linkedin.com/in/1ssb/}{LinkedIn}}
+
+% --- Extra header info (icons assumed available via moderncv) ---
+\extrainfo{
+    \faEnvelope~\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com} ~~|~~
+    \faGithub~\githublink ~~|~~
+    \faLinkedin~\linkedinlink ~~|~~ \aiGoogleScholar~\googlescholarlink
+}
+
+% --- Small blue divider + Research Interests block (compact, clean) ---
+\newcommand{\headerdivider}{%
+  \par\vspace{.35\baselineskip}%
+  {\centering \color{linkblue}\rule{0.22\linewidth}{0.9pt}\par}%
+  \vspace{.15\baselineskip}%
+}
+
+\newcommand{\researchinterests}{%
+  {\centering \small
+   \textbf{Research Interests}: Inverse Problems; Generative AI; Uncertainty Estimation; Spatial (Embodied) 3D Modeling; Optimization Theory\par}%
+  \vspace{.12\baselineskip}%
+  % {\centering \color{linkblue}\rule{0.14\linewidth}{0.6pt}\par}%
+  \vspace{.30\baselineskip}%
+}
+
+% --- Spacing robustness ---
+\setlength{\emergencystretch}{3em}
+\tolerance=1000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \makecvtitle
 \vspace{-3em}
+\headerdivider
+\researchinterests
 \input{sections/education}
-\vspace{-.5em}
 \input{sections/awards}
-\vspace{-1.5em}
 \input{sections/publications}
-\vspace{-0.75em}
 \input{sections/exp}
 \input{sections/skills}
+\vspace{-1em}
 \input{sections/services}
+
+% --- Closing line: transcripts + references ---
+% \begin{center}
+% \footnotesize\itshape
+% Transcripts and references are available upon request.
+% \end{center}
 
 \end{document}
