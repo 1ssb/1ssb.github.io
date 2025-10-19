@@ -1,16 +1,27 @@
 \documentclass[10pt, a4paper, sans]{moderncv}
+\definecolor{linkblue}{HTML}{1E3A8A} % deep, accessible blue
 
 % --- PDF metadata ---
-\usepackage[unicode, pdflang={en-GB}]{hyperref}
+% ------------ PDF metadata & links ------------------------------------
+\usepackage[unicode,pdflang={en-GB}]{hyperref}
 \hypersetup{
-  pdftitle={Subhransu S. Bhattacharjee Resume (Résumé)},
+  pdftitle={Subhransu S. Bhattacharjee Resume},
   pdfauthor={Subhransu S. Bhattacharjee},
-  pdfsubject={Résumé},
+  pdfsubject={Resume},
   pdfkeywords={AI, Machine Learning, Optimization, 3D Vision, Quantitative Research},
+  pdfproducer={LaTeX, moderncv},
+  colorlinks=true,
+  linkcolor=linkblue,
+  urlcolor=linkblue,
+  citecolor=linkblue,
+  breaklinks=true
 }
 
 % --- Core pkgs ---
+\usepackage[UKenglish]{babel}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}            % vector, copyable fonts
+
 \usepackage{multicol}
 \usepackage{amsmath}
 \usepackage{verbatim}
@@ -33,7 +44,7 @@
 % --- Header (personal info) ---
 \title{\huge Résumé}
 \name{\huge Subhransu S.}{\huge Bhattacharjee}
-\address{Skaidrite Darius Building, The Australian National University, Acton, ACT 2601}
+\address{School of Computing, The Australian National University, Australia}
 \newcommand*{\gmail}{\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com}}
 \email{Subhransu.Bhattacharjee@anu.edu.au}
 \mobile {+61474224742}
@@ -44,24 +55,21 @@
 \newcommand*{\googlescholarlink}{\href{https://scholar.google.com/citations?hl=en&user=Ngk4emsAAAAJ&view_op=list_works&sortby=pubdate}{Google Scholar}}
 \newcommand*{\linkedinlink}{\href{https://www.linkedin.com/in/1ssb/}{LinkedIn}}
 
-% --- Extra header info (icons assumed available via moderncv) ---
+% --- Extra header info ---
 \extrainfo{
-    \faEnvelope~\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com} ~~|~~
-    \faGithub~\githublink ~~|~~
-    \faLinkedin~\linkedinlink ~~|~~ \aiGoogleScholar~\googlescholarlink
+    \githublink ~~\textbullet~~
+    \linkedinlink ~~\textbullet~~ 
+    \googlescholarlink
 }
-
-% --- Small blue divider + Research Interests block (compact, clean) ---
-% keep your \definecolor{linkblue}{...} somewhere above
 
 \newcommand{\headerdivider}{%
   \par\vspace{.30\baselineskip}%
   {\centering \color{linkblue}\rule{0.24\linewidth}{0.9pt}\par}%
   \vspace{.5\baselineskip}%
 }
-\newcommand{\researchinterests}{%
+\newcommand{\summary}{%
   {\centering \small
-   \textbf{Research Interests:}\,—\,Generative AI; Uncertainty Estimation; Spatial (Embodied) 3D Modeling; Optimization Theory\par}%
+   \textbf{Research Interests:}\,—\,Efficient Generative Modelling; Uncertainty Estimation; Spatial Computing in 3D; Information Geometry\par}%
   \vspace{.10\baselineskip}%
   {\centering \color{linkblue}\rule{0.16\linewidth}{0.6pt}\par}%
   \vspace{.28\baselineskip}%
@@ -76,21 +84,17 @@
 \makecvtitle
 \vspace{-3em}
 \headerdivider
-\researchinterests
+\summary
 \vspace{-1em}
 \input{sections/education}
 \input{sections/awards}
+\vspace{-0.75em}
 \input{sections/publications}
+\vspace{-0.75em}
 \input{sections/exp}
-\vspace{-0.5em}
 \input{sections/skills}
-\vspace{-1em}
-\input{sections/services}
-\vspace{-1em}
-% --- Closing line: transcripts + references ---
 \begin{center}
-\itshape\bfseries
-Transcripts and references are available upon request.
+\vspace{1ex}
+\textbf{--- Transcripts and References are available on request ---}
 \end{center}
-
 \end{document}
