@@ -42,7 +42,7 @@
 \usepackage{etoolbox}
 
 % --- Header (personal info) ---
-\title{\huge Résumé}
+\title{\huge Ph.D. Scholar}
 \name{\huge Subhransu S.}{\huge Bhattacharjee}
 \address{School of Computing, The Australian National University, Australia}
 \newcommand*{\gmail}{\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com}}
@@ -69,11 +69,20 @@
 }
 \newcommand{\summary}{%
   {\centering \small
-   \textbf{Research Interests:}\,—\,Efficient Generative Modelling; Uncertainty Estimation; 3D Spatial Computing; Optimization Theory\par}%
+   \textbf{Bio:}\,—\,PhD researcher advancing generative and vision-language models to represent spatio-temporal uncertainty for reliable robotic decision-making; interests also include time-series uncertainty analysis in noisy regimes \& resource efficient convex optimization.\par}%
   \vspace{.10\baselineskip}%
   {\centering \color{linkblue}\rule{0.16\linewidth}{0.6pt}\par}%
   \vspace{.28\baselineskip}%
 }
+
+% In your preamble
+\usepackage{enumitem}
+\newlist{awards}{description}{1}
+\setlist[awards]{leftmargin=2.6cm,labelsep=0.8em,itemsep=0pt,topsep=0pt,parsep=0pt}
+
+% One-line variant (for single-award years)
+\newcommand{\awardyearline}[2]{\item[\textbf{#1}] #2}
+
 
 % --- Spacing robustness ---
 \setlength{\emergencystretch}{3em}
@@ -87,14 +96,12 @@
 \summary
 \vspace{-1em}
 \input{sections/education}
+\vspace{-1em}
+\input{sections/publications}
+\vspace{-1em}
 \input{sections/awards}
 \vspace{-0.75em}
-\input{sections/publications}
-\vspace{-0.75em}
 \input{sections/exp}
+\vspace{-0.75em}
 \input{sections/skills}
-\begin{center}
-\vspace{1ex}
-\textbf{--- Transcripts and References are available on request ---}
-\end{center}
 \end{document}
