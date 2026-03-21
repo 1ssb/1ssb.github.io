@@ -8,7 +8,7 @@
   pdftitle={Subhransu S. Bhattacharjee Resume},
   pdfauthor={Subhransu S. Bhattacharjee},
   pdfsubject={Resume},
-  pdfkeywords={AI, Machine Learning, Optimization, 3D Vision, Quantitative Research},
+  pdfkeywords={AI Research, Machine Learning Research, Computer Vision, 3D Vision, World Models, Embodied AI, Statistical Machine Learning, Generative Modeling, Probabilistic Modeling, Quantitative Research, Quantitative Finance, Market Microstructure, Alpha Research, Time-Series Forecasting, Risk Modeling, Backtesting, Optimization},
   pdfproducer={LaTeX, moderncv},
   colorlinks=true,
   linkcolor=linkblue,
@@ -25,16 +25,16 @@
 \usepackage{multicol}
 \usepackage{amsmath}
 \usepackage{verbatim}
-\usepackage[hmargin=1.35cm, bottom=1in, top=0.98in]{geometry} % small, sane margin update
+\usepackage[hmargin=1.35cm, bottom=0.88in, top=0.92in]{geometry} % ATS-friendly use of page area
 \usepackage{comment}
 \usepackage{float, multirow}
 \usepackage{xcolor} % for the blue rule
-\definecolor{linkblue}{HTML}{1E3A8A} % deep, accessible blue
 
 % ModernCV packages
 \usepackage{moderncvcompatibility}
 \moderncvstyle{banking}
 \moderncvcolor{black}
+\colorlet{firstnamecolor}{black}
 \nopagenumbers{}
 \renewcommand\footrule{\hrule width\textwidth}
 \usepackage{enumitem,url}
@@ -44,40 +44,32 @@
 % --- Header (personal info) ---
 \name{\huge Subhransu S.}{\huge Bhattacharjee}
 \address{School of Computing, The Australian National University, Australia}
-\newcommand*{\gmail}{\href{mailto:1ssb.rudra@gmail.com}{1ssb.rudra@gmail.com}}
+\phone[mobile]{+61 474 224 742}
 \email{Subhransu.Bhattacharjee@anu.edu.au}
-\mobile {+61474224742}
-\homepage {1ssb.github.io}
-
-% --- Social commands ---
-\newcommand*{\githublink}{\href{https://github.com/1ssb}{GitHub}}
-\newcommand*{\googlescholarlink}{\href{https://scholar.google.com/citations?hl=en&user=Ngk4emsAAAAJ&view_op=list_works&sortby=pubdate}{Google Scholar}}
-\newcommand*{\linkedinlink}{\href{https://www.linkedin.com/in/1ssb/}{LinkedIn}}
-
-% --- Extra header info ---
-\extrainfo{
-    \githublink ~~\textbullet~~
-    \linkedinlink ~~\textbullet~~ 
-    \googlescholarlink
-}
+\homepage{1ssb.github.io}
+\social[github]{1ssb}
+\social[linkedin]{1ssb}
+\social[googlescholar][scholar.google.com/citations?user=Ngk4emsAAAAJ]{Google Scholar}
 
 \newcommand{\headerdivider}{%
-  \par\vspace{.30\baselineskip}%
+  \par\vspace{.18\baselineskip}%
   {\centering \color{linkblue}\rule{0.24\linewidth}{0.9pt}\par}%
-  \vspace{.5\baselineskip}%
+  \vspace{.28\baselineskip}%
 }
 \newcommand{\summary}{%
   {\centering \small
-   \textbf{Bio:}\,—\,PhD researcher turning uncertain, noisy spatio-semantic data into calibrated predictions and robust decisions by combining generative modeling for forecasting, monitoring, and risk control for robotic perception pipelines.\par}%
-  \vspace{.10\baselineskip}%
+   \textbf{Summary:} PhD researcher in world models, embodied AI, statistical machine learning, and generative modeling for robotic perception.\\
+   Quantitative research experience in market microstructure, alpha research, forecasting, risk modeling, and walk-forward backtesting.\par}%
+  \vspace{.04\baselineskip}%
   {\centering \color{linkblue}\rule{0.16\linewidth}{0.6pt}\par}%
-  \vspace{.28\baselineskip}%
+  \vspace{.16\baselineskip}%
 }
 
 % In your preamble
 \usepackage{enumitem}
 \newlist{awards}{description}{1}
 \setlist[awards]{leftmargin=2.6cm,labelsep=0.8em,itemsep=0pt,topsep=0pt,parsep=0pt}
+\setlist[itemize]{leftmargin=*,itemsep=0pt,parsep=0pt,topsep=0pt,label={-}}
 
 % One-line variant (for single-award years)
 \newcommand{\awardyearline}[2]{\item[\textbf{#1}] #2}
@@ -90,13 +82,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \makecvtitle
-\vspace{-3em}
+\vspace{-2.2em}
 \headerdivider
-% \summary
-\vspace{-2em}
+\summary
 \input{sections/education}
 \input{sections/exp}
 \input{sections/publications}
 \input{sections/awards}
+\input{sections/service}
 \input{sections/skills}
 \end{document}
