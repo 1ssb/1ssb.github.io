@@ -236,7 +236,9 @@ nav ul li a:hover {
 
 /* Cancel the floating behavior when inside header */
 .header-buttons .home-button {
-    position: static !important;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
     width: 40px;
     height: 40px;
     border-radius: 6px;

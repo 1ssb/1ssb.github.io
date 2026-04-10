@@ -7,6 +7,7 @@
     content="Homepage of Subhransu Sekhar Bhattacharjee, PhD Student at the Australian National University.">
   <meta name="author" content="Subhransu S. Bhattacharjee">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; img-src 'self' https:; connect-src 'self';">
   <title>Subhransu Sekhar Bhattacharjee</title>
   <!-- Preload critical resources -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
@@ -797,112 +798,91 @@
     const updatesModalClose = document.getElementById('updates-modal-close');
     const updatesContent = document.getElementById('updates-content');
 
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function isValidUrl(url) {
+      try {
+        const parsed = new URL(url);
+        return parsed.protocol === 'https:' || parsed.protocol === 'http:';
+      } catch {
+        return false;
+      }
+    }
+
+    function renderUpdates(updates) {
+      const grouped = {};
+      updates.forEach(({ year, text, link }) => {
+        if (!grouped[year]) grouped[year] = [];
+        grouped[year].push({ text, link });
+      });
+
+      const fragment = document.createDocumentFragment();
+      Object.keys(grouped).sort((a, b) => b - a).forEach(year => {
+        const yearCard = document.createElement('div');
+        yearCard.className = 'year-card';
+
+        const yearTitle = document.createElement('div');
+        yearTitle.className = 'year-title';
+        yearTitle.textContent = year;
+        yearCard.appendChild(yearTitle);
+
+        grouped[year].forEach(({ text, link }) => {
+          const updateCard = document.createElement('div');
+          updateCard.className = 'update-card';
+
+          if (link && isValidUrl(link)) {
+            const a = document.createElement('a');
+            a.href = link;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.textContent = text;
+            updateCard.appendChild(a);
+          } else {
+            const span = document.createElement('span');
+            span.textContent = text;
+            updateCard.appendChild(span);
+          }
+
+          yearCard.appendChild(updateCard);
+        });
+
+        fragment.appendChild(yearCard);
+      });
+
+      updatesContent.textContent = '';
+      updatesContent.appendChild(fragment);
+    }
+
     async function loadUpdates() {
       try {
-        // Try to load updates from the JSON file
         const response = await fetch('./updates/updates.json');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const updates = await response.json();
-
-        const grouped = {};
-        updates.forEach(({ year, text, link }) => {
-          if (!grouped[year]) grouped[year] = [];
-          grouped[year].push({ text, link });
-        });
-
-        const sortedYears = Object.keys(grouped).sort((a, b) => b - a);
-
-        let html = '';
-        sortedYears.forEach(year => {
-          html += `
-            <div class="year-card">
-              <div class="year-title">${year}</div>
-          `;
-
-          grouped[year].forEach(({ text, link }) => {
-            html += `
-              <div class="update-card">
-                ${link ? `<a href="${link}" target="_blank" rel="noopener">${text}</a>` : `<span>${text}</span>`}
-              </div>
-            `;
-          });
-
-          html += '</div>';
-        });
-
-        updatesContent.innerHTML = html;
+        renderUpdates(updates);
       } catch (error) {
         console.error('Error loading updates:', error);
-        // Fallback to hardcoded updates if fetch fails
-        const fallbackUpdates = [
-          {
-            year: 2025,
-            text: "Winner of the VC Travel grant at ANU"
-          },
-          {
-            year: 2025,
-            text: "Reviewer for IROS 2025 in the LLM-based planning and Diffusion Policy domain"
-          },
-          {
-            year: 2025,
-            text: "Tutoring Building Cyberphysical Systems at the ANU School of Cybernetics",
-            link: "https://www.linkedin.com/posts/1ssb_im-happy-to-share-that-im-starting-a-new-activity-7311242108193886208-nDl7"
-          },
-          {
-            year: 2025,
-            text: "Citadel Poster Presentation in London",
-            link: "https://www.linkedin.com/posts/1ssb_i-had-an-incredibly-enriching-experience-activity-7310594360905973760-bNd8"
-          },
-          {
-            year: 2025,
-            text: "CVPR 2025 paper acceptance",
-            link: "https://www.linkedin.com/posts/1ssb_cvpr2025-activity-7300880423604166658-3_dh"
-          },
-          {
-            year: 2024,
-            text: "Reviewer for ICRA in Diffusion Policy Planning"
-          },
-          {
-            year: 2024,
-            text: "Intern at Optiver 2024–2025",
-            link: "https://www.linkedin.com/feed/update/urn:li:activity:7252164787344703488/"
-          },
-          {
-            year: 2024,
-            text: "TorchKAN released!",
-            link: "https://github.com/1ssb/torchkan"
-          }
-        ];
-
-        const grouped = {};
-        fallbackUpdates.forEach(({ year, text, link }) => {
-          if (!grouped[year]) grouped[year] = [];
-          grouped[year].push({ text, link });
-        });
-
-        const sortedYears = Object.keys(grouped).sort((a, b) => b - a);
-
-        let html = '';
-        sortedYears.forEach(year => {
-          html += `
-            <div class="year-card">
-              <div class="year-title">${year}</div>
-          `;
-
-          grouped[year].forEach(({ text, link }) => {
-            html += `
-              <div class="update-card">
-                ${link ? `<a href="${link}" target="_blank" rel="noopener">${text}</a>` : `<span>${text}</span>`}
-              </div>
-            `;
-          });
-
-          html += '</div>';
-        });
-
-        updatesContent.innerHTML = html;
+        renderUpdates([
+          { year: 2026, text: "Reviewing for NeurIPS 2026 and ECCV 2026" },
+          { year: 2025, text: "Winner of the VC Travel grant at ANU" },
+          { year: 2025, text: "Reviewer for IROS 2025 in the LLM-based planning and Diffusion Policy domain" },
+          { year: 2025, text: "Tutoring Building Cyberphysical Systems at the ANU School of Cybernetics",
+            link: "https://www.linkedin.com/posts/1ssb_im-happy-to-share-that-im-starting-a-new-activity-7311242108193886208-nDl7" },
+          { year: 2025, text: "Citadel Poster Presentation in London",
+            link: "https://www.linkedin.com/posts/1ssb_i-had-an-incredibly-enriching-experience-activity-7310594360905973760-bNd8" },
+          { year: 2025, text: "CVPR 2025 paper acceptance",
+            link: "https://www.linkedin.com/posts/1ssb_cvpr2025-activity-7300880423604166658-3_dh" },
+          { year: 2024, text: "Reviewer for ICRA in Diffusion Policy Planning" },
+          { year: 2024, text: "Intern at Optiver 2024\u20132025",
+            link: "https://www.linkedin.com/feed/update/urn:li:activity:7252164787344703488/" },
+          { year: 2024, text: "TorchKAN released!",
+            link: "https://github.com/1ssb/torchkan" }
+        ]);
       }
     }
 
@@ -919,6 +899,13 @@
 
     updatesModal.addEventListener('click', (e) => {
       if (e.target === updatesModal) {
+        updatesModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && updatesModal.style.display === 'block') {
         updatesModal.style.display = 'none';
         document.body.style.overflow = 'auto';
       }
