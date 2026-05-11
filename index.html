@@ -511,6 +511,29 @@
       box-shadow: var(--shadow-sm);
     }
 
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer a:hover,
+    .footer a:focus {
+      color: var(--accent-primary);
+    }
+
+    .footer-divider {
+      color: var(--border-medium);
+    }
+
     .loading {
       opacity: 0;
       visibility: hidden;
@@ -666,8 +689,13 @@
         border-radius: 8px;
       }
 
-      .updates-line {
+      .updates-line,
+      .footer-divider {
         display: none;
+      }
+
+      .footer-content {
+        gap: 8px;
       }
     }
 
@@ -769,7 +797,15 @@
   </div>
 
   <footer class="footer">
-    <p>© S. S. Bhattacharjee | Last Updated: <span id="lastUpdated"></span></p>
+    <div class="footer-content">
+      <span>&copy; S. S. Bhattacharjee</span>
+      <span class="footer-divider" aria-hidden="true">|</span>
+      <a href="./resume/Resume.pdf">Resume.pdf</a>
+      <span class="footer-divider" aria-hidden="true">|</span>
+      <a href="./contact/">Contact</a>
+      <span class="footer-divider" aria-hidden="true">|</span>
+      <span>Updated <time id="lastUpdated" datetime=""></time></span>
+    </div>
   </footer>
 
   <script>
@@ -779,7 +815,9 @@
     document.addEventListener('DOMContentLoaded', () => {
       const lastMod = new Date(document.lastModified);
       const options = { year: 'numeric', month: 'short' };
-      document.getElementById('lastUpdated').textContent = lastMod.toLocaleDateString('en-US', options);
+      const lastUpdated = document.getElementById('lastUpdated');
+      lastUpdated.textContent = lastMod.toLocaleDateString('en-US', options);
+      lastUpdated.dateTime = lastMod.toISOString().slice(0, 10);
       body.classList.remove('loading');
       body.classList.add('loaded');
       const footer = document.querySelector('.footer');
