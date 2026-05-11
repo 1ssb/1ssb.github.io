@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description"
+    content="Biography and research interests of Subhransu Sekhar Bhattacharjee, AI PhD candidate at the Australian National University.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Subhransu Sekhar Bhattacharjee</title>
+  <link rel="canonical" href="https://1ssb.github.io/bio/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="About | Subhransu Sekhar Bhattacharjee">
+  <meta property="og:description"
+    content="Biography and research interests of Subhransu Sekhar Bhattacharjee, AI PhD candidate at ANU.">
+  <meta property="og:url" content="https://1ssb.github.io/bio/">
+  <meta property="og:image" content="https://1ssb.github.io/bio/DP.jpeg">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../shared-styles.css">
+
+
+  <style>
+    :root {
+      --bg-primary: #0f111a;
+      --bg-surface: rgba(22, 27, 34, 0.95);
+      --bg-elevated: rgba(30, 35, 42, 0.98);
+      --text-primary: #f0f6fc;
+      --text-secondary: #c9d1d9;
+      --accent-primary: #58a6ff;
+      --accent-secondary: #1f6feb;
+      --accent-gold: #ffd700;
+      --accent-emerald: #56d364;
+      --border-light: rgba(88, 166, 255, 0.15);
+      --border-medium: rgba(88, 166, 255, 0.25);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+      --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      position: relative;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        /* PRIMARY GRID PATTERN */
+        repeating-linear-gradient(45deg, transparent 0px, transparent 30px, #3b82f6 30px, #3b82f6 32px),
+        repeating-linear-gradient(-45deg, transparent 0px, transparent 40px, #10b981 40px, #10b981 42px),
+        /* PRIMARY DOTS */
+        radial-gradient(circle at 25% 25%, #f59e0b 0px, #f59e0b 4px, transparent 4px),
+        radial-gradient(circle at 75% 75%, #ef4444 0px, #ef4444 4px, transparent 4px),
+        radial-gradient(circle at 25% 75%, #8b5cf6 0px, #8b5cf6 4px, transparent 4px),
+        radial-gradient(circle at 75% 25%, #06b6d4 0px, #06b6d4 4px, transparent 4px);
+      background-size: 60px 60px, 80px 80px, 100px 100px, 100px 100px, 100px 100px, 100px 100px;
+      opacity: 0.7;
+      z-index: -2;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        /* OFFSET GRID PATTERN */
+        repeating-linear-gradient(90deg, transparent 0px, transparent 35px, #06b6d4 35px, #06b6d4 37px),
+        repeating-linear-gradient(0deg, transparent 0px, transparent 45px, #f97316 45px, #f97316 47px),
+        /* OFFSET DOTS */
+        radial-gradient(circle at 50% 50%, #ec4899 0px, #ec4899 3px, transparent 3px),
+        radial-gradient(circle at 10% 90%, #8b5cf6 0px, #8b5cf6 3px, transparent 3px),
+        radial-gradient(circle at 90% 10%, #06b6d4 0px, #06b6d4 3px, transparent 3px);
+      background-size: 70px 70px, 90px 90px, 120px 120px, 120px 120px, 120px 120px;
+      background-position: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    @keyframes geometricFlow {
+      0% {
+        transform: rotate(0deg) scale(1) translate(0, 0);
+      }
+
+      25% {
+        transform: rotate(90deg) scale(1.02) translate(10px, -5px);
+      }
+
+      50% {
+        transform: rotate(180deg) scale(1) translate(0, -10px);
+      }
+
+      75% {
+        transform: rotate(270deg) scale(0.98) translate(-10px, 5px);
+      }
+
+      100% {
+        transform: rotate(360deg) scale(1) translate(0, 0);
+      }
+    }
+
+    @keyframes dotMatrix {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      25% {
+        transform: translate(20px, -15px) scale(1.01);
+      }
+
+      50% {
+        transform: translate(-10px, 20px) scale(0.99);
+      }
+
+      75% {
+        transform: translate(15px, -25px) scale(1.02);
+      }
+    }
+
+    .site-header {
+      background: var(--bg-surface);
+      backdrop-filter: blur(40px) saturate(200%);
+      border-bottom: 1px solid var(--border-light);
+      padding: 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 9999 !important;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      min-height: 80px;
+      width: 100%;
+    }
+
+    .site-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold), var(--accent-emerald));
+      opacity: 0.02;
+      transition: opacity 0.4s;
+      pointer-events: none !important;
+      z-index: -1;
+    }
+
+    .site-header:hover::before {
+      opacity: 0.06;
+    }
+
+    .site-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      position: relative;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--text-primary);
+      flex: 1;
+      text-align: left;
+    }
+
+    .site-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      border-radius: 2px;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .site-header:hover .site-title::after {
+      width: 50%;
+    }
+
+
+
+
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px;
+      position: relative;
+      z-index: 100;
+      gap: 32px;
+    }
+
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .bio-image {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--border-medium);
+      box-shadow: var(--shadow-xl);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .bio-image::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold), var(--accent-emerald));
+      border-radius: 50%;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .bio-image:hover::before {
+      opacity: 1;
+    }
+
+    .bio-image:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-2xl);
+    }
+
+    .bio-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .about-card {
+      background: var(--bg-surface);
+      backdrop-filter: blur(40px) saturate(200%);
+      border: 1px solid var(--border-medium);
+      border-radius: 32px;
+      padding: 48px;
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+      box-shadow: var(--shadow-xl);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg,
+          var(--accent-primary),
+          var(--accent-gold),
+          var(--accent-emerald),
+          var(--accent-secondary));
+      opacity: 0.8;
+      animation: gradientShimmer 8s ease-in-out infinite;
+    }
+
+    .about-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg,
+          rgba(59, 130, 246, 0.02),
+          rgba(245, 158, 11, 0.02),
+          rgba(16, 185, 129, 0.02));
+      border-radius: inherit;
+      transition: opacity 0.6s;
+      opacity: 0.5;
+    }
+
+    .about-card:hover {
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-card:hover::after {
+      opacity: 0.7;
+    }
+
+    @keyframes gradientShimmer {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+        opacity: 0.6;
+      }
+
+      50% {
+        background-position: 100% 50%;
+        opacity: 1;
+      }
+    }
+
+    .bio-section {
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bio-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio-section h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      position: relative;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    .bio-section p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .bio-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio-section ol {
+      margin-left: 24px;
+      color: var(--text-secondary);
+    }
+
+    .bio-section ol li {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-light);
+      color: var(--text-primary);
+      font-size: 20px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-icons a::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(59, 130, 246, 0.05);
+      border-radius: 12px;
+      transform: scale(0);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+    }
+
+    .social-icons a:hover::before {
+      transform: scale(1);
+    }
+
+    .social-icons a:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+      background: var(--bg-surface);
+    }
+
+    a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    a:hover {
+      color: var(--accent-secondary);
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-primary);
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+
+
+    @media (max-width: 768px) {
+      .site-header {
+        padding: 16px 20px;
+        min-height: 60px;
+      }
+
+      .site-title {
+        font-size: 22px;
+      }
+
+      .main-content {
+        padding: 20px;
+        gap: 24px;
+      }
+
+      .about-card {
+        padding: 24px 20px;
+        border-radius: 20px;
+        margin: 0 10px;
+      }
+
+      .bio-image {
+        width: 160px;
+        height: 160px;
+      }
+
+      .bio-section h2 {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .bio-section p {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .bio-section ol li {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .social-icons {
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-header {
+        padding: 12px 16px;
+        min-height: 56px;
+      }
+
+      .site-title {
+        font-size: 18px;
+      }
+
+      .main-content {
+        padding: 16px;
+        gap: 20px;
+      }
+
+      .about-card {
+        padding: 20px 16px;
+        border-radius: 16px;
+        margin: 0 8px;
+      }
+
+      .bio-image {
+        width: 140px;
+        height: 140px;
+      }
+
+      .bio-section h2 {
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+
+      .bio-section p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .bio-section ol {
+        margin-left: 16px;
+      }
+
+      .bio-section ol li {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 6px;
+      }
+
+      .social-icons {
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+        border-radius: 8px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .site-header {
+        padding: 10px 12px;
+        min-height: 52px;
+      }
+
+      .site-title {
+        font-size: 16px;
+      }
+
+      .main-content {
+        padding: 12px;
+        gap: 16px;
+      }
+
+      .about-card {
+        padding: 16px 12px;
+        border-radius: 12px;
+        margin: 0 4px;
+      }
+
+      .bio-image {
+        width: 120px;
+        height: 120px;
+      }
+
+      .bio-section h2 {
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      .bio-section p {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+      }
+
+      .bio-section ol {
+        margin-left: 12px;
+      }
+
+      .bio-section ol li {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 5px;
+      }
+
+      .social-icons {
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .social-icons a {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+        border-radius: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-title">About Me</div>
+    <div class="header-buttons">
+      <button type="button" class="home-button" id="homeButton" aria-label="Go home">
+        <i class="fas fa-home"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="profile-section">
+      <div class="bio-image">
+        <img src="DP.jpeg" alt="Portrait of Subhransu Sekhar Bhattacharjee" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <div class="about-card">
+      <article class="bio-content">
+        <section class="bio-section">
+          <h2>Introduction</h2>
+          <p>Hi, I am Subhransu Sekhar Bhattacharjee (Bangla: শুভ্রাংশু-শেখর ভট্টাচার্য), nickname: Rudra (রুদ্র). I am
+            an international research scholar at the <a href="https://comp.anu.edu.au/" target="_blank" rel="noopener noreferrer">ANU School of
+              Computing</a> since April 2023.</p>
+        </section>
+
+        <section class="bio-section">
+          <h2>Education</h2>
+          <p>I graduated with First Class Honours in Mechatronics at ANU, minoring in Electronic Communication
+            Systems and Mathematics. My honours thesis, advised by <a href="https://eng.anu.edu.au/people/ian-petersen/"
+              target="_blank" rel="noopener noreferrer">Prof. Ian Petersen</a>, was titled "Whiplash Inertial Gradient Descent Dynamics," and was
+            later published as a journal paper <a href="https://onlinelibrary.wiley.com/doi/10.1002/asjc.3153"
+              target="_blank" rel="noopener noreferrer">J1</a>. You can find the complete version <a href="https://arxiv.org/abs/2203.02140"
+              target="_blank" rel="noopener noreferrer">here</a>.</p>
+        </section>
+              
+      <section class="bio-section">
+        <h2>Research</h2>
+        <p>
+          I am a PhD candidate in the School of Computing at the
+          <a href="https://www.anu.edu.au/" target="_blank" rel="noopener noreferrer">Australian National University</a>,
+          working on autonomous spatio-semantic reasoning under uncertainty with
+          <a href="https://rahulsho.me/" target="_blank" rel="noopener noreferrer">Dr. Rahul Shome</a>,
+          <a href="https://sites.google.com/view/djcampbell" target="_blank" rel="noopener noreferrer">Dr. Dylan Campbell</a>,
+          and <a href="http://users.cecs.anu.edu.au/~sgould/" target="_blank" rel="noopener noreferrer">Prof. Stephen Gould</a>.
+        </p>
+        <p>
+          My thesis develops efficient generative world models of 3D indoor environments that turn
+          partial, noisy observations into calibrated spatial–semantic priors for robotic planning and decision-making.
+          Recent work appears at CVPR&nbsp;2025 as
+          <a href="https://1ssb.github.io/UOD" target="_blank" rel="noopener noreferrer">Unobserved Object Detection</a>.
+        </p>
+
+        <p>My research interests include the following:</p>
+        
+        <ol>
+          <li>
+            <strong>3D generative world models and scene priors:</strong>
+            Probabilistic models that infer occluded geometry and semantics from sparse observations
+            to produce uncertainty-aware scene representation.
+          </li>
+          <li>
+            <strong>World models for planning, Visuomotor control, RL and Imitation Learning:</strong>
+            Using learned environment and dynamics models as decision primitives for motion planning,
+            active search, learning visuomotor control or policy for imitation learning 
+            and model-based RL in partially observed settings. 
+          </li>
+          <li>
+            <strong>Efficient generative modelling and uncertainty quantification:</strong>
+            Scalable, sample- and compute-efficient generative modelling with guarantees on calibration,
+            coverage, and robustness of multi-stage inference pipelines, especially under
+            distributional shift.
+          </li>
+          <li>
+            <strong>High-dimensional inverse problems in physics and quantitative finance:</strong>
+            Building risk-sensitive inference tools for noisy time-series data, 3D physics-based inference systems, and pricing models.
+          </li>
+        </ol>
+        <p>If you are interested in collaborating with me, please reach out!</p>
+      </section>
+      
+      <section class="bio-section">
+        <h2>Hobbies</h2>
+        <p>
+          Outside research, I enjoy slow travel, theatre and long games of chess, and I am especially drawn to films with nonlinear
+          narratives. I also love reading epics, modern classics and travelogues.
+          I sketch and paint from time to time, experiment with cocktails for friends, look for unusual hiking routes, swim in the sea,
+          and listen to audiobooks.
+        </p>
+      </section>
+
+        
+      </article>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const homeButton = document.getElementById('homeButton');
+
+      // Home button functionality
+      if (homeButton) {
+        // Force button to be clickable
+        homeButton.style.zIndex = '10000';
+        homeButton.style.position = 'relative';
+        homeButton.style.pointerEvents = 'auto';
+
+        homeButton.addEventListener('click', function (e) {
+          e.stopPropagation();
+          window.location.href = 'https://1ssb.github.io/';
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

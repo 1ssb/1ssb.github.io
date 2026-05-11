@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description"
+    content="Subhransu Sekhar Bhattacharjee is an AI PhD candidate at the Australian National University working on world models, generative models, embodied AI, computer vision, and uncertainty quantification.">
+  <meta name="author" content="Subhransu S. Bhattacharjee">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; img-src 'self' https:; connect-src 'self';">
+  <title>Subhransu Sekhar Bhattacharjee</title>
+  <link rel="canonical" href="https://1ssb.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Subhransu Sekhar Bhattacharjee">
+  <meta property="og:description"
+    content="AI PhD candidate at ANU working on world models, generative models, embodied AI, computer vision, and uncertainty quantification.">
+  <meta property="og:url" content="https://1ssb.github.io/">
+  <meta property="og:image" content="https://1ssb.github.io/bio/DP.jpeg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Subhransu Sekhar Bhattacharjee">
+  <meta name="twitter:description"
+    content="AI PhD candidate at ANU working on world models, generative models, embodied AI, computer vision, and uncertainty quantification.">
+  <meta name="twitter:image" content="https://1ssb.github.io/bio/DP.jpeg">
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" crossorigin>
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap&font-display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap">
+  </noscript>
+  <link rel="icon" type="image/x-icon" href="https://1ssb.github.io/favicon.ico?v=2">
+  <link rel="stylesheet" href="shared-styles.css">
+
+  <style>
+    /* Page-specific styles for index.html */
+    /* Override background opacity for index page */
+    body::before {
+      opacity: 0.8;
+    }
+
+    body::after {
+      opacity: 0.6;
+    }
+
+    .container {
+      background: var(--bg-surface);
+      backdrop-filter: blur(40px) saturate(200%);
+      border: 1px solid var(--border-medium);
+      border-radius: 32px;
+      box-shadow: var(--shadow-xl);
+      padding: 64px;
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: cardEntrance 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      z-index: 100;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg,
+          var(--accent-primary),
+          var(--accent-gold),
+          var(--accent-emerald),
+          var(--accent-secondary));
+      opacity: 0.8;
+      animation: gradientShimmer 8s ease-in-out infinite;
+    }
+
+
+
+    .container:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg), 0 0 20px rgba(0, 180, 216, 0.3);
+    }
+
+
+
+    @keyframes cardEntrance {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95) rotateX(10deg);
+        filter: blur(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0deg);
+        filter: blur(0px);
+      }
+    }
+
+    @keyframes gradientShimmer {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+        opacity: 0.6;
+      }
+
+      50% {
+        background-position: 100% 50%;
+        opacity: 1;
+      }
+    }
+
+    .profile-section {
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .name {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      position: relative;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .name::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      border-radius: 2px;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .container:hover .name::after {
+      width: 60%;
+    }
+
+    .title,
+    .institution,
+    .department {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .title {
+      color: var(--accent-primary);
+      font-weight: 600;
+      margin-top: 32px;
+    }
+
+    .institution {
+      font-weight: 600;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .social-links a {
+      color: var(--text-secondary);
+      font-size: 1.4rem;
+      padding: 16px;
+      border-radius: 16px;
+      background: var(--bg-elevated);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-light);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-md);
+      z-index: 1;
+    }
+
+    .social-links a::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(59, 130, 246, 0.05);
+      border-radius: 16px;
+      transform: scale(0);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+    }
+
+    .social-links a:hover::before {
+      transform: scale(1);
+    }
+
+    .social-links a:hover {
+      color: var(--accent-primary);
+      border-color: var(--accent-primary);
+      background: var(--bg-surface);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .divider {
+      width: 150px;
+      height: 2px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      margin: 32px auto;
+      border-radius: 2px;
+      opacity: 0.7;
+      position: relative;
+    }
+
+    .divider::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.7;
+      }
+    }
+
+    .navigation {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .nav-link {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+      letter-spacing: 0.02em;
+      padding: 16px 8px;
+      border-radius: 16px;
+      background: var(--bg-elevated);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-light);
+      text-transform: uppercase;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-md);
+      z-index: 1;
+      text-align: center;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(59, 130, 246, 0.05);
+      border-radius: 16px;
+      transform: scale(0);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+    }
+
+    .nav-link:hover::before {
+      transform: scale(1);
+    }
+
+    .nav-link:hover {
+      color: var(--bg-elevated);
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .updates-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .updates-line {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      max-width: 100px;
+      opacity: 0.6;
+    }
+
+    .updates-button {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      color: var(--bg-elevated);
+      padding: 16px 32px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-md);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .updates-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      transform: scale(0);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+    }
+
+    .updates-button:hover::before {
+      transform: scale(1);
+    }
+
+    .updates-button:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: var(--shadow-lg);
+      background: linear-gradient(135deg, var(--accent-secondary), var(--accent-gold));
+    }
+
+    /* Updates Modal Styles */
+    .updates-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      overflow-y: auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .updates-modal-content {
+      position: relative;
+      margin: 20px auto;
+      padding: 30px;
+      width: 95%;
+      max-width: 800px;
+      max-height: 90vh;
+      background: var(--bg-surface);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      box-shadow: var(--shadow-2xl);
+      border: 1px solid var(--border-light);
+      overflow-y: auto;
+    }
+
+    .updates-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .updates-modal-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .updates-modal-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .updates-modal-close:hover {
+      background: var(--border-light);
+      color: var(--text-primary);
+    }
+
+    .year-card {
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      margin: 20px 0;
+      padding: 25px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-light);
+      transition: all 0.3s ease;
+    }
+
+    .year-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--text-primary);
+    }
+
+    .update-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .update-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-primary);
+    }
+
+    .update-card a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--accent-primary);
+      display: block;
+      transition: color 0.3s ease;
+    }
+
+    .update-card a:hover {
+      color: var(--accent-secondary);
+    }
+
+    .update-card span {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-surface);
+      backdrop-filter: blur(40px) saturate(200%);
+      border-top: 1px solid var(--border-light);
+      padding: 16px 32px;
+      text-align: center;
+      font-size: clamp(0.7rem, 2vw, 0.8rem);
+      color: var(--text-secondary);
+      z-index: 100;
+      font-family: 'JetBrains Mono', monospace;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .loading {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+    }
+
+    .loaded {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .nav-link:focus,
+    .updates-button:focus,
+    .social-links a:focus {
+      outline: 3px solid var(--accent-primary);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);
+    }
+
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s ease-out;
+      background-color: rgba(255, 255, 255, 0.5);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes ripple {
+      to {
+        transform: scale(3);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+
+      .container {
+        padding: 32px 24px;
+        border-radius: 20px;
+        margin: 0 10px;
+      }
+
+      .name {
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
+        margin-bottom: 16px;
+      }
+
+      .title {
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .social-links a {
+        padding: 10px;
+        font-size: 1.1rem;
+        border-radius: 10px;
+      }
+
+      .navigation {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        max-width: 400px;
+      }
+
+      .nav-link {
+        padding: 12px 8px;
+        font-size: clamp(0.7rem, 2.2vw, 0.8rem);
+        border-radius: 10px;
+        min-height: 44px;
+      }
+
+      .updates-section {
+        margin-top: 20px;
+        gap: 12px;
+      }
+
+      .updates-button {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+        border-radius: 10px;
+      }
+
+      .updates-line {
+        max-width: 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 16px;
+      }
+
+      .container {
+        padding: 24px 20px;
+        border-radius: 16px;
+        margin: 0 8px;
+      }
+
+      .name {
+        font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+        margin-bottom: 12px;
+      }
+
+      .title {
+        font-size: clamp(0.8rem, 2.2vw, 1rem);
+        margin-bottom: 16px;
+      }
+
+      .social-links {
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .social-links a {
+        padding: 8px;
+        font-size: 1rem;
+        border-radius: 8px;
+      }
+
+      .navigation {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .nav-link {
+        padding: 10px 6px;
+        font-size: clamp(0.65rem, 2vw, 0.75rem);
+        border-radius: 8px;
+        min-height: 40px;
+      }
+
+      .updates-section {
+        margin-top: 16px;
+        gap: 10px;
+        flex-direction: column;
+      }
+
+      .updates-button {
+        padding: 8px 16px;
+        font-size: 0.75rem;
+        border-radius: 8px;
+      }
+
+      .updates-line {
+        display: none;
+      }
+    }
+
+    @media (max-width: 360px) {
+      body {
+        padding: 12px;
+      }
+
+      .container {
+        padding: 20px 16px;
+        border-radius: 12px;
+        margin: 0 4px;
+      }
+
+      .name {
+        font-size: clamp(1.1rem, 3vw, 1.4rem);
+        margin-bottom: 10px;
+      }
+
+      .title {
+        font-size: clamp(0.75rem, 2vw, 0.9rem);
+        margin-bottom: 12px;
+      }
+
+      .social-links {
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .social-links a {
+        padding: 6px;
+        font-size: 0.9rem;
+        border-radius: 6px;
+      }
+
+      .navigation {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .nav-link {
+        padding: 10px 4px;
+        font-size: clamp(0.55rem, 1.6vw, 0.65rem);
+        min-height: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body class="loading page-index">
+  <div class="container">
+
+    <div class="profile-section">
+      <h1 class="name">Subhransu Sekhar Bhattacharjee</h1>
+      <p class="title">Ph.D. Student</p>
+      <p class="department">School of Computing</p>
+      <p class="institution">The Australian National University</p>
+        <div class="social-links">
+          <a href="./resume/Resume.pdf" title="Curriculum Vitae" aria-label="Download CV">
+            <i class="ai ai-cv"></i>
+          </a>
+          <a href="https://github.com/1ssb" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub Profile">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/1ssb/" title="LinkedIn" target="_blank" rel="noopener"
+            aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <nav class="navigation" aria-label="Primary navigation">
+      <a href="https://1ssb.github.io/bio/" class="nav-link">About</a>
+      <a href="https://scholar.google.com.au/citations?hl=en&pli=1&user=Ngk4emsAAAAJ" class="nav-link"
+        target="_blank" rel="noopener">Publications</a>
+      <a href="https://1ssb.github.io/exp/" class="nav-link">Experience</a>
+      <a href="https://1ssb.github.io/contact/" class="nav-link">Contact</a>
+    </nav>
+    <div class="updates-section">
+      <div class="updates-line"></div>
+      <button type="button" class="updates-button" id="updates-button">
+        <i class="fas fa-bullhorn"></i> Updates
+      </button>
+      <div class="updates-line"></div>
+    </div>
+  </div>
+
+  <!-- Updates Modal -->
+  <div id="updates-modal" class="updates-modal">
+    <div class="updates-modal-content">
+      <div class="updates-modal-header">
+        <h2 class="updates-modal-title">Recent Updates</h2>
+        <button type="button" class="updates-modal-close" id="updates-modal-close" aria-label="Close updates">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="updates-content"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© S. S. Bhattacharjee | Last Updated: <span id="lastUpdated"></span></p>
+  </footer>
+
+  <script>
+    const body = document.body;
+    // Force dark mode
+    body.classList.add('dark-mode');
+    document.addEventListener('DOMContentLoaded', () => {
+      const lastMod = new Date(document.lastModified);
+      const options = { year: 'numeric', month: 'short' };
+      document.getElementById('lastUpdated').textContent = lastMod.toLocaleDateString('en-US', options);
+      body.classList.remove('loading');
+      body.classList.add('loaded');
+      const footer = document.querySelector('.footer');
+      if (footer) {
+        const footerHeight = footer.getBoundingClientRect().height;
+        body.style.paddingBottom = `${footerHeight}px`;
+      }
+    });
+    function createRipple(event) {
+      const button = event.currentTarget;
+      const circle = document.createElement('span');
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
+      circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+      circle.classList.add('ripple');
+      const ripple = button.getElementsByClassName('ripple')[0];
+      if (ripple) ripple.remove();
+      button.appendChild(circle);
+    }
+    document.querySelectorAll('.nav-link, .updates-button, .social-links a').forEach(button => {
+      button.addEventListener('click', createRipple);
+    });
+
+    // Updates Modal Functionality
+    const updatesButton = document.getElementById('updates-button');
+    const updatesModal = document.getElementById('updates-modal');
+    const updatesModalClose = document.getElementById('updates-modal-close');
+    const updatesContent = document.getElementById('updates-content');
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function isValidUrl(url) {
+      try {
+        const parsed = new URL(url);
+        return parsed.protocol === 'https:' || parsed.protocol === 'http:';
+      } catch {
+        return false;
+      }
+    }
+
+    function renderUpdates(updates) {
+      const grouped = {};
+      updates.forEach(({ year, text, link }) => {
+        if (!grouped[year]) grouped[year] = [];
+        grouped[year].push({ text, link });
+      });
+
+      const fragment = document.createDocumentFragment();
+      Object.keys(grouped).sort((a, b) => b - a).forEach(year => {
+        const yearCard = document.createElement('div');
+        yearCard.className = 'year-card';
+
+        const yearTitle = document.createElement('div');
+        yearTitle.className = 'year-title';
+        yearTitle.textContent = year;
+        yearCard.appendChild(yearTitle);
+
+        grouped[year].forEach(({ text, link }) => {
+          const updateCard = document.createElement('div');
+          updateCard.className = 'update-card';
+
+          if (link && isValidUrl(link)) {
+            const a = document.createElement('a');
+            a.href = link;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.textContent = text;
+            updateCard.appendChild(a);
+          } else {
+            const span = document.createElement('span');
+            span.textContent = text;
+            updateCard.appendChild(span);
+          }
+
+          yearCard.appendChild(updateCard);
+        });
+
+        fragment.appendChild(yearCard);
+      });
+
+      updatesContent.textContent = '';
+      updatesContent.appendChild(fragment);
+    }
+
+    async function loadUpdates() {
+      try {
+        const response = await fetch('./updates/updates.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const updates = await response.json();
+        renderUpdates(updates);
+      } catch (error) {
+        console.error('Error loading updates:', error);
+        renderUpdates([
+          { year: 2026, text: "Reviewing for NeurIPS 2026 and ECCV 2026" },
+          { year: 2025, text: "Awarded the ANU Vice-Chancellor's Travel Grant" },
+          { year: 2025, text: "Reviewer for IROS 2025 in the LLM-based planning and Diffusion Policy domain" },
+          { year: 2025, text: "Tutoring Building Cyber-Physical Systems at the ANU School of Cybernetics",
+            link: "https://www.linkedin.com/posts/1ssb_im-happy-to-share-that-im-starting-a-new-activity-7311242108193886208-nDl7" },
+          { year: 2025, text: "Invited poster presentation in London with Citadel",
+            link: "https://www.linkedin.com/posts/1ssb_i-had-an-incredibly-enriching-experience-activity-7310594360905973760-bNd8" },
+          { year: 2025, text: "CVPR 2025 paper acceptance",
+            link: "https://www.linkedin.com/posts/1ssb_cvpr2025-activity-7300880423604166658-3_dh" },
+          { year: 2024, text: "Reviewer for ICRA in Diffusion Policy Planning" },
+          { year: 2024, text: "Intern at Optiver 2024\u20132025",
+            link: "https://www.linkedin.com/feed/update/urn:li:activity:7252164787344703488/" },
+          { year: 2024, text: "TorchKAN released!",
+            link: "https://github.com/1ssb/torchkan" }
+        ]);
+      }
+    }
+
+    updatesButton.addEventListener('click', () => {
+      updatesModal.style.display = 'block';
+      loadUpdates();
+      document.body.style.overflow = 'hidden';
+    });
+
+    updatesModalClose.addEventListener('click', () => {
+      updatesModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    updatesModal.addEventListener('click', (e) => {
+      if (e.target === updatesModal) {
+        updatesModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && updatesModal.style.display === 'block') {
+        updatesModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
+</body>
+
+</html>

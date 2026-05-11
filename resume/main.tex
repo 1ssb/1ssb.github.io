@@ -1,0 +1,83 @@
+\documentclass[10pt, a4paper, sans]{moderncv}
+\definecolor{linkblue}{HTML}{1E3A8A}
+
+\usepackage[unicode,pdflang={en-GB}]{hyperref}
+\hypersetup{
+  pdftitle={Subhransu S. Bhattacharjee Resume},
+  pdfauthor={Subhransu S. Bhattacharjee},
+  pdfsubject={Resume},
+  pdfkeywords={AI Research, Machine Learning Research, Computer Vision, 3D Vision, World Models, Embodied AI, Statistical Machine Learning, Generative Modelling, Probabilistic Modelling, Quantitative Research, Quantitative Finance, Market Microstructure, Alpha Research, Time-Series Forecasting, Risk Modelling, Backtesting, Optimisation},
+  pdfproducer={LaTeX, moderncv},
+  colorlinks=true,
+  linkcolor=linkblue,
+  urlcolor=linkblue,
+  citecolor=linkblue,
+  breaklinks=true
+}
+
+\usepackage[UKenglish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage[hmargin=1.35cm, bottom=0.88in, top=0.92in]{geometry}
+\usepackage{comment}
+\usepackage{float, multirow}
+\usepackage{xcolor}
+
+\usepackage{moderncvcompatibility}
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\colorlet{firstnamecolor}{black}
+\nopagenumbers{}
+\renewcommand\footrule{\hrule width\textwidth}
+\usepackage{enumitem,url}
+\usepackage{array,adjustbox,fancyhdr}
+\usepackage{etoolbox}
+
+\name{\huge Subhransu S.}{\huge Bhattacharjee}
+\address{School of Computing, The Australian National University, Australia}
+\phone[mobile]{+61 474 224 742}
+\email{Subhransu.Bhattacharjee@anu.edu.au}
+\homepage{1ssb.github.io}
+\social[github]{1ssb}
+\social[linkedin]{1ssb}
+\social[googlescholar][scholar.google.com/citations?user=Ngk4emsAAAAJ]{Google Scholar}
+
+\newcommand{\headerdivider}{%
+  \par\vspace{.18\baselineskip}%
+  {\centering \color{linkblue}\rule{0.24\linewidth}{0.9pt}\par}%
+  \vspace{.28\baselineskip}%
+}
+\newcommand{\summary}{%
+  {\centering \footnotesize
+   PhD candidate in Artificial Intelligence at ANU specialising in world models, generative models, and embodied AI for autonomous systems. Experience in uncertainty quantification, spatial reasoning, agentic systems, computer vision, and natural language processing.\par}%
+  \vspace{.04\baselineskip}%
+  {\centering \color{linkblue}\rule{0.16\linewidth}{0.6pt}\par}%
+  \vspace{.16\baselineskip}%
+}
+
+\newlist{awards}{description}{1}
+\setlist[awards]{leftmargin=2.6cm,labelsep=0.8em,itemsep=0pt,topsep=0pt,parsep=0pt}
+\setlist[itemize]{leftmargin=*,itemsep=0pt,parsep=0pt,topsep=0pt,label={-}}
+
+\newcommand{\awardyearline}[2]{\item[\textbf{#1}] #2}
+
+\setlength{\emergencystretch}{3em}
+\tolerance=1000
+
+\begin{document}
+\makecvtitle%
+\vspace{-1.5em}
+\headerdivider%
+\summary%
+\input{sections/education}
+\input{sections/exp}
+\input{sections/publications}
+\input{sections/awards}
+\input{sections/service}
+\input{sections/skills}
+
+\end{document}

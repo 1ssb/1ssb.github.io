@@ -1,0 +1,10 @@
+# Ignore local LaTeX build artifacts
+resume/*.aux
+resume/*.fdb_latexmk
+resume/*.fls
+resume/*.log
+resume/*.out
+resume/*.synctex.gz
+
+# Keep the generated resume PDF, but ignore accidental main.pdf builds.
+resume/main.pdf
