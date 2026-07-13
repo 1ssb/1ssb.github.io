@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="description"
-    content="Subhransu Sekhar Bhattacharjee is an AI PhD candidate at the Australian National University working on world models, generative models, embodied AI, computer vision, and uncertainty quantification.">
+    content="Subhransu Sekhar Bhattacharjee is an AI PhD candidate at the Australian National University working on generative world models, multimodal reasoning, computer vision, and model evaluation. Machine-learning researcher with applied and quantitative experience across Microsoft, Optiver, and JPMorgan.">
   <meta name="author" content="Subhransu S. Bhattacharjee">
+  <meta name="keywords"
+    content="Subhransu Bhattacharjee, AI PhD, machine learning researcher, applied scientist, research scientist, research engineer, generative world models, multimodal reasoning, computer vision, LLM evaluation, model evaluation, uncertainty quantification, PyTorch, ANU, quantitative research">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; img-src 'self' https:; connect-src 'self';">
   <title>Subhransu Sekhar Bhattacharjee</title>
@@ -30,9 +32,16 @@
     "url": "https://1ssb.github.io/",
     "image": "https://1ssb.github.io/bio/DP.jpeg",
     "jobTitle": "AI PhD Candidate",
+    "description": "AI PhD candidate at the Australian National University working on generative world models, multimodal reasoning, and model evaluation, with applied and quantitative machine-learning experience across Microsoft, Optiver, and JPMorgan.",
     "affiliation": { "@type": "CollegeOrUniversity", "name": "The Australian National University" },
     "alumniOf": { "@type": "CollegeOrUniversity", "name": "The Australian National University" },
-    "knowsAbout": ["Generative world models", "Multimodal reasoning", "Computer vision", "Model evaluation", "Uncertainty quantification", "Machine learning"],
+    "knowsAbout": ["Generative world models", "Multimodal reasoning", "Computer vision", "Model evaluation", "Uncertainty quantification", "Machine learning", "Large language models", "Reinforcement learning", "Quantitative research"],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Applied Scientist / Research Scientist (Machine Learning)",
+      "occupationLocation": { "@type": "Country", "name": "Australia" },
+      "skills": "Generative world models, multimodal reasoning, LLM and model evaluation, computer vision, uncertainty quantification, PyTorch, quantitative research"
+    },
     "sameAs": [
       "https://github.com/1ssb",
       "https://scholar.google.com.au/citations?user=Ngk4emsAAAAJ",
@@ -654,13 +663,16 @@
 
     @media (max-width: 480px) {
       body {
-        padding: 16px;
+        padding: 10px;
       }
 
+      body::before { opacity: 0.1; }
+      body::after { opacity: 0.06; }
+
       .container {
-        padding: 24px 20px;
-        border-radius: 16px;
-        margin: 0 8px;
+        padding: 26px 18px;
+        border-radius: 18px;
+        margin: 0;
       }
 
       .name {
@@ -848,8 +860,30 @@
     }
     .recent-item a:hover { text-decoration: underline; }
 
+    @media (max-width: 768px) {
+      .institution { font-size: 0.95rem; }
+      .tagline { font-size: 0.95rem; margin-top: 14px; }
+      .cv-actions { margin-top: 16px; }
+      .recent { margin-top: 22px; }
+      .recent-item { font-size: 0.85rem; padding: 9px 12px; }
+    }
+
     @media (max-width: 480px) {
-      .tagline { font-size: 0.9rem; }
+      .tagline {
+        font-size: 0.88rem;
+        margin-top: 12px;
+        max-width: 34ch;
+      }
+      .cv-actions a { padding: 9px 16px; font-size: 0.82rem; }
+      .recent { margin-top: 20px; }
+      .recent-title { margin-bottom: 10px; }
+      .recent-item {
+        font-size: 0.82rem;
+        padding: 8px 11px;
+        gap: 8px;
+      }
+      /* Keep the small-screen card focused: show the two latest items */
+      .recent-item:nth-child(n+3) { display: none; }
     }
   </style>
 </head>
@@ -877,7 +911,7 @@
           </a>
         </div>
         <div class="cv-actions">
-          <a class="primary" href="./resume/Resume.pdf" target="_blank" rel="noopener" aria-label="Open résumé PDF">
+          <a class="primary" href="./resume/" target="_blank" rel="noopener" aria-label="View résumé">
             <i class="ai ai-cv"></i> Résumé
           </a>
         </div>
