@@ -1,8 +1,8 @@
 name: Build resume PDF
 
-# Rebuild resume/Resume.pdf whenever the LaTeX sources change. Tectonic runs
-# every pass (references, layout) in a single call, so there is no manual
-# double-compile and the committed PDF always matches the sources.
+# Rebuild resume/Resume.pdf whenever the LaTeX sources change. latexmk runs
+# every xelatex pass (references, layout) it needs in one invocation, so there
+# is no manual double-compile and the committed PDF always matches the sources.
 on:
   push:
     branches: [main]
@@ -25,21 +25,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Tectonic
-        run: |
-          # Pinned official glibc (gnu) build — the musl build from the generic
-          # installer core-dumps while generating the LaTeX format on the runner.
-          curl -fsSL -o tectonic.tar.gz \
-            "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.16.9/tectonic-0.16.9-x86_64-unknown-linux-gnu.tar.gz"
-          tar -xzf tectonic.tar.gz
-          chmod +x tectonic
-          echo "$PWD" >> "$GITHUB_PATH"
+      - name: Compile resume (latexmk + xelatex — all passes in one run)
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: resume
+          root_file: main.tex
+          latexmk_use_xelatex: true
 
-      - name: Build Resume.pdf
-        working-directory: resume
-        run: |
-          tectonic main.tex
-          mv -f main.pdf Resume.pdf
+      - name: Name the output Resume.pdf
+        run: mv -f resume/main.pdf resume/Resume.pdf
 
       - name: Commit the PDF if it changed
         run: |
