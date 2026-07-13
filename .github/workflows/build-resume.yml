@@ -25,10 +25,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Tectonic
-        uses: wtfjoke/setup-tectonic@v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install Tectonic
+        run: |
+          # Pinned official glibc (gnu) build — the musl build from the generic
+          # installer core-dumps while generating the LaTeX format on the runner.
+          curl -fsSL -o tectonic.tar.gz \
+            "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.16.9/tectonic-0.16.9-x86_64-unknown-linux-gnu.tar.gz"
+          tar -xzf tectonic.tar.gz
+          chmod +x tectonic
+          echo "$PWD" >> "$GITHUB_PATH"
 
       - name: Build Resume.pdf
         working-directory: resume
