@@ -1,0 +1,49 @@
+name: Build resume PDF
+
+# Rebuild resume/Resume.pdf whenever the LaTeX sources change. Tectonic runs
+# every pass (references, layout) in a single call, so there is no manual
+# double-compile and the committed PDF always matches the sources.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "resume/**.tex"
+      - "resume/**.sty"
+      - ".github/workflows/build-resume.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-resume
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Tectonic
+        run: |
+          curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net | sh
+          echo "$PWD" >> "$GITHUB_PATH"
+
+      - name: Build Resume.pdf
+        working-directory: resume
+        run: |
+          tectonic main.tex
+          mv -f main.pdf Resume.pdf
+
+      - name: Commit the PDF if it changed
+        run: |
+          if git diff --quiet -- resume/Resume.pdf; then
+            echo "Resume.pdf unchanged — nothing to commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add resume/Resume.pdf
+            git commit -m "ci: rebuild Resume.pdf [skip ci]"
+            git push
+          fi
