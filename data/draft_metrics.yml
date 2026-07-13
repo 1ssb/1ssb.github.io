@@ -1,0 +1,32 @@
+# Synthetic draft metrics — Subhransu S. Bhattacharjee profile refresh
+#
+# These are conservative PLACEHOLDER numbers generated to complete
+# outcome-method bullets where an authentic figure is not yet available.
+# Every entry is source: synthetic and MUST be replaced or approved by the
+# candidate before the profile-refresh branch is merged to production.
+# Verified numbers (e.g. Optiver 94%, TorchKAN 190+ stars) are NOT stored here.
+
+metrics:
+  - key: microsoft_annotation_cognitive_load_reduction
+    value: "35%"
+    role: Microsoft India Development Center — Applied Scientist PhD Research Intern
+    claim: "reduced annotator cognitive load by ~35% via the agentic ingestion harness"
+    source: synthetic
+
+  - key: microsoft_annotation_throughput_gain
+    value: "2x"
+    role: Microsoft India Development Center — Applied Scientist PhD Research Intern
+    claim: "increased usable annotation throughput ~2x"
+    source: synthetic
+
+  - key: jpmorgan_documents_indexed
+    value: "10,000+"
+    role: JPMorgan Chase & Co. — Sydney
+    claim: "indexed 10,000+ financial documents"
+    source: synthetic
+
+  - key: jpmorgan_retrieval_recall_gain_pp
+    value: "8"
+    role: JPMorgan Chase & Co. — Sydney
+    claim: "improved top-k retrieval recall by ~8 percentage points"
+    source: synthetic
