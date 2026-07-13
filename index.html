@@ -9,7 +9,8 @@
   <meta name="keywords"
     content="Subhransu Bhattacharjee, AI PhD, machine learning researcher, applied scientist, research scientist, research engineer, generative world models, multimodal reasoning, computer vision, LLM evaluation, model evaluation, uncertainty quantification, PyTorch, ANU, quantitative research">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; img-src 'self' https:; connect-src 'self' https://1ssb.goatcounter.com;">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; img-src 'self' https:; connect-src 'self' https://1ssb.goatcounter.com;">
   <title>Subhransu Sekhar Bhattacharjee</title>
   <link rel="canonical" href="https://1ssb.github.io/">
   <meta property="og:type" content="profile">
@@ -666,8 +667,13 @@
         padding: 10px;
       }
 
-      body::before { opacity: 0.1; }
-      body::after { opacity: 0.06; }
+      body::before {
+        opacity: 0.1;
+      }
+
+      body::after {
+        opacity: 0.06;
+      }
 
       .container {
         padding: 26px 18px;
@@ -791,6 +797,7 @@
       margin-top: 20px;
       flex-wrap: wrap;
     }
+
     .cv-actions a {
       display: inline-flex;
       align-items: center;
@@ -805,11 +812,13 @@
       color: var(--text-primary);
       transition: all 0.3s ease;
     }
+
     .cv-actions a.primary {
       background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
       color: var(--bg-elevated);
       border-color: transparent;
     }
+
     .cv-actions a:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
@@ -817,9 +826,18 @@
     }
 
     @media (max-width: 768px) {
-      .institution { font-size: 0.95rem; }
-      .tagline { font-size: 0.95rem; margin-top: 14px; }
-      .cv-actions { margin-top: 16px; }
+      .institution {
+        font-size: 0.95rem;
+      }
+
+      .tagline {
+        font-size: 0.95rem;
+        margin-top: 14px;
+      }
+
+      .cv-actions {
+        margin-top: 16px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -828,7 +846,11 @@
         margin-top: 12px;
         max-width: 34ch;
       }
-      .cv-actions a { padding: 9px 16px; font-size: 0.82rem; }
+
+      .cv-actions a {
+        padding: 9px 16px;
+        font-size: 0.82rem;
+      }
     }
   </style>
 </head>
@@ -840,24 +862,26 @@
       <h1 class="name">Subhransu Sekhar Bhattacharjee</h1>
       <p class="title">AI PhD Candidate</p>
       <p class="institution">School of Computing, The Australian National University</p>
-      <p class="tagline">Generative world models, VLMs, multimodal reasoning, and model evaluation for decision-making under uncertainty.</p>
-        <div class="social-links">
-          <a href="./resume/Resume.pdf" title="Résumé" target="_blank" rel="noopener" aria-label="Résumé (PDF)">
-            <i class="ai ai-cv"></i>
-          </a>
-          <a href="https://github.com/1ssb" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub profile">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/1ssb/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn profile">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
+      <p class="tagline">Generative world models, VLMs, multimodal reasoning, and model evaluation for decision-making
+        under uncertainty.</p>
+      <div class="social-links">
+        <a href="./resume/Resume.pdf" title="Résumé" target="_blank" rel="noopener" aria-label="Résumé (PDF)">
+          <i class="ai ai-cv"></i>
+        </a>
+        <a href="https://github.com/1ssb" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub profile">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/1ssb/" title="LinkedIn" target="_blank" rel="noopener"
+          aria-label="LinkedIn profile">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
     </div>
     <div class="divider"></div>
     <nav class="navigation" aria-label="Primary navigation">
       <a href="https://1ssb.github.io/bio/" class="nav-link">About</a>
-      <a href="https://scholar.google.com.au/citations?hl=en&pli=1&user=Ngk4emsAAAAJ" class="nav-link"
-        target="_blank" rel="noopener">Publications</a>
+      <a href="https://scholar.google.com.au/citations?hl=en&pli=1&user=Ngk4emsAAAAJ" class="nav-link" target="_blank"
+        rel="noopener">Publications</a>
       <a href="https://1ssb.github.io/exp/" class="nav-link">Experience</a>
       <a href="https://1ssb.github.io/contact/" class="nav-link">Contact</a>
     </nav>
@@ -1003,25 +1027,38 @@
         console.error('Error loading updates:', error);
         renderUpdates([
           { year: 2026, text: "Applied Scientist PhD research intern at Microsoft (India Development Center), working on LLM-as-judge and retrieval evaluation" },
-          { year: 2026, text: "FlatLands accepted to ECCV 2026",
-            link: "https://www.linkedin.com/posts/1ssb_eccv2026-computervision-generativeai-activity-7474175354652286976-IWM5" },
+          {
+            year: 2026, text: "FlatLands accepted to ECCV 2026",
+            link: "https://www.linkedin.com/posts/1ssb_eccv2026-computervision-generativeai-activity-7474175354652286976-IWM5"
+          },
           { year: 2026, text: "Part of the ANU Robotics team supported by Google Research for generative world models in task-and-motion planning" },
           { year: 2026, text: "Reviewer for NeurIPS 2026 and ECCV 2026" },
+          { year: 2026, text: "Reviewer for IEEE Robotics and Automation Letters (RA-L)" },
           { year: 2025, text: "Reviewer for CVPR 2026 and ICRA 2026" },
           { year: 2025, text: "Tutoring Machine Learning at the ANU School of Computing" },
           { year: 2025, text: "Awarded the ANU Vice-Chancellor's Travel Grant" },
           { year: 2025, text: "Reviewer for IROS 2025 on LLM-based planning and diffusion-policy topics" },
-          { year: 2025, text: "Tutoring Building Cyber-Physical Systems at the ANU School of Cybernetics",
-            link: "https://www.linkedin.com/posts/1ssb_im-happy-to-share-that-im-starting-a-new-activity-7311242108193886208-nDl7" },
-          { year: 2025, text: "Invited poster presentation in London with Citadel",
-            link: "https://www.linkedin.com/posts/1ssb_i-had-an-incredibly-enriching-experience-activity-7310594360905973760-bNd8" },
-          { year: 2025, text: "CVPR 2025 paper acceptance",
-            link: "https://www.linkedin.com/posts/1ssb_cvpr2025-activity-7300880423604166658-3_dh" },
+          {
+            year: 2025, text: "Tutoring Building Cyber-Physical Systems at the ANU School of Cybernetics",
+            link: "https://www.linkedin.com/posts/1ssb_im-happy-to-share-that-im-starting-a-new-activity-7311242108193886208-nDl7"
+          },
+          {
+            year: 2025, text: "Invited poster presentation in London with Citadel",
+            link: "https://www.linkedin.com/posts/1ssb_i-had-an-incredibly-enriching-experience-activity-7310594360905973760-bNd8"
+          },
+          {
+            year: 2025, text: "CVPR 2025 paper acceptance",
+            link: "https://www.linkedin.com/posts/1ssb_cvpr2025-activity-7300880423604166658-3_dh"
+          },
           { year: 2024, text: "Reviewer for ICRA 2025 on diffusion-policy planning" },
-          { year: 2024, text: "Intern at Optiver 2024\u20132025",
-            link: "https://www.linkedin.com/feed/update/urn:li:activity:7252164787344703488/" },
-          { year: 2024, text: "TorchKAN released!",
-            link: "https://github.com/1ssb/torchkan" }
+          {
+            year: 2024, text: "Intern at Optiver 2024\u20132025",
+            link: "https://www.linkedin.com/feed/update/urn:li:activity:7252164787344703488/"
+          },
+          {
+            year: 2024, text: "TorchKAN released!",
+            link: "https://github.com/1ssb/torchkan"
+          }
         ]);
       }
     }
