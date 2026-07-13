@@ -21,6 +21,25 @@
   <meta name="twitter:description"
     content="AI PhD candidate at ANU working on world models, generative models, embodied AI, computer vision, and uncertainty quantification.">
   <meta name="twitter:image" content="https://1ssb.github.io/bio/DP.jpeg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Subhransu Sekhar Bhattacharjee",
+    "alternateName": "Subhransu S. Bhattacharjee",
+    "url": "https://1ssb.github.io/",
+    "image": "https://1ssb.github.io/bio/DP.jpeg",
+    "jobTitle": "AI PhD Candidate",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "The Australian National University" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "The Australian National University" },
+    "knowsAbout": ["Generative world models", "Multimodal reasoning", "Computer vision", "Model evaluation", "Uncertainty quantification", "Machine learning"],
+    "sameAs": [
+      "https://github.com/1ssb",
+      "https://scholar.google.com.au/citations?user=Ngk4emsAAAAJ",
+      "https://www.linkedin.com/in/1ssb/"
+    ]
+  }
+  </script>
   <!-- Preload critical resources -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
@@ -41,11 +60,11 @@
     /* Page-specific styles for index.html */
     /* Override background opacity for index page */
     body::before {
-      opacity: 0.8;
+      opacity: 0.35;
     }
 
     body::after {
-      opacity: 0.6;
+      opacity: 0.22;
     }
 
     .container {
@@ -742,6 +761,96 @@
         min-height: 36px;
       }
     }
+
+    /* Hero tagline */
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      max-width: 46ch;
+      margin: 18px auto 0;
+    }
+
+    /* CV actions */
+    .cv-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .cv-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border-light);
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+    .cv-actions a.primary {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+      color: var(--bg-elevated);
+      border-color: transparent;
+    }
+    .cv-actions a:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-primary);
+    }
+
+    /* Inline recent updates */
+    .recent {
+      margin-top: 28px;
+      text-align: left;
+    }
+    .recent-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .recent-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .recent-item {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-light);
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+    .recent-item .yr {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent-primary);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .recent-item a {
+      color: var(--accent-primary);
+      text-decoration: none;
+    }
+    .recent-item a:hover { text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      .tagline { font-size: 0.9rem; }
+    }
   </style>
 </head>
 
@@ -750,19 +859,26 @@
 
     <div class="profile-section">
       <h1 class="name">Subhransu Sekhar Bhattacharjee</h1>
-      <p class="title">Ph.D. Student</p>
-      <p class="department">School of Computing</p>
-      <p class="institution">The Australian National University</p>
+      <p class="title">AI PhD Candidate</p>
+      <p class="institution">School of Computing, The Australian National University</p>
+      <p class="tagline">Generative world models, multimodal reasoning, and model evaluation for decision-making under uncertainty.</p>
         <div class="social-links">
-          <a href="./resume/Resume.pdf" title="Curriculum Vitae" aria-label="Download CV">
-            <i class="ai ai-cv"></i>
-          </a>
-          <a href="https://github.com/1ssb" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub Profile">
+          <a href="https://github.com/1ssb" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub profile">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/1ssb/" title="LinkedIn" target="_blank" rel="noopener"
-            aria-label="LinkedIn Profile">
+          <a href="https://scholar.google.com.au/citations?hl=en&user=Ngk4emsAAAAJ" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar profile">
+            <i class="ai ai-google-scholar"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/1ssb/" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn profile">
             <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:Subhransu.Bhattacharjee@anu.edu.au" title="Email" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <div class="cv-actions">
+          <a class="primary" href="./resume/Resume.pdf" target="_blank" rel="noopener" aria-label="Open résumé PDF">
+            <i class="ai ai-cv"></i> Résumé
           </a>
         </div>
     </div>
@@ -774,10 +890,14 @@
       <a href="https://1ssb.github.io/exp/" class="nav-link">Experience</a>
       <a href="https://1ssb.github.io/contact/" class="nav-link">Contact</a>
     </nav>
+    <div class="recent">
+      <div class="recent-title">Recent</div>
+      <div class="recent-list" id="recent-updates"></div>
+    </div>
     <div class="updates-section">
       <div class="updates-line"></div>
       <button type="button" class="updates-button" id="updates-button">
-        <i class="fas fa-bullhorn"></i> Updates
+        <i class="fas fa-bullhorn"></i> View all updates
       </button>
       <div class="updates-line"></div>
     </div>
@@ -915,8 +1035,8 @@
       } catch (error) {
         console.error('Error loading updates:', error);
         renderUpdates([
-          { year: 2026, text: "Google Research award for world models for task and motion planning (ANU Robotics, $76,000)" },
-          { year: 2026, text: "Starting as an Applied Scientist PhD Research Intern at Microsoft Corporation" },
+          { year: 2026, text: "Applied Scientist PhD research intern at Microsoft (India Development Center), working on LLM-as-judge and retrieval evaluation" },
+          { year: 2026, text: "Part of the ANU Robotics team supported by Google Research for generative world models in task-and-motion planning" },
           { year: 2026, text: "Reviewer for NeurIPS 2026 and ECCV 2026" },
           { year: 2025, text: "Reviewer for CVPR 2026 and ICRA 2026" },
           { year: 2025, text: "Tutoring Machine Learning at the ANU School of Computing" },
@@ -936,6 +1056,46 @@
         ]);
       }
     }
+
+    async function loadRecent() {
+      const el = document.getElementById('recent-updates');
+      if (!el) return;
+      let updates;
+      try {
+        const r = await fetch('./updates/updates.json');
+        if (!r.ok) throw new Error(`HTTP error! status: ${r.status}`);
+        updates = await r.json();
+      } catch (e) {
+        updates = [
+          { year: 2026, text: "Applied Scientist PhD research intern at Microsoft (India Development Center)" },
+          { year: 2026, text: "Reviewer for NeurIPS 2026 and ECCV 2026" },
+          { year: 2026, text: "Part of the ANU Robotics team supported by Google Research for world models in task-and-motion planning" }
+        ];
+      }
+      const fragment = document.createDocumentFragment();
+      updates.slice(0, 3).forEach(({ year, text, link }) => {
+        const item = document.createElement('div');
+        item.className = 'recent-item';
+        const yr = document.createElement('span');
+        yr.className = 'yr';
+        yr.textContent = year;
+        item.appendChild(yr);
+        if (link && isValidUrl(link)) {
+          const a = document.createElement('a');
+          a.href = link; a.target = '_blank'; a.rel = 'noopener noreferrer';
+          a.textContent = text;
+          item.appendChild(a);
+        } else {
+          const span = document.createElement('span');
+          span.textContent = text;
+          item.appendChild(span);
+        }
+        fragment.appendChild(item);
+      });
+      el.textContent = '';
+      el.appendChild(fragment);
+    }
+    loadRecent();
 
     updatesButton.addEventListener('click', () => {
       updatesModal.style.display = 'block';

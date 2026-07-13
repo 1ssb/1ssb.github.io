@@ -1,15 +1,15 @@
 [
   {
     "year": 2026,
-    "text": "Google Research award for world models for task and motion planning (ANU Robotics, $76,000)"
-  },
-  {
-    "year": 2026,
-    "text": "Starting as an Applied Scientist PhD Research Intern at Microsoft Corporation"
+    "text": "Applied Scientist PhD research intern at Microsoft (India Development Center), working on LLM-as-judge and retrieval evaluation"
   },
   {
     "year": 2026,
     "text": "Reviewer for NeurIPS 2026 and ECCV 2026"
+  },
+  {
+    "year": 2026,
+    "text": "Part of the ANU Robotics team supported by Google Research for generative world models in task-and-motion planning"
   },
   {
     "year": 2025,
@@ -17,11 +17,11 @@
   },
   {
     "year": 2025,
-    "text": "Tutoring Machine Learning at the ANU School of Computing"
+    "text": "Awarded the ANU Vice-Chancellor's Travel Grant"
   },
   {
     "year": 2025,
-    "text": "Awarded the ANU Vice-Chancellor's Travel Grant"
+    "text": "Tutoring Machine Learning (COMP3670) at the ANU School of Computing"
   },
   {
     "year": 2025,
@@ -29,7 +29,7 @@
   },
   {
     "year": 2025,
-    "text": "Tutoring Building Cyber-Physical Systems at the ANU School of Cybernetics",
+    "text": "Head tutor for Building Cyber-Physical Systems at the ANU School of Cybernetics",
     "link": "https://www.linkedin.com/posts/1ssb_im-happy-to-share-that-im-starting-a-new-activity-7311242108193886208-nDl7"
   },
   {
@@ -39,21 +39,17 @@
   },
   {
     "year": 2025,
-    "text": "CVPR 2025 paper acceptance",
+    "text": "CVPR 2025 paper acceptance: Unobserved Object Detection",
     "link": "https://www.linkedin.com/posts/1ssb_cvpr2025-activity-7300880423604166658-3_dh"
   },
   {
     "year": 2024,
-    "text": "Reviewer for ICRA 2025 on diffusion-policy planning"
-  },
-  {
-    "year": 2024,
-    "text": "Intern at Optiver 2024–2025",
+    "text": "Quantitative research intern at Optiver (2024–2025)",
     "link": "https://www.linkedin.com/feed/update/urn:li:activity:7252164787344703488/"
   },
   {
     "year": 2024,
-    "text": "TorchKAN released!",
+    "text": "Released TorchKAN, an open-source PyTorch library for Kolmogorov–Arnold Networks",
     "link": "https://github.com/1ssb/torchkan"
   }
 ]
