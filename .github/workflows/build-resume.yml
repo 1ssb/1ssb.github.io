@@ -28,9 +28,9 @@ jobs:
       - name: Install TeX Live (xelatex + moderncv + latexmk)
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            texlive-xetex texlive-latex-extra texlive-fonts-recommended \
-            texlive-lang-english latexmk
+          sudo apt-get install -y \
+            texlive-xetex texlive-latex-recommended texlive-latex-extra \
+            texlive-fonts-recommended texlive-lang-english lmodern latexmk
 
       - name: Build Resume.pdf
         working-directory: resume
