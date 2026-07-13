@@ -39,14 +39,21 @@ jobs:
         # in a single invocation, and -jobname writes Resume.pdf directly.
         run: latexmk -xelatex -interaction=nonstopmode -halt-on-error -jobname=Resume main.tex
 
-      - name: Commit the PDF if it changed
+      - name: Render résumé page images for the web viewer
+        # The /resume/ viewer shows these images so the résumé displays on every
+        # device; regenerating here keeps them in sync with the compiled PDF.
         run: |
-          if git diff --quiet -- resume/Resume.pdf; then
-            echo "Resume.pdf unchanged — nothing to commit."
+          python3 -m pip install --quiet --break-system-packages PyMuPDF Pillow
+          python3 resume/render_images.py
+
+      - name: Commit the PDF and page images if they changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resume/Resume.pdf resume/assets/*.jpg
+          if git diff --cached --quiet; then
+            echo "Résumé outputs unchanged — nothing to commit."
           else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add resume/Resume.pdf
-            git commit -m "ci: rebuild Resume.pdf"
+            git commit -m "ci: rebuild Resume.pdf + résumé page images"
             git push
           fi
