@@ -30,7 +30,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             texlive-xetex texlive-latex-recommended texlive-latex-extra \
-            texlive-fonts-recommended texlive-lang-english lmodern latexmk
+            texlive-fonts-recommended texlive-fonts-extra texlive-lang-english \
+            lmodern latexmk
 
       - name: Build Resume.pdf
         working-directory: resume
