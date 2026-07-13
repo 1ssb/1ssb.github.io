@@ -25,15 +25,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Compile resume (latexmk + xelatex — all passes in one run)
-        uses: xu-cheng/latex-action@v3
-        with:
-          working_directory: resume
-          root_file: main.tex
-          latexmk_use_xelatex: true
+      - name: Install TeX Live (xelatex + moderncv + latexmk)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-xetex texlive-latex-extra texlive-fonts-recommended \
+            texlive-lang-english latexmk
 
-      - name: Name the output Resume.pdf
-        run: mv -f resume/main.pdf resume/Resume.pdf
+      - name: Build Resume.pdf
+        working-directory: resume
+        # latexmk runs xelatex as many times as the document needs (refs, layout)
+        # in a single invocation, and -jobname writes Resume.pdf directly.
+        run: latexmk -xelatex -interaction=nonstopmode -halt-on-error -jobname=Resume main.tex
 
       - name: Commit the PDF if it changed
         run: |
