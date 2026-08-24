@@ -21,7 +21,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../shared-styles.css">
 
@@ -65,6 +65,9 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      padding: 0;
       overflow-x: hidden;
       position: relative;
       transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -225,6 +228,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
       padding: 48px;
       position: relative;
       z-index: 100;
@@ -317,6 +321,7 @@
       border-radius: inherit;
       transition: opacity 0.6s;
       opacity: 0.5;
+      pointer-events: none;
     }
 
     .about-card:hover {
@@ -354,7 +359,6 @@
 
     .bio-section h2 {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 18px;
       font-weight: 600;
       color: var(--text-primary);
       margin-bottom: 16px;
@@ -374,6 +378,27 @@
 
     .bio-section p:last-child {
       margin-bottom: 0;
+    }
+
+    .bio-section .industry-summary {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .bio-content a {
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .bio-content a:hover {
+      text-decoration-color: currentColor;
+    }
+
+    .bio-content a::after {
+      content: none;
     }
 
     .bio-section ol {
@@ -481,7 +506,7 @@
       .about-card {
         padding: 24px 20px;
         border-radius: 20px;
-        margin: 0 10px;
+        margin: 0;
       }
 
       .bio-image {
@@ -535,7 +560,7 @@
       .about-card {
         padding: 20px 16px;
         border-radius: 16px;
-        margin: 0 8px;
+        margin: 0;
       }
 
       .bio-image {
@@ -595,7 +620,7 @@
       .about-card {
         padding: 16px 12px;
         border-radius: 12px;
-        margin: 0 4px;
+        margin: 0;
       }
 
       .bio-image {
@@ -675,71 +700,70 @@
               target="_blank" rel="noopener noreferrer">here</a>.</p>
         </section>
               
-      <section class="bio-section">
-        <h2>Research</h2>
-        <p>
-          I am a PhD candidate in the School of Computing at the
-          <a href="https://www.anu.edu.au/" target="_blank" rel="noopener noreferrer">Australian National University</a>,
-          working on autonomous spatio-semantic reasoning under uncertainty with
-          <a href="https://rahulsho.me/" target="_blank" rel="noopener noreferrer">Dr. Rahul Shome</a>,
-          <a href="https://sites.google.com/view/djcampbell" target="_blank" rel="noopener noreferrer">Dr. Dylan Campbell</a>,
-          and <a href="http://users.cecs.anu.edu.au/~sgould/" target="_blank" rel="noopener noreferrer">Prof. Stephen Gould</a>.
-        </p>
-        <p>
-          My thesis develops efficient generative world models of 3D indoor environments that turn
-          partial, noisy observations into calibrated spatial–semantic priors for robotic planning and decision-making.
-          Recent work appears at CVPR&nbsp;2025 as
-          <a href="https://1ssb.github.io/UOD" target="_blank" rel="noopener noreferrer">Unobserved Object Detection</a>.
-        </p>
-        <p>
-          My recent projects span CVPR&nbsp;2025 unobserved object detection,
-          <a href="https://1ssb.github.io/Flat_Lands/" target="_blank" rel="noopener noreferrer">FlatLands</a>,
-          our ECCV&nbsp;2026 work on generative floor-map completion, and MatterDoor for zero-shot spatio-semantic
-          priors. Alongside the PhD,
-          I have worked on applied AI, retrieval, and quantitative ML systems through Microsoft, Optiver,
-          JP Morgan, and ANU industry-linked research.
-        </p>
+        <section class="bio-section">
+          <h2>Research</h2>
+          <p>
+            I am a PhD candidate in the School of Computing at the
+            <a href="https://www.anu.edu.au/" target="_blank" rel="noopener noreferrer">Australian National University</a>,
+            working on autonomous spatio-semantic reasoning under uncertainty with
+            <a href="https://rahulsho.me/" target="_blank" rel="noopener noreferrer">Dr. Rahul Shome</a>,
+            <a href="https://sites.google.com/view/djcampbell" target="_blank" rel="noopener noreferrer">Dr. Dylan Campbell</a>,
+            and <a href="http://users.cecs.anu.edu.au/~sgould/" target="_blank" rel="noopener noreferrer">Prof. Stephen Gould</a>.
+          </p>
+          <p>
+            My thesis develops efficient generative world models of 3D indoor environments that turn
+            partial, noisy observations into calibrated spatial–semantic priors for robotic planning and decision-making.
+            This research includes
+            <a href="https://1ssb.github.io/UOD" target="_blank" rel="noopener noreferrer">Unobserved Object Detection</a>
+            (CVPR&nbsp;2025),
+            <a href="https://1ssb.github.io/Flat_Lands/" target="_blank" rel="noopener noreferrer">FlatLands</a>,
+            our ECCV&nbsp;2026 work on generative floor-map completion, and MatterDoor, which explores zero-shot
+            spatio-semantic priors.
+          </p>
+          <p class="industry-summary">
+            Alongside my PhD, I have developed applied AI, information retrieval, and quantitative ML systems
+            at Microsoft, Optiver, and JPMorgan, as well as through industry-linked research at ANU.
+          </p>
 
-        <p>
-          My current research direction keeps computer vision at its core while extending into vision-language
-          representation learning and token-efficient LLM/VLM architectures, with an emphasis on preserving
-          strong spatial features under tighter memory, latency, and compute budgets.
-        </p>
+          <p>
+            My current research direction keeps computer vision at its core while extending into vision-language
+            representation learning and token-efficient LLM/VLM architectures, with an emphasis on preserving
+            strong spatial features under tighter memory, latency, and compute budgets.
+          </p>
 
-        <p>My research interests include the following:</p>
-        
-        <ol>
-          <li>
-            <strong>Computer vision, 3D scene understanding, and generative world models:</strong>
-            Learning uncertainty-aware geometry and semantics from partial observations for scene completion,
-            spatial reasoning, and predictive world modelling.
-          </li>
-          <li>
-            <strong>VLM representation learning and multimodal grounding:</strong>
-            Learning dense and region-level visual features through cross-modal alignment, open-vocabulary
-            perception, visual grounding, and language-conditioned spatial representations.
-          </li>
-          <li>
-            <strong>Token-efficient LLM/VLM architectures and optimisation:</strong>
-            Visual tokenisation, adaptive token pruning and merging, token compression, efficient attention,
-            KV-cache optimisation, sparse or mixture-of-experts routing, and hardware-aware architecture–system
-            co-design targeting inference latency, throughput, and memory efficiency.
-          </li>
-        </ol>
-        <p>If you are interested in collaborating with me, please reach out!</p>
-      </section>
-      
-      <section class="bio-section">
-        <h2>Hobbies</h2>
-        <p>
-          Outside research, I enjoy slow travel, theatre and long games of chess, and I am especially drawn to films with nonlinear
-          narratives. I also love reading epics, modern classics and travelogues.
-          I sketch and paint from time to time, experiment with cocktails for friends, look for unusual hiking routes, swim in the sea,
-          and listen to audiobooks.
-        </p>
-      </section>
+          <p>My research interests include the following:</p>
 
-        
+          <ol>
+            <li>
+              <strong>Computer vision, 3D scene understanding, and generative world models:</strong>
+              Learning uncertainty-aware geometry and semantics from partial observations for scene completion,
+              spatial reasoning, and predictive world modelling.
+            </li>
+            <li>
+              <strong>VLM representation learning and multimodal grounding:</strong>
+              Learning dense and region-level visual features through cross-modal alignment, open-vocabulary
+              perception, visual grounding, and language-conditioned spatial representations.
+            </li>
+            <li>
+              <strong>Token-efficient LLM/VLM architectures and optimisation:</strong>
+              Visual tokenisation, adaptive token pruning and merging, token compression, efficient attention,
+              KV-cache optimisation, sparse or mixture-of-experts routing, and hardware-aware architecture–system
+              co-design targeting inference latency, throughput, and memory efficiency.
+            </li>
+          </ol>
+          <p>If you are interested in collaborating with me, please reach out!</p>
+        </section>
+
+        <section class="bio-section">
+          <h2>Hobbies</h2>
+          <p>
+            Outside research, I enjoy slow travel, theatre and long games of chess, and I am especially drawn to films with nonlinear
+            narratives. I also love reading epics, modern classics and travelogues.
+            I sketch and paint from time to time, experiment with cocktails for friends, look for unusual hiking routes, swim in the sea,
+            and listen to audiobooks.
+          </p>
+        </section>
+
       </article>
     </div>
   </main>
