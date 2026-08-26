@@ -1,11 +1,10 @@
 #!/bin/bash
 set -e
 
-# Build the resume with Tectonic. A single call runs every pass it needs
-# (references, layout), so there is no second xelatex run.
-echo "Compiling resume with tectonic..."
+# Build the resume using the same latexmk/XeLaTeX command as CI. Latexmk runs
+# every pass needed for references and layout in one invocation.
+echo "Compiling resume with latexmk and XeLaTeX..."
 cd "$(dirname "$0")"
-tectonic main.tex
-mv -f main.pdf Resume.pdf
+latexmk -xelatex -interaction=nonstopmode -halt-on-error -jobname=Resume main.tex
 echo "PDF compilation successful!"
 echo "Generated: Resume.pdf"
