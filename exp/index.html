@@ -279,6 +279,14 @@
       gap: 24px;
     }
 
+    @media (min-width: 920px) {
+      .experience-grid>.experience-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: calc((100% - 24px) / 2);
+        justify-self: center;
+      }
+    }
+
     .experience-card {
       background: var(--bg-surface);
       backdrop-filter: blur(40px) saturate(200%);
@@ -972,23 +980,6 @@
             </div>
           </div>
 
-          <div class="experience-card">
-            <div class="card-header">
-              <h3 class="card-title">Undergraduate Researcher: Optical Excitation Study in Graphene Sheets</h3>
-            </div>
-            <div class="card-details">
-              <p><strong>Duration:</strong> August - December 2019</p>
-              <p><strong>Supervisors:</strong> Prof. Gargi Chakraborty, Dr. Sumathi S, Prof. Shweta B. Thomas</p>
-            </div>
-            <div class="card-content">
-              <ul>
-                <li>Developed a model to estimate parametric states for the optical response of viscoelastic properties
-                  of the graphene
-                  sheets under stress.</li>
-                <li>Verified the bifurcations and empirically validated the model for larger gains.</li>
-              </ul>
-            </div>
-          </div>
         </div>
       </section>
 
